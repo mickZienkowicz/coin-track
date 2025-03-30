@@ -1,0 +1,945 @@
+{
+  "settings": {
+    "yourProfiles": "Twoje profile",
+    "noProfilesCardTitle": "Nie masz jeszcze żadnego profilu rodzinnego",
+    "noProfilesCardDescription": "Dodaj profil rodzinny, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+    "familyCard": {
+      "activeBadge": "Aktywny",
+      "role": "Rola: ",
+      "owner": "Właściciel",
+      "member": "Członek",
+      "members": "Członkowie",
+      "switchFamilyButton": "Przełącz profil",
+      "switchFamilyDefaultError": "Coś poszło nie tak.",
+      "you": "Ty"
+    },
+    "invitations": {
+      "received": {
+        "title": "Zaproszenia do profili rodzinnych",
+        "for": "Zaproszenie od:",
+        "sent": "Wysłano:",
+        "accept": {
+          "button": "Zaakceptuj",
+          "error": "Coś poszło nie tak."
+        },
+        "reject": {
+          "button": "Odrzuć",
+          "title": "Odrzuć zaproszenie",
+          "description": "Czy na pewno chcesz odrzucić zaproszenie?",
+          "error": "Coś poszło nie tak."
+        }
+      },
+      "sent": {
+        "title": "Wysłane zaproszenia",
+        "for": "Zaproszenie do:",
+        "family": "Profil rodzinny:",
+        "sent": "Wysłano:",
+        "reject": "Anuluj",
+        "rejectError": "Coś poszło nie tak.",
+        "pending": "Oczekujące",
+        "accepted": "Zaakceptowane",
+        "rejected": "Odrzucone"
+      }
+    },
+    "addFamily": {
+      "title": "Utwórz nowy profil rodzinny",
+      "description": "Profil rodzinny pozwala na wspólne zarządzanie finansami z innymi osobami.",
+      "form": {
+        "saveChangesButton": "Utwórz profil",
+        "name": "Nazwa",
+        "error": "Coś poszło nie tak.",
+        "familyNameField": {
+          "label": "Nazwa profilu",
+          "placeholder": "np. Rodzina Kowalskich",
+          "error": "Nazwa profilu jest wymagana."
+        },
+        "currencyField": {
+          "label": "Waluta",
+          "triggerDefaultLabel": "Wybierz walutę",
+          "placeholder": "Wyszukaj walutę...",
+          "noResultsMessage": "Nie znaleziono wyników",
+          "error": "Waluta jest wymagana."
+        },
+        "timezoneField": {
+          "label": "Strefa czasowa",
+          "triggerDefaultLabel": "Wybierz strefę czasową",
+          "placeholder": "Wyszukaj strefę czasową...",
+          "noResultsMessage": "Nie znaleziono wyników",
+          "error": "Strefa czasowa jest wymagana."
+        },
+        "budgetIntervalField": {
+          "label": "Interwał okresu budżetowego",
+          "triggerDefaultLabel": "Wybierz interwał",
+          "placeholder": "Wyszukaj interwał...",
+          "noResultsMessage": "Nie znaleziono wyników"
+        },
+        "budgetTransferPouchBalanceField": {
+          "label": "Przenoszenie salda sakiewek między budżetami",
+          "triggerDefaultLabel": "Wybierz opcję",
+          "yes": "Tak",
+          "no": "Nie"
+        },
+        "budgetStartDateField": {
+          "label": "Data rozpoczęcia pierwszego okresu budżetowego"
+        }
+      }
+    },
+    "editFamily": {
+      "title": "Edytuj profil rodzinny",
+      "description": "Edytuj nazwę profilu rodzinnego.",
+      "name": "Nazwa",
+      "currency": "Waluta",
+      "timezone": "Strefa czasowa",
+      "form": {
+        "saveChangesButton": "Zapisz zmiany",
+        "familyNameField": {
+          "label": "Nazwa profilu",
+          "placeholder": "np. Rodzina Kowalskich"
+        },
+        "currencyField": {
+          "label": "Waluta",
+          "triggerDefaultLabel": "Wybierz walutę",
+          "placeholder": "Wyszukaj walutę...",
+          "noResultsMessage": "Nie znaleziono wyników"
+        },
+        "timezoneField": {
+          "label": "Strefa czasowa",
+          "triggerDefaultLabel": "Wybierz strefę czasową",
+          "placeholder": "Wyszukaj strefę czasową...",
+          "noResultsMessage": "Nie znaleziono wyników"
+        }
+      }
+    },
+    "leaveFamily": {
+      "title": "Opuść profil rodzinny",
+      "description": "Czy na pewno chcesz tą opuścić rodzinę?",
+      "leaveButton": "Opuść",
+      "error": "Coś poszło nie tak."
+    },
+    "inviteUserToFamily": {
+      "button": "Zaproś użytkownika do profilu",
+      "title": "Zaproś użytkownika do profilu rodzinnego",
+      "description": "Podaj adres email osoby, którą chcesz zaprosić do profilu {familyName}.",
+      "form": {
+        "emailField": {
+          "label": "Adres email",
+          "placeholder": "np. jan.kowalski@gmail.com",
+          "error": "Niepoprawny adres email."
+        },
+        "sendInvitationButton": "Wyślij zaproszenie",
+        "error": "Coś poszło nie tak."
+      }
+    },
+    "removeFamily": {
+      "title": "Usuń profil rodzinny",
+      "description": "Czy na pewno chcesz usunąć profil rodzinny?",
+      "removeButton": "Usuń",
+      "error": "Coś poszło nie tak."
+    },
+    "removeUserFromFamily": {
+      "title": "Usuń użytkownika z profilu rodzinnego",
+      "description": "Czy na pewno chcesz usunąć użytkownika z profilu rodzinnego?",
+      "removeButton": "Usuń",
+      "error": "Coś poszło nie tak."
+    }
+  },
+  "menu": {
+    "dashboard": "Panel Główny",
+    "fortune": "Majątek",
+    "budget": "Budżet",
+    "goals": "Cel",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj",
+    "languageSwitcher": {
+      "title": "Zmień język",
+      "description": "Zmień język aplikacji na inny język.",
+      "polish": "Polski",
+      "english": "Angielski",
+      "placeholder": "Wybierz język",
+      "changeLanguageButton": "Zmień język"
+    }
+  },
+  "interval": {
+    "day": "Codziennie",
+    "week": "Co tydzień",
+    "twoWeeks": "Co dwa tygodnie",
+    "month": "Co miesiąc",
+    "twoMonths": "Co dwa miesiące",
+    "quarter": "Co kwartał",
+    "year": "Co rok"
+  },
+  "recurrence": {
+    "oneTime": "Jednorazowy",
+    "infinite": "Stały",
+    "multiple": "Kilkurazowy"
+  },
+  "budget": {
+    "title": "Budżet",
+    "summary": "Podsumowanie",
+    "budgetItems": "Pozycje budżetu",
+    "noFamilyCard": {
+      "title": "Nie masz jeszcze żadnego profilu rodzinnego",
+      "description": "Dodaj profil rodzinny, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+      "addFamilyButton": "Dodaj profil rodzinny"
+    },
+    "pouch": {
+      "title": "Sakiewki",
+      "addPouchButton": "Dodaj sakiewkę",
+      "noPouchesCard": {
+        "title": "Nie masz jeszcze żadnych sakiewek",
+        "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
+      },
+      "budgetSummary": {
+        "title": "Lista sakiewek",
+        "listOfPouches": "Łączna kwota sakiewek w okresie budżetowym.",
+        "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
+        "occurrences": "Wystąpienia w tym okresie budżetowym: ",
+        "capacity": "Pojemność sakiewki",
+        "expensesSum": "Suma wydatków",
+        "seeFullList": "Kliknij aby zobaczyć listę wydatków w tej sakiewce",
+        "toggleList": "przełącz listę"
+      },
+      "removePouchOutcome": {
+        "title": "Usuń wydatek z sakiewki",
+        "description": "Czy na pewno chcesz usunąć ten wydatek z sakiewki? Tej operacji nie da sie cofnąć.",
+        "removeButton": "Usuń wydatek",
+        "error": "Coś poszło nie tak."
+      },
+      "pouchCard": {
+        "finishedBadge": "Zakończony",
+        "stoppedBadge": "Wstrzymany",
+        "lastOccurrenceDatePrefix": "Ostatni: ",
+        "nextOccurrenceDatePrefix": "Następny: ",
+        "oneTime": "Jednorazowy",
+        "recurring": "Cykliczny",
+        "amount": "Pojemność sakiewki",
+        "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
+        "recurringDisabledCountLabel": {
+          "one": "raz",
+          "other": "razy"
+        },
+        "recurringMultiple": "Powtarza się co {interval}, jeszcze {count} razy",
+        "recurringInfinite": "Powtarza się co {interval}",
+        "editPouchOutcome": {
+          "title": "Edytuj wydatek w sakiewce",
+          "description": "Edytuj wydatek w sakiewce, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "button": "Edytuj wydatek",
+          "form": {
+            "error": "Coś poszło nie tak.",
+            "nameField": {
+              "label": "Nazwa",
+              "placeholder": "np. Zakupy",
+              "error": "Nazwa jest wymagana."
+            },
+            "valueField": {
+              "label": "Nazwa",
+              "placeholder": "np. Zakupy",
+              "error": "Nazwa jest wymagana."
+            },
+            "dateField": {
+              "label": "Data",
+              "placeholder": "np. 2024-01-01",
+              "error": "Data jest wymagana."
+            },
+            "editPouchOutcomeButton": "Edytuj wydatek"
+          }
+        },
+        "removePouch": {
+          "title": "Usuń sakiewkę",
+          "descriptionOneTime": "Czy na pewno chcesz usunąć ten sakiewkę? Tej operacji nie da sie cofnąć.",
+          "descriptionMultiple": "Czy na pewno chcesz usunąć ten sakiewkę? Tej operacji nie da sie cofnąć, a moze ona wpłynąć na historię twojego konta, np. poprzez zmiane salda obecnego lub przeszłego budżetu.",
+          "removeButton": "Usuń",
+          "error": "Coś poszło nie tak."
+        },
+        "addPouchOutcome": {
+          "title": "Dodaj wydatek do sakiewki",
+          "description": "Wybierz sakiewkę i dodaj wydatek w jej ramach, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "button": "Dodaj wydatek w ramach sakiewki",
+          "form": {
+            "error": "Coś poszło nie tak.",
+            "pouchField": {
+              "label": "Sakiewka",
+              "placeholder": "Wybierz sakiewkę",
+              "error": "Sakiewka jest wymagana."
+            },
+            "nameField": {
+              "label": "Nazwa",
+              "placeholder": "np. Zakupy",
+              "error": "Nazwa jest wymagana."
+            },
+            "valueField": {
+              "label": "Kwota",
+              "placeholder": "np. 100",
+              "error": "Kwota jest wymagana."
+            },
+            "dateField": {
+              "label": "Data",
+              "placeholder": "np. 2024-01-01",
+              "error": "Data jest wymagana."
+            },
+            "createPouchOutcomeButton": "Dodaj wydatek"
+          }
+        },
+        "addPouch": {
+          "title": "Utwórz nową sakiewkę",
+          "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "button": "Dodaj sakiewkę",
+          "form": {
+            "error": "Coś poszło nie tak.",
+            "nameField": {
+              "label": "Nazwa",
+              "placeholder": "np. Zakupy",
+              "error": "Nazwa jest wymagana."
+            },
+            "valueField": {
+              "label": "Pojemność",
+              "placeholder": "np. 1000",
+              "error": "Pojemność jest wymagana."
+            },
+            "dateField": {
+              "label": "Data",
+              "placeholder": "np. 2024-01-01",
+              "error": "Data jest wymagana."
+            },
+            "recurrenceField": {
+              "label": "Powtarzanie",
+              "placeholder": "Wybierz opcję",
+              "noResultsMessage": "Nie znaleziono wyników"
+            },
+            "repeatCountField": {
+              "label": "Ile razy",
+              "placeholder": "np. 10",
+              "error": "Ile razy jest wymagane."
+            },
+            "repeatEveryField": {
+              "label": "Co ile",
+              "placeholder": "np. 1",
+              "error": "Co ile jest wymagane."
+            },
+            "categoryField": {
+              "label": "Kategoria",
+              "placeholder": "Wybierz kategorię",
+              "error": "Kategoria jest wymagana."
+            },
+            "createPouchButton": "Utwórz sakiewkę"
+          }
+        },
+        "editPouch": {
+          "title": "Edytuj sakiewkę",
+          "description": "Niestety ze względu na zachownie poprawności historii twoich sakiewek nie wszystkie pola możesz zmienić. W celu pełnej edycji wydatku skorzystaj z opcji wstrzymaj sakiewkę lub usuń sakiewkę, a następnie utwórz nową.",
+          "button": "Edytuj",
+          "form": {
+            "error": "Coś poszło nie tak.",
+            "nameField": {
+              "label": "Nazwa",
+              "placeholder": "np. Zakupy",
+              "error": "Nazwa jest wymagana."
+            },
+            "typeField": {
+              "label": "Typ sakiewki",
+              "placeholder": "Wybierz typ sakiewki",
+              "noResultsMessage": "Nie znaleziono wyników"
+            },
+            "categoryField": {
+              "label": "Kategoria",
+              "placeholder": "Wybierz kategorię",
+              "error": "Kategoria jest wymagana."
+            },
+            "valueField": {
+              "label": "Kwota sakiewki"
+            },
+            "dateField": {
+              "label": "Data utworzenia"
+            },
+            "recurrenceField": {
+              "label": "Powtarzaj co"
+            },
+            "repeatCountField": {
+              "label": "Ile razy"
+            },
+            "repeatEveryField": {
+              "label": "Co ile"
+            },
+            "createPouchButton": "Edytuj sakiewkę"
+          }
+        },
+
+        "stopPouch": {
+          "title": "Wstrzymaj sakiewkę",
+          "stopButton": "Wstrzymaj",
+          "description": "Uwaga!",
+          "descriptionAttention": "Tej operacji nie można cofnąć. ",
+          "descriptionAttentionStop": "Wstrzymając sakiewkę, nie będzie ona uwzględniwana w budżecie od daty którą podasz. ",
+          "descriptionAttentionStopPouch": "Wstrzymając sakiewkę, nie będzie ona uwzględniwana w budżecie od daty którą podasz. ",
+          "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc sakiewkę, ",
+          "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie wydateku moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+          "descriptionDeleteButton": "kliknij tutaj",
+          "form": {
+            "error": "Coś poszło nie tak.",
+            "dateField": {
+              "label": "Data wstrzymania sakiewki",
+              "error": "Data jest wymagana."
+            },
+            "stopPouchButton": "Wstrzymaj sakiewkę"
+          }
+        }
+      }
+    },
+    "outcomes": {
+      "title": "Wydatki",
+      "addOutcomeButton": "Dodaj wydatek",
+      "budgetSummary": {
+        "title": "Lista wydatków",
+        "listOfOutcomes": "Łączna kwota wydatków w okresie budżetowym.",
+        "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
+        "occurrences": "Wystąpienia w tym okresie budżetowym: ",
+        "datesOfOccurrences": "Daty wystąpień: "
+      },
+      "outcomeCard": {
+        "finishedBadge": "Zakończony",
+        "stoppedBadge": "Wstrzymany",
+        "lastOccurrenceDatePrefix": "Ostatni: ",
+        "nextOccurrenceDatePrefix": "Następny: ",
+        "oneTime": "Jednorazowy",
+        "recurring": "Cykliczny",
+        "amount": "Kwota",
+        "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
+        "recurringDisabledCountLabel": {
+          "one": "raz",
+          "other": "razy"
+        },
+        "recurringMultiple": "Powtarza się co {interval}, jeszcze {count} razy",
+        "recurringInfinite": "Powtarza się co {interval}"
+      },
+      "noOutcomesCard": {
+        "title": "Nie masz jeszcze żadnych wydatków",
+        "description": "Dodaj wydatki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
+      },
+      "removeOutcome": {
+        "title": "Usuń wydatek",
+        "descriptionOneTime": "Czy na pewno chcesz usunąć ten wydatek? Tej operacji nie da sie cofnąć.",
+        "descriptionMultiple": "Czy na pewno chcesz usunąć ten wydatek? Tej operacji nie da sie cofnąć, a moze ona wpłynąć na historię twojego konta, np. poprzez zmiane salda obecnego lub przeszłego budżetu.",
+        "removeButton": "Usuń",
+        "error": "Coś poszło nie tak."
+      },
+      "editOutcome": {
+        "title": "Edytuj wydatek",
+        "description": "Niestety ze względu na zachownie poprawności historii twoich wydatków nie wszystkie pola możesz zmienić. W celu pełnej edycji wydatku skorzystaj z opcji wstrzymaj wydatek lub usuń wydatek, a następnie utwórz nowy",
+        "editButton": "Edytuj",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Zakupy",
+            "error": "Nazwa jest wymagana."
+          },
+          "valueField": {
+            "label": "Kwota",
+            "placeholder": "np. 1000",
+            "error": "Kwota musi być większa od zera."
+          },
+          "dateField": {
+            "label": "Data",
+            "placeholder": "np. 2024-01-01",
+            "error": "Data jest wymagana."
+          },
+          "recurrenceField": {
+            "label": "Powtarzanie",
+            "placeholder": "Wybierz opcję",
+            "noResultsMessage": "Nie znaleziono wyników"
+          },
+          "repeatCountField": {
+            "label": "Ile razy",
+            "placeholder": "np. 10",
+            "error": "Ile razy jest wymagane."
+          },
+          "repeatEveryField": {
+            "label": "Co ile",
+            "placeholder": "np. 1",
+            "error": "Co ile jest wymagane."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "Wybierz kategorię",
+            "error": "Kategoria jest wymagana."
+          },
+          "editButton": "Edytuj wydatek"
+        }
+      },
+      "addOutcome": {
+        "title": "Utwórz nowy wydatek",
+        "description": "Dodaj wydatki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+        "button": "Dodaj wydatek",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "valueField": {
+            "label": "Kwota",
+            "placeholder": "np. 1000",
+            "error": "Kwota musi być większa od zera."
+          },
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Zakupy",
+            "error": "Nazwa jest wymagana."
+          },
+          "dateField": {
+            "label": "Data",
+            "placeholder": "np. 2024-01-01",
+            "error": "Data jest wymagana."
+          },
+          "recurrenceField": {
+            "label": "Powtarzanie",
+            "triggerDefaultLabel": "Wybierz opcję",
+            "placeholder": "Wyszukaj opcję...",
+            "noResultsMessage": "Nie znaleziono wyników"
+          },
+          "repeatCountField": {
+            "label": "Ile razy",
+            "placeholder": "np. 10",
+            "error": "Ile razy jest wymagane kiedy wydatek jest powtarzany."
+          },
+          "repeatEveryField": {
+            "label": "Co ile",
+            "placeholder": "np. 1",
+            "error": "Co ile jest wymagane."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "Wybierz kategorię",
+            "error": "Kategoria jest wymagana."
+          },
+          "createOutcomeButton": "Utwórz wydatek"
+        }
+      },
+      "stopOutcome": {
+        "title": "Wstrzymaj wydatek",
+        "stopButton": "Wstrzymaj",
+        "descriptionAttention": "Uwaga!",
+        "descriptionAttentionBold": "Tej operacji nie można cofnąć.",
+        "descriptionAttentionStop": "Wstrzymając wydatek, nie będzie on uwzględniany w budżecie od daty którą podasz.",
+        "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc wydatek, ",
+        "descriptionDeleteButton": "kliknij tutaj",
+        "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie wydateku moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "dateField": {
+            "label": "Data wstrzymania wydateku",
+            "error": "Data jest wymagana."
+          },
+          "stopOutcomeButton": "Wstrzymaj wydatek"
+        }
+      }
+    },
+    "incomes": {
+      "title": "Przychody",
+      "addIncomeButton": "Dodaj przychód",
+      "budgetSummary": {
+        "title": "Lista przychodów",
+        "listOfIncomes": "Łączna kwota przychodów w okresie budżetowym.",
+        "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
+        "occurrences": "Wystąpienia w tym okresie budżetowym: ",
+        "datesOfOccurrences": "Daty wystąpień: "
+      },
+      "incomeCard": {
+        "finishedBadge": "Zakończony",
+        "stoppedBadge": "Wstrzymany",
+        "lastOccurrenceDatePrefix": "Ostatni: ",
+        "nextOccurrenceDatePrefix": "Następny: ",
+        "recurrence": "Powtarzający się",
+        "oneTime": "Jednorazowy",
+        "amount": "Kwota",
+        "recurringIncome": "Dochód cykliczny",
+        "recurringMultiple": "Powtarza się co {interval}, jeszcze {count} razy",
+        "recurringInfinite": "Powtarza się co {interval}",
+        "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
+        "recurringDisabledCountLabel": {
+          "one": "raz",
+          "other": "razy"
+        }
+      },
+      "stopIncome": {
+        "title": "Wstrzymaj dochód",
+        "stopButton": "Wstrzymaj",
+        "descriptionAttention": "Uwaga!",
+        "descriptionAttentionBold": "Tej operacji nie można cofnąć.",
+        "descriptionAttentionStop": "Wstrzymając dochód, nie będzie on uwzględniany w budżecie od daty którą podasz.",
+        "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc dochód, ",
+        "descriptionDeleteButton": "kliknij tutaj",
+        "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie dochodu moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "dateField": {
+            "label": "Data wstrzymania dochodu",
+            "error": "Data jest wymagana."
+          },
+          "stopIncomeButton": "Wstrzymaj dochód"
+        }
+      },
+      "noIncomesCard": {
+        "title": "Nie masz jeszcze żadnych przychodów",
+        "description": "Dodaj przychód, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+        "addIncomeButton": "Dodaj przychód"
+      },
+      "removeIncome": {
+        "title": "Usuń przychód",
+        "description": "Czy na pewno chcesz usunąć dochód? Tej operacji nie da sie cofnac, a moze ona wpłynąć na historię twojego konta, np. poprzez zmiane salda obecnego lub przeszłego budżetu.",
+        "removeButton": "Usuń",
+        "error": "Coś poszło nie tak."
+      },
+      "addIncome": {
+        "title": "Utwórz nowy przychód",
+        "description": "Dodaj przychód, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+        "button": "Dodaj przychód",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "nameField": {
+            "label": "Nazwa przychodu",
+            "placeholder": "np. Wynagrodzenie",
+            "error": "Nazwa przychodu jest wymagana."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Wartość jest wymagana."
+          },
+          "dateField": {
+            "label": "Data",
+            "placeholder": "np. 2024-01-01",
+            "error": "Data jest wymagana."
+          },
+          "recurrenceField": {
+            "label": "Powtarzanie",
+            "triggerDefaultLabel": "Wybierz opcję",
+            "placeholder": "Wyszukaj opcję...",
+            "noResultsMessage": "Nie znaleziono wyników"
+          },
+          "repeatCountField": {
+            "label": "Ile razy",
+            "placeholder": "np. 10",
+            "error": "Ile razy jest wymagane."
+          },
+          "repeatEveryField": {
+            "label": "Co ile",
+            "placeholder": "np. 1",
+            "error": "Co ile jest wymagane."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "Wyszukaj kategorię...",
+            "noResultsMessage": "Nie znaleziono wyników",
+            "error": "Kategoria jest wymagana."
+          },
+          "createIncomeButton": "Utwórz przychód"
+        }
+      },
+      "editIncome": {
+        "title": "Edytuj przychód",
+        "description": "Niestety ze względu na zachownie poprawności historii twoich dochodów nie wszystkie pola możesz zmienić. W celu pełnej edycji dochodu skorzystaj z opcji wstrzymaj dochód lub usuń dochód, a następnie utwórz nowy.",
+        "editIncomeButton": "Edytuj",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "nameField": {
+            "label": "Nazwa przychodu",
+            "placeholder": "np. Wynagrodzenie",
+            "error": "Nazwa przychodu jest wymagana."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "Wyszukaj kategorię..."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Wartość jest wymagana."
+          },
+          "dateField": {
+            "label": "Data",
+            "placeholder": "np. 2024-01-01",
+            "error": "Data jest wymagana."
+          },
+          "recurrenceField": {
+            "label": "Powtarzanie",
+            "placeholder": "Wyszukaj opcję...",
+            "noResultsMessage": "Nie znaleziono wyników"
+          },
+          "repeatCountField": {
+            "label": "Ile razy",
+            "placeholder": "np. 10",
+            "error": "Ile razy jest wymagane."
+          },
+          "repeatEveryField": {
+            "label": "Co ile",
+            "placeholder": "np. 1",
+            "error": "Co ile jest wymagane."
+          },
+          "createIncomeButton": "Utwórz przychód"
+        }
+      }
+    }
+  },
+  "categories": {
+    "pouch": {
+      "food": "Jedzenie",
+      "clothing": "Odzież",
+      "health": "Zdrowie",
+      "travel": "Podróże",
+      "education": "Edukacja",
+      "transport": "Transport",
+      "bills": "Rachunki",
+      "home": "Dom",
+      "car": "Samochód",
+      "leasing": "Leasing",
+      "loans": "Pożyczki",
+      "credit": "Kredyt",
+      "gifts": "Prezenty",
+      "work": "Praca",
+      "other": "Inne"
+    },
+    "incomes": {
+      "wages": "Wynagrodzenie",
+      "sales": "Sprzedaż",
+      "rent": "Najem",
+      "bonus": "Premia",
+      "taxReturn": "Zwrot podatku",
+      "investments": "Inwestycje",
+      "other": "Inne"
+    },
+    "outcomes": {
+      "bills": "Rachunki",
+      "home": "Dom",
+      "car": "Samochód",
+      "loans": "Pożyczki",
+      "leasing": "Leasing",
+      "credit": "Kredyt",
+      "food": "Jedzenie",
+      "clothing": "Odzież",
+      "health": "Zdrowie",
+      "travel": "Podróże",
+      "education": "Edukacja",
+      "technology": "Technologia",
+      "transport": "Transport",
+      "savings": "Oszczędności",
+      "other": "Inne"
+    }
+  },
+  "budgetSummary": {
+    "balance": "Saldo",
+    "pouches": "Sakiewki",
+    "balanceSummary": "Saldo: ",
+    "pouchesSummary": "Suma budżetu w sakiewkach",
+    "pouchesExpensesSummary": "Łączna kwota wydatków w sakiewkach",
+    "currentBudgetBalance": "Aktualne saldo budżetu licząc wydatki w sakiewkach",
+    "currentBudgetBalanceWithPouches": "Aktualne saldo budżetu licząc pojemność sakiewek",
+    "positiveBalance": "Pozytywne saldo",
+    "negativeBalance": "Negatywne saldo",
+    "neutralBalance": "Neutralne saldo",
+    "outcomes": "Wydatki",
+    "outcomesSummary": "Łączna kwota wydatków w okresie budżetowym",
+    "incomes": "Przychody",
+    "incomesSummary": "Łączna kwota przychodów w okresie budżetowym"
+  },
+  "budgetSettings": {
+    "title": "Ustawienia budżetu",
+    "description": "Zmień ustawienia budżetu, aby dopasować je do swoich potrzeb.",
+    "form": {
+      "error": "Coś poszło nie tak.",
+      "intervalField": {
+        "label": "Interwał",
+        "placeholder": "Wybierz interwał"
+      },
+      "startDateField": {
+        "label": "Data rozpoczęcia pierwszego okresu"
+      },
+      "transferPouchBalanceField": {
+        "label": "Przenoszenie salda sakiewek",
+        "placeholder": "Wybierz opcję",
+        "yes": "Tak",
+        "no": "Nie"
+      },
+      "applyChangesButton": "Zastosuj zmiany"
+    }
+  },
+  "errors": {
+    "budget": {
+      "create": {
+        "budgetNotFound": "Budżet nie znaleziony",
+        "failedToUpdateBudget": "Nie udało się zaktualizować budżetu",
+        "notAllowedToUpdateBudget": "Nie jesteś upoważniony do aktualizacji tego budżetu",
+        "invalidBudgetData": "Nieprawidłowe dane budżetu",
+        "budgetAlreadyExists": "Budżet już istnieje"
+      },
+      "update": {
+        "budgetNotFound": "Budżet nie znaleziony",
+        "failedToUpdateBudget": "Nie udało się zaktualizować budżetu",
+        "notAllowedToUpdateBudget": "Nie jesteś upoważniony do aktualizacji tego budżetu",
+        "invalidBudgetData": "Nieprawidłowe dane budżetu"
+      }
+    },
+    "family": {
+      "create": {
+        "failedToCreateFamily": "Nie udało się utworzyć profilu rodzinnego",
+        "invalidCurrency": "Nieprawidłowa waluta",
+        "invalidName": "Nieprawidłowa nazwa",
+        "invalidTimezone": "Nieprawidłowy czas"
+      },
+      "update": {
+        "failedToUpdateFamily": "Nie udało się zaktualizować profilu rodzinnego",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
+        "invalidName": "Nieprawidłowa nazwa",
+        "invalidCurrency": "Nieprawidłowa waluta",
+        "invalidTimezone": "Nieprawidłowy czas"
+      },
+      "delete": {
+        "failedToDeleteFamily": "Nie udało się usunąć profilu rodzinnego",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego"
+      },
+      "leave": {
+        "failedToLeaveFamily": "Nie udało się opuścić profilu rodzinnego",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Profil rodzinny nie może być opuszczony przez właściciela"
+      },
+      "removeUser": {
+        "failedToRemoveUserFromFamily": "Nie udało się usunąć użytkownika z profilu rodzinnego",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
+        "cannotRemoveSelf": "Nie możesz usunąć samego siebie z profilu rodzinnego",
+        "cannotRemoveOwner": "Nie możesz usunąć właściciela profilu rodzinnego",
+        "userNotFoundInFamily": "Użytkownik nie znaleziony w profilu rodzinnym"
+      },
+      "setSelectedFamily": {
+        "failedToSetSelectedFamily": "Nie udało zmienić aktywnego profilu rodzinnego",
+        "familyNotFound": "Profil rodzinny nie znaleziony"
+      }
+    },
+    "income": {
+      "create": {
+        "invalidIncomeData": "Nieprawidłowe dane przychodu",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy przychód jest powtarzany",
+        "repeatEveryRequired": "\"Co ile\" jest wymagane kiedy przychód jest powtarzany",
+        "failedToCreateIncome": "Nie udało się utworzyć przychodu"
+      },
+      "delete": {
+        "failedToDeleteIncome": "Nie udało się usunąć przychodu",
+        "incomeNotFound": "Przychód nie znaleziony",
+        "incomeNotBelongsToUser": "Przychód nie należy do ciebie"
+      },
+      "stop": {
+        "failedToStopIncome": "Nie udało się wstrzymać przychodu",
+        "incomeNotFound": "Przychód nie znaleziony",
+        "incomeNotBelongsToUser": "Przychód nie należy do ciebie",
+        "invalidIncomeData": "Nieprawidłowe dane przychodu",
+        "oneTimeIncomeCannotBeStopped": "Jednorazowy przychód nie może być wstrzymany. Po prostu usuń go"
+      },
+      "update": {
+        "failedToUpdateIncome": "Nie udało się zaktualizować przychodu",
+        "incomeNotFound": "Przychód nie znaleziony",
+        "incomeNotBelongsToUser": "Przychód nie należy do ciebie",
+        "invalidIncomeData": "Nieprawidłowe dane przychodu"
+      }
+    },
+    "invitation": {
+      "accept": {
+        "failedToAcceptInvitation": "Nie udało się zaakceptować zaproszenia",
+        "invitationNotFound": "Zaproszenie nie znalezione",
+        "invitationNotForUser": "Zaproszenie nie jest dla ciebie",
+        "invitationAlreadyAccepted": "Zaproszenie już zaakceptowane",
+        "invitationAlreadyRejected": "Zaproszenie już odrzucone",
+        "familyNotFound": "Profil rodzinny nie znaleziony"
+      },
+      "reject": {
+        "failedToRejectInvitation": "Nie udało się odrzucić zaproszenia",
+        "invitationNotFound": "Zaproszenie nie znalezione",
+        "invitationNotForUser": "Zaproszenie nie jest dla ciebie",
+        "invitationAlreadyAccepted": "Zaproszenie już zaakceptowane"
+      },
+      "send": {
+        "failedToSendInvitation": "Nie udało się wysłać zaproszenia",
+        "userNotFound": "Użytkownik nie znaleziony",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "cannotInviteSelf": "Nie możesz zaprosić samego siebie do profilu rodzinnego",
+        "userAlreadyMemberOfFamily": "Użytkownik jest już członkiem tego profilu rodzinnego",
+        "invitationAlreadyExists": "Ten użytkownik jest już zaproszony do tego profilu rodzinnego",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego"
+      }
+    },
+    "outcome": {
+      "create": {
+        "invalidOutcomeData": "Nieprawidłowe dane wydatku",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy wydatki jest powtarzany",
+        "repeatEveryRequired": "\"Co ile\" jest wymagane kiedy wydatki jest powtarzany",
+        "failedToCreateOutcome": "Nie udało się utworzyć wydatku",
+        "unauthorized": "Nie jesteś upoważniony do utworzenia wydatku"
+      },
+      "delete": {
+        "failedToDeleteOutcome": "Nie udało się usunąć wydatku",
+        "outcomeNotFound": "Wydatku nie znaleziony",
+        "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie"
+      },
+      "stop": {
+        "failedToStopOutcome": "Nie udało się wstrzymać wydatku",
+        "outcomeNotFound": "Wydatku nie znaleziony",
+        "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie",
+        "invalidOutcomeData": "Nieprawidłowe dane wydatku",
+        "oneTimeOutcomeCannotBeStopped": "Jednorazowy wydatek nie może być wstrzymany. Po prostu usuń go"
+      },
+      "update": {
+        "failedToUpdateOutcome": "Nie udało się zaktualizować wydatku",
+        "outcomeNotFound": "Wydatku nie znaleziony",
+        "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie",
+        "invalidOutcomeData": "Nieprawidłowe dane wydatku"
+      }
+    },
+    "pouchOutcome": {
+      "create": {
+        "invalidPouchOutcomeData": "Invalid pouch outcome data",
+        "budgetNotFound": "Budget not found",
+        "pouchNotFound": "Pouch not found",
+        "failedToCreatePouchOutcome": "Failed to create pouch outcome",
+        "unauthorized": "You are not authorized to create pouch outcome"
+      },
+      "delete": {
+        "failedToDeletePouchOutcome": "Failed to delete pouch outcome",
+        "pouchOutcomeNotFound": "Pouch outcome not found",
+        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you"
+      },
+      "update": {
+        "failedToUpdatePouchOutcome": "Failed to update pouch outcome",
+        "pouchOutcomeNotFound": "Pouch outcome not found",
+        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you",
+        "invalidPouchOutcomeData": "Invalid pouch outcome data"
+      }
+    },
+    "pouch": {
+      "create": {
+        "invalidPouchData": "Nieprawidłowe dane sakiewki",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy sakiewka jest wielorazowa.",
+        "repeatEveryRequired": "\"Co ile\" jest wymagane kiedy sakiewka jest wielorazowa",
+        "failedToCreatePouch": "Nie udało się utworzyć sakiewki",
+        "unauthorized": "Nie jesteś upoważniony do utworzenia sakiewki"
+      },
+      "delete": {
+        "failedToDeletePouch": "Nie udało się usunąć sakiewki",
+        "pouchNotFound": "Sakiewka nie znaleziona",
+        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie"
+      },
+      "stop": {
+        "failedToStopPouch": "Nie udało się wstrzymać sakiewki",
+        "pouchNotFound": "Sakiewka nie znaleziona",
+        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",
+        "invalidPouchData": "Nieprawidłowe dane sakiewki",
+        "oneTimePouchCannotBeStopped": "Jednorazowa sakiewka nie może być wstrzymana. Po prostu usuń ją"
+      },
+      "update": {
+        "failedToUpdatePouch": "Nie udało się zaktualizować sakiewki",
+        "pouchNotFound": "Sakiewka nie znaleziona",
+        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",
+        "invalidPouchData": "Nieprawidłowe dane sakiewki"
+      }
+    }
+  }
+}

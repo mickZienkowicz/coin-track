@@ -1,0 +1,150 @@
+import { RecurrenceType } from '@prisma/client';
+import { format } from 'date-fns';
+import {
+  ArrowUpCircle,
+  Ban,
+  Calendar,
+  CheckCircle2,
+  Clock,
+  RefreshCw
+} from 'lucide-react';
+import { getLocale, getTranslations } from 'next-intl/server';
+
+import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader
+} from '@/components/ui/card';
+import { Language } from '@/i18n/routing';
+import { formatCurrency } from '@/lib/currencies';
+import { IncomeWithOccurenceInfo } from '@/lib/dates/get-next-occurance/types';
+import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
+import { cn } from '@/lib/utils';
+
+import { EditIncomeDialog } from '../edit-income/edit-income-dialog';
+import { RemoveIncomeDialog } from '../remove-income/remove-income-dialog';
+import { StopIncomeDialog } from '../stop-income/stop-income-dialog';
+import { CategoryBadge } from './components/category-badge';
+import { RecuranceInfo } from './components/recurance-info';
+
+export const IncomeCard = async ({
+  income,
+  currency
+}: {
+  income: IncomeWithOccurenceInfo;
+  currency: string;
+}) => {
+  const t = await getTranslations('budget.incomes.incomeCard');
+  const locale = await getLocale();
+
+  return (
+    <Card className='pb-4! @container w-full'>
+      {income.isFinished && (
+        <Badge
+          variant='outline'
+          className='mx-6 -mb-2 h-auto border-gray-200 bg-gray-100 py-1 text-gray-800'
+        >
+          <CheckCircle2 className='size-4! mr-1' />
+          {t('finishedBadge')}
+        </Badge>
+      )}
+      {income.isStopped && (
+        <Badge
+          variant='outline'
+          className='mx-6 -mb-2 h-auto border-gray-200 bg-gray-100 py-1 text-gray-800'
+        >
+          <Ban className='size-4! mr-1' />
+          {t('stoppedBadge')}
+        </Badge>
+      )}
+      <CardHeader
+        className={cn(
+          income.isDisabled && 'opacity-20',
+          'mb-2 flex items-start justify-between gap-4'
+        )}
+      >
+        <div className='flex w-full flex-col gap-1.5'>
+          <div className='flex w-full justify-between gap-1.5'>
+            <h3 className='text-xl font-semibold'>{income.name}</h3>
+            <CategoryBadge category={income.category} />
+          </div>
+          <p className='text-sm text-muted-foreground'>
+            <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
+            {income.isDisabled &&
+              income.lastOccurrenceDate &&
+              `${income.recurrence !== RecurrenceType.ONE_TIME ? t('lastOccurrenceDatePrefix') : ''}${format(
+                income.lastOccurrenceDate,
+                'dd MMMM yyyy',
+                {
+                  locale: getDateFnsLocaleFromLanguage(locale as Language)
+                }
+              )}`}
+
+            {!income.isDisabled &&
+              income.nextOccurrenceDate &&
+              `${income.recurrence !== RecurrenceType.ONE_TIME ? t('nextOccurrenceDatePrefix') : ''}${format(
+                income.nextOccurrenceDate,
+                'dd MMMM yyyy',
+                {
+                  locale: getDateFnsLocaleFromLanguage(locale as Language)
+                }
+              )}`}
+          </p>
+        </div>
+      </CardHeader>
+      <CardContent
+        className={cn(income.isDisabled && 'opacity-20', 'flex flex-col gap-3')}
+      >
+        <div className='@md:flex-row @md:items-center @md:gap-2 flex flex-col justify-between gap-4'>
+          <div className='flex items-center'>
+            <div className='mr-3 flex size-12 items-center justify-center rounded-full bg-green-600/10'>
+              <ArrowUpCircle className='size-6 text-green-600' />
+            </div>
+            <div>
+              <p className='text-sm font-medium text-muted-foreground'>
+                {t('amount')}
+              </p>
+              <p className='text-2xl font-bold'>
+                {formatCurrency({
+                  cents: income.valueCents,
+                  currency,
+                  language: locale as Language
+                })}
+              </p>
+            </div>
+          </div>
+
+          <div className='@md:order-1 -order-1 flex items-center'>
+            {income.recurrence !== RecurrenceType.ONE_TIME ? (
+              <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
+                <RefreshCw className='mr-1.5 h-3.5 w-3.5 text-blue-500' />
+                <span className='text-xs font-medium text-blue-700'>
+                  {t('recurrence')}
+                </span>
+              </div>
+            ) : (
+              <div className='flex items-center rounded-full bg-gray-100 px-3 py-1'>
+                <Clock className='mr-1.5 h-3.5 w-3.5 text-gray-500' />
+                <span className='text-xs font-medium text-gray-700'>
+                  {t('oneTime')}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+        <RecuranceInfo income={income} />
+      </CardContent>
+
+      <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
+        <EditIncomeDialog income={income} currency={currency} />
+        {income.isDisabled || income.recurrence === RecurrenceType.ONE_TIME ? (
+          <RemoveIncomeDialog incomeId={income.id} />
+        ) : (
+          <StopIncomeDialog income={income} />
+        )}
+      </CardFooter>
+    </Card>
+  );
+};

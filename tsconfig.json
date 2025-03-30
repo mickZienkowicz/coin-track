@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["vitest/globals"],
     "plugins": [
       {
         "name": "next"
@@ -22,6 +23,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "global.d.ts",
+    "src/app/[locale]/dashboard/(features)/budget/_components/budget-summary/_components/summary-cards/pouches-summary-card",
+    "src/app/[locale]/dashboard/(features)/budget/_components/budget-summary/_components/summary-cards/incomes-summary-card"
+  ],
   "exclude": ["node_modules"]
 }

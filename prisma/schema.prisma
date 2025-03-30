@@ -1,0 +1,170 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String       @id @default(uuid())
+  email               String       @unique
+  name                String
+  avatar              String?      @default("https://img.clerk.com/avatar-placeholder.svg")
+  clerkId             String       @unique
+  families            UserFamily[]
+  sentInvitations     Invitation[] @relation("UserSentInvitations")
+  receivedInvitations Invitation[] @relation("UserReceivedInvitations")
+  ownedFamilies       Family[]     @relation("UserOwnerFamilies")
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+}
+
+model Family {
+  id          String       @id @default(uuid())
+  name        String
+  ownerId     String
+  owner       User         @relation(fields: [ownerId], references: [id], onDelete: Cascade, name: "UserOwnerFamilies")
+  users       UserFamily[]
+  budget      Budget?
+  goals       Goal[]
+  invitations Invitation[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  currency    String       @default("PLN")
+  timezone    String       @default("Europe/Warsaw")
+}
+
+model UserFamily {
+  userId   String
+  familyId String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  family   Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  @@id([userId, familyId])
+}
+
+model Invitation {
+  id         String           @id @default(uuid())
+  fromUserId String
+  toUserId   String
+  familyId   String
+  status     InvitationStatus @default(PENDING)
+  fromUser   User             @relation(fields: [fromUserId], references: [id], onDelete: Cascade, name: "UserSentInvitations")
+  toUser     User             @relation(fields: [toUserId], references: [id], onDelete: Cascade, name: "UserReceivedInvitations")
+  family     Family           @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+model Budget {
+  id                   String    @id @default(uuid())
+  familyId             String    @unique
+  startDate            DateTime  @default(now())
+  interval             Interval  @default(MONTH)
+  transferPouchBalance Boolean   @default(false)
+  family               Family    @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  outcomes             Outcome[]
+  incomes              Income[]
+  pouches              Pouch[]
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+}
+
+enum Interval {
+  DAY
+  WEEK
+  TWO_WEEKS
+  MONTH
+  TWO_MONTHS
+  QUARTER
+  YEAR
+}
+
+model Pouch {
+  id            String         @id @default(uuid())
+  name          String
+  valueCents    Int
+  date          DateTime
+  recurrence    RecurrenceType
+  repeatCount   Int?
+  repeatEvery   Interval?
+  pouchExpenses PouchExpense[]
+  budgetId      String
+  budget        Budget         @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  category      String
+  stoppedAt     DateTime?
+}
+
+model Outcome {
+  id          String         @id @default(uuid())
+  name        String
+  valueCents  Int
+  date        DateTime
+  recurrence  RecurrenceType
+  repeatCount Int?
+  repeatEvery Interval?
+  goalId      String?
+  goal        Goal?          @relation(fields: [goalId], references: [id], onDelete: Cascade)
+  budgetId    String
+  budget      Budget         @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  category    String
+  stoppedAt   DateTime?
+}
+
+model Income {
+  id          String         @id @default(uuid())
+  name        String
+  valueCents  Int
+  date        DateTime
+  recurrence  RecurrenceType
+  repeatCount Int?
+  repeatEvery Interval?
+  budgetId    String
+  budget      Budget         @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  category    String
+  stoppedAt   DateTime?
+}
+
+model PouchExpense {
+  id         String   @id @default(uuid())
+  pouchId    String
+  name       String
+  date       DateTime
+  valueCents Int
+  pouch      Pouch    @relation(fields: [pouchId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum RecurrenceType {
+  ONE_TIME
+  MULTIPLE
+  INFINITE
+}
+
+model Goal {
+  id                  String    @id @default(uuid())
+  familyId            String
+  valueCents          Int
+  initialDepositCents Int
+  endDate             DateTime
+  savingInterval      Interval
+  goalBudgetOutcomes  Outcome[]
+  family              Family    @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+}

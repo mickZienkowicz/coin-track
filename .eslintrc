@@ -1,0 +1,18 @@
+{
+  "extends": "next/core-web-vitals",
+  "root": true,
+  "rules": {
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "react/no-unescaped-entities": "off"
+  },
+  "plugins": ["react-hooks", "unused-imports", "@typescript-eslint"]
+}

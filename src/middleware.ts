@@ -10,7 +10,9 @@ const isProtectedRoute = createRouteMatcher(['dashboard/(.*)']);
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect();
 
-  return intlMiddleware(req);
+  if (!req.nextUrl.pathname.startsWith('/api/webhooks')) {
+    return intlMiddleware(req);
+  }
 });
 
 export const config = {

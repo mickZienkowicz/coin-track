@@ -17,7 +17,6 @@ import {
 
 import { ErrorMessageWidget } from '@/components/error-message-widget/error-message-widget';
 import { Toaster } from '@/components/ui/sonner';
-import { pathGenerators } from '@/lib/paths';
 import { QueryProvider } from '@/lib/react-query/query-provider';
 
 const geistSans = Geist({
@@ -63,13 +62,8 @@ export default async function RootLayout({
             <ErrorMessageWidget />
             <SignedOut>
               <header className='flex h-16 items-center justify-end gap-4 p-4'>
-                <SignInButton
-                  fallbackRedirectUrl={pathGenerators.dashboard()}
-                  signUpFallbackRedirectUrl={pathGenerators.dashboard()}
-                />
-                <SignUpButton
-                  fallbackRedirectUrl={pathGenerators.dashboard()}
-                />
+                <SignInButton />
+                <SignUpButton />
               </header>
             </SignedOut>
             <QueryProvider>

@@ -92,7 +92,6 @@ export const PouchOutcomeProgressBar = ({
     pouchCapacity
   );
 
-  // Handle case when current expenses exceed capacity
   if (currentProgress > 100) {
     const newFullCapacity = calculateNewFullCapacity(
       pouchCapacity,
@@ -115,7 +114,6 @@ export const PouchOutcomeProgressBar = ({
     );
   }
 
-  // Handle case when new expenses would exceed capacity
   if (newProgress > 100) {
     const newFullCapacity = calculateNewFullCapacity(
       pouchCapacity,
@@ -138,7 +136,6 @@ export const PouchOutcomeProgressBar = ({
     );
   }
 
-  // Handle normal case (within budget)
   return (
     <ProgressBar
       value={currentProgress}

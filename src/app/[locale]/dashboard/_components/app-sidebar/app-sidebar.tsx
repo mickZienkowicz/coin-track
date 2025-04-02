@@ -153,7 +153,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
 
-          <SidebarGroup>
+          <SidebarGroup className='p-1'>
             <SignedIn>
               <UserButton />
             </SignedIn>

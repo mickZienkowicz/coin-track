@@ -21,8 +21,8 @@ export const IncomesSummaryCard = ({
         <CardTitle className='mr-11 text-[26px] leading-[28px]'>
           {t('incomes')}
         </CardTitle>
-        <div className='absolute right-6 top-0 flex size-11  items-center justify-center rounded-full bg-green-600/20'>
-          <ArrowUpCircle className='size-6 text-green-600' />
+        <div className='absolute right-6 top-0 flex size-9 shrink-0 items-center justify-center rounded-full bg-green-600/20 md:size-11'>
+          <ArrowUpCircle className='size-5 text-green-600 md:size-6' />
         </div>
       </CardHeader>
       <CardContent>

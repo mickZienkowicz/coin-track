@@ -26,8 +26,8 @@ export const PouchesSummaryCard = ({
     <Card className='justify-between gap-2'>
       <CardHeader className='flex items-center justify-between gap-2'>
         <CardTitle className='text-[26px]'>{t('pouches')}</CardTitle>
-        <div className='flex size-11  items-center justify-center rounded-full bg-blue-600/20'>
-          <Package className='size-6 text-blue-600' />
+        <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-600/20 md:size-11'>
+          <Package className='size-5 text-blue-600 md:size-6' />
         </div>
       </CardHeader>
       <CardContent className='flex flex-col gap-2'>

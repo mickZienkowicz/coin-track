@@ -1,4 +1,40 @@
 {
+  "dashboard": {
+    "title": "Dashboard",
+    "fortune": {
+      "assets": "Assets",
+      "debts": "Debts",
+      "netWorth": "Your net worth",
+      "assetsDescription": "Last updated: ",
+      "debtsDescription": "Last updated: ",
+      "netWorthDescription": "Last updated: "
+    },
+    "balance": {
+      "currentBudgetBalance": "Current budget balance",
+      "manageBudget": "Manage budget",
+      "balance": {
+        "title": "Balance",
+        "income": "Incomes",
+        "outcome": "Outcomes",
+        "withPouches": "(Including pouches)"
+      },
+      "income": {
+        "title": "Incomes",
+        "summary": "Summary",
+        "total": "Total amount of incomes in the budget period."
+      },
+      "outcome": {
+        "title": "Outcomes",
+        "summary": "Summary",
+        "total": "Total amount of outcomes in the budget period."
+      },
+      "pouch": {
+        "title": "Pouches",
+        "spent": "Spent",
+        "planned": "Planned"
+      }
+    }
+  },
   "settings": {
     "yourProfiles": "Your profiles",
     "noProfilesCardTitle": "You don't have any family profile yet",

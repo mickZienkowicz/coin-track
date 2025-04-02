@@ -1,4 +1,40 @@
 {
+  "dashboard": {
+    "title": "Panel Główny",
+    "fortune": {
+      "assets": "Aktywa",
+      "debts": "Zobowiązania",
+      "netWorth": "Twoja wartość netto",
+      "assetsDescription": "Ostatnia aktualizacja: ",
+      "debtsDescription": "Ostatnia aktualizacja: ",
+      "netWorthDescription": "Ostatnia aktualizacja: "
+    },
+    "balance": {
+      "currentBudgetBalance": "Bilans obecnego budżetu",
+      "manageBudget": "Zarządzaj budżetem",
+      "balance": {
+        "title": "Bilans",
+        "income": "Przychody",
+        "outcome": "Wydatki",
+        "withPouches": "(Włącznie z sakiewkami)"
+      },
+      "income": {
+        "title": "Przychody",
+        "summary": "Podsumowanie",
+        "total": "Łączna kwota przychodów w okresie budżetowym."
+      },
+      "outcome": {
+        "title": "Wydatki",
+        "summary": "Podsumowanie",
+        "total": "Łączna kwota wydatków w okresie budżetowym."
+      },
+      "pouch": {
+        "title": "Sakiewki",
+        "spent": "Wydane",
+        "planned": "Zaplanowane"
+      }
+    }
+  },
   "settings": {
     "yourProfiles": "Twoje profile",
     "noProfilesCardTitle": "Nie masz jeszcze żadnego profilu rodzinnego",
@@ -147,7 +183,7 @@
     "dashboard": "Panel Główny",
     "fortune": "Majątek",
     "budget": "Budżet",
-    "goals": "Cel",
+    "goals": "Cele",
     "settings": "Ustawienia",
     "logout": "Wyloguj",
     "languageSwitcher": {
@@ -723,16 +759,16 @@
     }
   },
   "budgetSummary": {
-    "balance": "Saldo",
+    "balance": "Bilans",
     "pouches": "Sakiewki",
-    "balanceSummary": "Saldo: ",
-    "pouchesSummary": "Suma budżetu w sakiewkach",
-    "pouchesExpensesSummary": "Łączna kwota wydatków w sakiewkach",
-    "currentBudgetBalance": "Aktualne saldo budżetu licząc wydatki w sakiewkach",
-    "currentBudgetBalanceWithPouches": "Aktualne saldo budżetu licząc pojemność sakiewek",
-    "positiveBalance": "Pozytywne saldo",
-    "negativeBalance": "Negatywne saldo",
-    "neutralBalance": "Neutralne saldo",
+    "balanceSummary": "Bilans: ",
+    "pouchesSummary": "Planowane wydatki w sakiewkach",
+    "pouchesExpensesSummary": "Aktualne wydatki w sakiewkach",
+    "currentBudgetBalance": "Aktualne bilans z obecnymi wydatkami w sakiewkach",
+    "currentBudgetBalanceWithPouches": "Aktualny bilans z planowanymi wydatkami w sakiewkach",
+    "positiveBalance": "Nadwyżka",
+    "negativeBalance": "Deficyt",
+    "neutralBalance": "Równowaga",
     "outcomes": "Wydatki",
     "outcomesSummary": "Łączna kwota wydatków w okresie budżetowym",
     "incomes": "Przychody",

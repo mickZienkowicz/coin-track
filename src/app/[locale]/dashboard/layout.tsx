@@ -11,7 +11,7 @@ export default async function DashboardLayout({
     <div className='w-full'>
       <SidebarProvider defaultOpen={false}>
         <AppSidebar />
-        <div className='relative flex h-screen w-full flex-col items-center p-5 pt-20 lg:p-8 lg:pt-8'>
+        <div className='relative flex min-h-screen w-full flex-col items-center p-5 pb-8 pt-20 lg:p-8 lg:pt-8'>
           <SidebarTrigger className='absolute left-4 top-4 size-12 bg-muted lg:hidden' />
           {children}
         </div>

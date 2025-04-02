@@ -8,12 +8,7 @@ import { routing } from '@/i18n/routing';
 
 import '../globals.css';
 
-import {
-  ClerkProvider,
-  SignedOut,
-  SignInButton,
-  SignUpButton
-} from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import { ErrorMessageWidget } from '@/components/error-message-widget/error-message-widget';
 import { Toaster } from '@/components/ui/sonner';
@@ -60,12 +55,6 @@ export default async function RootLayout({
           <NextIntlClientProvider>
             <Toaster position='top-right' richColors />
             <ErrorMessageWidget />
-            <SignedOut>
-              <header className='flex h-16 items-center justify-end gap-4 p-4'>
-                <SignInButton />
-                <SignUpButton />
-              </header>
-            </SignedOut>
             <QueryProvider>
               <div className='mx-auto flex h-screen w-full max-w-screen-3xl flex-col items-center justify-center'>
                 {children}

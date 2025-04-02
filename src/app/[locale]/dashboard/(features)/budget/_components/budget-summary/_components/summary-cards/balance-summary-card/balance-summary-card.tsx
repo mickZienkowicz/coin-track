@@ -1,12 +1,7 @@
-import {
-  ArrowDownCircle,
-  ArrowUpCircle,
-  CircleEqual,
-  Wallet
-} from 'lucide-react';
+import { Wallet } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { Badge } from '@/components/ui/badge';
+import { BalanceBadge } from '@/app/[locale]/dashboard/_components/balance-badge/balance-badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import type { Language } from '@/i18n/routing';
@@ -35,8 +30,8 @@ export const BalanceSummaryCard = ({
     <Card className='justify-between gap-2'>
       <CardHeader className='flex items-center justify-between gap-2'>
         <CardTitle className='text-[26px]'>{t('balance')}</CardTitle>
-        <div className='flex size-11  items-center justify-center rounded-full bg-yellow-600/20'>
-          <Wallet className='size-6 text-yellow-600' />
+        <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-yellow-600/20 md:size-11'>
+          <Wallet className='size-5 text-yellow-600 md:size-6' />
         </div>
       </CardHeader>
       <CardContent className='@container flex flex-col gap-2'>
@@ -51,32 +46,7 @@ export const BalanceSummaryCard = ({
               currency,
               language: locale as Language
             })}
-            <Badge
-              className={cn(
-                '@sm:order-1 @sm:mb-0 -order-1 mb-2 bg-yellow-700 font-bold tracking-tighter text-white',
-                balanceSum > 0 && 'bg-green-700 text-white',
-                balanceSum < 0 && 'bg-red-800 text-white'
-              )}
-            >
-              {balanceSum > 0 && (
-                <>
-                  {t('positiveBalance')}
-                  <ArrowUpCircle className='size-4! text-white' />
-                </>
-              )}
-              {balanceSum < 0 && (
-                <>
-                  {t('negativeBalance')}
-                  <ArrowDownCircle className='size-4! text-white' />
-                </>
-              )}
-              {balanceSum === 0 && (
-                <>
-                  {t('neutralBalance')}
-                  <CircleEqual className='size-4! text-white' />
-                </>
-              )}
-            </Badge>
+            <BalanceBadge balanceSum={balanceSum} />
           </span>
           <span className='text-sm text-primary/50'>
             {t('currentBudgetBalance')}

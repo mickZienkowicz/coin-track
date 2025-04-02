@@ -1,16 +1,12 @@
-import { ListOrdered, PieChart, PlusCircle } from 'lucide-react';
+import { ListOrdered, PieChart } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-import { buttonVariants } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Link } from '@/i18n/navigation';
-import { pathGenerators } from '@/lib/paths';
-import { cn } from '@/lib/utils';
 import { getBudget } from '@/server/budget/queries/get-budget';
 import { getBudgetSummary } from '@/server/budget/queries/get-budget-summary';
 import { getSelectedFamily } from '@/server/family/queries/get-selected-family';
 
+import { NoFamilyCard } from '../../_components/no-family-card';
 import { BudgetSettingsDialog } from './_components/budget-settings/budget-settings-dialog/budget-settings-dialog';
 import { BudgetSummaryBadge } from './_components/budget-summary-badge/budget-summary-badge';
 import { BudgetSummary } from './_components/budget-summary/budget-summary';
@@ -78,25 +74,7 @@ export default async function BudgetPage() {
           </Tabs>
         </>
       ) : (
-        <Card className='mt-6 w-full'>
-          <CardContent className='flex flex-col items-center px-8 pb-6 pt-10 text-center'>
-            <div className='mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-muted'>
-              <PlusCircle className='h-8 w-8 text-muted-foreground' />
-            </div>
-            <h2 className='mb-3 text-2xl font-semibold'>
-              {t('noFamilyCard.title')}
-            </h2>
-            <p className='mb-6 max-w-xl text-muted-foreground'>
-              {t('noFamilyCard.description')}
-            </p>
-            <Link
-              href={pathGenerators.settings()}
-              className={cn(buttonVariants())}
-            >
-              {t('noFamilyCard.addFamilyButton')}
-            </Link>
-          </CardContent>
-        </Card>
+        <NoFamilyCard />
       )}
     </div>
   );

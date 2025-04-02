@@ -20,8 +20,8 @@ export const OutcomesSummaryCard = ({
         <CardTitle className='mr-11 text-[26px] leading-[28px]'>
           {t('outcomes')}
         </CardTitle>
-        <div className='absolute right-6 top-0 flex size-11  items-center justify-center rounded-full bg-red-600/20'>
-          <ArrowDownCircle className='size-6 text-red-600' />
+        <div className='absolute right-6 top-0 flex size-9 shrink-0 items-center justify-center rounded-full bg-red-600/20 md:size-11'>
+          <ArrowDownCircle className='size-5 text-red-600 md:size-6' />
         </div>
       </CardHeader>
       <CardContent>

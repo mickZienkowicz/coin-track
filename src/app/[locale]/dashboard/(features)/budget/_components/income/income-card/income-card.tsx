@@ -36,8 +36,10 @@ export const IncomeCard = async ({
   income: IncomeWithOccurenceInfo;
   currency: string;
 }) => {
-  const t = await getTranslations('budget.incomes.incomeCard');
-  const locale = await getLocale();
+  const [t, locale] = await Promise.all([
+    getTranslations('budget.incomes.incomeCard'),
+    getLocale()
+  ]);
 
   return (
     <Card className='pb-4! @container w-full'>

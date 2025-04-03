@@ -57,6 +57,7 @@ export const StopOutcomeDialog = ({
             <RemoveOutcomeDialog
               outcomeId={outcome.id}
               isOneTime={outcome.recurrence === RecurrenceType.ONE_TIME}
+              onSuccess={() => setIsOpen(false)}
             >
               <Button
                 className='inline h-auto cursor-pointer p-0 text-base font-bold underline hover:bg-transparent'

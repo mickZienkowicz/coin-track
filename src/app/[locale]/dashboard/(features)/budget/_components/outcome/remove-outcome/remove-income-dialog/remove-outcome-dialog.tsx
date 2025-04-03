@@ -22,11 +22,13 @@ import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-pat
 export const RemoveOutcomeDialog = ({
   outcomeId,
   isOneTime,
-  children
+  children,
+  onSuccess
 }: {
   outcomeId: string;
   isOneTime: boolean;
   children?: React.ReactNode;
+  onSuccess?: () => void;
 }) => {
   const t = useTranslations('budget.outcomes.removeOutcome');
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +44,7 @@ export const RemoveOutcomeDialog = ({
         return;
       }
 
+      onSuccess?.();
       setIsOpen(false);
       toast.success(message);
       revalidatePathAction(pathGenerators.budget());

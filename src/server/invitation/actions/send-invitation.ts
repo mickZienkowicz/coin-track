@@ -88,7 +88,7 @@ export async function sendInvitation({
 
     return {
       success: true,
-      message: 'Invitation sent.',
+      message: t('success'),
       data: invitation
     };
   } catch (error) {

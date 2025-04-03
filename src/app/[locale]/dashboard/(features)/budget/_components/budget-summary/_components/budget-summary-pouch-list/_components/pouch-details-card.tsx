@@ -59,27 +59,21 @@ export const PouchDetailsCard = ({
             {pouchPercetageUsage.toFixed(0)}%
           </Badge>
         </h3>
-        <p className='text-sm text-primary/60'>
-          {t('occurrences')}
+        <p className='text-sm text-primary/70'>
+          {t('capacity')}:{' '}
           <span className='font-semibold text-primary/70'>
-            {pouch.occurrences.length}
+            {formatCurrency({
+              cents: pouchFullCapacity,
+              currency,
+              language: locale as Language
+            })}
           </span>
         </p>
         <div className='mb-2 mt-4 flex items-center justify-between gap-2'>
           <p className='flex flex-col'>
-            <span className='text-xl font-bold'>
-              {formatCurrency({
-                cents: pouchFullCapacity,
-                currency,
-                language: locale as Language
-              })}
-            </span>
-            <span className='text-sm text-primary/70'>{t('capacity')}</span>
-          </p>
-          <p className='flex flex-col'>
             <span
               className={cn(
-                'text-right text-xl font-bold text-blue-500',
+                'text-left text-xl font-bold text-blue-500',
                 pouchPercetageUsage >= 100 && 'text-red-700'
               )}
             >
@@ -89,8 +83,20 @@ export const PouchDetailsCard = ({
                 language: locale as Language
               })}
             </span>
-            <span className='text-right text-sm text-primary/70'>
+            <span className='text-left text-sm text-primary/70'>
               {t('expensesSum')}
+            </span>
+          </p>
+          <p className='flex flex-col'>
+            <span className='text-right text-xl font-bold'>
+              {formatCurrency({
+                cents: pouchFullCapacity - expensesSum,
+                currency,
+                language: locale as Language
+              })}
+            </span>
+            <span className='text-right text-sm text-primary/70'>
+              {t('leftCapacity')}
             </span>
           </p>
         </div>
@@ -99,7 +105,7 @@ export const PouchDetailsCard = ({
           {pouch.pouchExpenses.length > 0 && (
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <h5 className='mt-7 flex w-full items-center justify-between gap-2 text-sm text-primary/80'>
+                <h5 className='mt-7 flex w-full items-center justify-between gap-2 text-sm text-primary/70'>
                   {t('seeFullList')}
                   <Button variant='outline' size='iconSmall'>
                     <ChevronsUpDown className='h-4 w-4' />

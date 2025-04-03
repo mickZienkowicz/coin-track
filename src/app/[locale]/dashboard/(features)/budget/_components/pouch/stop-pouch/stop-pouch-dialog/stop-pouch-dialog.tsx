@@ -57,6 +57,7 @@ export const StopPouchDialog = ({
             <RemovePouchDialog
               pouchId={pouch.id}
               isOneTime={pouch.recurrence === RecurrenceType.ONE_TIME}
+              onSuccess={() => setIsOpen(false)}
             >
               <Button
                 className='inline h-auto cursor-pointer p-0 text-base font-bold underline hover:bg-transparent'

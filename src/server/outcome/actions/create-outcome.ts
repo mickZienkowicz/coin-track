@@ -81,7 +81,7 @@ export const createOutcome = async ({
 
     return {
       success: true,
-      message: 'Outcome created successfully.',
+      message: t('success'),
       data: outcome
     };
   } catch (error) {

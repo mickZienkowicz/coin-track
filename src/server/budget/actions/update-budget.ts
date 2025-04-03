@@ -76,7 +76,7 @@ export const updateBudget = async ({
 
     return {
       success: true,
-      message: 'Budget updated.',
+      message: t('success'),
       data: updatedBudget
     };
   } catch (error) {

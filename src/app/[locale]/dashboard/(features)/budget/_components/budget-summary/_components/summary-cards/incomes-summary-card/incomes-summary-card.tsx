@@ -18,14 +18,26 @@ export const IncomesSummaryCard = ({
   return (
     <Card className='gap-3 2xl:hidden'>
       <CardHeader className='relative flex items-center justify-between gap-2'>
-        <CardTitle className='mr-11 text-[26px] leading-[28px]'>
-          {t('incomes')}
+        <CardTitle className='mr-11'>
+          <h3 className='hidden text-[26px] leading-[28px] md:block'>
+            {t('incomes')}
+          </h3>
+          <h3 className='text-[26px] font-bold leading-[28px] md:hidden'>
+            {formatCurrency({
+              cents: incomesSum,
+              currency,
+              language: locale as Language
+            })}
+          </h3>
+          <p className='mt-1 text-sm font-normal text-primary/70 md:hidden'>
+            {t('incomesSummary')}
+          </p>
         </CardTitle>
-        <div className='absolute right-6 top-0 flex size-9 shrink-0 items-center justify-center rounded-full bg-green-600/20 md:size-11'>
+        <div className='absolute right-4 top-0 flex size-9 shrink-0 items-center justify-center rounded-full bg-green-600/20 md:size-11'>
           <ArrowUpCircle className='size-5 text-green-600 md:size-6' />
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className='hidden md:block'>
         <p className='flex flex-col'>
           <span className='flex items-center justify-between text-[26px] font-bold text-primary/90'>
             {formatCurrency({
@@ -34,7 +46,7 @@ export const IncomesSummaryCard = ({
               language: locale as Language
             })}
           </span>
-          <span className='text-sm text-primary/50'>{t('incomesSummary')}</span>
+          <span className='text-sm text-primary/70'>{t('incomesSummary')}</span>
         </p>
       </CardContent>
     </Card>

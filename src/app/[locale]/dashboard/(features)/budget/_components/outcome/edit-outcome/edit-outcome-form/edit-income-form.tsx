@@ -46,7 +46,7 @@ export const EditOutcomeForm = ({
   outcome: Outcome;
   currency: string;
 }) => {
-  const outcomeCategoriesT = useTranslations('categories.outcomes');
+  const outcomeCategoriesT = useTranslations('categories');
   const t = useTranslations('budget.outcomes.editOutcome.form');
   const editOutcomeFormSchema = getEditOutcomeFormSchema(t);
   const form = useForm<z.infer<typeof editOutcomeFormSchema>>({
@@ -60,7 +60,7 @@ export const EditOutcomeForm = ({
   const { mutate, isPending } = useMutation({
     mutationFn: updateOutcome,
     onError: () => {
-      toast.error(t('form.error'));
+      toast.error(t('error'));
     },
     onSuccess: ({ success, message }) => {
       if (!success) {

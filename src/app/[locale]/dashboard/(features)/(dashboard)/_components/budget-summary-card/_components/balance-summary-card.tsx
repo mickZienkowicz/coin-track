@@ -1,6 +1,7 @@
-import { Wallet } from 'lucide-react';
+import { ArrowDownCircle, ArrowUpCircle, PieChart } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
+import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Language } from '@/i18n/routing';
 import { formatCurrency } from '@/lib/currencies';
@@ -21,55 +22,72 @@ export const BalanceSummaryCard = async ({
   pouchesOutcomesSum: number;
   className?: string;
 }) => {
-  const t = await getTranslations('dashboard.balance.balance');
-  const locale = await getLocale();
+  const [t, locale] = await Promise.all([
+    getTranslations('dashboard.balance'),
+    getLocale()
+  ]);
+
   return (
     <div className={cn('@container flex flex-col gap-2', className)}>
-      <div className='flex flex-col md:gap-2'>
-        <div className='flex flex-col gap-2 md:flex-row md:items-center md:gap-4'>
-          <h4 className='-mb-1 flex items-center gap-3 text-xl font-bold'>
-            <span className='flex size-9  items-center justify-center rounded-full bg-yellow-600/20'>
-              <Wallet className='size-[18px] text-yellow-600' />
-            </span>
-            {t('title')}
-          </h4>
-          <p
-            className={cn(
-              '@sm:flex-row @sm:items-center flex flex-col justify-between text-2xl font-black  md:text-[25px]',
-              balanceSum === 0 && 'text-yellow-600',
-              balanceSum > 0 && 'text-green-600',
-              balanceSum < 0 && 'text-red-700'
-            )}
-          >
-            {formatCurrency({
-              cents: balanceSum,
-              currency,
-              language: locale as Language
-            })}
-          </p>
-        </div>
-        <div className='mt-1 flex items-center justify-between gap-1'>
-          <p className='text-sm text-primary/50'>
-            {t('income')}:{' '}
-            <span className='font-bold'>
+      <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3.5'>
+          <div className='flex w-full justify-between gap-2'>
+            <h4 className='flex items-center gap-2 text-xl font-bold md:gap-3'>
+              <span className='flex size-7 items-center justify-center rounded-full bg-yellow-600/20 md:size-9'>
+                <PieChart className='size-3.5 text-yellow-600 md:size-5' />
+              </span>
+              {t('balance.title')}
+            </h4>
+            <Badge
+              className={cn(
+                'mt-[2px] h-8 bg-blue-600 font-bold tracking-tighter text-white md:mt-0',
+                balanceSum < 0 && 'bg-red-700',
+                balanceSum === 0 && 'bg-yellow-700',
+                balanceSum > 0 && 'bg-green-700'
+              )}
+            >
+              {balanceSum > 0 && '+'}
               {formatCurrency({
-                cents: incomesSum,
+                cents: balanceSum,
                 currency,
                 language: locale as Language
               })}
+            </Badge>
+          </div>
+        </div>
+        <div className='mt-1 flex items-center justify-between gap-1'>
+          <p className='flex flex-col items-center gap-1 text-sm text-primary/70 sm:flex-row'>
+            <span className='flex items-center gap-1'>
+              <span className='flex size-5  items-center justify-center rounded-full bg-red-700/20'>
+                <ArrowDownCircle className='size-3.5 text-red-700' />
+              </span>
+              {t('balance.outcome')}:{' '}
             </span>
-          </p>
-          <p className='text-end text-sm text-primary/50'>
-            {t('outcome')}:{' '}
             <span className='font-bold'>
               {formatCurrency({
                 cents: outcomesSum + pouchesOutcomesSum,
                 currency,
                 language: locale as Language
               })}
-            </span>{' '}
+            </span>
             <span className='hidden text-xs 2xl:inline-block'>
-              {t('withPouches')}
+              {' '}
+              {t('balance.withPouches')}
+            </span>
+          </p>
+          <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
+            <span className='flex items-center gap-1'>
+              <span className='flex size-5  items-center justify-center rounded-full bg-green-600/20'>
+                <ArrowUpCircle className='size-3.5 text-green-600' />
+              </span>
+              {t('balance.income')}:{' '}
+            </span>
+            <span className='font-bold'>
+              {formatCurrency({
+                cents: incomesSum,
+                currency,
+                language: locale as Language
+              })}
             </span>
           </p>
         </div>

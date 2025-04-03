@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Package } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { ShoppingCart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
@@ -13,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { getCurrentBudgetPouches } from '@/server/budget/queries/get-current-budget-pouches';
 import type { PouchWithCurrentBudgetOccurance } from '@/server/budget/types';
 
 import { AddPouchOutcomeForm } from '../add-pouch-outcome-form';
@@ -27,9 +29,14 @@ export const AddPouchOutcomeDialog = ({
   className?: string;
   children?: React.ReactNode;
   currency: string;
-  pouches: PouchWithCurrentBudgetOccurance[];
+  pouches?: PouchWithCurrentBudgetOccurance[];
   pouchId?: string;
 }) => {
+  const { data: pouchesData } = useQuery({
+    queryKey: ['pouches'],
+    queryFn: async () => await getCurrentBudgetPouches(),
+    initialData: pouches
+  });
   const t = useTranslations('budget.pouch.pouchCard.addPouchOutcome');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +45,7 @@ export const AddPouchOutcomeDialog = ({
       <DialogTrigger asChild>
         {children || (
           <Button className={className} variant='outline'>
-            <Package className='size-4 text-blue-600' />
+            <ShoppingCart className='size-4 text-blue-600' />
             {t('button')}
           </Button>
         )}
@@ -51,7 +58,7 @@ export const AddPouchOutcomeDialog = ({
         <AddPouchOutcomeForm
           closeDialog={() => setIsOpen(false)}
           currency={currency}
-          pouches={pouches}
+          pouches={pouchesData ?? []}
           pouchId={pouchId}
         />
       </DialogContent>

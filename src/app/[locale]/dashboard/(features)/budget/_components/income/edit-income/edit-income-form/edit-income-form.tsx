@@ -46,7 +46,7 @@ export const EditIncomeForm = ({
   income: Income;
   currency: string;
 }) => {
-  const incomeCategoriesT = useTranslations('categories.incomes');
+  const incomeCategoriesT = useTranslations('categories');
   const t = useTranslations('budget.incomes.editIncome.form');
   const editIncomeFormSchema = getEditIncomeFormSchema(t);
   const form = useForm<z.infer<typeof editIncomeFormSchema>>({

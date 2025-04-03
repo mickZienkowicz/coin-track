@@ -34,7 +34,8 @@ export const AddOutcomeDialog = ({
         {children || (
           <Button className={className} variant='outline'>
             <ArrowDownCircle className='size-4 text-red-600' />
-            {t('button')}
+            <span className='hidden md:inline'>{t('button')}</span>
+            <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>

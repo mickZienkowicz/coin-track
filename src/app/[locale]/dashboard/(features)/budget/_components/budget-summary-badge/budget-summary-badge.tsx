@@ -8,10 +8,12 @@ import { cn } from '@/lib/utils';
 
 export const BudgetSummaryBadge = ({
   balance,
-  currency
+  currency,
+  className
 }: {
   balance?: number;
   currency?: string;
+  className?: string;
 }) => {
   const t = useTranslations('budgetSummary');
   const locale = useLocale();
@@ -24,6 +26,7 @@ export const BudgetSummaryBadge = ({
     <Badge
       className={cn(
         'text-md @xl:w-auto h-11 w-full bg-yellow-700 px-4 py-2 font-bold tracking-tight text-white',
+        className,
         balance > 0 && 'bg-green-700',
         balance < 0 && 'bg-red-700'
       )}

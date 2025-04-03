@@ -76,7 +76,7 @@ export async function acceptInvitation({
 
     return {
       success: true,
-      message: 'Invitation accepted.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

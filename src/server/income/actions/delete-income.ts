@@ -51,7 +51,7 @@ export async function deleteIncome({ incomeId }: { incomeId: string }) {
 
     return {
       success: true,
-      message: 'Income deleted successfully.',
+      message: t('success'),
       data: deletedIncome
     };
   } catch (error) {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Trash2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
@@ -28,6 +28,7 @@ export const RemovePouchOutcomeDialog = ({
 }) => {
   const t = useTranslations('budget.pouch.removePouchOutcome');
   const [isOpen, setIsOpen] = useState(false);
+  const queryClient = useQueryClient();
 
   const { mutate, isPending } = useMutation({
     mutationFn: deletePouchOutcome,
@@ -42,6 +43,7 @@ export const RemovePouchOutcomeDialog = ({
 
       setIsOpen(false);
       toast.success(message);
+      queryClient.invalidateQueries({ queryKey: ['pouches'] });
       revalidatePathAction(pathGenerators.budget());
     }
   });

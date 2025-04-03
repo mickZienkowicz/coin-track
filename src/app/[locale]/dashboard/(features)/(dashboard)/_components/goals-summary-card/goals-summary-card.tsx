@@ -16,7 +16,7 @@ export const GoalsSummaryCard = () => {
           </div>
           <div className='flex flex-col'>
             <h4 className='text-2xl font-bold'>Cele finansowe</h4>
-            <p className='text-sm font-normal text-primary/50'>
+            <p className='text-sm font-normal text-primary/70'>
               Brak aktywnych celów
             </p>
           </div>
@@ -24,10 +24,13 @@ export const GoalsSummaryCard = () => {
       </CardHeader>
       <CardContent className='grow'>
         <div className='flex h-full flex-col items-center justify-center p-6 text-center'>
-          <p className='mb-4 text-primary/80'>
+          <p className='mb-4 text-primary/70'>
             Nie masz jeszcze żadnych celów finansowych.
           </p>
-          <Link className={cn(buttonVariants())} href={pathGenerators.goals()}>
+          <Link
+            className={cn(buttonVariants({ size: 'sm' }))}
+            href={pathGenerators.goals()}
+          >
             Dodaj pierwszy cel
           </Link>
         </div>

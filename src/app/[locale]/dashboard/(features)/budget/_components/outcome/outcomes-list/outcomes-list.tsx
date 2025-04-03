@@ -9,8 +9,10 @@ import { AddOutcomeDialog } from '../add-outcome/add-outcome-dialog';
 import { OutcomeCard } from '../outcome-card';
 
 export const OutcomesList = async ({ currency }: { currency: string }) => {
-  const t = await getTranslations('budget.outcomes');
-  const outcomes = await getOutcomes();
+  const [t, outcomes] = await Promise.all([
+    getTranslations('budget.outcomes'),
+    getOutcomes()
+  ]);
 
   return (
     <div className='mb-12 flex flex-col gap-4'>

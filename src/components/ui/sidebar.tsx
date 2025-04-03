@@ -25,6 +25,13 @@ import {
 import { cn } from '@/lib/utils';
 
 import { useIsMobile } from '../../hooks/use-mobile';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle
+} from './drawer';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -201,6 +208,22 @@ const Sidebar = React.forwardRef<
 
     if (isMobile) {
       return (
+        <Drawer open={openMobile} onOpenChange={setOpenMobile}>
+          <DrawerContent data-sidebar='sidebar' data-mobile='true'>
+            <DrawerHeader className='sr-only'>
+              <DrawerTitle>Sidebar</DrawerTitle>
+              <DrawerDescription>
+                Displays the mobile sidebar.
+              </DrawerDescription>
+            </DrawerHeader>
+            <div className='mt-3 flex h-full w-full flex-col'>{children}</div>
+          </DrawerContent>
+        </Drawer>
+      );
+    }
+
+    if (isMobile) {
+      return (
         <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
           <SheetContent
             data-sidebar='sidebar'
@@ -280,7 +303,7 @@ const SidebarTrigger = React.forwardRef<
     <Button
       ref={ref}
       data-sidebar='trigger'
-      variant='ghost'
+      variant='secondary'
       size='icon'
       className={cn('h-7 w-7', className)}
       onClick={(event) => {

@@ -36,7 +36,7 @@ export const setSelectedFamily = async ({ familyId }: { familyId: string }) => {
 
     return {
       success: true,
-      message: 'Family selected.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

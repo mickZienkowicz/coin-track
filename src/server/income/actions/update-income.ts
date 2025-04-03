@@ -71,7 +71,7 @@ export async function updateIncome({
 
     return {
       success: true,
-      message: 'Income updated successfully.',
+      message: t('success'),
       data: updatedIncome
     };
   } catch (error) {

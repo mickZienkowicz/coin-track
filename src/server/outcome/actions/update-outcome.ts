@@ -71,7 +71,7 @@ export async function updateOutcome({
 
     return {
       success: true,
-      message: 'Outcome updated successfully.',
+      message: t('success'),
       data: updatedOutcome
     };
   } catch (error) {

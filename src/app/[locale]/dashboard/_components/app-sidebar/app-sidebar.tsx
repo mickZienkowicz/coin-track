@@ -25,16 +25,23 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-  SidebarSeparator
+  SidebarSeparator,
+  useSidebar
 } from '@/components/ui/sidebar';
 import { Link, usePathname } from '@/i18n/navigation';
 import { pathGenerators } from '@/lib/paths';
+import { cn } from '@/lib/utils';
 
 import { ChangeLanguageDialog } from '../change-language-dialog';
 
-export function AppSidebar() {
+export function AppSidebar({
+  receivedInvitationsCount
+}: {
+  receivedInvitationsCount: number;
+}) {
   const t = useTranslations('menu');
   const pathname = usePathname();
+  const { setOpenMobile } = useSidebar();
 
   const mainNavItems = useMemo(
     () => [
@@ -53,7 +60,11 @@ export function AppSidebar() {
         label: t('budget'),
         icon: Package
       },
-      { value: pathGenerators.goals(), label: t('goals'), icon: Target }
+      {
+        value: pathGenerators.goals(),
+        label: t('goals'),
+        icon: Target
+      }
     ],
     [t]
   );
@@ -62,6 +73,7 @@ export function AppSidebar() {
     () => [
       {
         value: pathGenerators.settings(),
+
         label: t('settings'),
         icon: Settings
       }
@@ -72,7 +84,7 @@ export function AppSidebar() {
   return (
     <>
       <Sidebar collapsible='icon'>
-        <SidebarHeader>
+        <SidebarHeader className='hidden md:flex'>
           <Image
             src='/logo-transparent-icon.svg'
             alt='logo'
@@ -83,20 +95,21 @@ export function AppSidebar() {
           />
         </SidebarHeader>
 
-        <SidebarSeparator />
+        <SidebarSeparator className='hidden md:block' />
 
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupContent>
-              <SidebarMenu>
+              <SidebarMenu className='gap-0 md:gap-2'>
                 {mainNavItems.map((item) => (
                   <SidebarMenuItem key={item.value}>
                     <SidebarMenuButton
                       asChild
                       isActive={pathname.endsWith(item.value)}
                       tooltip={item.label}
+                      onClick={() => setOpenMobile(false)}
                     >
-                      <Link href={item.value}>
+                      <Link href={item.value} target='_self'>
                         <item.icon className='size-6' />
                         <span>{item.label}</span>
                       </Link>
@@ -110,8 +123,8 @@ export function AppSidebar() {
 
         <SidebarSeparator />
 
-        <SidebarFooter>
-          <SidebarMenu>
+        <SidebarFooter className='pb-2'>
+          <SidebarMenu className='gap-0 md:gap-2'>
             <ChangeLanguageDialog>
               <SidebarMenuItem>
                 <SidebarMenuButton
@@ -126,7 +139,13 @@ export function AppSidebar() {
               </SidebarMenuItem>
             </ChangeLanguageDialog>
             {bottomNavItems.map((item) => (
-              <SidebarMenuItem key={item.value}>
+              <SidebarMenuItem
+                key={item.value}
+                className={cn(
+                  receivedInvitationsCount > 0 &&
+                    `relative after:absolute after:-bottom-[3px] after:-right-[3px] after:h-2.5 after:w-2.5 after:rounded-full after:bg-yellow-600`
+                )}
+              >
                 <SidebarMenuButton
                   isActive={pathname.endsWith(item.value)}
                   tooltip={item.label}
@@ -153,7 +172,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
 
-          <SidebarGroup className='p-1'>
+          <SidebarGroup className='safe-area-fix-bottom mb-1 p-1 pb-0'>
             <SignedIn>
               <UserButton />
             </SignedIn>

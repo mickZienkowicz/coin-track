@@ -37,7 +37,7 @@ export default function Home() {
           </SignUpButton>
         </SignedOut>
       </header>
-      <main className='row-start-2 mt-8 flex flex-col items-center gap-[32px] sm:items-start'>
+      <main className='row-start-2 mt-8 flex flex-col items-center gap-[32px] p-4 sm:items-start'>
         <div className='flex flex-col gap-44 pb-20'>
           <HeroSection />
           <FeaturesSection />

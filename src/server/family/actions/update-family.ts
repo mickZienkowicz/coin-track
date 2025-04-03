@@ -62,7 +62,7 @@ export async function updateFamily({
 
     return {
       success: true,
-      message: 'Family updated.',
+      message: t('success'),
       data: updatedFamily
     };
   } catch (error) {

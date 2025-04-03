@@ -21,10 +21,12 @@ import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-pat
 
 export const RemoveIncomeDialog = ({
   incomeId,
-  children
+  children,
+  onSuccess
 }: {
   incomeId: string;
   children?: React.ReactNode;
+  onSuccess?: () => void;
 }) => {
   const t = useTranslations('budget.incomes.removeIncome');
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +42,7 @@ export const RemoveIncomeDialog = ({
         return;
       }
 
+      onSuccess?.();
       setIsOpen(false);
       toast.success(message);
       revalidatePathAction(pathGenerators.budget());

@@ -60,7 +60,7 @@ export async function deletePouchOutcome({
 
     return {
       success: true,
-      message: 'Pouch outcome deleted successfully.',
+      message: t('success'),
       data: deletedPouchOutcome
     };
   } catch (error) {

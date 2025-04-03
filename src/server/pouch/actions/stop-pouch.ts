@@ -72,7 +72,7 @@ export async function stopPouch({ id, date }: { id: string; date: Date }) {
 
     return {
       success: true,
-      message: 'Pouch stopped successfully.',
+      message: t('success'),
       data: updatedPouch
     };
   } catch (error) {

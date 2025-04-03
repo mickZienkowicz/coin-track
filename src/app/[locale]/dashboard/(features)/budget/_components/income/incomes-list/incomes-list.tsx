@@ -9,8 +9,10 @@ import { AddIncomeDialog } from '../add-income/add-income-dialog';
 import { IncomeCard } from '../income-card/income-card';
 
 export const IncomesList = async ({ currency }: { currency: string }) => {
-  const t = await getTranslations('budget.incomes');
-  const incomes = await getIncomes();
+  const [t, incomes] = await Promise.all([
+    getTranslations('budget.incomes'),
+    getIncomes()
+  ]);
 
   return (
     <div className='mb-12 flex flex-col gap-4'>

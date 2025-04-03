@@ -39,7 +39,7 @@ export const AddIncomeForm = ({
   closeDialog: () => void;
   currency: string;
 }) => {
-  const incomeCategoriesT = useTranslations('categories.incomes');
+  const incomeCategoriesT = useTranslations('categories');
   const t = useTranslations('budget.incomes.addIncome.form');
   const addIncomeFormSchema = getAddIncomeFormSchema(t);
   const form = useForm<z.infer<typeof addIncomeFormSchema>>({

@@ -34,7 +34,8 @@ export const AddIncomeDialog = ({
         {children || (
           <Button className={className} variant='outline'>
             <ArrowUpCircle className='size-4 text-green-600' />
-            {t('button')}
+            <span className='hidden md:inline'>{t('button')}</span>
+            <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>

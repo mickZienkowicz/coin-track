@@ -36,8 +36,10 @@ export const OutcomeCard = async ({
   outcome: OutcomeWithOccurenceInfo;
   currency: string;
 }) => {
-  const t = await getTranslations('budget.outcomes.outcomeCard');
-  const locale = await getLocale();
+  const [t, locale] = await Promise.all([
+    getTranslations('budget.outcomes.outcomeCard'),
+    getLocale()
+  ]);
 
   return (
     <Card className='pb-4! w-full'>

@@ -5,8 +5,8 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  Package,
-  RefreshCw
+  RefreshCw,
+  ShoppingCart
 } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
@@ -36,8 +36,10 @@ export const PouchCard = async ({
   pouch: PouchWithOccurenceInfo;
   currency: string;
 }) => {
-  const t = await getTranslations('budget.pouch.pouchCard');
-  const locale = await getLocale();
+  const [t, locale] = await Promise.all([
+    getTranslations('budget.pouch.pouchCard'),
+    getLocale()
+  ]);
 
   return (
     <Card className='pb-4! w-full'>
@@ -100,7 +102,7 @@ export const PouchCard = async ({
         <div className='@md:flex-row @md:items-center @md:gap-2 flex flex-col justify-between gap-4'>
           <div className='flex items-center'>
             <div className='mr-3 flex size-12 items-center justify-center rounded-full bg-blue-600/10'>
-              <Package className='size-6 text-blue-600' />
+              <ShoppingCart className='size-6 text-blue-600' />
             </div>
             <div>
               <p className='text-sm font-medium text-muted-foreground'>

@@ -72,7 +72,7 @@ export async function stopOutcome({ id, date }: { id: string; date: Date }) {
 
     return {
       success: true,
-      message: 'Outcome stopped successfully.',
+      message: t('success'),
       data: updatedOutcome
     };
   } catch (error) {

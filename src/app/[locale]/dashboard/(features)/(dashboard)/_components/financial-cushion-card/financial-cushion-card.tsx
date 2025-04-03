@@ -28,7 +28,7 @@ export const FinancialCushionCard = async ({
             </div>
             <div className='flex flex-col'>
               <h4 className='text-2xl font-bold'>Poduszka finansowa</h4>
-              <p className='text-sm font-normal text-primary/50'>
+              <p className='text-sm font-normal text-primary/70'>
                 Rekomendujemy:{' '}
                 {formatCurrency({
                   cents: 3000,
@@ -46,7 +46,7 @@ export const FinancialCushionCard = async ({
           </CardTitle>
           <Badge
             className={cn(
-              'mt-[2px] bg-blue-600 font-bold tracking-tighter text-white md:mt-0'
+              'mt-[2px] hidden bg-blue-600 font-bold tracking-tighter text-white sm:flex md:mt-0'
             )}
           >
             80%
@@ -54,7 +54,7 @@ export const FinancialCushionCard = async ({
         </div>
       </CardHeader>
       <CardContent>
-        <p className='mb-6 mt-3 text-sm text-primary/80 md:text-base'>
+        <p className='mb-6 mt-3 text-sm text-primary/70 md:text-base'>
           Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby
           zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych.
           Aktualnie posiadasz <span className='font-bold'>100 000 zł</span>, co
@@ -63,8 +63,8 @@ export const FinancialCushionCard = async ({
         </p>
         <div className='mb-2'>
           <div className='mt-1 flex items-center justify-between gap-1'>
-            <p className='text-sm text-primary/50'>
-              Obecnie:{' '}
+            <p className='flex flex-col items-start gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
+              Obecnie:
               <span className='font-bold'>
                 {formatCurrency({
                   cents: 100000,
@@ -73,8 +73,8 @@ export const FinancialCushionCard = async ({
                 })}
               </span>
             </p>
-            <p className='text-end text-sm text-primary/50'>
-              Rekomendujemy:{' '}
+            <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
+              Rekomendujemy:
               <span className='font-bold'>
                 {formatCurrency({
                   cents: 120000,
@@ -95,7 +95,7 @@ export const FinancialCushionCard = async ({
         <div className='mt-4 flex justify-end'>
           <Link
             href={pathGenerators.fortune()}
-            className={cn(buttonVariants())}
+            className={cn(buttonVariants({ size: 'sm' }))}
           >
             Zarządzaj majątkiem
           </Link>

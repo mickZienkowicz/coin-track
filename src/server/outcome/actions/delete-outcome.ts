@@ -51,7 +51,7 @@ export async function deleteOutcome({ outcomeId }: { outcomeId: string }) {
 
     return {
       success: true,
-      message: 'Outcome deleted successfully.',
+      message: t('success'),
       data: deletedOutcome
     };
   } catch (error) {

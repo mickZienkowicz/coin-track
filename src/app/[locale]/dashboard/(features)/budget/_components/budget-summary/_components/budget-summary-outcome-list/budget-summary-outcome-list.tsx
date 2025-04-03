@@ -46,22 +46,24 @@ export const BudgetSummaryOutcomeList = ({
           </div>
         </CardContent>
       </Card>
-      <Card className='py-4! mb-2'>
-        <CardContent>
-          <p className='flex flex-col'>
-            <span className='flex items-center justify-between text-[26px] font-bold text-red-700'>
-              {formatCurrency({
-                cents: outcomesSum,
-                currency,
-                language: locale as Language
-              })}
-            </span>
-            <span className='text-sm text-primary/50'>
-              {t('budgetSummary.listOfOutcomes')}
-            </span>
-          </p>
-        </CardContent>
-      </Card>
+      {outcomesSum > 0 && (
+        <Card className='py-4! mb-2'>
+          <CardContent>
+            <p className='flex flex-col'>
+              <span className='flex items-center justify-between text-[26px] font-bold text-red-700'>
+                {formatCurrency({
+                  cents: outcomesSum,
+                  currency,
+                  language: locale as Language
+                })}
+              </span>
+              <span className='text-sm text-primary/70'>
+                {t('budgetSummary.listOfOutcomes')}
+              </span>
+            </p>
+          </CardContent>
+        </Card>
+      )}
       {outcomes.length > 0 && (
         <ul className='flex flex-col gap-3'>
           {outcomes.map((outcome) => (
@@ -80,13 +82,13 @@ export const BudgetSummaryOutcomeList = ({
                   </div>
                   {outcome.occurrences.length > 1 ? (
                     <>
-                      <p className='mt-4 flex justify-between text-sm text-primary/60'>
+                      <p className='mt-4 flex justify-between text-sm text-primary/70'>
                         {t('budgetSummary.occurrences')}
                         <span className='font-semibold text-primary/70'>
                           {outcome.occurrences.length}
                         </span>
                       </p>
-                      <p className='mt-1 flex justify-between text-sm text-primary/60'>
+                      <p className='mt-1 flex justify-between text-sm text-primary/70'>
                         {t('budgetSummary.singleOccurrence')}
                         <span className='font-semibold text-primary/70'>
                           {formatCurrency({
@@ -96,7 +98,7 @@ export const BudgetSummaryOutcomeList = ({
                           })}
                         </span>
                       </p>
-                      <p className='mt-1 flex justify-between gap-1 text-sm text-primary/60'>
+                      <p className='mt-1 flex justify-between gap-1 text-sm text-primary/70'>
                         <span className='min-w-[160px]'>
                           {t('budgetSummary.datesOfOccurrences')}
                         </span>

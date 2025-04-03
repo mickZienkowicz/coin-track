@@ -77,7 +77,7 @@ export async function updatePouchOutcome({
 
     return {
       success: true,
-      message: 'Pouch outcome updated successfully.',
+      message: t('success'),
       data: updatedPouchOutcome
     };
   } catch (error) {

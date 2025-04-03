@@ -3,7 +3,7 @@
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RecurrenceType } from '@prisma/client';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -39,7 +39,8 @@ export const AddPouchForm = ({
   closeDialog: () => void;
   currency: string;
 }) => {
-  const pouchCategoriesT = useTranslations('categories.pouch');
+  const queryClient = useQueryClient();
+  const pouchCategoriesT = useTranslations('categories');
   const t = useTranslations('budget.pouch.pouchCard.addPouch.form');
   const addPouchFormSchema = getAddPouchFormSchema(t);
   const form = useForm<z.infer<typeof addPouchFormSchema>>({
@@ -74,6 +75,7 @@ export const AddPouchForm = ({
       form.reset();
       toast.success(message);
       revalidatePathAction(pathGenerators.budget());
+      queryClient.invalidateQueries({ queryKey: ['pouches'] });
     }
   });
 

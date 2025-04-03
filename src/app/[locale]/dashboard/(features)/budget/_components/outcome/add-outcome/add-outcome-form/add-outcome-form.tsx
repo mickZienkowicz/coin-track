@@ -39,7 +39,7 @@ export const AddOutcomeForm = ({
   closeDialog: () => void;
   currency: string;
 }) => {
-  const outcomeCategoriesT = useTranslations('categories.outcomes');
+  const outcomeCategoriesT = useTranslations('categories');
   const t = useTranslations('budget.outcomes.addOutcome.form');
   const addOutcomeFormSchema = getAddOutcomeFormSchema(t);
   const form = useForm<z.infer<typeof addOutcomeFormSchema>>({
@@ -62,7 +62,7 @@ export const AddOutcomeForm = ({
   const { mutate, isPending } = useMutation({
     mutationFn: createOutcome,
     onError: () => {
-      toast.error(t('form.error'));
+      toast.error(t('error'));
     },
     onSuccess: ({ success, message }) => {
       if (!success) {

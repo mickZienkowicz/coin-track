@@ -59,7 +59,7 @@ export async function removeUserFromFamily({
 
     return {
       success: true,
-      message: 'User removed from family.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

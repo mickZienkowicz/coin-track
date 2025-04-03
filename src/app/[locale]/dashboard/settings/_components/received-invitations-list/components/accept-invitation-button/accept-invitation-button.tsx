@@ -6,7 +6,9 @@ import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
+import { pathGenerators } from '@/lib/paths';
 import { acceptInvitation } from '@/server/invitation/actions/accept-invitation';
+import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
 export const AcceptInvitationButton = ({
   invitationId,
@@ -26,6 +28,7 @@ export const AcceptInvitationButton = ({
       }
 
       toast.success(message);
+      revalidatePathAction(pathGenerators.settings());
     },
     onError: () => {
       toast.error(t('error'));

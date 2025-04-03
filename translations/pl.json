@@ -7,10 +7,12 @@
       "netWorth": "Twoja wartość netto",
       "assetsDescription": "Ostatnia aktualizacja: ",
       "debtsDescription": "Ostatnia aktualizacja: ",
-      "netWorthDescription": "Ostatnia aktualizacja: "
+      "netWorthDescription": "Ostatnia aktualizacja: ",
+      "manageAssets": "Zarządzaj majątkiem",
+      "cardTitle": "Twój majątek"
     },
     "balance": {
-      "currentBudgetBalance": "Bilans obecnego budżetu",
+      "currentBudgetBalance": "Obecny budżet",
       "manageBudget": "Zarządzaj budżetem",
       "balance": {
         "title": "Bilans",
@@ -21,17 +23,18 @@
       "income": {
         "title": "Przychody",
         "summary": "Podsumowanie",
-        "total": "Łączna kwota przychodów w okresie budżetowym."
+        "total": "Przychodów w  tym okresie budżetowym."
       },
       "outcome": {
         "title": "Wydatki",
         "summary": "Podsumowanie",
-        "total": "Łączna kwota wydatków w okresie budżetowym."
+        "total": "Wydatków w tym okresie budżetowym."
       },
       "pouch": {
         "title": "Sakiewki",
         "spent": "Wydane",
-        "planned": "Zaplanowane"
+        "planned": "Zaplanowane",
+        "addPouchOutcome": "Dodaj wydatek do sakiewki"
       }
     }
   },
@@ -47,7 +50,7 @@
       "members": "Członkowie",
       "switchFamilyButton": "Przełącz profil",
       "switchFamilyDefaultError": "Coś poszło nie tak.",
-      "you": "Ty"
+      "you": "(ty)"
     },
     "invitations": {
       "received": {
@@ -226,14 +229,15 @@
         "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
       },
       "budgetSummary": {
-        "title": "Lista sakiewek",
+        "title": "Sakiewki",
         "listOfPouches": "Łączna kwota sakiewek w okresie budżetowym.",
         "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
         "occurrences": "Wystąpienia w tym okresie budżetowym: ",
-        "capacity": "Pojemność sakiewki",
+        "capacity": "Zaplanowana wydatki w sakiewce",
         "expensesSum": "Suma wydatków",
         "seeFullList": "Kliknij aby zobaczyć listę wydatków w tej sakiewce",
-        "toggleList": "przełącz listę"
+        "toggleList": "przełącz listę",
+        "leftCapacity": "Pozostało do wydania"
       },
       "removePouchOutcome": {
         "title": "Usuń wydatek z sakiewki",
@@ -248,7 +252,7 @@
         "nextOccurrenceDatePrefix": "Następny: ",
         "oneTime": "Jednorazowy",
         "recurring": "Cykliczny",
-        "amount": "Pojemność sakiewki",
+        "amount": "Zaplanowane wydatki w sakiewce",
         "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "raz",
@@ -320,6 +324,7 @@
           "title": "Utwórz nową sakiewkę",
           "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
           "button": "Dodaj sakiewkę",
+          "buttonMobile": "Dodaj",
           "form": {
             "error": "Coś poszło nie tak.",
             "nameField": {
@@ -349,7 +354,7 @@
             },
             "repeatEveryField": {
               "label": "Co ile",
-              "placeholder": "np. 1",
+              "placeholder": "np. Co miesiąc",
               "error": "Co ile jest wymagane."
             },
             "categoryField": {
@@ -425,8 +430,8 @@
       "title": "Wydatki",
       "addOutcomeButton": "Dodaj wydatek",
       "budgetSummary": {
-        "title": "Lista wydatków",
-        "listOfOutcomes": "Łączna kwota wydatków w okresie budżetowym.",
+        "title": "Wydatki",
+        "listOfOutcomes": "Wydatki w tym okresie budżetowym.",
         "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
         "occurrences": "Wystąpienia w tym okresie budżetowym: ",
         "datesOfOccurrences": "Daty wystąpień: "
@@ -491,7 +496,7 @@
           },
           "repeatEveryField": {
             "label": "Co ile",
-            "placeholder": "np. 1",
+            "placeholder": "np. Co miesiąc",
             "error": "Co ile jest wymagane."
           },
           "categoryField": {
@@ -506,6 +511,7 @@
         "title": "Utwórz nowy wydatek",
         "description": "Dodaj wydatki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
         "button": "Dodaj wydatek",
+        "buttonMobile": "Dodaj",
         "form": {
           "error": "Coś poszło nie tak.",
           "valueField": {
@@ -536,7 +542,7 @@
           },
           "repeatEveryField": {
             "label": "Co ile",
-            "placeholder": "np. 1",
+            "placeholder": "np. Co miesiąc",
             "error": "Co ile jest wymagane."
           },
           "categoryField": {
@@ -570,8 +576,8 @@
       "title": "Przychody",
       "addIncomeButton": "Dodaj przychód",
       "budgetSummary": {
-        "title": "Lista przychodów",
-        "listOfIncomes": "Łączna kwota przychodów w okresie budżetowym.",
+        "title": "Przychody",
+        "listOfIncomes": "Przychody w tym okresie budżetowym.",
         "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
         "occurrences": "Wystąpienia w tym okresie budżetowym: ",
         "datesOfOccurrences": "Daty wystąpień: "
@@ -626,6 +632,7 @@
         "title": "Utwórz nowy przychód",
         "description": "Dodaj przychód, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
         "button": "Dodaj przychód",
+        "buttonMobile": "Dodaj",
         "form": {
           "error": "Coś poszło nie tak.",
           "nameField": {
@@ -656,7 +663,7 @@
           },
           "repeatEveryField": {
             "label": "Co ile",
-            "placeholder": "np. 1",
+            "placeholder": "np. Co miesiąc",
             "error": "Co ile jest wymagane."
           },
           "categoryField": {
@@ -705,58 +712,39 @@
           },
           "repeatEveryField": {
             "label": "Co ile",
-            "placeholder": "np. 1",
+            "placeholder": "np. Co miesiąc",
             "error": "Co ile jest wymagane."
           },
-          "createIncomeButton": "Utwórz przychód"
+          "createIncomeButton": "Utwórz przychód",
+          "editIncomeButton": "Edytuj przychód"
         }
       }
     }
   },
   "categories": {
-    "pouch": {
-      "food": "Jedzenie",
-      "clothing": "Odzież",
-      "health": "Zdrowie",
-      "travel": "Podróże",
-      "education": "Edukacja",
-      "transport": "Transport",
-      "bills": "Rachunki",
-      "home": "Dom",
-      "car": "Samochód",
-      "leasing": "Leasing",
-      "loans": "Pożyczki",
-      "credit": "Kredyt",
-      "gifts": "Prezenty",
-      "work": "Praca",
-      "other": "Inne"
-    },
-    "incomes": {
-      "wages": "Wynagrodzenie",
-      "sales": "Sprzedaż",
-      "rent": "Najem",
-      "bonus": "Premia",
-      "taxReturn": "Zwrot podatku",
-      "investments": "Inwestycje",
-      "other": "Inne"
-    },
-    "outcomes": {
-      "bills": "Rachunki",
-      "home": "Dom",
-      "car": "Samochód",
-      "loans": "Pożyczki",
-      "leasing": "Leasing",
-      "credit": "Kredyt",
-      "food": "Jedzenie",
-      "clothing": "Odzież",
-      "health": "Zdrowie",
-      "travel": "Podróże",
-      "education": "Edukacja",
-      "technology": "Technologia",
-      "transport": "Transport",
-      "savings": "Oszczędności",
-      "other": "Inne"
-    }
+    "gifts": "Prezenty",
+    "work": "Praca",
+    "wages": "Wynagrodzenie",
+    "sales": "Sprzedaż",
+    "rent": "Najem",
+    "bonus": "Premia",
+    "taxReturn": "Zwrot podatku",
+    "investments": "Inwestycje",
+    "other": "Inne",
+    "bills": "Rachunki",
+    "home": "Dom",
+    "car": "Samochód",
+    "loans": "Pożyczki",
+    "leasing": "Leasing",
+    "credit": "Kredyt",
+    "food": "Jedzenie",
+    "clothing": "Odzież",
+    "health": "Zdrowie",
+    "travel": "Podróże",
+    "education": "Edukacja",
+    "technology": "Technologia",
+    "transport": "Transport",
+    "savings": "Oszczędności"
   },
   "budgetSummary": {
     "balance": "Bilans",
@@ -764,15 +752,15 @@
     "balanceSummary": "Bilans: ",
     "pouchesSummary": "Planowane wydatki w sakiewkach",
     "pouchesExpensesSummary": "Aktualne wydatki w sakiewkach",
-    "currentBudgetBalance": "Aktualne bilans z obecnymi wydatkami w sakiewkach",
-    "currentBudgetBalanceWithPouches": "Aktualny bilans z planowanymi wydatkami w sakiewkach",
+    "currentBudgetBalance": "Bilans z wydatkami w sakiewkach",
+    "currentBudgetBalanceWithPouches": "Bilans z planowanymi wydatkami w sakiewkach",
     "positiveBalance": "Nadwyżka",
     "negativeBalance": "Deficyt",
     "neutralBalance": "Równowaga",
     "outcomes": "Wydatki",
-    "outcomesSummary": "Łączna kwota wydatków w okresie budżetowym",
+    "outcomesSummary": "Wydatki w tym okresie budżetowym",
     "incomes": "Przychody",
-    "incomesSummary": "Łączna kwota przychodów w okresie budżetowym"
+    "incomesSummary": "Przychody w tym okresie budżetowym"
   },
   "budgetSettings": {
     "title": "Ustawienia budżetu",
@@ -798,6 +786,7 @@
   "errors": {
     "budget": {
       "create": {
+        "success": "Utworzono budżet",
         "budgetNotFound": "Budżet nie znaleziony",
         "failedToUpdateBudget": "Nie udało się zaktualizować budżetu",
         "notAllowedToUpdateBudget": "Nie jesteś upoważniony do aktualizacji tego budżetu",
@@ -805,6 +794,7 @@
         "budgetAlreadyExists": "Budżet już istnieje"
       },
       "update": {
+        "success": "Zaktualizowano budżet",
         "budgetNotFound": "Budżet nie znaleziony",
         "failedToUpdateBudget": "Nie udało się zaktualizować budżetu",
         "notAllowedToUpdateBudget": "Nie jesteś upoważniony do aktualizacji tego budżetu",
@@ -813,12 +803,14 @@
     },
     "family": {
       "create": {
+        "success": "Utworzono profil rodzinny",
         "failedToCreateFamily": "Nie udało się utworzyć profilu rodzinnego",
         "invalidCurrency": "Nieprawidłowa waluta",
         "invalidName": "Nieprawidłowa nazwa",
         "invalidTimezone": "Nieprawidłowy czas"
       },
       "update": {
+        "success": "Zaktualizowano profil rodzinny",
         "failedToUpdateFamily": "Nie udało się zaktualizować profilu rodzinnego",
         "familyNotFound": "Profil rodzinny nie znaleziony",
         "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
@@ -827,16 +819,19 @@
         "invalidTimezone": "Nieprawidłowy czas"
       },
       "delete": {
+        "success": "Usunięto profil rodzinny",
         "failedToDeleteFamily": "Nie udało się usunąć profilu rodzinnego",
         "familyNotFound": "Profil rodzinny nie znaleziony",
         "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego"
       },
       "leave": {
+        "success": "Opuściłeś profil rodzinny",
         "failedToLeaveFamily": "Nie udało się opuścić profilu rodzinnego",
         "familyNotFound": "Profil rodzinny nie znaleziony",
         "notFamilyOwner": "Profil rodzinny nie może być opuszczony przez właściciela"
       },
       "removeUser": {
+        "success": "Użytkownik usunięty z profilu rodzinnego",
         "failedToRemoveUserFromFamily": "Nie udało się usunąć użytkownika z profilu rodzinnego",
         "familyNotFound": "Profil rodzinny nie znaleziony",
         "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
@@ -845,12 +840,14 @@
         "userNotFoundInFamily": "Użytkownik nie znaleziony w profilu rodzinnym"
       },
       "setSelectedFamily": {
+        "success": "Zmieniono aktywny profil rodzinny",
         "failedToSetSelectedFamily": "Nie udało zmienić aktywnego profilu rodzinnego",
         "familyNotFound": "Profil rodzinny nie znaleziony"
       }
     },
     "income": {
       "create": {
+        "success": "Utworzono przychód",
         "invalidIncomeData": "Nieprawidłowe dane przychodu",
         "budgetNotFound": "Budżet nie znaleziony",
         "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy przychód jest powtarzany",
@@ -858,11 +855,13 @@
         "failedToCreateIncome": "Nie udało się utworzyć przychodu"
       },
       "delete": {
+        "success": "Usunięto przychód",
         "failedToDeleteIncome": "Nie udało się usunąć przychodu",
         "incomeNotFound": "Przychód nie znaleziony",
         "incomeNotBelongsToUser": "Przychód nie należy do ciebie"
       },
       "stop": {
+        "success": "Wstrzymano przychód",
         "failedToStopIncome": "Nie udało się wstrzymać przychodu",
         "incomeNotFound": "Przychód nie znaleziony",
         "incomeNotBelongsToUser": "Przychód nie należy do ciebie",
@@ -870,6 +869,7 @@
         "oneTimeIncomeCannotBeStopped": "Jednorazowy przychód nie może być wstrzymany. Po prostu usuń go"
       },
       "update": {
+        "success": "Zaktualizowano przychód",
         "failedToUpdateIncome": "Nie udało się zaktualizować przychodu",
         "incomeNotFound": "Przychód nie znaleziony",
         "incomeNotBelongsToUser": "Przychód nie należy do ciebie",
@@ -878,6 +878,7 @@
     },
     "invitation": {
       "accept": {
+        "success": "Zaakceptowano zaproszenie",
         "failedToAcceptInvitation": "Nie udało się zaakceptować zaproszenia",
         "invitationNotFound": "Zaproszenie nie znalezione",
         "invitationNotForUser": "Zaproszenie nie jest dla ciebie",
@@ -886,12 +887,14 @@
         "familyNotFound": "Profil rodzinny nie znaleziony"
       },
       "reject": {
+        "success": "Odrzucono zaproszenie",
         "failedToRejectInvitation": "Nie udało się odrzucić zaproszenia",
         "invitationNotFound": "Zaproszenie nie znalezione",
         "invitationNotForUser": "Zaproszenie nie jest dla ciebie",
         "invitationAlreadyAccepted": "Zaproszenie już zaakceptowane"
       },
       "send": {
+        "success": "Wysłano zaproszenie",
         "failedToSendInvitation": "Nie udało się wysłać zaproszenia",
         "userNotFound": "Użytkownik nie znaleziony",
         "familyNotFound": "Profil rodzinny nie znaleziony",
@@ -903,6 +906,7 @@
     },
     "outcome": {
       "create": {
+        "success": "Utworzono wydatek",
         "invalidOutcomeData": "Nieprawidłowe dane wydatku",
         "budgetNotFound": "Budżet nie znaleziony",
         "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy wydatki jest powtarzany",
@@ -911,11 +915,13 @@
         "unauthorized": "Nie jesteś upoważniony do utworzenia wydatku"
       },
       "delete": {
+        "success": "Usunięto wydatek",
         "failedToDeleteOutcome": "Nie udało się usunąć wydatku",
         "outcomeNotFound": "Wydatku nie znaleziony",
         "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie"
       },
       "stop": {
+        "success": "Wstrzymano wydatek",
         "failedToStopOutcome": "Nie udało się wstrzymać wydatku",
         "outcomeNotFound": "Wydatku nie znaleziony",
         "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie",
@@ -923,6 +929,7 @@
         "oneTimeOutcomeCannotBeStopped": "Jednorazowy wydatek nie może być wstrzymany. Po prostu usuń go"
       },
       "update": {
+        "success": "Zaktualizowano wydatek",
         "failedToUpdateOutcome": "Nie udało się zaktualizować wydatku",
         "outcomeNotFound": "Wydatku nie znaleziony",
         "outcomeNotBelongsToUser": "Wydatku nie należy do ciebie",
@@ -931,18 +938,21 @@
     },
     "pouchOutcome": {
       "create": {
-        "invalidPouchOutcomeData": "Invalid pouch outcome data",
-        "budgetNotFound": "Budget not found",
-        "pouchNotFound": "Pouch not found",
-        "failedToCreatePouchOutcome": "Failed to create pouch outcome",
-        "unauthorized": "You are not authorized to create pouch outcome"
+        "success": "Utworzono wydatek w sakiewce",
+        "invalidPouchOutcomeData": "Nieprawidłowe dane wydatku w sakiewce",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "pouchNotFound": "Sakiewka nie znaleziona",
+        "failedToCreatePouchOutcome": "Nie udało się utworzyć wydatku w sakiewce",
+        "unauthorized": "Nie jesteś upoważniony do utworzenia wydatku w sakiewce"
       },
       "delete": {
-        "failedToDeletePouchOutcome": "Failed to delete pouch outcome",
-        "pouchOutcomeNotFound": "Pouch outcome not found",
-        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you"
+        "success": "Usunięto wydatek z sakiewki",
+        "failedToDeletePouchOutcome": "Nie udało się usunąć wydateku z sakiewki",
+        "pouchOutcomeNotFound": "Wydatku w sakiewce nie znaleziony",
+        "pouchOutcomeNotBelongsToUser": "Wydatku w sakiewce nie należy do ciebie"
       },
       "update": {
+        "success": "Zaktualizowano wydatek w sakiewce",
         "failedToUpdatePouchOutcome": "Failed to update pouch outcome",
         "pouchOutcomeNotFound": "Pouch outcome not found",
         "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you",
@@ -951,6 +961,7 @@
     },
     "pouch": {
       "create": {
+        "success": "Utworzono sakiewkę",
         "invalidPouchData": "Nieprawidłowe dane sakiewki",
         "budgetNotFound": "Budżet nie znaleziony",
         "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy sakiewka jest wielorazowa.",
@@ -959,11 +970,13 @@
         "unauthorized": "Nie jesteś upoważniony do utworzenia sakiewki"
       },
       "delete": {
+        "success": "Usunięto sakiewkę",
         "failedToDeletePouch": "Nie udało się usunąć sakiewki",
         "pouchNotFound": "Sakiewka nie znaleziona",
         "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie"
       },
       "stop": {
+        "success": "Wstrzymano sakiewkę",
         "failedToStopPouch": "Nie udało się wstrzymać sakiewki",
         "pouchNotFound": "Sakiewka nie znaleziona",
         "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",
@@ -971,6 +984,7 @@
         "oneTimePouchCannotBeStopped": "Jednorazowa sakiewka nie może być wstrzymana. Po prostu usuń ją"
       },
       "update": {
+        "success": "Zaktualizowano sakiewkę",
         "failedToUpdatePouch": "Nie udało się zaktualizować sakiewki",
         "pouchNotFound": "Sakiewka nie znaleziona",
         "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",

@@ -78,7 +78,7 @@ export const createBudget = async ({
 
     return {
       success: true,
-      message: 'Budget created.',
+      message: t('success'),
       data: budget
     };
   } catch (error) {

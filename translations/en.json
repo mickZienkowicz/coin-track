@@ -7,7 +7,9 @@
       "netWorth": "Your net worth",
       "assetsDescription": "Last updated: ",
       "debtsDescription": "Last updated: ",
-      "netWorthDescription": "Last updated: "
+      "netWorthDescription": "Last updated: ",
+      "manageAssets": "Manage assets",
+      "cardTitle": "Your fortune"
     },
     "balance": {
       "currentBudgetBalance": "Current budget balance",
@@ -31,7 +33,8 @@
       "pouch": {
         "title": "Pouches",
         "spent": "Spent",
-        "planned": "Planned"
+        "planned": "Planned",
+        "addPouchOutcome": "Add outcome within pouch"
       }
     }
   },
@@ -47,7 +50,7 @@
       "members": "Members",
       "switchFamilyButton": "Switch family",
       "switchFamilyDefaultError": "Failed to switch family",
-      "you": "You"
+      "you": "(you)"
     },
     "invitations": {
       "received": {
@@ -220,14 +223,15 @@
         "description": "Add pouches to control your budget, track your assets and achieve your financial goals."
       },
       "budgetSummary": {
-        "title": "List of pouches",
+        "title": "Pouches",
         "listOfPouches": "Total amount of pouches in the budget period.",
         "singleOccurrence": "Amount of a single occurrence: ",
         "occurrences": "Occurrences in this budget period: ",
-        "capacity": "Capacity",
+        "capacity": "Planned expenses in pouch",
         "expensesSum": "Expenses sum",
         "seeFullList": "Click to see the list of expenses in this pouch",
-        "toggleList": "toggle list"
+        "toggleList": "toggle list",
+        "leftCapacity": "Left capacity"
       },
       "removePouchOutcome": {
         "title": "Remove expense from pouch",
@@ -242,7 +246,7 @@
         "nextOccurrenceDatePrefix": "Next: ",
         "oneTime": "One time",
         "recurring": "Recurring",
-        "amount": "Pouch capacity",
+        "amount": "Planned expenses in pouch",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "time",
@@ -314,6 +318,7 @@
           "title": "Create new pouch",
           "description": "Add pouches to control your budget, track your assets and achieve your financial goals.",
           "button": "Add pouch",
+          "buttonMobile": "Add",
           "form": {
             "error": "Something went wrong.",
             "nameField": {
@@ -342,9 +347,9 @@
               "error": "How many times is required."
             },
             "repeatEveryField": {
-              "label": "Every how many",
-              "placeholder": "e.g. 1",
-              "error": "Every how many is required."
+              "label": "Repeat every",
+              "placeholder": "e.g. every month",
+              "error": "Repeat every is required."
             },
             "categoryField": {
               "label": "Category",
@@ -418,8 +423,9 @@
     "outcomes": {
       "title": "Outcomes",
       "addOutcomeButton": "Add outcome",
+      "addOutcomeButtonMobile": "Add",
       "budgetSummary": {
-        "title": "List of outcomes",
+        "title": "Outcomes",
         "listOfOutcomes": "Total amount of outcomes in the budget period.",
         "singleOccurrence": "Amount of a single occurrence: ",
         "occurrences": "Occurrences in this budget period: ",
@@ -484,9 +490,9 @@
             "error": "How many times is required."
           },
           "repeatEveryField": {
-            "label": "Every how many",
-            "placeholder": "e.g. 1",
-            "error": "Every how many is required."
+            "label": "Repeat every",
+            "placeholder": "e.g. every month",
+            "error": "Repeat every is required."
           },
           "categoryField": {
             "label": "Category",
@@ -500,6 +506,7 @@
         "title": "Create new outcome",
         "description": "Add an outcome to control your budget, track your assets and achieve your financial goals.",
         "button": "Add outcome",
+        "buttonMobile": "Add",
         "form": {
           "error": "Something went wrong.",
           "valueField": {
@@ -528,9 +535,9 @@
             "error": "How many times is required."
           },
           "repeatEveryField": {
-            "label": "Every how many",
-            "placeholder": "e.g. 1",
-            "error": "Every how many is required."
+            "label": "Repeat every",
+            "placeholder": "e.g. every month",
+            "error": "Repeat every is required."
           },
           "categoryField": {
             "label": "Category",
@@ -563,7 +570,7 @@
       "title": "Incomes",
       "addIncomeButton": "Add income",
       "budgetSummary": {
-        "title": "List of incomes",
+        "title": "Incomes",
         "listOfIncomes": "Total amount of incomes in the budget period.",
         "singleOccurrence": "Amount of a single occurrence: ",
         "occurrences": "Occurrences in this budget period: ",
@@ -619,6 +626,7 @@
         "title": "Create new income",
         "description": "Add an income to control your budget, track your assets and achieve your financial goals.",
         "button": "Add income",
+        "buttonMobile": "Add",
         "form": {
           "error": "Coś poszło nie tak.",
           "nameField": {
@@ -648,9 +656,9 @@
             "error": "How many times is required."
           },
           "repeatEveryField": {
-            "label": "Every how many",
-            "placeholder": "e.g. 1",
-            "error": "Every how many is required."
+            "label": "Repeat every",
+            "placeholder": "e.g. every month",
+            "error": "Repeat every is required."
           },
           "categoryField": {
             "label": "Category",
@@ -697,59 +705,40 @@
             "error": "How many times is required."
           },
           "repeatEveryField": {
-            "label": "Every how many",
-            "placeholder": "e.g. 1",
-            "error": "Every how many is required."
+            "label": "Repeat every",
+            "placeholder": "e.g. every month",
+            "error": "Repeat every is required."
           },
-          "createIncomeButton": "Create income"
+          "createIncomeButton": "Create income",
+          "editIncomeButton": "Edit income"
         }
       }
     }
   },
   "categories": {
-    "pouch": {
-      "food": "Food",
-      "clothing": "Clothing",
-      "health": "Health",
-      "travel": "Travel",
-      "education": "Education",
-      "transport": "Transport",
-      "bills": "Bills",
-      "home": "Home",
-      "car": "Car",
-      "leasing": "Leasing",
-      "loans": "Loans",
-      "credit": "Credit",
-      "gifts": "Gifts",
-      "work": "Work",
-      "other": "Other"
-    },
-    "incomes": {
-      "wages": "Wages",
-      "sales": "Sales",
-      "rent": "Rent",
-      "bonus": "Bonus",
-      "taxReturn": "Tax return",
-      "investments": "Investments",
-      "other": "Other"
-    },
-    "outcomes": {
-      "bills": "Bills",
-      "home": "Home",
-      "car": "Car",
-      "loans": "Loans",
-      "leasing": "Leasing",
-      "credit": "Credit",
-      "food": "Food",
-      "clothing": "Clothing",
-      "health": "Health",
-      "travel": "Travel",
-      "education": "Education",
-      "technology": "Technology",
-      "transport": "Transport",
-      "savings": "Savings",
-      "other": "Other"
-    }
+    "gifts": "Gifts",
+    "work": "Work",
+    "wages": "Wages",
+    "sales": "Sales",
+    "rent": "Rent",
+    "bonus": "Bonus",
+    "taxReturn": "Tax return",
+    "investments": "Investments",
+    "bills": "Bills",
+    "home": "Home",
+    "car": "Car",
+    "loans": "Loans",
+    "leasing": "Leasing",
+    "credit": "Credit",
+    "food": "Food",
+    "clothing": "Clothing",
+    "health": "Health",
+    "travel": "Travel",
+    "education": "Education",
+    "technology": "Technology",
+    "transport": "Transport",
+    "savings": "Savings",
+    "other": "Other"
   },
   "budgetSummary": {
     "balance": "Balance",
@@ -798,6 +787,7 @@
         "budgetAlreadyExists": "Budget already exists"
       },
       "update": {
+        "success": "Budget updated",
         "budgetNotFound": "Budget not found",
         "failedToUpdateBudget": "Failed to update budget",
         "notAllowedToUpdateBudget": "You are not allowed to update this budget",
@@ -806,12 +796,14 @@
     },
     "family": {
       "create": {
+        "success": "Family profile created",
         "failedToCreateFamily": "Failed to create family profile",
         "invalidCurrency": "Invalid currency",
         "invalidName": "Invalid name",
         "invalidTimezone": "Invalid timezone"
       },
       "update": {
+        "success": "Family profile updated",
         "failedToUpdateFamily": "Failed to update family profile",
         "familyNotFound": "Family profile not found",
         "notFamilyOwner": "You are not the owner of this family profile",
@@ -820,16 +812,19 @@
         "invalidTimezone": "Invalid timezone"
       },
       "delete": {
+        "success": "Family profile deleted",
         "failedToDeleteFamily": "Failed to delete family profile",
         "familyNotFound": "Family profile not found",
         "notFamilyOwner": "You are not the owner of this family profile"
       },
       "leave": {
+        "success": "Family profile left",
         "failedToLeaveFamily": "Failed to leave family profile",
         "familyNotFound": "Family profile not found",
         "notFamilyOwner": "Family profile cannot be left by the owner"
       },
       "removeUser": {
+        "success": "User removed from family profile",
         "failedToRemoveUserFromFamily": "Failed to remove user from family profile",
         "familyNotFound": "Family profile not found",
         "notFamilyOwner": "You are not the owner of this family profile",
@@ -838,12 +833,14 @@
         "userNotFoundInFamily": "User not found in family profile"
       },
       "setSelectedFamily": {
+        "success": "Family profile selected",
         "failedToSetSelectedFamily": "Failed to set active family profile",
         "familyNotFound": "Family profile not found"
       }
     },
     "income": {
       "create": {
+        "success": "Income created",
         "invalidIncomeData": "Invalid income data",
         "budgetNotFound": "Budget not found",
         "repeatCountRequired": "\"How many times\" is required when income is recurring",
@@ -851,11 +848,13 @@
         "failedToCreateIncome": "Failed to create income"
       },
       "delete": {
+        "success": "Income deleted",
         "failedToDeleteIncome": "Failed to delete income",
         "incomeNotFound": "Income not found",
         "incomeNotBelongsToUser": "Income does not belong to you"
       },
       "stop": {
+        "success": "Income stopped",
         "failedToStopIncome": "Failed to stop income",
         "incomeNotFound": "Income not found",
         "incomeNotBelongsToUser": "Income does not belong to you",
@@ -863,6 +862,7 @@
         "oneTimeIncomeCannotBeStopped": "One-time income cannot be stopped. Simply delete it"
       },
       "update": {
+        "success": "Income updated",
         "failedToUpdateIncome": "Failed to update income",
         "incomeNotFound": "Income not found",
         "incomeNotBelongsToUser": "Income does not belong to you",
@@ -871,6 +871,7 @@
     },
     "invitation": {
       "accept": {
+        "success": "Invitation accepted",
         "failedToAcceptInvitation": "Failed to accept invitation",
         "invitationNotFound": "Invitation not found",
         "invitationNotForUser": "Invitation is not for you",
@@ -879,12 +880,14 @@
         "familyNotFound": "Family profile not found"
       },
       "reject": {
+        "success": "Invitation rejected",
         "failedToRejectInvitation": "Failed to reject invitation",
         "invitationNotFound": "Invitation not found",
         "invitationNotForUser": "Invitation is not for you",
         "invitationAlreadyAccepted": "Invitation already accepted"
       },
       "send": {
+        "success": "Invitation sent",
         "failedToSendInvitation": "Failed to send invitation",
         "userNotFound": "User not found",
         "familyNotFound": "Family profile not found",
@@ -896,6 +899,7 @@
     },
     "outcome": {
       "create": {
+        "success": "Outcome created",
         "invalidOutcomeData": "Invalid outcome data",
         "budgetNotFound": "Budget not found",
         "repeatCountRequired": "\"How many times\" is required when outcome is recurring",
@@ -904,11 +908,13 @@
         "unauthorized": "You are not authorized to create outcome"
       },
       "delete": {
+        "success": "Outcome deleted",
         "failedToDeleteOutcome": "Failed to delete outcome",
         "outcomeNotFound": "Outcome not found",
         "outcomeNotBelongsToUser": "Outcome does not belong to you"
       },
       "stop": {
+        "success": "Outcome stopped",
         "failedToStopOutcome": "Failed to stop outcome",
         "outcomeNotFound": "Outcome not found",
         "outcomeNotBelongsToUser": "Outcome does not belong to you",
@@ -916,6 +922,7 @@
         "oneTimeOutcomeCannotBeStopped": "One-time outcome cannot be stopped. Simply delete it"
       },
       "update": {
+        "success": "Outcome updated",
         "failedToUpdateOutcome": "Failed to update outcome",
         "outcomeNotFound": "Outcome not found",
         "outcomeNotBelongsToUser": "Outcome does not belong to you",
@@ -924,6 +931,7 @@
     },
     "pouchOutcome": {
       "create": {
+        "success": "Pouch outcome created",
         "invalidPouchOutcomeData": "Invalid pouch outcome data",
         "budgetNotFound": "Budget not found",
         "pouchNotFound": "Pouch not found",
@@ -931,11 +939,13 @@
         "unauthorized": "You are not authorized to create pouch outcome"
       },
       "delete": {
+        "success": "Pouch outcome deleted",
         "failedToDeletePouchOutcome": "Failed to delete pouch outcome",
         "pouchOutcomeNotFound": "Pouch outcome not found",
         "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you"
       },
       "update": {
+        "success": "Pouch outcome updated",
         "failedToUpdatePouchOutcome": "Failed to update pouch outcome",
         "pouchOutcomeNotFound": "Pouch outcome not found",
         "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you",
@@ -944,6 +954,7 @@
     },
     "pouch": {
       "create": {
+        "success": "Pouch created",
         "invalidPouchData": "Invalid pouch data",
         "budgetNotFound": "Budget not found",
         "repeatCountRequired": "\"How many times\" is required when pouch is recurring",
@@ -952,11 +963,13 @@
         "unauthorized": "You are not authorized to create pouch"
       },
       "delete": {
+        "success": "Pouch deleted",
         "failedToDeletePouch": "Failed to delete pouch",
         "pouchNotFound": "Pouch not found",
         "pouchNotBelongsToUser": "Pouch does not belong to you"
       },
       "stop": {
+        "success": "Pouch stopped",
         "failedToStopPouch": "Failed to stop pouch",
         "pouchNotFound": "Pouch not found",
         "pouchNotBelongsToUser": "Pouch does not belong to you",
@@ -964,6 +977,7 @@
         "oneTimePouchCannotBeStopped": "One-time pouch cannot be stopped. Simply delete it"
       },
       "update": {
+        "success": "Pouch updated",
         "failedToUpdatePouch": "Failed to update pouch",
         "pouchNotFound": "Pouch not found",
         "pouchNotBelongsToUser": "Pouch does not belong to you",

@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 
 import { BudgetSettingsForm } from '../budget-settings-form';
 
@@ -30,9 +31,17 @@ export const BudgetSettingsDialog = ({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className={className} variant='secondary'>
-          <Cog className='mr-2 h-4 w-4' />
-          {t('title')}
+        <Button
+          className={cn(
+            className,
+            'md:h-11 md:w-auto md:px-4 md:py-2 md:has-[>svg]:px-3'
+          )}
+          variant='secondary'
+          size='icon'
+          aria-label={t('title')}
+        >
+          <Cog className='h-4 w-4 md:mr-2' />
+          <span className='hidden md:inline'>{t('title')}</span>
         </Button>
       </DialogTrigger>
       <DialogContent>

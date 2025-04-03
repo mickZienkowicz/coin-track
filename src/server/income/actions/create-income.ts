@@ -80,7 +80,7 @@ export const createIncome = async ({
 
     return {
       success: true,
-      message: 'Income created successfully.',
+      message: t('success'),
       data: income
     };
   } catch (error) {

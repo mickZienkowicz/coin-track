@@ -51,7 +51,7 @@ export async function deletePouch({ pouchId }: { pouchId: string }) {
 
     return {
       success: true,
-      message: 'Pouch deleted successfully.',
+      message: t('success'),
       data: deletedPouch
     };
   } catch (error) {

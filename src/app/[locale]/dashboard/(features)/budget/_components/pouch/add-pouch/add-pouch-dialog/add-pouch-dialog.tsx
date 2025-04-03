@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Package } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
@@ -33,8 +33,9 @@ export const AddPouchDialog = ({
       <DialogTrigger asChild>
         {children || (
           <Button className={className} variant='outline'>
-            <Package className='size-4 text-blue-600' />
-            {t('button')}
+            <ShoppingCart className='size-4 text-blue-600' />
+            <span className='hidden md:inline'>{t('button')}</span>
+            <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>

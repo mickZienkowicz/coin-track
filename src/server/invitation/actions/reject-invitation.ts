@@ -45,7 +45,7 @@ export async function rejectInvitation({
 
     return {
       success: true,
-      message: 'Invitation rejected.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

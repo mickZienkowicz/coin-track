@@ -38,7 +38,7 @@ function Progress({
         <ProgressPrimitive.Indicator
           data-slot='progress-indicator'
           className={cn(
-            'relative z-0 h-full w-full flex-1 bg-primary/80 transition-all',
+            'relative z-0 h-full w-full flex-1 bg-primary/70 transition-all',
             excessBarClassName
           )}
           style={{ transform: `translateX(-${100 - (excess || 0)}%)` }}

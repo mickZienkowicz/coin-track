@@ -48,7 +48,7 @@ export const BalanceSummaryCard = ({
             })}
             <BalanceBadge balanceSum={balanceSum} />
           </span>
-          <span className='text-sm text-primary/50'>
+          <span className='text-sm text-primary/70'>
             {t('currentBudgetBalance')}
           </span>
         </h4>
@@ -61,7 +61,7 @@ export const BalanceSummaryCard = ({
           progressBarClassName='bg-red-700'
           className='bg-green-600'
         />
-        <p className='mt-2 flex flex-col text-[22px] text-primary/80'>
+        <p className='mt-2 flex flex-col text-[22px] text-primary/70'>
           <span className={cn('font-bold')}>
             {formatCurrency({
               cents: balanceWithFullPouchesSum,
@@ -69,7 +69,7 @@ export const BalanceSummaryCard = ({
               language: locale as Language
             })}
           </span>
-          <span className='text-[12px] text-primary/40'>
+          <span className='text-[12px] text-primary/70'>
             {t('currentBudgetBalanceWithPouches')}
           </span>
         </p>

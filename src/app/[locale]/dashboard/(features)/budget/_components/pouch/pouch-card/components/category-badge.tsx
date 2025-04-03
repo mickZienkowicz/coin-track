@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { getPouchCategories } from '@/lib/categories';
 
 export const CategoryBadge = ({ category }: { category: string }) => {
-  const pouchCategoriesT = useTranslations('categories.pouch');
+  const pouchCategoriesT = useTranslations('categories');
   const categoryItem = getPouchCategories(pouchCategoriesT).find(
     (item) => item.value === category
   ) || {

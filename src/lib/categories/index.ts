@@ -1,7 +1,6 @@
 import {
   Banknote,
   Bolt,
-  Briefcase,
   Bus,
   Car,
   CircleHelp,
@@ -42,7 +41,7 @@ export const getPouchCategories = (t: ReturnType<typeof useTranslations>) => [
   { value: 'leasing', name: t('leasing'), icon: Truck, color: '#FFB5A7' },
   { value: 'credit', name: t('credit'), icon: Handshake, color: '#FFDAC1' },
   { value: 'gifts', name: t('gifts'), icon: Gift, color: '#FFC8DD' },
-  { value: 'work', name: t('work'), icon: Briefcase, color: '#C8E6C9' },
+  { value: 'work', name: t('work'), icon: ShoppingCart, color: '#C8E6C9' },
   { value: 'other', name: t('other'), icon: CircleHelp, color: '#FFFFFF' }
 ];
 

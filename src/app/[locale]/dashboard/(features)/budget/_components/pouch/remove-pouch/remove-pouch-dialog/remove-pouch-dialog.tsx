@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Trash2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
@@ -22,13 +22,16 @@ import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-pat
 export const RemovePouchDialog = ({
   pouchId,
   children,
-  isOneTime
+  isOneTime,
+  onSuccess
 }: {
   pouchId: string;
   isOneTime: boolean;
   children?: React.ReactNode;
+  onSuccess?: () => void;
 }) => {
-  const t = useTranslations('budget.pouch.removePouch');
+  const queryClient = useQueryClient();
+  const t = useTranslations('budget.pouch.pouchCard.removePouch');
   const [isOpen, setIsOpen] = useState(false);
 
   const { mutate, isPending } = useMutation({
@@ -42,9 +45,11 @@ export const RemovePouchDialog = ({
         return;
       }
 
+      onSuccess?.();
       setIsOpen(false);
       toast.success(message);
       revalidatePathAction(pathGenerators.budget());
+      queryClient.invalidateQueries({ queryKey: ['pouches'] });
     }
   });
 

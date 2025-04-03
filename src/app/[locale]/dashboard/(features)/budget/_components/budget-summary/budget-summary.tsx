@@ -4,7 +4,6 @@ import { useLocale } from 'next-intl';
 import { Language } from '@/i18n/routing';
 import { BudgetSummaryResponse } from '@/server/budget/types';
 
-import { AddPouchOutcomeDialog } from '../pouch/add-pouch-outcome/add-pouch-outcome-dialog';
 import { BudgetSummaryIncomeList } from './_components/budget-summary-income-list/budget-summary-income-list';
 import { BudgetSummaryOutcomeList } from './_components/budget-summary-outcome-list';
 import { BudgetSummaryPouchList } from './_components/budget-summary-pouch-list';
@@ -16,10 +15,12 @@ import { getCurrentBudgetTimeframeLabel } from './_utils/get-current-budget-time
 
 export const BudgetSummary = ({
   currency,
-  budgetSummary
+  budgetSummary,
+  hasPouches
 }: {
   currency: string;
   budgetSummary: BudgetSummaryResponse;
+  hasPouches: boolean;
 }) => {
   const locale = useLocale();
 
@@ -39,12 +40,6 @@ export const BudgetSummary = ({
               locale: locale as Language
             })}
           </h2>
-        </div>
-        <div className='flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-2 xl:justify-end'>
-          <AddPouchOutcomeDialog
-            currency={currency}
-            pouches={budgetSummary.pouchOccurances}
-          />
         </div>
       </div>
       <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-2'>

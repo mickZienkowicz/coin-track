@@ -91,7 +91,7 @@ export async function createFamily(data: {
 
     return {
       success: true,
-      message: 'Family created.',
+      message: t('success'),
       data: family
     };
   } catch (error) {

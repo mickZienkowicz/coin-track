@@ -69,7 +69,7 @@ export async function stopIncome({ id, date }: { id: string; date: Date }) {
 
     return {
       success: true,
-      message: 'Income stopped successfully.',
+      message: t('success'),
       data: updatedIncome
     };
   } catch (error) {

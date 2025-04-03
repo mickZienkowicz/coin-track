@@ -73,7 +73,7 @@ export const createPouchOutcome = async ({
 
     return {
       success: true,
-      message: 'Pouch outcome created successfully.',
+      message: t('success'),
       data: pouchOutcome
     };
   } catch (error) {

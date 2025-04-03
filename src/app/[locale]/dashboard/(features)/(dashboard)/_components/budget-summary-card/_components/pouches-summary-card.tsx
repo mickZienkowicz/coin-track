@@ -1,4 +1,4 @@
-import { Package } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { Badge } from '@/components/ui/badge';
@@ -20,41 +20,36 @@ export const PouchesSummaryCard = async ({
   pouchesBalancePercentage: number;
   className?: string;
 }) => {
-  const locale = await getLocale();
-  const t = await getTranslations('dashboard.balance.pouch');
+  const [t, locale] = await Promise.all([
+    getTranslations('dashboard.balance.pouch'),
+    getLocale()
+  ]);
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
-      <div className='flex flex-col md:gap-2'>
-        <div className='flex items-start justify-between gap-2 md:items-center'>
-          <div className='flex flex-col gap-2 md:flex-row md:items-center md:gap-4'>
-            <h4 className='-mb-1 flex items-center gap-3 text-xl font-bold '>
-              <span className='flex size-9  items-center justify-center rounded-full bg-blue-600/20'>
-                <Package className='size-5 text-blue-600' />
+      <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3.5'>
+          <div className='flex w-full justify-between gap-2'>
+            <h4 className='flex items-center gap-2 text-xl font-bold md:gap-3'>
+              <span className='flex size-7 items-center  justify-center rounded-full bg-blue-600/20 md:size-9'>
+                <ShoppingCart className='size-4 text-blue-600 md:size-5' />
               </span>
               {t('title')}
             </h4>
-            <p className='flex items-center justify-between text-2xl font-black text-primary/85 md:text-[25px]'>
-              {formatCurrency({
-                cents: pouchesOutcomesSum,
-                currency,
-                language: locale as Language
-              })}
-            </p>
+            <Badge
+              className={cn(
+                'mt-[2px] bg-blue-600 font-bold tracking-tighter text-white md:mt-0',
+                pouchesBalancePercentage >= 100 && 'bg-red-700'
+              )}
+            >
+              {pouchesBalancePercentage.toFixed(0)}%
+            </Badge>
           </div>
-          <Badge
-            className={cn(
-              'mt-[2px] bg-blue-600 font-bold tracking-tighter text-white md:mt-0',
-              pouchesBalancePercentage >= 100 && 'bg-red-700'
-            )}
-          >
-            {pouchesBalancePercentage.toFixed(0)}%
-          </Badge>
         </div>
 
-        <div className='mt-1 flex items-center justify-between gap-1'>
-          <p className='text-sm text-primary/50'>
-            {t('spent')}:{' '}
+        <div className='mt-1 flex min-h-5 items-center justify-between gap-1'>
+          <p className='flex flex-col items-start gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
+            {t('spent')}:
             <span className='font-bold'>
               {formatCurrency({
                 cents: pouchesOutcomesSum,
@@ -63,8 +58,8 @@ export const PouchesSummaryCard = async ({
               })}
             </span>
           </p>
-          <p className='text-end text-sm text-primary/50'>
-            {t('planned')}:{' '}
+          <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
+            {t('planned')}:
             <span className='font-bold'>
               {formatCurrency({
                 cents: pouchesSum,

@@ -1,4 +1,4 @@
-import { Package } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Badge } from '@/components/ui/badge';
@@ -27,7 +27,7 @@ export const PouchesSummaryCard = ({
       <CardHeader className='flex items-center justify-between gap-2'>
         <CardTitle className='text-[26px]'>{t('pouches')}</CardTitle>
         <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-600/20 md:size-11'>
-          <Package className='size-5 text-blue-600 md:size-6' />
+          <ShoppingCart className='size-5 text-blue-600 md:size-6' />
         </div>
       </CardHeader>
       <CardContent className='flex flex-col gap-2'>
@@ -47,7 +47,7 @@ export const PouchesSummaryCard = ({
               {pouchesBalancePercentage.toFixed(0)}%
             </Badge>
           </span>
-          <span className='text-sm text-primary/50'>
+          <span className='text-sm text-primary/70'>
             {t('pouchesExpensesSummary')}
           </span>
         </h4>
@@ -64,7 +64,7 @@ export const PouchesSummaryCard = ({
             progressBarClassName='bg-blue-600'
           />
         )}
-        <p className='mt-2 flex flex-col text-[22px] text-primary/80'>
+        <p className='mt-2 flex flex-col text-[22px] text-primary/70'>
           <span className='font-bold'>
             {formatCurrency({
               cents: pouchesSum,
@@ -72,7 +72,7 @@ export const PouchesSummaryCard = ({
               language: locale as Language
             })}
           </span>
-          <span className='text-[12px] text-primary/50'>
+          <span className='text-[12px] text-primary/70'>
             {t('pouchesSummary')}
           </span>
         </p>

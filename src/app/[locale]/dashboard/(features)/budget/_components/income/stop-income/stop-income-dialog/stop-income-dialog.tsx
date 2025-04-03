@@ -54,7 +54,10 @@ export const StopIncomeDialog = ({
           </DialogDescription>
           <DialogDescription>
             {t('descriptionDeleteTitle')}
-            <RemoveIncomeDialog incomeId={income.id}>
+            <RemoveIncomeDialog
+              incomeId={income.id}
+              onSuccess={() => setIsOpen(false)}
+            >
               <Button
                 className='inline h-auto cursor-pointer p-0 text-base font-bold underline hover:bg-transparent'
                 variant='ghost'

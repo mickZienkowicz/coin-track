@@ -39,7 +39,7 @@ export async function leaveFamily({ familyId }: { familyId: string }) {
 
     return {
       success: true,
-      message: 'You left the family.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

@@ -34,7 +34,7 @@ export async function deleteFamily({ familyId }: { familyId: string }) {
 
     return {
       success: true,
-      message: 'Family deleted.'
+      message: t('success')
     };
   } catch (error) {
     const isKnownError =

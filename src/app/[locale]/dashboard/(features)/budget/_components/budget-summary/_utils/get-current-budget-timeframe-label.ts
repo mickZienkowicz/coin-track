@@ -1,4 +1,5 @@
-import { format, isSameYear } from 'date-fns';
+import { format, isSameMonth, isSameYear } from 'date-fns';
+
 import { Language } from '@/i18n/routing';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 
@@ -12,12 +13,21 @@ export const getCurrentBudgetTimeframeLabel = ({
   locale: Language;
 }) => {
   const isSameYearBudget = isSameYear(startDate, finishDate);
+  const isSameMonthBudget = isSameMonth(startDate, finishDate);
 
-  const startDateFormatting = `d MMMM${isSameYearBudget ? '' : ' yyyy'}`;
+  let startDateFormatting = 'd MMMM yyyy';
+
+  if (isSameYearBudget) {
+    startDateFormatting = 'd MMMM';
+  }
+
+  if (isSameMonthBudget) {
+    startDateFormatting = 'd';
+  }
 
   return `${format(startDate, startDateFormatting, {
     locale: getDateFnsLocaleFromLanguage(locale as Language)
-  })} - ${format(finishDate, 'd MMMM yyyy', {
+  })}${isSameMonthBudget ? '-' : ' - '}${format(finishDate, 'd MMMM yyyy', {
     locale: getDateFnsLocaleFromLanguage(locale as Language)
   })}`;
 };

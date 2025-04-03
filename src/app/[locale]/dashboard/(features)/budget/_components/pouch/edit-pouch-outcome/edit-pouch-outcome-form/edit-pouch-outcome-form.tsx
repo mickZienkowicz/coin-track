@@ -3,7 +3,7 @@
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PouchExpense } from '@prisma/client';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -38,6 +38,7 @@ export const EditPouchOutcomeForm = ({
   pouchOutcome: PouchExpense;
   currency: string;
 }) => {
+  const queryClient = useQueryClient();
   const t = useTranslations('budget.pouch.pouchCard.editPouchOutcome.form');
   const editPouchOutcomeFormSchema = getEditPouchOutcomeFormSchema(t);
   const form = useForm<z.infer<typeof editPouchOutcomeFormSchema>>({
@@ -62,6 +63,7 @@ export const EditPouchOutcomeForm = ({
 
       closeDialog();
       toast.success(message);
+      queryClient.invalidateQueries({ queryKey: ['pouches'] });
       revalidatePathAction(pathGenerators.budget());
     }
   });

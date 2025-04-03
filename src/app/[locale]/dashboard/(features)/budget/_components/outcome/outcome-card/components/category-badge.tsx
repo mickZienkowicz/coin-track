@@ -5,9 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { getOutcomesCategories } from '@/lib/categories';
 
 export const CategoryBadge = ({ category }: { category: string }) => {
-  const outcomeCategoriesT = useTranslations('categories.outcomes');
+  const outcomeCategoriesT = useTranslations('categories');
   const categoryItem = getOutcomesCategories(outcomeCategoriesT).find(
-    (item) => item.name === category
+    (item) => item.value === category
   ) || {
     name: outcomeCategoriesT('other'),
     icon: CircleHelp,
@@ -20,7 +20,7 @@ export const CategoryBadge = ({ category }: { category: string }) => {
       style={{ backgroundColor: categoryItem?.color || '' }}
     >
       <categoryItem.icon className='size-4!' />
-      {category}
+      {categoryItem.name}
     </Badge>
   );
 };

@@ -2,21 +2,19 @@ import { format } from 'date-fns';
 import { ArrowDownCircle, PlusCircle } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 import type { OutcomeWithCurrentBudgetOccurance } from '@/server/budget/types';
 
-import { AddOutcomeDialog } from '../../../outcome/add-outcome/add-outcome-dialog';
+import { AddOutcomeDialog } from '../../../budget-configuration/_components/outcome/add-outcome/add-outcome-dialog';
 
 export const BudgetSummaryOutcomeList = ({
-  currency,
   outcomesSum,
   outcomes
 }: {
-  currency: string;
   outcomesSum: number;
   outcomes: OutcomeWithCurrentBudgetOccurance[];
 }) => {
@@ -34,7 +32,7 @@ export const BudgetSummaryOutcomeList = ({
               </div>
               {t('budgetSummary.title')}
             </h2>
-            <AddOutcomeDialog currency={currency}>
+            <AddOutcomeDialog>
               <Button
                 variant='secondary'
                 size='iconSmall'
@@ -51,11 +49,7 @@ export const BudgetSummaryOutcomeList = ({
           <CardContent>
             <p className='flex flex-col'>
               <span className='flex items-center justify-between text-[26px] font-bold text-red-700'>
-                {formatCurrency({
-                  cents: outcomesSum,
-                  currency,
-                  language: locale as Language
-                })}
+                <FormattedCurrency valueCents={outcomesSum} />
               </span>
               <span className='text-sm text-primary/70'>
                 {t('budgetSummary.listOfOutcomes')}
@@ -70,14 +64,16 @@ export const BudgetSummaryOutcomeList = ({
             <li key={outcome.id}>
               <Card className='py-4!'>
                 <CardContent>
-                  <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-xl font-semibold'>{outcome.name}</h3>
+                  <div className='flex items-center justify-between gap-3'>
+                    <h3 className='overflow-hidden text-ellipsis break-words text-xl font-semibold'>
+                      {outcome.name}
+                    </h3>
                     <p className='text-xl font-bold text-red-700'>
-                      {formatCurrency({
-                        cents: outcome.valueCents * outcome.occurrences.length,
-                        currency,
-                        language: locale as Language
-                      })}
+                      <FormattedCurrency
+                        valueCents={
+                          outcome.valueCents * outcome.occurrences.length
+                        }
+                      />
                     </p>
                   </div>
                   {outcome.occurrences.length > 1 ? (
@@ -91,28 +87,7 @@ export const BudgetSummaryOutcomeList = ({
                       <p className='mt-1 flex justify-between text-sm text-primary/70'>
                         {t('budgetSummary.singleOccurrence')}
                         <span className='font-semibold text-primary/70'>
-                          {formatCurrency({
-                            cents: outcome.valueCents,
-                            currency,
-                            language: locale as Language
-                          })}
-                        </span>
-                      </p>
-                      <p className='mt-1 flex justify-between gap-1 text-sm text-primary/70'>
-                        <span className='min-w-[160px]'>
-                          {t('budgetSummary.datesOfOccurrences')}
-                        </span>
-                        <span className='text-end font-semibold text-primary/70'>
-                          {outcome.occurrences.map((date, index) => (
-                            <span key={date.toISOString()}>
-                              {format(date, 'd MMMM', {
-                                locale: getDateFnsLocaleFromLanguage(
-                                  locale as Language
-                                )
-                              })}
-                              {index < outcome.occurrences.length - 1 && ', '}
-                            </span>
-                          ))}
+                          <FormattedCurrency valueCents={outcome.valueCents} />
                         </span>
                       </p>
                     </>
@@ -148,7 +123,7 @@ export const BudgetSummaryOutcomeList = ({
             <p className='mb-6 max-w-xl text-muted-foreground'>
               {t('noOutcomesCard.description')}
             </p>
-            <AddOutcomeDialog currency={currency}>
+            <AddOutcomeDialog>
               <Button variant='secondary' size='sm' className='mb-2'>
                 <ArrowDownCircle className='h-4 w-4' />
                 {t('addOutcomeButton')}

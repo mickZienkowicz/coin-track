@@ -1,31 +1,25 @@
 import { ArrowDownCircle, ArrowUpCircle, PieChart } from 'lucide-react';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { cn } from '@/lib/utils';
 
-export const BalanceSummaryCard = async ({
+export const BalanceSummaryCard = ({
   balanceSum,
-  currency,
   incomesSum,
   outcomesSum,
   pouchesOutcomesSum,
   className
 }: {
   balanceSum: number;
-  currency: string;
   incomesSum: number;
   outcomesSum: number;
   pouchesOutcomesSum: number;
   className?: string;
 }) => {
-  const [t, locale] = await Promise.all([
-    getTranslations('dashboard.balance'),
-    getLocale()
-  ]);
+  const t = useTranslations('dashboard.balance');
 
   return (
     <div className={cn('@container flex flex-col gap-2', className)}>
@@ -47,11 +41,7 @@ export const BalanceSummaryCard = async ({
               )}
             >
               {balanceSum > 0 && '+'}
-              {formatCurrency({
-                cents: balanceSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={balanceSum} />
             </Badge>
           </div>
         </div>
@@ -64,11 +54,9 @@ export const BalanceSummaryCard = async ({
               {t('balance.outcome')}:{' '}
             </span>
             <span className='font-bold'>
-              {formatCurrency({
-                cents: outcomesSum + pouchesOutcomesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency
+                valueCents={outcomesSum + pouchesOutcomesSum}
+              />
             </span>
             <span className='hidden text-xs 2xl:inline-block'>
               {' '}
@@ -83,11 +71,7 @@ export const BalanceSummaryCard = async ({
               {t('balance.income')}:{' '}
             </span>
             <span className='font-bold'>
-              {formatCurrency({
-                cents: incomesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={incomesSum} />
             </span>
           </p>
         </div>

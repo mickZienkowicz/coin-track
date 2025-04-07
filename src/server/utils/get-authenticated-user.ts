@@ -33,13 +33,19 @@ export async function getAuthenticatedUser() {
     },
     update: {
       email: clerkUser.emailAddresses[0].emailAddress,
-      name: `${clerkUser.firstName} ${clerkUser.lastName}`,
+      name:
+        clerkUser.firstName && clerkUser.lastName
+          ? `${clerkUser.firstName} ${clerkUser.lastName}`
+          : clerkUser.emailAddresses[0].emailAddress,
       avatar: clerkUser.imageUrl
     },
     create: {
       email: clerkUser.emailAddresses[0].emailAddress,
       clerkId: clerkUserId,
-      name: `${clerkUser.firstName} ${clerkUser.lastName}`,
+      name:
+        clerkUser.firstName && clerkUser.lastName
+          ? `${clerkUser.firstName} ${clerkUser.lastName}`
+          : clerkUser.emailAddresses[0].emailAddress,
       avatar: clerkUser.imageUrl
     }
   });

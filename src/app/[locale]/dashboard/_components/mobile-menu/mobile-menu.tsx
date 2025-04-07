@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useOptimistic } from 'react';
 import { LayoutDashboard, Package, Target, Wallet } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -38,12 +38,16 @@ export const MobileMenu = () => {
     [t]
   );
 
+  const [activeItemValue, setActiveItemValue] = useOptimistic(
+    mainNavItems.find((item) => pathname.endsWith(item.value))?.value
+  );
+
   return (
     <>
       <div className='fixed bottom-0 left-0 right-0 z-40 border-t border-sidebar-border bg-sidebar min-[768px]:hidden'>
         <ul className='safe-area-fix-bottom flex items-center justify-center gap-4'>
           {mainNavItems.map((item) => {
-            const isActive = pathname.endsWith(item.value);
+            const isActive = item.value === activeItemValue;
 
             return (
               <li
@@ -57,6 +61,7 @@ export const MobileMenu = () => {
                 <Link
                   key={item.label}
                   href={item.value}
+                  onClick={() => setActiveItemValue(item.value)}
                   className={cn(
                     'relative z-50 flex size-11 flex-col items-center justify-center gap-1 rounded-xl text-xs',
                     isActive && 'bg-brand-primary text-white'

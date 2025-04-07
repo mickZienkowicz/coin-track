@@ -52,8 +52,8 @@ export const updateBudget = async ({
     }
 
     if (
-      budget.family.users.some(
-        ({ user: budgetUser }) => budgetUser.id !== user.id
+      !budget.family.users.some(
+        ({ user: budgetUser }) => budgetUser.id === user.id
       )
     ) {
       throw new Error(knownErrors.notAllowedToUpdateBudget);
@@ -90,7 +90,7 @@ export const updateBudget = async ({
 
     return {
       success: false,
-      message: knownErrors.failedToUpdateBudget
+      message: isKnownError ? error.message : knownErrors.failedToUpdateBudget
     };
   }
 };

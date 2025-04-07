@@ -2,7 +2,9 @@
 
 import { useMemo } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { SignedIn, SignOutButton, UserButton } from '@clerk/nextjs';
+import { useQuery } from '@tanstack/react-query';
 import {
   Globe,
   LayoutDashboard,
@@ -31,14 +33,17 @@ import {
 import { Link, usePathname } from '@/i18n/navigation';
 import { pathGenerators } from '@/lib/paths';
 import { cn } from '@/lib/utils';
+import { getReceivedInvitations } from '@/server/invitation/queries/get-received-invitations';
 
 import { ChangeLanguageDialog } from '../change-language-dialog';
 
-export function AppSidebar({
-  receivedInvitationsCount
-}: {
-  receivedInvitationsCount: number;
-}) {
+export function AppSidebar() {
+  const router = useRouter();
+  const { data: receivedInvitations } = useQuery({
+    queryKey: ['receivedInvitations'],
+    queryFn: () => getReceivedInvitations()
+  });
+  const receivedInvitationsCount = receivedInvitations?.length ?? 0;
   const t = useTranslations('menu');
   const pathname = usePathname();
   const { setOpenMobile } = useSidebar();
@@ -141,6 +146,7 @@ export function AppSidebar({
             {bottomNavItems.map((item) => (
               <SidebarMenuItem
                 key={item.value}
+                onClick={() => setOpenMobile(false)}
                 className={cn(
                   receivedInvitationsCount > 0 &&
                     `relative after:absolute after:-bottom-[3px] after:-right-[3px] after:h-2.5 after:w-2.5 after:rounded-full after:bg-yellow-600`
@@ -164,6 +170,7 @@ export function AppSidebar({
                 <SidebarMenuButton
                   className='text-red-700 hover:bg-red-100 hover:text-red-600'
                   tooltip={t('logout')}
+                  onClick={() => router.push(pathGenerators.home())}
                 >
                   <LogOut className='h-5 w-5' />
                   <span>{t('logout')}</span>

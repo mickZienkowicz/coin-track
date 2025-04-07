@@ -1,29 +1,23 @@
 import { ShoppingCart } from 'lucide-react';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { cn } from '@/lib/utils';
 
-export const PouchesSummaryCard = async ({
-  currency,
+export const PouchesSummaryCard = ({
   pouchesOutcomesSum,
   pouchesSum,
   pouchesBalancePercentage,
   className
 }: {
-  currency: string;
   pouchesOutcomesSum: number;
   pouchesSum: number;
   pouchesBalancePercentage: number;
   className?: string;
 }) => {
-  const [t, locale] = await Promise.all([
-    getTranslations('dashboard.balance.pouch'),
-    getLocale()
-  ]);
+  const t = useTranslations('dashboard.balance.pouch');
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
@@ -51,21 +45,13 @@ export const PouchesSummaryCard = async ({
           <p className='flex flex-col items-start gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
             {t('spent')}:
             <span className='font-bold'>
-              {formatCurrency({
-                cents: pouchesOutcomesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={pouchesOutcomesSum} />
             </span>
           </p>
           <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
             {t('planned')}:
             <span className='font-bold'>
-              {formatCurrency({
-                cents: pouchesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={pouchesSum} />
             </span>
           </p>
         </div>

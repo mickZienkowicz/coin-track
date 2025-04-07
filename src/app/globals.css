@@ -74,6 +74,22 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::placeholder {
+    @apply text-primary/60;
+  }
+
+  ::-webkit-input-placeholder {
+    @apply text-primary/60;
+  }
+
+  :-ms-input-placeholder {
+    @apply text-primary/60;
+  }
+
+  ::-ms-input-placeholder {
+    @apply text-primary/60;
+  }
 }
 
 html,

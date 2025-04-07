@@ -1,23 +1,15 @@
 import { Shield } from 'lucide-react';
-import { getLocale } from 'next-intl/server';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Link } from '@/i18n/navigation';
-import { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { pathGenerators } from '@/lib/paths';
 import { cn } from '@/lib/utils';
 
-export const FinancialCushionCard = async ({
-  currency
-}: {
-  currency: string;
-}) => {
-  const locale = await getLocale();
-
+export const FinancialCushionCard = () => {
   return (
     <Card className='gap-0'>
       <CardHeader className='pb-2'>
@@ -29,18 +21,8 @@ export const FinancialCushionCard = async ({
             <div className='flex flex-col'>
               <h4 className='text-2xl font-bold'>Poduszka finansowa</h4>
               <p className='text-sm font-normal text-primary/70'>
-                Rekomendujemy:{' '}
-                {formatCurrency({
-                  cents: 3000,
-                  currency,
-                  language: locale as Language
-                })}{' '}
-                -{' '}
-                {formatCurrency({
-                  cents: 2000,
-                  currency,
-                  language: locale as Language
-                })}
+                Rekomendujemy: <FormattedCurrency valueCents={3000} />-{' '}
+                <FormattedCurrency valueCents={2000} />
               </p>
             </div>
           </CardTitle>
@@ -66,21 +48,13 @@ export const FinancialCushionCard = async ({
             <p className='flex flex-col items-start gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
               Obecnie:
               <span className='font-bold'>
-                {formatCurrency({
-                  cents: 100000,
-                  currency,
-                  language: locale as Language
-                })}
+                <FormattedCurrency valueCents={100000} />
               </span>
             </p>
             <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
               Rekomendujemy:
               <span className='font-bold'>
-                {formatCurrency({
-                  cents: 120000,
-                  currency,
-                  language: locale as Language
-                })}
+                <FormattedCurrency valueCents={120000} />
               </span>
             </p>
           </div>

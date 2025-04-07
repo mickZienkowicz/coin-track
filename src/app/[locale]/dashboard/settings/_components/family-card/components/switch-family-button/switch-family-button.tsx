@@ -5,7 +5,9 @@ import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
+import { pathGenerators } from '@/lib/paths';
 import { setSelectedFamily } from '@/server/family/actions/set-selected-family';
+import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
 export const SwitchFamilyButton = ({
   familyId,
@@ -21,6 +23,9 @@ export const SwitchFamilyButton = ({
     mutationFn: setSelectedFamily,
     onError: () => {
       toast.error(t('familyCard.switchFamilyDefaultError'));
+    },
+    onSuccess: async () => {
+      await revalidatePathAction(pathGenerators.dashboard(), 'layout');
     }
   });
 

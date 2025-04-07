@@ -59,7 +59,7 @@ export const FeaturesSection = () => {
         <FeatureCard
           icon={<Wallet className='h-10 w-10 text-primary' />}
           title='Zarządzanie majątkiem'
-          description='Monitoruj wartość swojego majątku, zobowiązań i śledź zmiany wartości netto w czasie.'
+          description='Monitoruj wartość swojego majątku i śledź zmiany towojej wartości netto w czasie.'
         />
         <FeatureCard
           icon={<Target className='h-10 w-10 text-primary' />}

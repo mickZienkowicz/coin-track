@@ -1,9 +1,10 @@
 import { Calendar } from 'lucide-react';
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 import { Language } from '@/i18n/routing';
-import { BudgetSummaryResponse } from '@/server/budget/types';
+import { getBudgetSummary } from '@/server/budget/queries/get-budget-summary';
 
+import { BudgetSummaryBadge } from '../budget-summary-badge/budget-summary-badge';
 import { BudgetSummaryIncomeList } from './_components/budget-summary-income-list/budget-summary-income-list';
 import { BudgetSummaryOutcomeList } from './_components/budget-summary-outcome-list';
 import { BudgetSummaryPouchList } from './_components/budget-summary-pouch-list';
@@ -13,16 +14,11 @@ import { OutcomesSummaryCard } from './_components/summary-cards/outcomes-summar
 import { PouchesSummaryCard } from './_components/summary-cards/pouches-summary-card';
 import { getCurrentBudgetTimeframeLabel } from './_utils/get-current-budget-timeframe-label';
 
-export const BudgetSummary = ({
-  currency,
-  budgetSummary,
-  hasPouches
-}: {
-  currency: string;
-  budgetSummary: BudgetSummaryResponse;
-  hasPouches: boolean;
-}) => {
-  const locale = useLocale();
+export const BudgetSummary = async () => {
+  const [locale, budgetSummary] = await Promise.all([
+    getLocale(),
+    getBudgetSummary()
+  ]);
 
   if (!budgetSummary) {
     return null;
@@ -41,6 +37,10 @@ export const BudgetSummary = ({
             })}
           </h2>
         </div>
+        <BudgetSummaryBadge
+          balance={budgetSummary.balance}
+          className='hidden lg:flex'
+        />
       </div>
       <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-2'>
         <BalanceSummaryCard
@@ -49,35 +49,22 @@ export const BudgetSummary = ({
           pouchesOutcomesSum={budgetSummary.pouchesOutcomesSum}
           balanceSum={budgetSummary.balance}
           balanceWithFullPouchesSum={budgetSummary.balanceWithFullPouchesSum}
-          currency={currency}
         />
         <PouchesSummaryCard
           pouchesSum={budgetSummary.pouchesSum}
           pouchesOutcomesSum={budgetSummary.pouchesOutcomesSum}
-          currency={currency}
         />
 
-        <IncomesSummaryCard
-          incomesSum={budgetSummary.incomesSum}
-          currency={currency}
-        />
-        <OutcomesSummaryCard
-          outcomesSum={budgetSummary.outcomesSum}
-          currency={currency}
-        />
+        <IncomesSummaryCard incomesSum={budgetSummary.incomesSum} />
+        <OutcomesSummaryCard outcomesSum={budgetSummary.outcomesSum} />
       </div>
       <section className='mt-16 grid grid-cols-1 gap-6 2xl:grid-cols-3'>
-        <BudgetSummaryPouchList
-          currency={currency}
-          pouches={budgetSummary.pouchOccurances}
-        />
+        <BudgetSummaryPouchList pouches={budgetSummary.pouchOccurances} />
         <BudgetSummaryIncomeList
-          currency={currency}
           incomesSum={budgetSummary.incomesSum}
           incomes={budgetSummary.incomeOccurances}
         />
         <BudgetSummaryOutcomeList
-          currency={currency}
           outcomesSum={budgetSummary.outcomesSum}
           outcomes={budgetSummary.outcomeOccurances}
         />

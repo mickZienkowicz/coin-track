@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Interval } from '@prisma/client';
 import { useMutation } from '@tanstack/react-query';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -23,8 +23,11 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
+import { Language } from '@/i18n/routing';
+import { getCurrencyList } from '@/lib/currencies';
 import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { getUtcMiddayDateOfGivenDate } from '@/lib/dates/get-utc-midday-date-of-given-date';
+import { timezones } from '@/lib/dates/time-zones';
 import { pathGenerators } from '@/lib/paths';
 import { createFamily } from '@/server/family/actions/create-family';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
@@ -50,25 +53,16 @@ const getFormSchema = (t: ReturnType<typeof useTranslations>) =>
     budgetTransferPouchBalance: z.nativeEnum(YesNoEnum)
   });
 
-export const AddFamilyForm = ({
-  closeDialog,
-  currencies,
-  timezones
-}: {
-  closeDialog: () => void;
-  currencies: {
-    label: string;
-    value: string;
-  }[];
-  timezones: {
-    label: string;
-    value: string;
-  }[];
-}) => {
+export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
+  const locale = useLocale();
   const t = useTranslations('settings.addFamily.form');
   const formSchema = getFormSchema(t);
   const deviceTimezone =
     Intl?.DateTimeFormat()?.resolvedOptions()?.timeZone || 'Europe/Warsaw';
+
+  const currencies = getCurrencyList({
+    language: locale as Language
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

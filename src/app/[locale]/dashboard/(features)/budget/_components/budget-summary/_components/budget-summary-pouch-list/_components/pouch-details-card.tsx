@@ -4,33 +4,31 @@ import { format } from 'date-fns';
 import { ChevronsUpDown } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
 } from '@/components/ui/collapsible';
 import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 import { cn } from '@/lib/utils';
 import { PouchWithCurrentBudgetOccurance } from '@/server/budget/types';
 
-import { AddPouchOutcomeDialog } from '../../../../pouch/add-pouch-outcome/add-pouch-outcome-dialog';
-import { EditPouchOutcomeDialog } from '../../../../pouch/edit-pouch-outcome/edit-pouch-outcome-dialog';
-import { PouchOutcomeProgressBar } from '../../../../pouch/pouch-outcome-progress-bar';
-import { RemovePouchOutcomeDialog } from '../../../../pouch/remove-pouch-outcome/remove-pouch-outcome-dialog';
+import { AddPouchOutcomeDialog } from '../../../../budget-configuration/_components/pouch/add-pouch-outcome/add-pouch-outcome-dialog';
+import { EditPouchOutcomeDialog } from '../../../../budget-configuration/_components/pouch/edit-pouch-outcome/edit-pouch-outcome-dialog';
+import { PouchOutcomeProgressBar } from '../../../../budget-configuration/_components/pouch/pouch-outcome-progress-bar';
+import { RemovePouchOutcomeDialog } from '../../../../budget-configuration/_components/pouch/remove-pouch-outcome/remove-pouch-outcome-dialog';
 
 export const PouchDetailsCard = ({
   pouch,
-  currency,
   pouches
 }: {
   pouch: PouchWithCurrentBudgetOccurance;
   pouches: PouchWithCurrentBudgetOccurance[];
-  currency: string;
 }) => {
   const t = useTranslations('budget.pouch.budgetSummary');
   const locale = useLocale();
@@ -46,14 +44,16 @@ export const PouchDetailsCard = ({
     expensesSum <= 0 ? 0 : (expensesSum / pouchFullCapacity) * 100;
 
   return (
-    <Card>
+    <Card className='pb-4! w-full gap-4'>
       <CardContent>
-        <h3 className='mb-1 flex justify-between gap-2 text-2xl font-bold'>
-          {pouch.name}
+        <h3 className='mb-1 flex items-center justify-between gap-2 text-2xl font-bold'>
+          <span className='overflow-hidden text-ellipsis break-words'>
+            {pouch.name}
+          </span>
           <Badge
             className={cn(
               'bg-blue-600 font-bold tracking-tighter text-white',
-              pouchPercetageUsage >= 100 && 'bg-red-700'
+              pouchPercetageUsage > 100 && 'bg-red-700'
             )}
           >
             {pouchPercetageUsage.toFixed(0)}%
@@ -62,11 +62,7 @@ export const PouchDetailsCard = ({
         <p className='text-sm text-primary/70'>
           {t('capacity')}:{' '}
           <span className='font-semibold text-primary/70'>
-            {formatCurrency({
-              cents: pouchFullCapacity,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={pouchFullCapacity} />
           </span>
         </p>
         <div className='mb-2 mt-4 flex items-center justify-between gap-2'>
@@ -74,14 +70,10 @@ export const PouchDetailsCard = ({
             <span
               className={cn(
                 'text-left text-xl font-bold text-blue-500',
-                pouchPercetageUsage >= 100 && 'text-red-700'
+                pouchPercetageUsage > 100 && 'text-red-700'
               )}
             >
-              {formatCurrency({
-                cents: expensesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={expensesSum} />
             </span>
             <span className='text-left text-sm text-primary/70'>
               {t('expensesSum')}
@@ -89,11 +81,7 @@ export const PouchDetailsCard = ({
           </p>
           <p className='flex flex-col'>
             <span className='text-right text-xl font-bold'>
-              {formatCurrency({
-                cents: pouchFullCapacity - expensesSum,
-                currency,
-                language: locale as Language
-              })}
+              <FormattedCurrency valueCents={pouchFullCapacity - expensesSum} />
             </span>
             <span className='text-right text-sm text-primary/70'>
               {t('leftCapacity')}
@@ -130,19 +118,14 @@ export const PouchDetailsCard = ({
                             })}
                           </p>
                           <p className='mt-1 text-xl font-bold'>
-                            {formatCurrency({
-                              cents: expense.valueCents,
-                              currency,
-                              language: locale as Language
-                            })}
+                            <FormattedCurrency
+                              valueCents={expense.valueCents}
+                            />
                           </p>
                         </div>
                         <div className='flex flex-col gap-2'>
                           <div className='flex justify-end gap-2'>
-                            <EditPouchOutcomeDialog
-                              currency={currency}
-                              pouchOutcome={expense}
-                            />
+                            <EditPouchOutcomeDialog pouchOutcome={expense} />
                             <RemovePouchOutcomeDialog
                               pouchOutcomeId={expense.id}
                             />
@@ -156,14 +139,10 @@ export const PouchDetailsCard = ({
             </Collapsible>
           )}
         </div>
-        <div className='mt-5 flex items-center justify-end'>
-          <AddPouchOutcomeDialog
-            currency={currency}
-            pouches={pouches}
-            pouchId={pouch.id}
-          />
-        </div>
       </CardContent>
+      <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
+        <AddPouchOutcomeDialog pouches={pouches} pouchId={pouch.id} />
+      </CardFooter>
     </Card>
   );
 };

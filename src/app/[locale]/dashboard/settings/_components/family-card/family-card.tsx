@@ -23,22 +23,12 @@ export const FamilyCard = ({
   family,
   currentUserId,
   selectedFamilyId,
-  setOptimisticSelectedFamilyId,
-  currencies,
-  timezones
+  setOptimisticSelectedFamilyId
 }: {
   currentUserId: string;
   selectedFamilyId: string | undefined;
   setOptimisticSelectedFamilyId: (familyId: string) => void;
   family: FamilyWithUsers;
-  currencies: {
-    label: string;
-    value: string;
-  }[];
-  timezones: {
-    label: string;
-    value: string;
-  }[];
 }) => {
   const t = useTranslations('settings');
   const isCurrentUserOwner = family.ownerId === currentUserId;
@@ -97,11 +87,8 @@ export const FamilyCard = ({
             {isCurrentUserOwner && (
               <EditFamilyDialog
                 name={family.name}
-                currency={family.currency}
                 timezone={family.timezone}
                 familyId={family.id}
-                currencies={currencies}
-                timezones={timezones}
               />
             )}
             {isCurrentUserOwner && <RemoveFamilyDialog familyId={family.id} />}

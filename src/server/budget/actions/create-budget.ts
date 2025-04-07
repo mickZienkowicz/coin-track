@@ -24,8 +24,8 @@ export const createBudget = async ({
 
   const knownErrors = {
     budgetNotFound: t('budgetNotFound'),
-    failedToUpdateBudget: t('failedToUpdateBudget'),
-    notAllowedToUpdateBudget: t('notAllowedToUpdateBudget'),
+    failedToCreateBudget: t('failedToCreateBudget'),
+    notAllowedToCreateBudget: t('notAllowedToCreateBudget'),
     invalidBudgetData: t('invalidBudgetData'),
     budgetAlreadyExists: t('budgetAlreadyExists')
   };
@@ -52,7 +52,7 @@ export const createBudget = async ({
     if (
       family.users.some(({ user: familyUser }) => familyUser.id !== user.id)
     ) {
-      throw new Error(knownErrors.notAllowedToUpdateBudget);
+      throw new Error(knownErrors.notAllowedToCreateBudget);
     }
 
     if (!dateSchemaWithMinDate().safeParse(startDate).success) {
@@ -92,7 +92,7 @@ export const createBudget = async ({
 
     return {
       success: false,
-      message: knownErrors.failedToUpdateBudget
+      message: isKnownError ? error.message : knownErrors.failedToCreateBudget
     };
   }
 };

@@ -1,18 +1,14 @@
 import { ArrowDownCircle } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 
 export const OutcomesSummaryCard = ({
-  outcomesSum,
-  currency
+  outcomesSum
 }: {
   outcomesSum: number;
-  currency: string;
 }) => {
-  const locale = useLocale();
   const t = useTranslations('budgetSummary');
   return (
     <Card className='gap-3 2xl:hidden'>
@@ -22,11 +18,7 @@ export const OutcomesSummaryCard = ({
             {t('outcomes')}
           </h3>
           <h3 className='text-[26px] font-bold leading-[28px] md:hidden'>
-            {formatCurrency({
-              cents: outcomesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={outcomesSum} />
           </h3>
           <p className='mt-1 text-sm font-normal text-primary/70 md:hidden'>
             {t('outcomesSummary')}
@@ -39,11 +31,7 @@ export const OutcomesSummaryCard = ({
       <CardContent className='hidden md:block'>
         <p className='flex flex-col'>
           <span className='flex items-center justify-between text-[26px] font-bold text-primary/90'>
-            {formatCurrency({
-              cents: outcomesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={outcomesSum} />
           </span>
           <span className='text-sm text-primary/70'>
             {t('outcomesSummary')}

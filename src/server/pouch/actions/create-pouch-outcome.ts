@@ -86,10 +86,9 @@ export const createPouchOutcome = async ({
     }
     return {
       success: false,
-      message:
-        error instanceof Error
-          ? error.message
-          : knownErrors.failedToCreatePouchOutcome
+      message: isKnownError
+        ? error.message
+        : knownErrors.failedToCreatePouchOutcome
     };
   }
 };

@@ -15,10 +15,8 @@ import { BalanceSummaryCard } from './_components/balance-summary-card';
 import { PouchesSummaryCard } from './_components/pouches-summary-card';
 
 export const BudgetSummaryCard = async ({
-  currency,
   className
 }: {
-  currency: string;
   className?: string;
 }) => {
   const [t, budgetSummary, locale] = await Promise.all([
@@ -62,14 +60,12 @@ export const BudgetSummaryCard = async ({
       <CardContent>
         <div className='grid gap-8 xl:grid-cols-2 xl:gap-12'>
           <BalanceSummaryCard
-            currency={currency}
             balanceSum={budgetSummary.balance}
             incomesSum={budgetSummary.incomesSum}
             outcomesSum={budgetSummary.outcomesSum}
             pouchesOutcomesSum={budgetSummary.pouchesOutcomesSum}
           />
           <PouchesSummaryCard
-            currency={currency}
             pouchesOutcomesSum={budgetSummary.pouchesOutcomesSum}
             pouchesSum={budgetSummary.pouchesSum}
             pouchesBalancePercentage={

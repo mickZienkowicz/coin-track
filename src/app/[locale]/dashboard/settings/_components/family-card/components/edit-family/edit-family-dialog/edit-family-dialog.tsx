@@ -18,24 +18,12 @@ import { EditFamilyForm } from '../edit-family-form';
 
 export const EditFamilyDialog = ({
   name,
-  currency,
   timezone,
-  familyId,
-  currencies,
-  timezones
+  familyId
 }: {
   name: string;
   familyId: string;
-  currency: string;
   timezone: string;
-  currencies: {
-    label: string;
-    value: string;
-  }[];
-  timezones: {
-    label: string;
-    value: string;
-  }[];
 }) => {
   const t = useTranslations('settings.editFamily');
   const [isOpen, setIsOpen] = useState(false);
@@ -59,10 +47,7 @@ export const EditFamilyDialog = ({
         <EditFamilyForm
           name={name}
           familyId={familyId}
-          currency={currency}
           timezone={timezone}
-          currencies={currencies}
-          timezones={timezones}
           closeDialog={closeDialog}
         />
       </DialogContent>

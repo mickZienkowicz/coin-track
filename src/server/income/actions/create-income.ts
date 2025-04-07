@@ -93,10 +93,7 @@ export const createIncome = async ({
     }
     return {
       success: false,
-      message:
-        error instanceof Error
-          ? error.message
-          : knownErrors.failedToCreateIncome
+      message: isKnownError ? error.message : knownErrors.failedToCreateIncome
     };
   }
 };

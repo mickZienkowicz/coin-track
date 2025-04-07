@@ -1,22 +1,19 @@
 import { Wallet } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 import { BalanceBadge } from '@/app/[locale]/dashboard/_components/balance-badge/balance-badge';
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { cn } from '@/lib/utils';
 
 export const BalanceSummaryCard = ({
   incomesSum,
   outcomesSum,
   pouchesOutcomesSum,
-  currency,
   balanceSum,
   balanceWithFullPouchesSum
 }: {
-  currency: string;
   incomesSum: number;
   outcomesSum: number;
   pouchesOutcomesSum: number;
@@ -24,7 +21,6 @@ export const BalanceSummaryCard = ({
   balanceWithFullPouchesSum: number;
 }) => {
   const t = useTranslations('budgetSummary');
-  const locale = useLocale();
 
   return (
     <Card className='justify-between gap-2'>
@@ -41,11 +37,7 @@ export const BalanceSummaryCard = ({
               '@sm:flex-row @sm:items-center flex flex-col justify-between text-[26px] font-bold text-primary/90'
             )}
           >
-            {formatCurrency({
-              cents: balanceSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={balanceSum} />
             <BalanceBadge balanceSum={balanceSum} />
           </span>
           <span className='text-sm text-primary/70'>
@@ -63,11 +55,7 @@ export const BalanceSummaryCard = ({
         />
         <p className='mt-2 flex flex-col text-[22px] text-primary/70'>
           <span className={cn('font-bold')}>
-            {formatCurrency({
-              cents: balanceWithFullPouchesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={balanceWithFullPouchesSum} />
           </span>
           <span className='text-[12px] text-primary/70'>
             {t('currentBudgetBalanceWithPouches')}

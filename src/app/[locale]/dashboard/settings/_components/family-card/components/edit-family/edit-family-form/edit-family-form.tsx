@@ -3,7 +3,7 @@
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -13,6 +13,10 @@ import { Combobox } from '@/components/ui/combobox';
 import { Form, FormField } from '@/components/ui/form';
 import { FormItemWrapper } from '@/components/ui/form-item-wrapper';
 import { Input } from '@/components/ui/input';
+import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
+import { Language } from '@/i18n/routing';
+import { getCurrencyList } from '@/lib/currencies';
+import { timezones } from '@/lib/dates/time-zones';
 import { pathGenerators } from '@/lib/paths';
 import { updateFamily } from '@/server/family/actions/update-family';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
@@ -32,26 +36,16 @@ const formSchema = z.object({
 export const EditFamilyForm = ({
   closeDialog,
   name,
-  currency,
   timezone,
-  familyId,
-  currencies,
-  timezones
+  familyId
 }: {
   closeDialog: () => void;
   name: string;
-  currency: string;
   timezone: string;
   familyId: string;
-  currencies: {
-    label: string;
-    value: string;
-  }[];
-  timezones: {
-    label: string;
-    value: string;
-  }[];
 }) => {
+  const locale = useLocale();
+  const currency = useCurrentFamilyCurrency();
   const t = useTranslations('settings.editFamily.form');
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -60,6 +54,10 @@ export const EditFamilyForm = ({
       currency,
       timezone
     }
+  });
+
+  const currencies = getCurrencyList({
+    language: locale as Language
   });
 
   const { mutate, isPending } = useMutation({

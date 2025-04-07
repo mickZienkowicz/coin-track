@@ -19,19 +19,9 @@ import { AddFamilyForm } from '../add-family-form';
 
 export const AddFamilyDialog = ({
   className,
-  currencies,
-  timezones,
   mobileSmallVersion
 }: {
   className?: string;
-  currencies: {
-    label: string;
-    value: string;
-  }[];
-  timezones: {
-    label: string;
-    value: string;
-  }[];
   mobileSmallVersion?: boolean;
 }) => {
   const t = useTranslations('settings.addFamily');
@@ -65,11 +55,7 @@ export const AddFamilyDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        <AddFamilyForm
-          closeDialog={() => setIsOpen(false)}
-          currencies={currencies}
-          timezones={timezones}
-        />
+        <AddFamilyForm closeDialog={() => setIsOpen(false)} />
       </DialogContent>
     </Dialog>
   );

@@ -15,8 +15,9 @@ export const FamilyUsersList = ({
   isCurrentUserOwner: boolean;
   users: {
     id: string;
-    name: string;
+    name: string | undefined;
     avatar: string | null;
+    email: string | undefined;
   }[];
 }) => {
   const t = useTranslations('settings');
@@ -35,14 +36,14 @@ export const FamilyUsersList = ({
               <Avatar className='h-8 w-8'>
                 <AvatarImage src={user.avatar || ''} />
                 <AvatarFallback>
-                  {user.name
-                    .split(' ')
+                  {user?.name
+                    ?.split(' ')
                     .map((name) => name[0])
                     .join('')}
                 </AvatarFallback>
               </Avatar>
               <span className='text-sm'>
-                {user.name} {user.id === currentUserId && t('familyCard.you')}
+                {user.email} {user.id === currentUserId && t('familyCard.you')}
               </span>
             </div>
             {isCurrentUserOwner && user.id !== currentUserId && (

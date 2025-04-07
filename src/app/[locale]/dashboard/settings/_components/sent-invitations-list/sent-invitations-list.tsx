@@ -1,24 +1,19 @@
-import { InvitationStatus, Prisma } from '@prisma/client';
+import { InvitationStatus } from '@prisma/client';
 import { format } from 'date-fns';
 import { Mail } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { Card, CardContent } from '@/components/ui/card';
+import { getSentInvitations } from '@/server/invitation/queries/get-sent-invitations';
 
 import { InvitationStatusBadge } from './components/invitation-status-badge';
 import { RejectInvitationButton } from './components/reject-invitation-button';
 
-export const SentInvitationsList = ({
-  invitations
-}: {
-  invitations: Prisma.InvitationGetPayload<{
-    include: {
-      toUser: true;
-      family: true;
-    };
-  }>[];
-}) => {
-  const t = useTranslations('settings.invitations.sent');
+export const SentInvitationsList = async () => {
+  const [invitations, t] = await Promise.all([
+    getSentInvitations(),
+    getTranslations('settings.invitations.sent')
+  ]);
 
   if (invitations.length === 0) {
     return null;

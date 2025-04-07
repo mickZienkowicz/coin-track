@@ -5,14 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import type { PouchWithCurrentBudgetOccurance } from '@/server/budget/types';
 
-import { AddPouchDialog } from '../../../pouch/add-pouch/add-pouch-dialog';
+import { AddPouchDialog } from '../../../budget-configuration/_components/pouch/add-pouch/add-pouch-dialog';
 import { PouchDetailsCard } from './_components/pouch-details-card';
 
 export const BudgetSummaryPouchList = async ({
-  currency,
   pouches
 }: {
-  currency: string;
   pouches: PouchWithCurrentBudgetOccurance[];
 }) => {
   const t = await getTranslations('budget.pouch');
@@ -28,7 +26,7 @@ export const BudgetSummaryPouchList = async ({
               </div>
               {t('budgetSummary.title')}
             </h2>
-            <AddPouchDialog currency={currency}>
+            <AddPouchDialog>
               <Button
                 variant='secondary'
                 size='iconSmall'
@@ -43,11 +41,7 @@ export const BudgetSummaryPouchList = async ({
       <ul className='flex flex-col gap-3'>
         {pouches.map((pouch) => (
           <li key={pouch.id}>
-            <PouchDetailsCard
-              pouches={pouches}
-              pouch={pouch}
-              currency={currency}
-            />
+            <PouchDetailsCard pouches={pouches} pouch={pouch} />
           </li>
         ))}
         {pouches.length === 0 && (
@@ -63,7 +57,7 @@ export const BudgetSummaryPouchList = async ({
                 <p className='mb-6 max-w-xl text-muted-foreground'>
                   {t('noPouchesCard.description')}
                 </p>
-                <AddPouchDialog currency={currency}>
+                <AddPouchDialog>
                   <Button variant='secondary' size='sm' className='mb-2'>
                     <ShoppingCart className='h-4 w-4' />
                     {t('addPouchButton')}

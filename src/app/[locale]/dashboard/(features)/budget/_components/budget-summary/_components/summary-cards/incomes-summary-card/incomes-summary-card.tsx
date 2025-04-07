@@ -1,18 +1,10 @@
 import { ArrowUpCircle } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 
-export const IncomesSummaryCard = ({
-  incomesSum,
-  currency
-}: {
-  incomesSum: number;
-  currency: string;
-}) => {
-  const locale = useLocale();
+export const IncomesSummaryCard = ({ incomesSum }: { incomesSum: number }) => {
   const t = useTranslations('budgetSummary');
 
   return (
@@ -23,11 +15,7 @@ export const IncomesSummaryCard = ({
             {t('incomes')}
           </h3>
           <h3 className='text-[26px] font-bold leading-[28px] md:hidden'>
-            {formatCurrency({
-              cents: incomesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={incomesSum} />
           </h3>
           <p className='mt-1 text-sm font-normal text-primary/70 md:hidden'>
             {t('incomesSummary')}
@@ -40,11 +28,7 @@ export const IncomesSummaryCard = ({
       <CardContent className='hidden md:block'>
         <p className='flex flex-col'>
           <span className='flex items-center justify-between text-[26px] font-bold text-primary/90'>
-            {formatCurrency({
-              cents: incomesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={incomesSum} />
           </span>
           <span className='text-sm text-primary/70'>{t('incomesSummary')}</span>
         </p>

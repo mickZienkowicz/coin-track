@@ -94,8 +94,7 @@ export const createPouch = async ({
     }
     return {
       success: false,
-      message:
-        error instanceof Error ? error.message : knownErrors.failedToCreatePouch
+      message: isKnownError ? error.message : knownErrors.failedToCreatePouch
     };
   }
 };

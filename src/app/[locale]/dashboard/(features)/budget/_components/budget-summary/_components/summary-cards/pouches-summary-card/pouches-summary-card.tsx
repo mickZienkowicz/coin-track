@@ -1,23 +1,19 @@
 import { ShoppingCart } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
+import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import type { Language } from '@/i18n/routing';
-import { formatCurrency } from '@/lib/currencies';
 import { cn } from '@/lib/utils';
 
 export const PouchesSummaryCard = ({
   pouchesSum,
-  currency,
   pouchesOutcomesSum
 }: {
   pouchesSum: number;
   pouchesOutcomesSum: number;
-  currency: string;
 }) => {
-  const locale = useLocale();
   const t = useTranslations('budgetSummary');
   const pouchesBalancePercentage =
     (pouchesSum <= 0 ? 0 : pouchesOutcomesSum / pouchesSum) * 100;
@@ -33,11 +29,7 @@ export const PouchesSummaryCard = ({
       <CardContent className='flex flex-col gap-2'>
         <h4 className='flex flex-col'>
           <span className='flex items-center justify-between text-[26px] font-bold text-primary/90'>
-            {formatCurrency({
-              cents: pouchesOutcomesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={pouchesOutcomesSum} />
             <Badge
               className={cn(
                 'bg-blue-600 font-bold tracking-tighter text-white',
@@ -66,11 +58,7 @@ export const PouchesSummaryCard = ({
         )}
         <p className='mt-2 flex flex-col text-[22px] text-primary/70'>
           <span className='font-bold'>
-            {formatCurrency({
-              cents: pouchesSum,
-              currency,
-              language: locale as Language
-            })}
+            <FormattedCurrency valueCents={pouchesSum} />
           </span>
           <span className='text-[12px] text-primary/70'>
             {t('pouchesSummary')}

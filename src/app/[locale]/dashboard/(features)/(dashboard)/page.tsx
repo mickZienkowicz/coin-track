@@ -1,20 +1,13 @@
-import { Suspense } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
-import { getSelectedFamily } from '@/server/family/queries/get-selected-family';
-
-import { LoadingCard } from '../_components/loading-card/loading-card';
-import { NoFamilyCard } from '../../_components/no-family-card';
+import { FortuneSummarySection } from '../_components/fortune-summary-section';
+import { NoFamilyCardFallback } from '../../_components/no-family-card-fallback';
 import { BudgetSummaryCard } from './_components/budget-summary-card';
 import { FinancialCushionCard } from './_components/financial-cushion-card';
-import { FortuneSection } from './_components/fortune-section';
 import { GoalsSummaryCard } from './_components/goals-summary-card/goals-summary-card';
 
-export default async function Dashboard() {
-  const [t, family] = await Promise.all([
-    getTranslations('dashboard'),
-    getSelectedFamily()
-  ]);
+export default function Dashboard() {
+  const t = useTranslations('dashboard');
 
   return (
     <div className='@container'>
@@ -26,23 +19,16 @@ export default async function Dashboard() {
         </div>
       </div>
 
-      <Suspense fallback={<LoadingCard className='mt-6' />}>
-        {!family ? (
-          <NoFamilyCard />
-        ) : (
-          <div className='mt-6 flex flex-col gap-6'>
-            <FortuneSection currency={family.currency} className='' />
-            <BudgetSummaryCard
-              currency={family.currency}
-              className='-order-1 md:order-none'
-            />
-            <div className='grid grid-cols-1 gap-6 xl:grid-cols-[1fr_1.5fr]'>
-              <GoalsSummaryCard />
-              <FinancialCushionCard currency={family.currency} />
-            </div>
+      <NoFamilyCardFallback>
+        <div className='mt-6 flex flex-col gap-6'>
+          <FortuneSummarySection />
+          <BudgetSummaryCard className='-order-1 md:order-none' />
+          <div className='grid grid-cols-1 gap-6 xl:grid-cols-[1fr_1.5fr]'>
+            <GoalsSummaryCard />
+            <FinancialCushionCard />
           </div>
-        )}
-      </Suspense>
+        </div>
+      </NoFamilyCardFallback>
     </div>
   );
 }

@@ -1,9 +1,141 @@
 {
+  "fortune": {
+    "title": "Majątek",
+    "structure": {
+      "financialCushion": "Poduszka finansowa",
+      "livingAssets": "Majątek bytowy",
+      "investmentAssets": "Majątek inwestycyjny",
+      "otherAssets": "Pozostałe",
+      "description": {
+        "one": "{count} składnik",
+        "few": "{count} składniki",
+        "many": "{count} składników"
+      }
+    },
+    "assets": {
+      "title": "Aktywa",
+      "addAssetButton": "Dodaj Aktywa",
+      "noAssetsCard": {
+        "title": "Nie masz jeszcze żadnych aktywów",
+        "description": "Dodaj aktywa, aby kontrolować swój majątek."
+      },
+      "addAsset": {
+        "title": "Dodaj aktywa",
+        "description": "Dodaj aktywa do swojej listy aktywów.",
+        "button": "Dodaj aktywa",
+        "buttonMobile": "Dodaj"
+      },
+      "editAsset": {
+        "title": "Edytuj aktywa",
+        "description": "Edytuj aktywa do swojej listy aktywów.",
+        "button": "Edytuj aktywa",
+        "buttonMobile": "Edytuj"
+      },
+      "deleteAsset": {
+        "title": "Usuń aktywa",
+        "description": "Usuń aktywa z swojej listy aktywów.",
+        "button": "Usuń aktywa",
+        "buttonMobile": "Usuń"
+      },
+      "assetDetailsCard": {
+        "lastUpdate": "Ostatnia aktualizacja: ",
+        "amount": "Kwota",
+        "category": "Kategoria",
+        "value": "Wartość",
+        "yourFortune": "twojego majątku",
+        "livingAssets": "Majątek bytowy",
+        "investmentAssets": "Majątek inwestycyjny",
+        "otherAssets": "Pozostałe",
+        "financialCushion": "Poduszka finansowa"
+      }
+    },
+    "debts": {
+      "title": "Pasywa",
+      "addDebtButton": "Dodaj pasywa",
+      "noDebtsCard": {
+        "title": "Nie masz jeszcze żadnych pasyw",
+        "description": "Dodaj pasywa, aby kontrolować swój majątek."
+      },
+      "addDebt": {
+        "title": "Dodaj pasywa",
+        "description": "Dodaj pasywa do swojej listy pasyw.",
+        "button": "Dodaj pasywa",
+        "buttonMobile": "Dodaj"
+      },
+      "editDebt": {
+        "title": "Edytuj pasywa",
+        "description": "Edytuj pasywa do swojej listy pasyw.",
+        "button": "Edytuj pasywa",
+        "buttonMobile": "Edytuj"
+      },
+      "deleteDebt": {
+        "title": "Usuń pasywa",
+        "description": "Usuń pasywa z swojej listy pasyw.",
+        "button": "Usuń pasywa",
+        "buttonMobile": "Usuń"
+      },
+      "debtDetailsCard": {
+        "lastUpdate": "Ostatnia aktualizacja: ",
+        "amount": "Kwota",
+        "category": "Kategoria",
+        "value": "Wartość",
+        "yourFortune": "twojego majątku"
+      }
+    }
+  },
+  "goals": {
+    "title": "Cele",
+    "goalCard": {
+      "sumOfDeposits": "Suma wpłat",
+      "remainingToGoal": "Pozostało do celu",
+      "initialDeposit": "Wpłata początkowa:",
+      "nextDeposit": "Najbliższa wpłata:",
+      "nextDepositAmount": "Kwota najbliższej wpłaty:"
+    },
+    "noGoalsCard": {
+      "title": "Nie masz jeszcze żadnych celów",
+      "description": "Dodaj cel do swojej listy celów, aby móc śledzić swoje cele finansowe.",
+      "addGoalButton": "Dodaj nowy cel"
+    },
+    "scheduleDialog": {
+      "title": "Harmonogram wpłat - {goalName}",
+      "description": "Tutaj znajduje się harmonogram wpłat na cel.",
+      "button": "Zobacz harmonogram wpłat",
+      "past": "Dokonana",
+      "future": "Planowana",
+      "currentBudget": "W obecnym budżecie"
+    },
+    "addGoal": {
+      "title": "Dodaj nowy cel",
+      "description": "Dodaj nowy cel do swojej listy celów.",
+      "button": "Dodaj nowy cel"
+    },
+    "editGoal": {
+      "title": "Edytuj cel",
+      "description": "Edytuj cel do swojej listy celów.",
+      "button": "Edytuj"
+    },
+    "deleteGoal": {
+      "title": "Usuń cel",
+      "description": "Usuń cel z swojej listy celów.",
+      "button": "Usuń"
+    },
+    "finishGoal": {
+      "title": "Zakończ cel",
+      "description": "Zakończ cel z swojej listy celów.",
+      "button": "Zakończ"
+    },
+    "editGoalOutcome": {
+      "title": "Edytuj wydatek na cel",
+      "description": "Edytuj wydatek na cel z swojej listy celów.",
+      "button": "Edytuj wydatek na cel"
+    }
+  },
   "dashboard": {
     "title": "Panel Główny",
     "fortune": {
       "assets": "Aktywa",
-      "debts": "Zobowiązania",
+      "debts": "Pasywa",
       "netWorth": "Twoja wartość netto",
       "assetsDescription": "Ostatnia aktualizacja: ",
       "debtsDescription": "Ostatnia aktualizacja: ",
@@ -90,21 +222,21 @@
         "familyNameField": {
           "label": "Nazwa profilu",
           "placeholder": "np. Rodzina Kowalskich",
-          "error": "Nazwa profilu jest wymagana."
+          "error": "Podaj nazwę profilu."
         },
         "currencyField": {
           "label": "Waluta",
           "triggerDefaultLabel": "Wybierz walutę",
           "placeholder": "Wyszukaj walutę...",
           "noResultsMessage": "Nie znaleziono wyników",
-          "error": "Waluta jest wymagana."
+          "error": "Wybierz walutę."
         },
         "timezoneField": {
           "label": "Strefa czasowa",
           "triggerDefaultLabel": "Wybierz strefę czasową",
           "placeholder": "Wyszukaj strefę czasową...",
           "noResultsMessage": "Nie znaleziono wyników",
-          "error": "Strefa czasowa jest wymagana."
+          "error": "Wybierz strefę czasową."
         },
         "budgetIntervalField": {
           "label": "Interwał okresu budżetowego",
@@ -163,7 +295,7 @@
         "emailField": {
           "label": "Adres email",
           "placeholder": "np. jan.kowalski@gmail.com",
-          "error": "Niepoprawny adres email."
+          "error": "Podaj poprawny adres email."
         },
         "sendInvitationButton": "Wyślij zaproszenie",
         "error": "Coś poszło nie tak."
@@ -219,7 +351,7 @@
     "noFamilyCard": {
       "title": "Nie masz jeszcze żadnego profilu rodzinnego",
       "description": "Dodaj profil rodzinny, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
-      "addFamilyButton": "Dodaj profil rodzinny"
+      "addFamilyButton": "Przejdź to ustawień"
     },
     "pouch": {
       "title": "Sakiewki",
@@ -252,7 +384,7 @@
         "nextOccurrenceDatePrefix": "Następny: ",
         "oneTime": "Jednorazowy",
         "recurring": "Cykliczny",
-        "amount": "Zaplanowane wydatki w sakiewce",
+        "amount": "Zaplanowane",
         "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "raz",
@@ -269,17 +401,17 @@
             "nameField": {
               "label": "Nazwa",
               "placeholder": "np. Zakupy",
-              "error": "Nazwa jest wymagana."
+              "error": "Podaj nazwę."
             },
             "valueField": {
-              "label": "Nazwa",
-              "placeholder": "np. Zakupy",
-              "error": "Nazwa jest wymagana."
+              "label": "Kwota",
+              "placeholder": "np. 100",
+              "error": "Podaj poprawną kwotę."
             },
             "dateField": {
               "label": "Data",
               "placeholder": "np. 2024-01-01",
-              "error": "Data jest wymagana."
+              "error": "Wybierz datę."
             },
             "editPouchOutcomeButton": "Edytuj wydatek"
           }
@@ -300,22 +432,22 @@
             "pouchField": {
               "label": "Sakiewka",
               "placeholder": "Wybierz sakiewkę",
-              "error": "Sakiewka jest wymagana."
+              "error": "Wybierz sakiewkę."
             },
             "nameField": {
               "label": "Nazwa",
               "placeholder": "np. Zakupy",
-              "error": "Nazwa jest wymagana."
+              "error": "Podaj nazwę."
             },
             "valueField": {
               "label": "Kwota",
               "placeholder": "np. 100",
-              "error": "Kwota jest wymagana."
+              "error": "Podaj poprawną kwotę."
             },
             "dateField": {
               "label": "Data",
               "placeholder": "np. 2024-01-01",
-              "error": "Data jest wymagana."
+              "error": "Wybierz datę."
             },
             "createPouchOutcomeButton": "Dodaj wydatek"
           }
@@ -330,17 +462,17 @@
             "nameField": {
               "label": "Nazwa",
               "placeholder": "np. Zakupy",
-              "error": "Nazwa jest wymagana."
+              "error": "Podaj nazwę."
             },
             "valueField": {
               "label": "Pojemność",
               "placeholder": "np. 1000",
-              "error": "Pojemność jest wymagana."
+              "error": "Podaj poprawną pojemność."
             },
             "dateField": {
               "label": "Data",
               "placeholder": "np. 2024-01-01",
-              "error": "Data jest wymagana."
+              "error": "Wybierz datę."
             },
             "recurrenceField": {
               "label": "Powtarzanie",
@@ -348,19 +480,19 @@
               "noResultsMessage": "Nie znaleziono wyników"
             },
             "repeatCountField": {
-              "label": "Ile razy",
+              "label": "Ile razy ma się powtarzać",
               "placeholder": "np. 10",
-              "error": "Ile razy jest wymagane."
+              "error": "Podaj poprawną liczbę."
             },
             "repeatEveryField": {
-              "label": "Co ile",
+              "label": "Co ile ma się powtarzać",
               "placeholder": "np. Co miesiąc",
-              "error": "Co ile jest wymagane."
+              "error": "Podaj poprawną wartość."
             },
             "categoryField": {
               "label": "Kategoria",
               "placeholder": "Wybierz kategorię",
-              "error": "Kategoria jest wymagana."
+              "error": "Wybierz kategorię."
             },
             "createPouchButton": "Utwórz sakiewkę"
           }
@@ -374,7 +506,7 @@
             "nameField": {
               "label": "Nazwa",
               "placeholder": "np. Zakupy",
-              "error": "Nazwa jest wymagana."
+              "error": "Podaj nazwę."
             },
             "typeField": {
               "label": "Typ sakiewki",
@@ -384,7 +516,7 @@
             "categoryField": {
               "label": "Kategoria",
               "placeholder": "Wybierz kategorię",
-              "error": "Kategoria jest wymagana."
+              "error": "Wybierz kategorię."
             },
             "valueField": {
               "label": "Kwota sakiewki"
@@ -419,7 +551,7 @@
             "error": "Coś poszło nie tak.",
             "dateField": {
               "label": "Data wstrzymania sakiewki",
-              "error": "Data jest wymagana."
+              "error": "Wybierz datę."
             },
             "stopPouchButton": "Wstrzymaj sakiewkę"
           }
@@ -472,17 +604,17 @@
           "nameField": {
             "label": "Nazwa",
             "placeholder": "np. Zakupy",
-            "error": "Nazwa jest wymagana."
+            "error": "Podaj nazwę."
           },
           "valueField": {
             "label": "Kwota",
             "placeholder": "np. 1000",
-            "error": "Kwota musi być większa od zera."
+            "error": "Podaj poprawną kwotę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
@@ -490,19 +622,19 @@
             "noResultsMessage": "Nie znaleziono wyników"
           },
           "repeatCountField": {
-            "label": "Ile razy",
+            "label": "Ile razy ma się powtarzać",
             "placeholder": "np. 10",
-            "error": "Ile razy jest wymagane."
+            "error": "Podaj poprawną liczbę."
           },
           "repeatEveryField": {
-            "label": "Co ile",
+            "label": "Co ile ma się powtarzać",
             "placeholder": "np. Co miesiąc",
-            "error": "Co ile jest wymagane."
+            "error": "Podaj poprawną wartość."
           },
           "categoryField": {
             "label": "Kategoria",
             "placeholder": "Wybierz kategorię",
-            "error": "Kategoria jest wymagana."
+            "error": "Wybierz kategorię."
           },
           "editButton": "Edytuj wydatek"
         }
@@ -517,17 +649,17 @@
           "valueField": {
             "label": "Kwota",
             "placeholder": "np. 1000",
-            "error": "Kwota musi być większa od zera."
+            "error": "Podaj poprawną kwotę."
           },
           "nameField": {
             "label": "Nazwa",
             "placeholder": "np. Zakupy",
-            "error": "Nazwa jest wymagana."
+            "error": "Podaj nazwę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
@@ -536,19 +668,19 @@
             "noResultsMessage": "Nie znaleziono wyników"
           },
           "repeatCountField": {
-            "label": "Ile razy",
+            "label": "Ile razy ma się powtarzać",
             "placeholder": "np. 10",
-            "error": "Ile razy jest wymagane kiedy wydatek jest powtarzany."
+            "error": "Podaj poprawną liczbę."
           },
           "repeatEveryField": {
-            "label": "Co ile",
+            "label": "Co ile ma się powtarzać",
             "placeholder": "np. Co miesiąc",
-            "error": "Co ile jest wymagane."
+            "error": "Podaj popraw ną wartość."
           },
           "categoryField": {
             "label": "Kategoria",
             "placeholder": "Wybierz kategorię",
-            "error": "Kategoria jest wymagana."
+            "error": "Wybierz kategorię."
           },
           "createOutcomeButton": "Utwórz wydatek"
         }
@@ -566,7 +698,7 @@
           "error": "Coś poszło nie tak.",
           "dateField": {
             "label": "Data wstrzymania wydateku",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "stopOutcomeButton": "Wstrzymaj wydatek"
         }
@@ -612,7 +744,7 @@
           "error": "Coś poszło nie tak.",
           "dateField": {
             "label": "Data wstrzymania dochodu",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "stopIncomeButton": "Wstrzymaj dochód"
         }
@@ -638,17 +770,17 @@
           "nameField": {
             "label": "Nazwa przychodu",
             "placeholder": "np. Wynagrodzenie",
-            "error": "Nazwa przychodu jest wymagana."
+            "error": "Podaj nazwę."
           },
           "valueField": {
             "label": "Wartość",
             "placeholder": "np. 1000",
-            "error": "Wartość jest wymagana."
+            "error": "Podaj poprawną kwotę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
@@ -657,20 +789,20 @@
             "noResultsMessage": "Nie znaleziono wyników"
           },
           "repeatCountField": {
-            "label": "Ile razy",
+            "label": "Ile razy ma się powtarzać",
             "placeholder": "np. 10",
-            "error": "Ile razy jest wymagane."
+            "error": "Podaj poprawną liczbę."
           },
           "repeatEveryField": {
-            "label": "Co ile",
+            "label": "Co ile ma się powtarzać",
             "placeholder": "np. Co miesiąc",
-            "error": "Co ile jest wymagane."
+            "error": "Podaj poprawną wartość."
           },
           "categoryField": {
             "label": "Kategoria",
             "placeholder": "Wyszukaj kategorię...",
             "noResultsMessage": "Nie znaleziono wyników",
-            "error": "Kategoria jest wymagana."
+            "error": "Wybierz kategorię."
           },
           "createIncomeButton": "Utwórz przychód"
         }
@@ -684,21 +816,23 @@
           "nameField": {
             "label": "Nazwa przychodu",
             "placeholder": "np. Wynagrodzenie",
-            "error": "Nazwa przychodu jest wymagana."
+            "error": "Podaj nazwę."
           },
           "categoryField": {
             "label": "Kategoria",
-            "placeholder": "Wyszukaj kategorię..."
+            "placeholder": "Wyszukaj kategorię...",
+            "noResultsMessage": "Nie znaleziono wyników",
+            "error": "Wybierz kategorię."
           },
           "valueField": {
             "label": "Wartość",
             "placeholder": "np. 1000",
-            "error": "Wartość jest wymagana."
+            "error": "Podaj poprawną kwotę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Data jest wymagana."
+            "error": "Wybierz datę."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
@@ -706,14 +840,14 @@
             "noResultsMessage": "Nie znaleziono wyników"
           },
           "repeatCountField": {
-            "label": "Ile razy",
+            "label": "Ile razy ma się powtarzać",
             "placeholder": "np. 10",
-            "error": "Ile razy jest wymagane."
+            "error": "Podaj poprawną liczbę."
           },
           "repeatEveryField": {
-            "label": "Co ile",
+            "label": "Co ile ma się powtarzać",
             "placeholder": "np. Co miesiąc",
-            "error": "Co ile jest wymagane."
+            "error": "Podaj poprawną wartość."
           },
           "createIncomeButton": "Utwórz przychód",
           "editIncomeButton": "Edytuj przychód"
@@ -788,8 +922,8 @@
       "create": {
         "success": "Utworzono budżet",
         "budgetNotFound": "Budżet nie znaleziony",
-        "failedToUpdateBudget": "Nie udało się zaktualizować budżetu",
-        "notAllowedToUpdateBudget": "Nie jesteś upoważniony do aktualizacji tego budżetu",
+        "failedToCreateBudget": "Nie udało się utworzyć budżetu",
+        "notAllowedToCreateBudget": "Nie jesteś upoważniony do tworzenia tego budżetu",
         "invalidBudgetData": "Nieprawidłowe dane budżetu",
         "budgetAlreadyExists": "Budżet już istnieje"
       },
@@ -850,8 +984,8 @@
         "success": "Utworzono przychód",
         "invalidIncomeData": "Nieprawidłowe dane przychodu",
         "budgetNotFound": "Budżet nie znaleziony",
-        "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy przychód jest powtarzany",
-        "repeatEveryRequired": "\"Co ile\" jest wymagane kiedy przychód jest powtarzany",
+        "repeatCountRequired": "\"Ile razy ma sie powtarzać\" jest wymagane kiedy przychód jest powtarzany",
+        "repeatEveryRequired": "\"Co ile ma sie powtarzać\" jest wymagane kiedy przychód jest powtarzany",
         "failedToCreateIncome": "Nie udało się utworzyć przychodu"
       },
       "delete": {
@@ -964,8 +1098,8 @@
         "success": "Utworzono sakiewkę",
         "invalidPouchData": "Nieprawidłowe dane sakiewki",
         "budgetNotFound": "Budżet nie znaleziony",
-        "repeatCountRequired": "\"Ile razy\" jest wymagane kiedy sakiewka jest wielorazowa.",
-        "repeatEveryRequired": "\"Co ile\" jest wymagane kiedy sakiewka jest wielorazowa",
+        "repeatCountRequired": "\"Ile razy ma sie powtarzać\" jest wymagane kiedy sakiewka jest wielorazowa.",
+        "repeatEveryRequired": "\"Co ile ma sie powtarzać\" jest wymagane kiedy sakiewka jest wielorazowa",
         "failedToCreatePouch": "Nie udało się utworzyć sakiewki",
         "unauthorized": "Nie jesteś upoważniony do utworzenia sakiewki"
       },

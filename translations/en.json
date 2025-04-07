@@ -1,4 +1,136 @@
 {
+  "fortune": {
+    "title": "Fortune",
+    "structure": {
+      "financialCushion": "Financial cushion",
+      "livingAssets": "Living assets",
+      "investmentAssets": "Investment assets",
+      "otherAssets": "Other assets",
+      "description": {
+        "one": "{count} component",
+        "few": "{count} components",
+        "many": "{count} components"
+      }
+    },
+    "assets": {
+      "title": "Assets",
+      "addAssetButton": "Add asset",
+      "noAssetsCard": {
+        "title": "You don't have any assets yet",
+        "description": "Add assets to control your fortune."
+      },
+      "addAsset": {
+        "title": "Add asset",
+        "description": "Add an asset to your list of assets.",
+        "button": "Add asset",
+        "buttonMobile": "Add"
+      },
+      "editAsset": {
+        "title": "Edit asset",
+        "description": "Edit an asset from your list of assets.",
+        "button": "Edit asset",
+        "buttonMobile": "Edit"
+      },
+      "deleteAsset": {
+        "title": "Delete asset",
+        "description": "Delete an asset from your list of assets.",
+        "button": "Delete asset",
+        "buttonMobile": "Delete"
+      },
+      "assetDetailsCard": {
+        "lastUpdate": "Last updated: ",
+        "amount": "Amount",
+        "category": "Category",
+        "value": "Value",
+        "yourFortune": "of your fortune",
+        "livingAssets": "Living assets",
+        "investmentAssets": "Investment assets",
+        "otherAssets": "Other assets",
+        "financialCushion": "Financial cushion"
+      }
+    },
+    "debts": {
+      "title": "Debts",
+      "addDebtButton": "Add debt",
+      "noDebtsCard": {
+        "title": "You don't have any debts yet",
+        "description": "Add debts to control your fortune."
+      },
+      "addDebt": {
+        "title": "Add debt",
+        "description": "Add a debt to your list of debts.",
+        "button": "Add debt",
+        "buttonMobile": "Add"
+      },
+      "editDebt": {
+        "title": "Edit debt",
+        "description": "Edit a debt from your list of debts.",
+        "button": "Edit debt",
+        "buttonMobile": "Edit"
+      },
+      "deleteDebt": {
+        "title": "Delete debt",
+        "description": "Delete a debt from your list of debts.",
+        "button": "Delete debt",
+        "buttonMobile": "Delete"
+      },
+      "debtDetailsCard": {
+        "lastUpdate": "Last updated: ",
+        "amount": "Amount",
+        "category": "Category",
+        "value": "Value",
+        "yourFortune": "of your fortune"
+      }
+    }
+  },
+  "goals": {
+    "title": "Goals",
+    "goalCard": {
+      "sumOfDeposits": "Sum of deposits",
+      "remainingToGoal": "Remaining to goal",
+      "initialDeposit": "Initial deposit:",
+      "nextDeposit": "Next deposit:",
+      "nextDepositAmount": "Next deposit amount:"
+    },
+    "noGoalsCard": {
+      "title": "You don't have any goals yet",
+      "description": "Add a goal to your list of goals, to track your financial goals.",
+      "addGoalButton": "Add new goal"
+    },
+    "scheduleDialog": {
+      "title": "Deposit schedule - {goalName}",
+      "description": "Here is the deposit schedule on the goal.",
+      "button": "View deposit schedule",
+      "past": "Completed",
+      "future": "Planned",
+      "currentBudget": "In the current budget"
+    },
+    "addGoal": {
+      "title": "Add new goal",
+      "description": "Add a new goal to your list of goals.",
+      "button": "Add new goal"
+    },
+    "editGoal": {
+      "title": "Edit goal",
+      "description": "Edit a goal from your list of goals.",
+      "button": "Edit"
+    },
+    "deleteGoal": {
+      "title": "Delete goal",
+      "description": "Delete a goal from your list of goals.",
+      "button": "Delete"
+    },
+    "finishGoal": {
+      "title": "Finish goal",
+      "description": "Finish a goal from your list of goals.",
+      "button": "Finish"
+    },
+    "editGoalOutcome": {
+      "title": "Edit goal saving",
+      "description": "Edit a goal saving item.",
+      "button": "Edit goal saving"
+    }
+  },
   "dashboard": {
     "title": "Dashboard",
     "fortune": {
@@ -90,27 +222,28 @@
         "familyNameField": {
           "label": "Family name",
           "placeholder": "e.g. The Smiths",
-          "error": "Family name is required."
+          "error": "Provide family name."
         },
         "currencyField": {
           "label": "Currency",
           "triggerDefaultLabel": "Select currency",
           "placeholder": "Search for a currency...",
           "noResultsMessage": "No results found",
-          "error": "Currency is required."
+          "error": "Select currency."
         },
         "timezoneField": {
           "label": "Timezone",
           "triggerDefaultLabel": "Select timezone",
           "placeholder": "Search for a timezone...",
           "noResultsMessage": "No results found",
-          "error": "Timezone is required."
+          "error": "Select timezone."
         },
         "budgetIntervalField": {
           "label": "Budget period interval",
           "triggerDefaultLabel": "Select interval",
           "placeholder": "Search for an interval...",
-          "noResultsMessage": "No results found"
+          "noResultsMessage": "No results found",
+          "error": "Select interval."
         },
         "budgetTransferPouchBalanceField": {
           "label": "Transfer pouch balance between budgets",
@@ -163,7 +296,7 @@
         "emailField": {
           "label": "Email",
           "placeholder": "e.g. john.doe@gmail.com",
-          "error": "Invalid email address."
+          "error": "Provide valid email address."
         },
         "sendInvitationButton": "Send invitation",
         "error": "Something went wrong."
@@ -213,7 +346,7 @@
     "noFamilyCard": {
       "title": "You don't have any family profile yet",
       "description": "Add a family profile to control your budget, track your assets and achieve your financial goals.",
-      "addFamilyButton": "Add family profile"
+      "addFamilyButton": "Go to settings"
     },
     "pouch": {
       "title": "Pouches",
@@ -246,7 +379,7 @@
         "nextOccurrenceDatePrefix": "Next: ",
         "oneTime": "One time",
         "recurring": "Recurring",
-        "amount": "Planned expenses in pouch",
+        "amount": "Planned",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "time",
@@ -270,22 +403,22 @@
             "pouchField": {
               "label": "Pouch",
               "placeholder": "Select pouch",
-              "error": "Pouch is required."
+              "error": "Select pouch."
             },
             "nameField": {
               "label": "Name",
               "placeholder": "e.g. Shopping",
-              "error": "Name is required."
+              "error": "Provide name."
             },
             "valueField": {
               "label": "Value",
               "placeholder": "e.g. 100",
-              "error": "Value is required."
+              "error": "Provide value."
             },
             "dateField": {
               "label": "Date",
               "placeholder": "e.g. 2024-01-01",
-              "error": "Date is required."
+              "error": "Select date."
             },
             "createPouchOutcomeButton": "Add expense within pouch"
           }
@@ -299,17 +432,17 @@
             "nameField": {
               "label": "Name",
               "placeholder": "e.g. Shopping",
-              "error": "Name is required."
+              "error": "Provide name."
             },
             "valueField": {
               "label": "Name",
               "placeholder": "e.g. Shopping",
-              "error": "Name is required."
+              "error": "Provide value."
             },
             "dateField": {
               "label": "Date",
               "placeholder": "e.g. 2024-01-01",
-              "error": "Date is required."
+              "error": "Select date."
             },
             "editPouchOutcomeButton": "Edit pouch expense"
           }
@@ -324,17 +457,17 @@
             "nameField": {
               "label": "Name",
               "placeholder": "e.g. Shopping",
-              "error": "Name is required."
+              "error": "Provide name."
             },
             "valueField": {
               "label": "Capacity",
               "placeholder": "e.g. 1000",
-              "error": "Capacity is required."
+              "error": "Provide value."
             },
             "dateField": {
               "label": "Date",
               "placeholder": "e.g. 2024-01-01",
-              "error": "Date is required."
+              "error": "Select date."
             },
             "recurrenceField": {
               "label": "Recurrence",
@@ -342,19 +475,19 @@
               "noResultsMessage": "No results found"
             },
             "repeatCountField": {
-              "label": "How many times",
+              "label": "Number of occurrences",
               "placeholder": "e.g. 10",
-              "error": "How many times is required."
+              "error": "Provide number of occurrences."
             },
             "repeatEveryField": {
               "label": "Repeat every",
               "placeholder": "e.g. every month",
-              "error": "Repeat every is required."
+              "error": "Provide interval."
             },
             "categoryField": {
               "label": "Category",
               "placeholder": "Select category",
-              "error": "Category is required."
+              "error": "Select category."
             },
             "createPouchButton": "Create pouch"
           }
@@ -368,7 +501,7 @@
             "nameField": {
               "label": "Name",
               "placeholder": "e.g. Shopping",
-              "error": "Name is required."
+              "error": "Provide name."
             },
             "typeField": {
               "label": "Type",
@@ -378,7 +511,7 @@
             "categoryField": {
               "label": "Category",
               "placeholder": "Select category",
-              "error": "Category is required."
+              "error": "Select category."
             },
             "valueField": {
               "label": "Capacity"
@@ -413,7 +546,7 @@
             "error": "Something went wrong.",
             "dateField": {
               "label": "Stop pouch date",
-              "error": "Date is required."
+              "error": "Select date."
             },
             "stopPouchButton": "Stop pouch"
           }
@@ -467,17 +600,17 @@
           "nameField": {
             "label": "Name",
             "placeholder": "e.g. Shopping",
-            "error": "Name is required."
+            "error": "Provide name."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Value is required."
+            "error": "Provide value."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "recurrenceField": {
             "label": "Recurrence",
@@ -485,19 +618,19 @@
             "noResultsMessage": "No results found"
           },
           "repeatCountField": {
-            "label": "How many times",
+            "label": "Number of occurrences",
             "placeholder": "e.g. 10",
-            "error": "How many times is required."
+            "error": "Provide number of occurrences."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Repeat every is required."
+            "error": "Provide interval."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "Select category",
-            "error": "Category is required."
+            "error": "Select category."
           },
           "editButton": "Edit outcome"
         }
@@ -512,17 +645,17 @@
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Value is required."
+            "error": "Provide value."
           },
           "nameField": {
             "label": "Name",
             "placeholder": "e.g. Shopping",
-            "error": "Name is required."
+            "error": "Provide name."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "recurrenceField": {
             "label": "Recurrence",
@@ -530,19 +663,19 @@
             "noResultsMessage": "No results found"
           },
           "repeatCountField": {
-            "label": "How many times",
+            "label": "Number of occurrences",
             "placeholder": "e.g. 10",
-            "error": "How many times is required."
+            "error": "Provide number of occurrences."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Repeat every is required."
+            "error": "Provide interval."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "Select category",
-            "error": "Category is required."
+            "error": "Select category."
           },
           "createOutcomeButton": "Create outcome"
         }
@@ -560,7 +693,7 @@
           "error": "Something went wrong.",
           "dateField": {
             "label": "Stop outcome date",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "stopOutcomeButton": "Stop outcome"
         }
@@ -606,7 +739,7 @@
           "error": "Something went wrong.",
           "dateField": {
             "label": "Stop income date",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "stopIncomeButton": "Stop income"
         }
@@ -628,21 +761,21 @@
         "button": "Add income",
         "buttonMobile": "Add",
         "form": {
-          "error": "Coś poszło nie tak.",
+          "error": "Something went wrong.",
           "nameField": {
             "label": "Income name",
             "placeholder": "e.g. Salary",
-            "error": "Income name is required."
+            "error": "Provide name."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Value is required."
+            "error": "Provide value."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "recurrenceField": {
             "label": "Recurrence",
@@ -651,20 +784,20 @@
             "noResultsMessage": "No results found"
           },
           "repeatCountField": {
-            "label": "How many times",
+            "label": "Number of occurrences",
             "placeholder": "e.g. 10",
-            "error": "How many times is required."
+            "error": "Provide number of occurrences."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Repeat every is required."
+            "error": "Provide interval."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "Search for a category...",
             "noResultsMessage": "No results found",
-            "error": "Category is required."
+            "error": "Select category."
           },
           "createIncomeButton": "Create income"
         }
@@ -678,21 +811,23 @@
           "nameField": {
             "label": "Income name",
             "placeholder": "e.g. Salary",
-            "error": "Income name is required."
+            "error": "Provide name."
           },
           "categoryField": {
             "label": "Category",
-            "placeholder": "Search for a category..."
+            "placeholder": "Search for a category...",
+            "noResultsMessage": "No results found",
+            "error": "Select category."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Value is required."
+            "error": "Provide value."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Date is required."
+            "error": "Select date."
           },
           "recurrenceField": {
             "label": "Recurrence",
@@ -700,14 +835,14 @@
             "noResultsMessage": "No results found"
           },
           "repeatCountField": {
-            "label": "How many times",
+            "label": "Number of occurrences",
             "placeholder": "e.g. 10",
-            "error": "How many times is required."
+            "error": "Provide number of occurrences."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Repeat every is required."
+            "error": "Provide interval."
           },
           "createIncomeButton": "Create income",
           "editIncomeButton": "Edit income"
@@ -781,8 +916,8 @@
     "budget": {
       "create": {
         "budgetNotFound": "Budget not found",
-        "failedToUpdateBudget": "Failed to update budget",
-        "notAllowedToUpdateBudget": "You are not allowed to update this budget",
+        "failedToCreateBudget": "Failed to create budget",
+        "notAllowedToCreateBudget": "You are not allowed to create this budget",
         "invalidBudgetData": "Invalid budget data",
         "budgetAlreadyExists": "Budget already exists"
       },
@@ -843,8 +978,8 @@
         "success": "Income created",
         "invalidIncomeData": "Invalid income data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"How many times\" is required when income is recurring",
-        "repeatEveryRequired": "\"Every how many\" is required when income is recurring",
+        "repeatCountRequired": "\"Number of occurrences\" is required when income is recurring",
+        "repeatEveryRequired": "\"Repeat every\" is required when income is recurring",
         "failedToCreateIncome": "Failed to create income"
       },
       "delete": {
@@ -902,8 +1037,8 @@
         "success": "Outcome created",
         "invalidOutcomeData": "Invalid outcome data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"How many times\" is required when outcome is recurring",
-        "repeatEveryRequired": "\"Every how many\" is required when outcome is recurring",
+        "repeatCountRequired": "\"Number of occurrences\" is required when outcome is recurring",
+        "repeatEveryRequired": "\"Repeat every\" is required when outcome is recurring",
         "failedToCreateOutcome": "Failed to create outcome",
         "unauthorized": "You are not authorized to create outcome"
       },
@@ -957,8 +1092,8 @@
         "success": "Pouch created",
         "invalidPouchData": "Invalid pouch data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"How many times\" is required when pouch is recurring",
-        "repeatEveryRequired": "\"Every how many\" is required when pouch is recurring",
+        "repeatCountRequired": "\"Number of occurrences\" is required when pouch is recurring",
+        "repeatEveryRequired": "\"Repeat every\" is required when pouch is recurring",
         "failedToCreatePouch": "Failed to create pouch",
         "unauthorized": "You are not authorized to create pouch"
       },

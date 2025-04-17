@@ -84,8 +84,6 @@ export const EditOutcomeForm = ({
     });
   };
 
-  console.log(321, outcome.category);
-
   return (
     <Suspense>
       <section className='w-full'>

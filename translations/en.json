@@ -86,6 +86,7 @@
   "goals": {
     "title": "Goals",
     "goalCard": {
+      "finishedBadge": "Finished",
       "sumOfDeposits": "Sum of deposits",
       "remainingToGoal": "Remaining to goal",
       "initialDeposit": "Initial deposit:",
@@ -103,21 +104,84 @@
       "button": "View deposit schedule",
       "past": "Completed",
       "future": "Planned",
-      "currentBudget": "In the current budget"
+      "currentBudget": "In the current budget",
+      "incomingOutcomes": "Incoming outcomes:",
+      "passedOutcomes": "Completed outcomes:"
     },
     "addGoal": {
       "title": "Add new goal",
       "description": "Add a new goal to your list of goals.",
-      "button": "Add new goal"
+      "button": "Add new goal",
+      "form": {
+        "error": "Something went wrong.",
+        "nameField": {
+          "label": "Name",
+          "placeholder": "e.g. Car replacement",
+          "error": "Provide name."
+        },
+        "valueField": {
+          "label": "Value",
+          "placeholder": "e.g. 10000",
+          "error": "Provide value."
+        },
+        "dateField": {
+          "label": "Planned end date",
+          "placeholder": "e.g. 2024-01-01",
+          "error": "Select date.",
+          "errorMustBeInTheFuture": "Date must be in the future."
+        },
+        "savingIntervalField": {
+          "label": "Saving interval",
+          "triggerDefaultLabel": "Select interval",
+          "placeholder": "Search for an interval...",
+          "noResultsMessage": "No results found"
+        },
+        "initialDepositField": {
+          "label": "Initial deposit",
+          "placeholder": "e.g. 1000",
+          "error": "Provide initial deposit."
+        },
+        "addGoalButton": "Add goal"
+      }
     },
     "editGoal": {
       "title": "Edit goal",
       "description": "Edit a goal from your list of goals.",
-      "button": "Edit"
+      "button": "Edit",
+      "form": {
+        "error": "Something went wrong.",
+        "nameField": {
+          "label": "Name",
+          "placeholder": "e.g. Car replacement",
+          "error": "Provide name."
+        },
+        "valueField": {
+          "label": "Value",
+          "placeholder": "e.g. 10000",
+          "error": "Provide value."
+        },
+        "dateField": {
+          "label": "Date",
+          "placeholder": "e.g. 2024-01-01",
+          "error": "Select date."
+        },
+        "savingIntervalField": {
+          "label": "Interval",
+          "triggerDefaultLabel": "Select interval",
+          "placeholder": "Search for an interval...",
+          "noResultsMessage": "No results found"
+        },
+        "initialDepositField": {
+          "label": "Initial deposit",
+          "placeholder": "e.g. 1000",
+          "error": "Provide initial deposit."
+        },
+        "editGoalButton": "Edit goal"
+      }
     },
     "deleteGoal": {
       "title": "Delete goal",
-      "description": "Delete a goal from your list of goals.",
+      "description": "Delete a goal from your list of goals. All the outcomes will be removed from previous budget periods, so it may affect your account history. If you don't want to affect history finish the goal instead, then only the future outcomes will be removed.",
       "button": "Delete"
     },
     "finishGoal": {
@@ -128,7 +192,21 @@
     "editGoalOutcome": {
       "title": "Edit goal saving",
       "description": "Edit a goal saving item.",
-      "button": "Edit goal saving"
+      "button": "Edit goal saving",
+      "editGoalOutcome": {
+        "title": "Edit goal saving",
+        "description": "Edit a goal saving item.",
+        "button": "Edit goal saving",
+        "form": {
+          "error": "Something went wrong.",
+          "valueField": {
+            "label": "Value",
+            "placeholder": "e.g. 1000",
+            "error": "Provide value."
+          },
+          "editGoalOutcomeButton": "Edit goal saving"
+        }
+      }
     }
   },
   "dashboard": {
@@ -572,6 +650,8 @@
         "oneTime": "One time",
         "recurring": "Recurring",
         "amount": "Amount",
+        "goalOutcomeChangeInfo": "Changes in outcome on goals are possible",
+        "goToGoals": "Go to goals",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "time",
@@ -873,7 +953,8 @@
     "technology": "Technology",
     "transport": "Transport",
     "savings": "Savings",
-    "other": "Other"
+    "other": "Other",
+    "goal": "Outcome on goal"
   },
   "budgetSummary": {
     "balance": "Balance",
@@ -913,6 +994,44 @@
     }
   },
   "errors": {
+    "goal": {
+      "create": {
+        "invalidIncomeData": "Invalid goal data",
+        "budgetNotFound": "Budget not found",
+        "failedToCreateGoal": "Failed to create goal",
+        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "success": "Goal created"
+      },
+      "delete": {
+        "failedToDeleteGoal": "Failed to delete goal",
+        "goalNotFound": "Goal not found",
+        "goalNotBelongsToUser": "Goal does not belong to you",
+        "success": "Goal deleted"
+      },
+      "finish": {
+        "failedToFinishGoal": "Failed to finish goal",
+        "goalNotFound": "Goal not found",
+        "goalNotBelongsToUser": "Goal does not belong to you",
+        "success": "Goal finished"
+      },
+      "update": {
+        "invalidIncomeData": "Invalid goal data",
+        "budgetNotFound": "Budget not found",
+        "failedToUpdateGoal": "Failed to update goal",
+        "goalNotFound": "Goal not found",
+        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "goalNotBelongsToUser": "Goal does not belong to you",
+        "success": "Goal updated"
+      },
+      "updateOutcome": {
+        "failedToUpdateGoalOutcome": "Failed to update goal outcome",
+        "goalOutcomeNotFound": "Goal outcome not found",
+        "budgetNotFound": "Budget not found",
+        "goalNotFound": "Goal not found",
+        "goalNotBelongsToUser": "Goal does not belong to you",
+        "success": "Goal outcome updated"
+      }
+    },
     "budget": {
       "create": {
         "budgetNotFound": "Budget not found",

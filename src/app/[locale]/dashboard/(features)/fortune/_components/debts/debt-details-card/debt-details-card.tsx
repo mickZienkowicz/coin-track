@@ -1,4 +1,3 @@
-import { Debt } from '@prisma/client';
 import { format } from 'date-fns';
 import { ArrowDownCircle, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -11,11 +10,12 @@ import {
   CardHeader
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune';
 
 import { DeleteDebtDialog } from '../delete-debt/delete-debt-dialog';
 import { EditDebtDialog } from '../edit-debt/edit-debt-dialog';
 
-export const DebtDetailsCard = ({ debt }: { debt: Debt }) => {
+export const DebtDetailsCard = ({ debt }: { debt: DebtWithAdditionalInfo }) => {
   const t = useTranslations('fortune.debts.debtDetailsCard');
 
   return (

@@ -61,7 +61,7 @@ export const PouchCard = async ({
       )}
       <CardHeader
         className={cn(
-          pouch.isDisabled && 'opacity-20',
+          pouch.isDisabled && 'opacity-30',
           'mb-2 flex items-start justify-between gap-4'
         )}
       >
@@ -97,7 +97,7 @@ export const PouchCard = async ({
         </div>
       </CardHeader>
       <CardContent
-        className={cn(pouch.isDisabled && 'opacity-20', 'flex flex-col gap-4')}
+        className={cn(pouch.isDisabled && 'opacity-30', 'flex flex-col gap-4')}
       >
         <div className='@md:flex-row @md:items-center @md:gap-2 flex flex-col justify-between gap-4'>
           <div className='flex items-center'>

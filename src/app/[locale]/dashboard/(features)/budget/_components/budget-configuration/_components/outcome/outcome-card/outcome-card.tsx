@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { RecurrenceType } from '@prisma/client';
 import { format } from 'date-fns';
 import {
@@ -6,12 +7,14 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  RefreshCw
+  RefreshCw,
+  TargetIcon
 } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -21,6 +24,7 @@ import {
 import { Language } from '@/i18n/routing';
 import { OutcomeWithOccurenceInfo } from '@/lib/dates/get-next-occurance/types';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
+import { pathGenerators } from '@/lib/paths';
 import { cn } from '@/lib/utils';
 
 import { EditOutcomeDialog } from '../edit-outcome/edit-outcome-dialog';
@@ -61,7 +65,7 @@ export const OutcomeCard = async ({
       )}
       <CardHeader
         className={cn(
-          outcome.isDisabled && 'opacity-20',
+          outcome.isDisabled && 'opacity-30',
           'mb-2 flex items-start justify-between gap-4'
         )}
       >
@@ -98,7 +102,7 @@ export const OutcomeCard = async ({
       </CardHeader>
       <CardContent
         className={cn(
-          outcome.isDisabled && 'opacity-20',
+          outcome.isDisabled && 'opacity-30',
           'flex flex-col gap-4'
         )}
       >
@@ -139,15 +143,32 @@ export const OutcomeCard = async ({
       </CardContent>
 
       <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
-        <EditOutcomeDialog outcome={outcome} />
-        {outcome.isDisabled ||
-        outcome.recurrence === RecurrenceType.ONE_TIME ? (
-          <RemoveOutcomeDialog
-            outcomeId={outcome.id}
-            isOneTime={outcome.recurrence === RecurrenceType.ONE_TIME}
-          />
+        {outcome.goalId ? (
+          <div className='flex items-center gap-4'>
+            <p className='text-sm text-primary/70'>
+              {t('goalOutcomeChangeInfo')}
+            </p>
+            <Link
+              href={pathGenerators.goals()}
+              className={cn(buttonVariants({ size: 'sm' }))}
+            >
+              <TargetIcon className='size-3.5' />
+              {t('goToGoals')}
+            </Link>
+          </div>
         ) : (
-          <StopOutcomeDialog outcome={outcome} />
+          <>
+            <EditOutcomeDialog outcome={outcome} />
+            {outcome.isDisabled ||
+            outcome.recurrence === RecurrenceType.ONE_TIME ? (
+              <RemoveOutcomeDialog
+                outcomeId={outcome.id}
+                isOneTime={outcome.recurrence === RecurrenceType.ONE_TIME}
+              />
+            ) : (
+              <StopOutcomeDialog outcome={outcome} />
+            )}
+          </>
         )}
       </CardFooter>
     </Card>

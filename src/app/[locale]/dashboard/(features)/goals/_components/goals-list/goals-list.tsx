@@ -1,8 +1,11 @@
-import { goals } from '../../data';
+import { getGoals } from '@/server/goal/queries/get-goals';
+
 import { GoalCard } from '../goal-card';
 import { NoGoalsCard } from '../no-goals-card';
 
 export const GoalsList = async () => {
+  const goals = await getGoals();
+
   if (goals.length <= 0) {
     return <NoGoalsCard />;
   }

@@ -18,10 +18,14 @@ import { EditGoalOutcomeForm } from '../edit-goal-outcome-form';
 
 export const EditGoalOutcomeDialog = ({
   className,
-  children
+  children,
+  outcomeId,
+  valueCents
 }: {
   className?: string;
   children?: React.ReactNode;
+  outcomeId: string;
+  valueCents: number;
 }) => {
   const t = useTranslations('goals.editGoalOutcome');
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +50,11 @@ export const EditGoalOutcomeDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        <EditGoalOutcomeForm />
+        <EditGoalOutcomeForm
+          closeDialog={() => setIsOpen(false)}
+          outcomeId={outcomeId}
+          valueCents={valueCents}
+        />
       </DialogContent>
     </Dialog>
   );

@@ -86,6 +86,7 @@
   "goals": {
     "title": "Cele",
     "goalCard": {
+      "finishedBadge": "Zakończony",
       "sumOfDeposits": "Suma wpłat",
       "remainingToGoal": "Pozostało do celu",
       "initialDeposit": "Wpłata początkowa:",
@@ -103,21 +104,84 @@
       "button": "Zobacz harmonogram wpłat",
       "past": "Dokonana",
       "future": "Planowana",
-      "currentBudget": "W obecnym budżecie"
+      "currentBudget": "W obecnym budżecie",
+      "incomingOutcomes": "Planowane wydatki:",
+      "passedOutcomes": "Dokonane wydatki:"
     },
     "addGoal": {
       "title": "Dodaj nowy cel",
       "description": "Dodaj nowy cel do swojej listy celów.",
-      "button": "Dodaj nowy cel"
+      "button": "Dodaj nowy cel",
+      "form": {
+        "error": "Coś poszło nie tak.",
+        "nameField": {
+          "label": "Nazwa",
+          "placeholder": "np. Wymiana samochodu",
+          "error": "Podaj nazwę celu."
+        },
+        "valueField": {
+          "label": "Kwota",
+          "placeholder": "np. 10000",
+          "error": "Podaj kwotę."
+        },
+        "dateField": {
+          "label": "Planowana data zakończenia",
+          "placeholder": "np. 2024-01-01",
+          "error": "Wybierz datę.",
+          "errorMustBeInTheFuture": "Data musi być w przyszłości."
+        },
+        "savingIntervalField": {
+          "label": "Częstotliwość wpłat",
+          "triggerDefaultLabel": "Wybierz interwał",
+          "placeholder": "Wyszukaj interwał...",
+          "noResultsMessage": "Nie znaleziono wyników"
+        },
+        "initialDepositField": {
+          "label": "Wpłata początkowa",
+          "placeholder": "np. 1000",
+          "error": "Podaj kwotę."
+        },
+        "addGoalButton": "Dodaj cel"
+      }
     },
     "editGoal": {
       "title": "Edytuj cel",
       "description": "Edytuj cel do swojej listy celów.",
-      "button": "Edytuj"
+      "button": "Edytuj",
+      "form": {
+        "error": "Coś poszło nie tak.",
+        "nameField": {
+          "label": "Nazwa",
+          "placeholder": "np. Wymiana samochodu",
+          "error": "Podaj nazwę celu."
+        },
+        "valueField": {
+          "label": "Kwota celu",
+          "placeholder": "np. 10000",
+          "error": "Podaj kwotę."
+        },
+        "dateField": {
+          "label": "Data",
+          "placeholder": "np. 2024-01-01",
+          "error": "Wybierz datę."
+        },
+        "savingIntervalField": {
+          "label": "Interwał",
+          "triggerDefaultLabel": "Wybierz interwał",
+          "placeholder": "Wyszukaj interwał...",
+          "noResultsMessage": "Nie znaleziono wyników"
+        },
+        "initialDepositField": {
+          "label": "Wpłata początkowa",
+          "placeholder": "np. 1000",
+          "error": "Podaj kwotę."
+        },
+        "editGoalButton": "Edytuj cel"
+      }
     },
     "deleteGoal": {
       "title": "Usuń cel",
-      "description": "Usuń cel z swojej listy celów.",
+      "description": "Usuń cel z swojej listy celów. Wszystkie wydatki z poprzednich okresów budżetowych zostaną usunięte, co może wpłynąć na historię twojego konta. Jeśli nie chcesz wpływać na historię konta zakończ cel, wówczas usunięte zostaną tylko wydatki przyszłe.",
       "button": "Usuń"
     },
     "finishGoal": {
@@ -128,7 +192,16 @@
     "editGoalOutcome": {
       "title": "Edytuj wydatek na cel",
       "description": "Edytuj wydatek na cel z swojej listy celów.",
-      "button": "Edytuj wydatek na cel"
+      "button": "Edytuj wydatek na cel",
+      "form": {
+        "error": "Coś poszło nie tak.",
+        "valueField": {
+          "label": "Wartość celu",
+          "placeholder": "np. 1000",
+          "error": "Podaj wartość."
+        },
+        "editGoalOutcomeButton": "Edytuj wydatek na cel"
+      }
     }
   },
   "dashboard": {
@@ -577,6 +650,8 @@
         "recurring": "Cykliczny",
         "amount": "Kwota",
         "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
+        "goalOutcomeChangeInfo": "Zmiany w wydatkach na cele moliwe są za poziomu celów",
+        "goToGoals": "Przejdź do celów",
         "recurringDisabledCountLabel": {
           "one": "raz",
           "other": "razy"
@@ -878,7 +953,8 @@
     "education": "Edukacja",
     "technology": "Technologia",
     "transport": "Transport",
-    "savings": "Oszczędności"
+    "savings": "Oszczędności",
+    "goals": "Wydatek na cel"
   },
   "budgetSummary": {
     "balance": "Bilans",
@@ -918,6 +994,44 @@
     }
   },
   "errors": {
+    "goal": {
+      "create": {
+        "invalidIncomeData": "Nieprawidłowe dane kwoty celu",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "failedToCreateGoal": "Nie udało się utworzyć celu",
+        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "success": "Cel utworzony"
+      },
+      "delete": {
+        "failedToDeleteGoal": "Nie udało się usunąć celu",
+        "goalNotFound": "Cel nie znaleziony",
+        "goalNotBelongsToUser": "Cel nie należy do ciebie",
+        "success": "Cel usunięty"
+      },
+      "finish": {
+        "failedToFinishGoal": "Nie udało się zakończyć celu",
+        "goalNotFound": "Cel nie znaleziony",
+        "goalNotBelongsToUser": "Cel nie należy do ciebie",
+        "success": "Cel zakończony"
+      },
+      "update": {
+        "invalidIncomeData": "Nieprawidłowe dane celu",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "failedToUpdateGoal": "Nie udało się zaktualizować celu",
+        "goalNotFound": "Cel nie znaleziony",
+        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "goalNotBelongsToUser": "Cel nie należy do ciebie",
+        "success": "Cel zaktualizowany"
+      },
+      "updateOutcome": {
+        "failedToUpdateGoalOutcome": "Nie udało się zaktualizować wydatku celu",
+        "goalOutcomeNotFound": "Wydatku celu nie znaleziony",
+        "budgetNotFound": "Budżet nie znaleziony",
+        "goalNotFound": "Cel nie znaleziony",
+        "goalNotBelongsToUser": "Cel nie należy do ciebie",
+        "success": "Wydatku celu zaktualizowany"
+      }
+    },
     "budget": {
       "create": {
         "success": "Utworzono budżet",

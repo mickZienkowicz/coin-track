@@ -169,19 +169,21 @@ model Goal {
   goalBudgetOutcomes  Outcome[]
   family              Family    @relation(fields: [familyId], references: [id], onDelete: Cascade)
   withBudgetOutcomes  Boolean   @default(false)
+  finishedAt          DateTime?
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt
 }
 
 model Asset {
-  id         String        @id @default(uuid())
-  name       String
-  category   AssetCategory
-  valueCents Int
-  familyId   String
-  family     Family        @relation(fields: [familyId], references: [id], onDelete: Cascade)
-  createdAt  DateTime      @default(now())
-  updatedAt  DateTime      @updatedAt
+  id          String         @id @default(uuid())
+  name        String
+  description String
+  category    AssetCategory
+  valueCents  FortuneValue[]
+  familyId    String
+  family      Family         @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
 }
 
 enum AssetCategory {
@@ -192,11 +194,22 @@ enum AssetCategory {
 }
 
 model Debt {
+  id          String         @id @default(uuid())
+  name        String
+  description String
+  values      FortuneValue[]
+  familyId    String
+  family      Family         @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model FortuneValue {
   id         String   @id @default(uuid())
-  name       String
   valueCents Int
-  familyId   String
-  family     Family   @relation(fields: [familyId], references: [id], onDelete: Cascade)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  date       DateTime
+  Asset      Asset?   @relation(fields: [assetId], references: [id])
+  assetId    String?
+  Debt       Debt?    @relation(fields: [debtId], references: [id])
+  debtId     String?
 }

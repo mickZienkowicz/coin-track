@@ -25,6 +25,7 @@ import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
 import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { getUtcMiddayDateOfGivenDate } from '@/lib/dates/get-utc-midday-date-of-given-date';
 import { pathGenerators } from '@/lib/paths';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 import { PouchWithCurrentBudgetOccurance } from '@/server/budget/types';
 import { createPouchOutcome } from '@/server/pouch/actions/create-pouch-outcome';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
@@ -33,7 +34,7 @@ import { PouchOutcomeProgressBar } from '../../pouch-outcome-progress-bar/pouch-
 
 const getAddPouchOutcomeFormSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
-    value: z.coerce.number().positive(t('valueField.error')),
+    value: getNumberSchema(t('valueField.error')),
     name: z.string().min(1, t('nameField.error')),
     date: dateSchemaWithMinDate({ message: t('dateField.error') }),
     pouch: z.string().min(1, t('pouchField.error'))

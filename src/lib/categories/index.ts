@@ -16,6 +16,7 @@ import {
   Plane,
   Shirt,
   ShoppingCart,
+  Target,
   TrendingUp,
   Truck,
   Utensils
@@ -90,6 +91,7 @@ export const getOutcomesCategories = (
     icon: Monitor,
     color: '#B5EAD7'
   },
+  { value: 'goals', name: t('goals'), icon: Target, color: '#FFDD67' },
   { value: 'transport', name: t('transport'), icon: Bus, color: '#F4D35E' },
   { value: 'savings', name: t('savings'), icon: PiggyBank, color: '#FFDD67' },
   { value: 'other', name: t('other'), icon: CircleHelp, color: '#FFFFFF' }

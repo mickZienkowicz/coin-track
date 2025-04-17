@@ -18,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
 import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { pathGenerators } from '@/lib/paths';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 import { updatePouchOutcome } from '@/server/pouch/actions/update-pouch-outcome';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
@@ -25,7 +26,7 @@ export const getEditPouchOutcomeFormSchema = (
   t: ReturnType<typeof useTranslations>
 ) =>
   z.object({
-    value: z.coerce.number().positive(t('valueField.error')),
+    value: getNumberSchema(t('valueField.error')),
     date: dateSchemaWithMinDate({ message: t('dateField.error') }),
     name: z.string().min(1, t('nameField.error'))
   });
@@ -45,7 +46,7 @@ export const EditPouchOutcomeForm = ({
     resolver: zodResolver(editPouchOutcomeFormSchema),
     defaultValues: {
       name: pouchOutcome.name,
-      value: pouchOutcome.valueCents / 100,
+      value: (pouchOutcome.valueCents / 100).toString() as unknown as number,
       date: pouchOutcome.date
     }
   });

@@ -1,4 +1,3 @@
-import { Asset } from '@prisma/client';
 import { format } from 'date-fns';
 import { ArrowUpCircle, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -11,12 +10,17 @@ import {
   CardHeader
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune';
 
 import { DeleteAssetDialog } from '../delete-asset/delete-asset-dialog';
 import { EditAssetDialog } from '../edit-asset/edit-asset-dialog';
 import { AssetCategoryBadge } from './components/asset-category-badge';
 
-export const AssetDetailsCard = ({ asset }: { asset: Asset }) => {
+export const AssetDetailsCard = ({
+  asset
+}: {
+  asset: AssetWithAdditionalInfo;
+}) => {
   const t = useTranslations('fortune.assets.assetDetailsCard');
 
   return (

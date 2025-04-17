@@ -45,7 +45,7 @@ export const AddGoalDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        <AddGoalForm />
+        <AddGoalForm closeDialog={() => setIsOpen(false)} />
       </DialogContent>
     </Dialog>
   );

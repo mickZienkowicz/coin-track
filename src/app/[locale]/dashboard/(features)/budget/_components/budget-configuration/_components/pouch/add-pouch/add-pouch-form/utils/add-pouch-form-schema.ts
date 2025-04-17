@@ -3,11 +3,12 @@ import { useTranslations } from 'next-intl';
 import { z } from 'zod';
 
 import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date/date-schema-with-min-date';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 
 export const getAddPouchFormSchema = (t: ReturnType<typeof useTranslations>) =>
   z
     .object({
-      value: z.coerce.number().positive(t('valueField.error')),
+      value: getNumberSchema(t('valueField.error')),
       name: z.string().min(1, t('nameField.error')),
       date: dateSchemaWithMinDate({ message: t('dateField.error') }),
       recurrence: z.enum([

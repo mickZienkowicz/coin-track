@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Goal } from '@prisma/client';
 import { Pencil } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -18,10 +19,12 @@ import { EditGoalForm } from '../edit-goal-form';
 
 export const EditGoalDialog = ({
   className,
-  children
+  children,
+  goal
 }: {
   className?: string;
   children?: React.ReactNode;
+  goal: Goal;
 }) => {
   const t = useTranslations('goals.editGoal');
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +49,7 @@ export const EditGoalDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        <EditGoalForm />
+        <EditGoalForm closeDialog={() => setIsOpen(false)} goal={goal} />
       </DialogContent>
     </Dialog>
   );

@@ -14,6 +14,8 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog';
 
+import { AddAssetForm } from '../add-asset-form/add-asset-form';
+
 export const AddAssetDialog = ({
   className,
   children
@@ -42,7 +44,7 @@ export const AddAssetDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        {/* <AddIncomeForm closeDialog={() => setIsOpen(false)} /> */}
+        <AddAssetForm closeDialog={() => setIsOpen(false)} />
       </DialogContent>
     </Dialog>
   );

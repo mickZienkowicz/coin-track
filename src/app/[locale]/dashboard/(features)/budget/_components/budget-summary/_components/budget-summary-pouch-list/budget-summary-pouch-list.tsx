@@ -9,9 +9,13 @@ import { AddPouchDialog } from '../../../budget-configuration/_components/pouch/
 import { PouchDetailsCard } from './_components/pouch-details-card';
 
 export const BudgetSummaryPouchList = async ({
-  pouches
+  pouches,
+  isTransferingPouchesBalance,
+  isPreview
 }: {
   pouches: PouchWithCurrentBudgetOccurance[];
+  isTransferingPouchesBalance: boolean;
+  isPreview: boolean;
 }) => {
   const t = await getTranslations('budget.pouch');
 
@@ -26,22 +30,29 @@ export const BudgetSummaryPouchList = async ({
               </div>
               {t('budgetSummary.title')}
             </h2>
-            <AddPouchDialog>
-              <Button
-                variant='secondary'
-                size='iconSmall'
-                aria-label={t('addPouchButton')}
-              >
-                <PlusCircle className='h-4 w-4' />
-              </Button>
-            </AddPouchDialog>
+            {!isPreview && (
+              <AddPouchDialog>
+                <Button
+                  variant='secondary'
+                  size='iconSmall'
+                  aria-label={t('addPouchButton')}
+                >
+                  <PlusCircle className='h-4 w-4' />
+                </Button>
+              </AddPouchDialog>
+            )}
           </div>
         </CardContent>
       </Card>
       <ul className='flex flex-col gap-3'>
         {pouches.map((pouch) => (
           <li key={pouch.id}>
-            <PouchDetailsCard pouches={pouches} pouch={pouch} />
+            <PouchDetailsCard
+              pouches={pouches}
+              pouch={pouch}
+              isTransferingPouchesBalance={isTransferingPouchesBalance}
+              isPreview={isPreview}
+            />
           </li>
         ))}
         {pouches.length === 0 && (

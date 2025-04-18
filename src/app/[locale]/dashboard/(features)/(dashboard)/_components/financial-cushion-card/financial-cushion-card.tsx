@@ -1,4 +1,5 @@
 import { Shield } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
 import { Badge } from '@/components/ui/badge';
@@ -8,8 +9,17 @@ import { Progress } from '@/components/ui/progress';
 import { Link } from '@/i18n/navigation';
 import { pathGenerators } from '@/lib/paths';
 import { cn } from '@/lib/utils';
+import { getFortuneSummary } from '@/server/fortune/queries/get-forune-summary';
 
-export const FinancialCushionCard = () => {
+export const FinancialCushionCard = async () => {
+  const t = await getTranslations('dashboard.balance.financialCushion');
+  const fortuneSummary = await getFortuneSummary();
+
+  const currentFinancialCushionPercentage =
+    (fortuneSummary.financialCushionAssetsValueSum /
+      (fortuneSummary.monthlyOutcomesSum * 6)) *
+    100;
+
   return (
     <Card className='gap-0'>
       <CardHeader className='pb-2'>
@@ -19,51 +29,77 @@ export const FinancialCushionCard = () => {
               <Shield className='size-5 text-blue-600 md:size-6' />
             </div>
             <div className='flex flex-col'>
-              <h4 className='text-2xl font-bold'>Poduszka finansowa</h4>
+              <h4 className='text-2xl font-bold'>{t('title')}</h4>
               <p className='text-sm font-normal text-primary/70'>
-                Rekomendujemy: <FormattedCurrency valueCents={3000} />-{' '}
-                <FormattedCurrency valueCents={2000} />
+                {t('recommendation')}{' '}
+                <span className='font-bold'>
+                  <FormattedCurrency
+                    valueCents={fortuneSummary.monthlyOutcomesSum * 3}
+                  />
+                </span>{' '}
+                -{' '}
+                <span className='font-bold'>
+                  <FormattedCurrency
+                    valueCents={fortuneSummary.monthlyOutcomesSum * 6}
+                  />
+                </span>
               </p>
             </div>
           </CardTitle>
           <Badge
             className={cn(
-              'mt-[2px] hidden bg-blue-600 font-bold tracking-tighter text-white sm:flex md:mt-0'
+              'mt-[2px] hidden bg-blue-600 font-bold tracking-tighter text-white sm:flex md:mt-0',
+              currentFinancialCushionPercentage < 50 && 'bg-red-700'
             )}
           >
-            80%
+            {currentFinancialCushionPercentage.toFixed(0)}%
           </Badge>
         </div>
       </CardHeader>
       <CardContent>
         <p className='mb-6 mt-3 text-sm text-primary/70 md:text-base'>
-          Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby
-          zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych.
-          Aktualnie posiadasz <span className='font-bold'>100 000 zł</span>, co
-          stanowi <span className='font-bold'>80%</span> rekomendowanej
-          wartości.
+          {t('description1')}
+          <span className='font-bold'>
+            <FormattedCurrency
+              valueCents={fortuneSummary.financialCushionAssetsValueSum}
+            />
+          </span>
+          {t('description2')}
+          <span className='font-bold'>
+            {currentFinancialCushionPercentage.toFixed(0)}%
+          </span>
+          {t('description3')}
         </p>
         <div className='mb-2'>
           <div className='mt-1 flex items-center justify-between gap-1'>
             <p className='flex flex-col items-start gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
-              Obecnie:
+              {t('current')}
               <span className='font-bold'>
-                <FormattedCurrency valueCents={100000} />
+                <FormattedCurrency
+                  valueCents={fortuneSummary.financialCushionAssetsValueSum}
+                />
               </span>
             </p>
             <p className='flex flex-col items-end gap-1 text-sm text-primary/70 sm:flex-row sm:items-center'>
-              Rekomendujemy:
+              {t('recommendation')}
               <span className='font-bold'>
-                <FormattedCurrency valueCents={120000} />
+                <FormattedCurrency
+                  valueCents={fortuneSummary.monthlyOutcomesSum * 6}
+                />
               </span>
             </p>
           </div>
         </div>
 
         <Progress
-          value={80}
+          value={currentFinancialCushionPercentage}
           className='h-2'
-          progressBarClassName='bg-blue-600'
+          progressBarClassName={cn(
+            'bg-blue-600',
+            currentFinancialCushionPercentage < 50 && 'bg-red-700'
+          )}
+          excessBarClassName='bg-primary/30'
+          excess={50}
         />
 
         <div className='mt-4 flex justify-end'>
@@ -71,7 +107,7 @@ export const FinancialCushionCard = () => {
             href={pathGenerators.fortune()}
             className={cn(buttonVariants({ size: 'sm' }))}
           >
-            Zarządzaj majątkiem
+            {t('manageAssets')}
           </Link>
         </div>
       </CardContent>

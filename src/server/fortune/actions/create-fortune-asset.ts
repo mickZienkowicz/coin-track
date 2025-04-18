@@ -15,7 +15,7 @@ export const createFortuneAsset = async ({
 }: {
   data: z.infer<typeof fortuneAssetSchema>;
 }) => {
-  const t = await getTranslations('errors.goal.create');
+  const t = await getTranslations('errors.fortune.asset.create');
   await getUser();
 
   const knownErrors = {
@@ -41,7 +41,7 @@ export const createFortuneAsset = async ({
         description: data.description,
         category: data.category,
         familyId: selectedFamily.id,
-        valueCents: {
+        values: {
           create: {
             valueCents: data.valueCents,
             date: getUtcMiddayDateOfGivenDate(new Date())

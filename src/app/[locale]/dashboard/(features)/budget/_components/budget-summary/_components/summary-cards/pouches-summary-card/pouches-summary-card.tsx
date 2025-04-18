@@ -9,10 +9,12 @@ import { cn } from '@/lib/utils';
 
 export const PouchesSummaryCard = ({
   pouchesSum,
-  pouchesOutcomesSum
+  pouchesOutcomesSum,
+  isPreview
 }: {
   pouchesSum: number;
   pouchesOutcomesSum: number;
+  isPreview?: boolean;
 }) => {
   const t = useTranslations('budgetSummary');
   const pouchesBalancePercentage =
@@ -40,7 +42,9 @@ export const PouchesSummaryCard = ({
             </Badge>
           </span>
           <span className='text-sm text-primary/70'>
-            {t('pouchesExpensesSummary')}
+            {isPreview
+              ? t('pouchesExpensesSummaryOnPreview')
+              : t('pouchesExpensesSummary')}
           </span>
         </h4>
 

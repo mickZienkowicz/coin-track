@@ -47,7 +47,7 @@ export const FortuneStructureCard = ({
       <CardContent className='hidden items-center justify-between pt-3 2xl:flex'>
         <div className='text-2xl font-black md:text-[25px]'>{value}</div>
       </CardContent>
-      {monthlySpendingsMultiplier && (
+      {typeof monthlySpendingsMultiplier === 'number' && (
         <Badge
           className={cn(
             'absolute -top-5 right-6 bg-blue-600 font-bold tracking-tighter text-white'

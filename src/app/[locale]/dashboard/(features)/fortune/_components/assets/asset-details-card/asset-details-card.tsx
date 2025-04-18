@@ -10,16 +10,19 @@ import {
   CardHeader
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune';
+import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
 
+import { getPercentageOfWholeFortune } from '../../fortune-structure/utils';
 import { DeleteAssetDialog } from '../delete-asset/delete-asset-dialog';
 import { EditAssetDialog } from '../edit-asset/edit-asset-dialog';
 import { AssetCategoryBadge } from './components/asset-category-badge';
 
 export const AssetDetailsCard = ({
-  asset
+  asset,
+  totalAssets
 }: {
   asset: AssetWithAdditionalInfo;
+  totalAssets: number;
 }) => {
   const t = useTranslations('fortune.assets.assetDetailsCard');
 
@@ -44,7 +47,8 @@ export const AssetDetailsCard = ({
         <div className='flex shrink-0 items-center'>
           <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
             <span className='text-xs font-medium text-blue-700'>
-              5% {t('yourFortune')}
+              {getPercentageOfWholeFortune(asset.valueCents, totalAssets)}%{' '}
+              {t('yourAssets')}
             </span>
           </div>
         </div>
@@ -69,8 +73,8 @@ export const AssetDetailsCard = ({
       </CardContent>
 
       <CardFooter className='pt-4! mt-1 flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
-        <EditAssetDialog />
-        <DeleteAssetDialog />
+        <EditAssetDialog asset={asset} />
+        <DeleteAssetDialog asset={asset} />
       </CardFooter>
     </Card>
   );

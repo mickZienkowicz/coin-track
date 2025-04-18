@@ -20,7 +20,7 @@ export const NetWorthCard = ({
   title: string;
   icon: React.ReactNode;
   value: React.ReactNode;
-  description: string;
+  description?: string;
   className?: string;
 }) => {
   const pathname = usePathname();
@@ -39,10 +39,12 @@ export const NetWorthCard = ({
           {icon}
           <div className='flex flex-col'>
             <h4 className='hidden text-2xl font-bold sm:block'>{title}</h4>
-            <p className='hidden text-sm font-normal text-primary/70 sm:block'>
-              <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
-              {description}
-            </p>
+            {description && (
+              <p className='hidden text-sm font-normal text-primary/70 sm:block'>
+                <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
+                {description}
+              </p>
+            )}
             <h4 className='text-2xl font-bold sm:hidden'>{value}</h4>
             <p className='text-sm font-normal text-primary/70 sm:hidden'>
               {title}

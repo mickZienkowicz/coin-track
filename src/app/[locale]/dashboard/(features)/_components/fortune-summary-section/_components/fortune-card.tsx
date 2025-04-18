@@ -13,7 +13,7 @@ export const FortuneCard = async ({
   title: string;
   icon: React.ReactNode;
   value: React.ReactNode;
-  description: string;
+  description?: string;
   className?: string;
 }) => (
   <Card className={cn('gap-0', className)}>
@@ -23,10 +23,12 @@ export const FortuneCard = async ({
         <div className='flex flex-col'>
           <h4 className='hidden text-2xl font-bold 2xl:block'>{title}</h4>
           <h4 className='text-[22px] font-black 2xl:hidden '>{value}</h4>
-          <p className='hidden text-sm font-normal text-primary/70 2xl:block'>
-            <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
-            {description}
-          </p>
+          {description && (
+            <p className='hidden text-sm font-normal text-primary/70 2xl:block'>
+              <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
+              {description}
+            </p>
+          )}
           <p className='text-sm font-normal text-primary/70 2xl:hidden'>
             {title}
           </p>

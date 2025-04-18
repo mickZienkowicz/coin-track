@@ -10,12 +10,19 @@ import {
   CardHeader
 } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune';
+import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
 
+import { getPercentageOfWholeFortune } from '../../fortune-structure/utils';
 import { DeleteDebtDialog } from '../delete-debt/delete-debt-dialog';
 import { EditDebtDialog } from '../edit-debt/edit-debt-dialog';
 
-export const DebtDetailsCard = ({ debt }: { debt: DebtWithAdditionalInfo }) => {
+export const DebtDetailsCard = ({
+  debt,
+  totalDebts
+}: {
+  debt: DebtWithAdditionalInfo;
+  totalDebts: number;
+}) => {
   const t = useTranslations('fortune.debts.debtDetailsCard');
 
   return (
@@ -39,7 +46,8 @@ export const DebtDetailsCard = ({ debt }: { debt: DebtWithAdditionalInfo }) => {
         <div className='flex shrink-0 items-center'>
           <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
             <span className='text-xs font-medium text-blue-700'>
-              5% {t('yourFortune')}
+              {getPercentageOfWholeFortune(debt.valueCents, totalDebts)}%{' '}
+              {t('yourDebts')}
             </span>
           </div>
         </div>
@@ -63,8 +71,8 @@ export const DebtDetailsCard = ({ debt }: { debt: DebtWithAdditionalInfo }) => {
       </CardContent>
 
       <CardFooter className='pt-4! mt-1 flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
-        <EditDebtDialog />
-        <DeleteDebtDialog />
+        <EditDebtDialog debt={debt} />
+        <DeleteDebtDialog debt={debt} />
       </CardFooter>
     </Card>
   );

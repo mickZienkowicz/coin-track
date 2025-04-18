@@ -37,7 +37,7 @@ export const MobileFortuneCard = ({
   netWorth: ReactNode;
   assetsCount: ReactNode;
   debtsCount: ReactNode;
-  lastUpdateDate: string;
+  lastUpdateDate?: string;
 }) => {
   const pathname = usePathname();
   const t = useTranslations('dashboard.fortune');
@@ -53,10 +53,12 @@ export const MobileFortuneCard = ({
 
             <div className='flex flex-col'>
               <h2 className='text-2xl font-bold'>{t('cardTitle')}</h2>
-              <p className='text-sm font-normal text-primary/70 '>
-                <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
-                {`${t('assetsDescription')} ${lastUpdateDate}`}
-              </p>
+              {lastUpdateDate && (
+                <p className='text-sm font-normal text-primary/70 '>
+                  <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />
+                  {`${t('assetsDescription')} ${lastUpdateDate}`}
+                </p>
+              )}
             </div>
           </div>
         </CardTitle>

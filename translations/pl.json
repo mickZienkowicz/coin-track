@@ -1,4 +1,13 @@
 {
+  "recurring": {
+    "day": "dzień",
+    "week": "tydzień",
+    "twoWeeks": "dwa tygodnie",
+    "month": "miesiąc",
+    "twoMonths": "dwa miesiące",
+    "quarter": "kwartał",
+    "year": "rok"
+  },
   "fortune": {
     "title": "Majątek",
     "structure": {
@@ -7,6 +16,7 @@
       "investmentAssets": "Majątek inwestycyjny",
       "otherAssets": "Pozostałe",
       "description": {
+        "zero": "{count} składników",
         "one": "{count} składnik",
         "few": "{count} składniki",
         "many": "{count} składników"
@@ -14,35 +24,101 @@
     },
     "assets": {
       "title": "Aktywa",
-      "addAssetButton": "Dodaj Aktywa",
+      "addAssetButton": "Dodaj aktywo",
       "noAssetsCard": {
         "title": "Nie masz jeszcze żadnych aktywów",
-        "description": "Dodaj aktywa, aby kontrolować swój majątek."
+        "description": "Dodaj aktywo, aby kontrolować swój majątek."
       },
       "addAsset": {
-        "title": "Dodaj aktywa",
-        "description": "Dodaj aktywa do swojej listy aktywów.",
-        "button": "Dodaj aktywa",
-        "buttonMobile": "Dodaj"
+        "title": "Dodaj aktywo",
+        "description": "Dodaj aktywo do swojej listy aktywów.",
+        "button": "Dodaj aktywo",
+        "buttonMobile": "Dodaj",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "category": {
+            "financialCushion": "Poduszka finansowa",
+            "livingAssets": "Majątek bytowy",
+            "investmentAssets": "Majątek inwestycyjny",
+            "otherAssets": "Pozostałe"
+          },
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Oszczedności w euro",
+            "error": "Podaj nazwę aktywa."
+          },
+          "descriptionField": {
+            "label": "Opis",
+            "placeholder": "np. 1200 euro",
+            "error": "Podaj opis aktywa."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "np. Poduszka finansowa",
+            "error": "Podaj kategorię aktywa."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Podaj wartość aktywa."
+          },
+          "addAssetButton": "Dodaj aktywo"
+        }
       },
       "editAsset": {
-        "title": "Edytuj aktywa",
-        "description": "Edytuj aktywa do swojej listy aktywów.",
-        "button": "Edytuj aktywa",
-        "buttonMobile": "Edytuj"
+        "title": "Edytuj aktywo",
+        "description": "Edytuj aktywo do swojej listy aktywów.",
+        "button": "Edytuj aktywo",
+        "buttonMobile": "Edytuj",
+        "error": "Coś poszło nie tak.",
+        "form": {
+          "error": "Coś poszło nie tak.",
+          "category": {
+            "financialCushion": "Poduszka finansowa",
+            "livingAssets": "Majątek bytowy",
+            "investmentAssets": "Majątek inwestycyjny",
+            "otherAssets": "Pozostałe"
+          },
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Oszczedności w euro",
+            "error": "Podaj nazwę aktywa."
+          },
+          "descriptionField": {
+            "label": "Opis",
+            "placeholder": "np. 1200 euro",
+            "error": "Podaj opis aktywa."
+          },
+          "categoryField": {
+            "label": "Kategoria",
+            "placeholder": "np. Poduszka finansowa",
+            "error": "Podaj kategorię aktywa."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Podaj wartość aktywa."
+          },
+          "button": "Edytuj aktywo"
+        }
       },
       "deleteAsset": {
-        "title": "Usuń aktywa",
-        "description": "Usuń aktywa z swojej listy aktywów.",
-        "button": "Usuń aktywa",
-        "buttonMobile": "Usuń"
+        "title": "Usuń aktywo",
+        "description": "Jeśli dodałeś aktywo przez przypadek i chcesz je usunąć razem z historią, tak aby nie pozostały w niej żadne ślady - ",
+        "descriptionDeleteButton": "kliknij tutaj.",
+        "button": "Usuń aktywo",
+        "buttonMobile": "Usuń",
+        "deleteAssetButton": "Usuń aktywo",
+        "totalDeleteTitle": "Usuń aktywo całkowicie",
+        "totalDeleteDescription": "Jeśli chcesz usunąć aktywo całkowicie, moze to zaburzyć historie twojego konta. Jezeli po prostu zredukowałeś to aktywo do zera użyj zwykłej opcji usuwania.",
+        "totalDeleteButton": "Usuń aktywo całkowicie"
       },
       "assetDetailsCard": {
         "lastUpdate": "Ostatnia aktualizacja: ",
         "amount": "Kwota",
         "category": "Kategoria",
         "value": "Wartość",
-        "yourFortune": "twojego majątku",
+        "yourAssets": "twoich aktywów",
         "livingAssets": "Majątek bytowy",
         "investmentAssets": "Majątek inwestycyjny",
         "otherAssets": "Pozostałe",
@@ -51,35 +127,76 @@
     },
     "debts": {
       "title": "Pasywa",
-      "addDebtButton": "Dodaj pasywa",
+      "addDebtButton": "Dodaj pasywo",
       "noDebtsCard": {
         "title": "Nie masz jeszcze żadnych pasyw",
-        "description": "Dodaj pasywa, aby kontrolować swój majątek."
+        "description": "Dodaj pasywo, aby kontrolować swój majątek."
       },
       "addDebt": {
-        "title": "Dodaj pasywa",
-        "description": "Dodaj pasywa do swojej listy pasyw.",
-        "button": "Dodaj pasywa",
-        "buttonMobile": "Dodaj"
+        "title": "Dodaj pasywo",
+        "description": "Dodaj pasywo do swojej listy pasyw.",
+        "button": "Dodaj pasywo",
+        "buttonMobile": "Dodaj",
+        "form": {
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Kredyt",
+            "error": "Podaj nazwę pasywa."
+          },
+          "descriptionField": {
+            "label": "Opis",
+            "placeholder": "np. Kredyt samochodowy",
+            "error": "Podaj opis pasywa."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Podaj wartość pasywa."
+          },
+          "addDebtButton": "Dodaj pasywo"
+        }
       },
       "editDebt": {
-        "title": "Edytuj pasywa",
-        "description": "Edytuj pasywa do swojej listy pasyw.",
-        "button": "Edytuj pasywa",
-        "buttonMobile": "Edytuj"
+        "title": "Edytuj pasywo",
+        "description": "Edytuj pasywo ze swojej listy pasyw.",
+        "button": "Edytuj pasywo",
+        "buttonMobile": "Edytuj",
+        "form": {
+          "nameField": {
+            "label": "Nazwa",
+            "placeholder": "np. Kredyt",
+            "error": "Podaj nazwę pasywa."
+          },
+          "descriptionField": {
+            "label": "Opis",
+            "placeholder": "np. Kredyt samochodowy",
+            "error": "Podaj opis pasywa."
+          },
+          "valueField": {
+            "label": "Wartość",
+            "placeholder": "np. 1000",
+            "error": "Podaj wartość pasywa."
+          },
+          "button": "Edytuj pasywo"
+        }
       },
       "deleteDebt": {
-        "title": "Usuń pasywa",
-        "description": "Usuń pasywa z swojej listy pasyw.",
-        "button": "Usuń pasywa",
-        "buttonMobile": "Usuń"
+        "title": "Usuń pasywo",
+        "description": "Jeśli dodałeś pasywo przez przypadek i chcesz je usunąć razem z historią, tak aby nie pozostały ślady w historii - ",
+        "descriptionDeleteButton": "kliknij tutaj.",
+        "button": "Usuń pasywo",
+        "buttonMobile": "Usuń",
+        "deleteDebtButton": "Usuń pasywo",
+        "totalDeleteTitle": "Usuń pasywo całkowicie",
+        "totalDeleteDescription": "Jeśli chcesz usunąć pasywo całkowicie, moze to zaburzyć historie twojego konta. Jezeli po prostu zredukowałeś to aktywo do zera użyj zwykłej opcji usuwania.",
+        "totalDeleteButton": "Usuń pasywo całkowicie"
       },
       "debtDetailsCard": {
         "lastUpdate": "Ostatnia aktualizacja: ",
         "amount": "Kwota",
         "category": "Kategoria",
         "value": "Wartość",
-        "yourFortune": "twojego majątku"
+        "yourDebts": "twoich pasyw"
       }
     }
   },
@@ -120,9 +237,9 @@
           "error": "Podaj nazwę celu."
         },
         "valueField": {
-          "label": "Kwota",
+          "label": "Wartość celu",
           "placeholder": "np. 10000",
-          "error": "Podaj kwotę."
+          "error": "Podaj wartość."
         },
         "dateField": {
           "label": "Planowana data zakończenia",
@@ -156,9 +273,9 @@
           "error": "Podaj nazwę celu."
         },
         "valueField": {
-          "label": "Kwota celu",
+          "label": "Wartość celu",
           "placeholder": "np. 10000",
-          "error": "Podaj kwotę."
+          "error": "Podaj wartość."
         },
         "dateField": {
           "label": "Data",
@@ -196,7 +313,7 @@
       "form": {
         "error": "Coś poszło nie tak.",
         "valueField": {
-          "label": "Wartość celu",
+          "label": "Kwota",
           "placeholder": "np. 1000",
           "error": "Podaj wartość."
         },
@@ -206,6 +323,16 @@
   },
   "dashboard": {
     "title": "Panel Główny",
+    "history": {
+      "title": "Historia twoich finansów",
+      "seePreview": "Zobacz podgląd",
+      "to": "do",
+      "selectBudgetToPreview": "Wybierz budżet do podglądu",
+      "preview": "Podgląd",
+      "incomes": "Przychody",
+      "outcomes": "Wydatki",
+      "balance": "Bilans"
+    },
     "fortune": {
       "assets": "Aktywa",
       "debts": "Pasywa",
@@ -216,9 +343,28 @@
       "manageAssets": "Zarządzaj majątkiem",
       "cardTitle": "Twój majątek"
     },
+    "goalsSummaryCard": {
+      "title": "Cele",
+      "description": "Ostatnia aktualizacja: ",
+      "manageGoals": "Zarządzaj celami",
+      "noActiveGoals": "Brak aktywnych celów",
+      "noGoals": "Nie masz jeszcze żadnych celów",
+      "addFirstGoal": "Dodaj pierwszy cel",
+      "activeGoals": "Twoje cele - {count}"
+    },
     "balance": {
       "currentBudgetBalance": "Obecny budżet",
       "manageBudget": "Zarządzaj budżetem",
+      "financialCushion": {
+        "title": "Poduszka finansowa",
+        "recommendation": "Rekomendujemy:",
+        "manageAssets": "Zarządzaj majątkiem",
+        "current": "Obecnie:",
+        "recommendationAmount": "Kwota rekomendacji:",
+        "description1": "Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych. Aktualnie posiadasz ",
+        "description2": ", co stanowi ",
+        "description3": " rekomendowanej wartości. Dowyliczeń przyjmujemy poduszkę wynoszącą 6-krotność miesięcznych wydatków."
+      },
       "balance": {
         "title": "Bilans",
         "income": "Przychody",
@@ -417,6 +563,10 @@
     "infinite": "Stały",
     "multiple": "Kilkurazowy"
   },
+  "budgetHistory": {
+    "title": "Podgląd przeszłego budżetu",
+    "backToCurrentBudget": "Wróć do obecnego budżetu"
+  },
   "budget": {
     "title": "Budżet",
     "summary": "Podsumowanie",
@@ -438,11 +588,14 @@
         "listOfPouches": "Łączna kwota sakiewek w okresie budżetowym.",
         "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
         "occurrences": "Wystąpienia w tym okresie budżetowym: ",
-        "capacity": "Zaplanowana wydatki w sakiewce",
+        "capacity": "Pojemność sakiewki",
+        "transferredFromPreviousPeriods": "Przeniesione z poprzednich okresów",
+        "withoutTransfers": "bez przeniesień",
         "expensesSum": "Suma wydatków",
         "seeFullList": "Kliknij aby zobaczyć listę wydatków w tej sakiewce",
         "toggleList": "przełącz listę",
-        "leftCapacity": "Pozostało do wydania"
+        "leftCapacity": "Pozostało do wydania",
+        "unusedCapacity": "Niewykorzystana pojemność"
       },
       "removePouchOutcome": {
         "title": "Usuń wydatek z sakiewki",
@@ -598,13 +751,19 @@
               "label": "Data utworzenia"
             },
             "recurrenceField": {
-              "label": "Powtarzaj co"
+              "label": "Powtarzaj co",
+              "placeholder": "Wybierz opcję",
+              "noResultsMessage": "Nie znaleziono wyników"
             },
             "repeatCountField": {
-              "label": "Ile razy"
+              "label": "Ile razy",
+              "placeholder": "np. 10",
+              "error": "Podaj poprawną liczbę."
             },
             "repeatEveryField": {
-              "label": "Co ile"
+              "label": "Co ile",
+              "placeholder": "np. Co miesiąc",
+              "error": "Podaj poprawną wartość."
             },
             "createPouchButton": "Edytuj sakiewkę"
           }
@@ -961,9 +1120,10 @@
     "pouches": "Sakiewki",
     "balanceSummary": "Bilans: ",
     "pouchesSummary": "Planowane wydatki w sakiewkach",
+    "pouchesExpensesSummaryOnPreview": "Wydatki w sakiewkach",
     "pouchesExpensesSummary": "Aktualne wydatki w sakiewkach",
-    "currentBudgetBalance": "Bilans z wydatkami w sakiewkach",
-    "currentBudgetBalanceWithPouches": "Bilans z planowanymi wydatkami w sakiewkach",
+    "currentBudgetBalance": "Bilans z zaplanowanymi wydatkami w sakiewkach",
+    "currentBudgetBalanceWithPouches": "Bilans z wydatkami w sakiewkach",
     "positiveBalance": "Nadwyżka",
     "negativeBalance": "Deficyt",
     "neutralBalance": "Równowaga",
@@ -994,6 +1154,56 @@
     }
   },
   "errors": {
+    "fortune": {
+      "asset": {
+        "create": {
+          "invalidAssetData": "Nieprawidłowe dane aktywu",
+          "failedToCreateAsset": "Nie udało się utworzyć aktywu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "success": "Aktyw utworzony"
+        },
+        "delete": {
+          "invalidAssetData": "Nieprawidłowe dane aktywu",
+          "failedToDeleteAsset": "Nie udało się usunąć aktywu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "assetNotFound": "Aktyw nie znaleziony",
+          "assetNotBelongsToFamily": "Aktyw nie należy do profilu rodzinnego",
+          "success": "Aktyw usunięty"
+        },
+        "update": {
+          "invalidAssetData": "Nieprawidłowe dane aktywu",
+          "failedToUpdateAsset": "Nie udało się zaktualizować aktywu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "assetNotFound": "Aktyw nie znaleziony",
+          "assetNotBelongsToFamily": "Aktyw nie należy do profilu rodzinnego",
+          "success": "Aktyw zaktualizowany"
+        }
+      },
+      "debt": {
+        "create": {
+          "invalidDebtData": "Nieprawidłowe dane długu",
+          "failedToCreateDebt": "Nie udało się utworzyć długu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "success": "Dług utworzony"
+        },
+        "delete": {
+          "invalidDebtData": "Nieprawidłowe dane długu",
+          "failedToDeleteDebt": "Nie udało się usunąć długu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "debtNotFound": "Dług nie znaleziony",
+          "debtNotBelongsToFamily": "Dług nie należy do profilu rodzinnego",
+          "success": "Dług usunięty"
+        },
+        "update": {
+          "invalidDebtData": "Nieprawidłowe dane długu",
+          "failedToUpdateDebt": "Nie udało się zaktualizować długu",
+          "familyNotFound": "Profil rodzinny nie znaleziony",
+          "debtNotFound": "Dług nie znaleziony",
+          "debtNotBelongsToFamily": "Dług nie należy do profilu rodzinnego",
+          "success": "Dług zaktualizowany"
+        }
+      }
+    },
     "goal": {
       "create": {
         "invalidIncomeData": "Nieprawidłowe dane kwoty celu",

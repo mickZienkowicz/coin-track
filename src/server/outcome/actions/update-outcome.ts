@@ -1,19 +1,27 @@
 'use server';
 
+import { RecurrenceType } from '@prisma/client';
 import { getTranslations } from 'next-intl/server';
-import { z } from 'zod';
 
 import { prisma } from '@/lib/prisma/prisma-client';
 import { getAuthenticatedUser } from '@/server/utils/get-authenticated-user';
 
-import { updateOutcomeSchema } from '../schemas/update-outcome-schema';
+import {
+  updateOneTimeOutcomeSchema,
+  updateOutcomeSchema
+} from '../schemas/update-outcome-schema';
 
 export async function updateOutcome({
   id,
   data
 }: {
   id: string;
-  data: z.infer<typeof updateOutcomeSchema>;
+  data: {
+    name: string;
+    category: string;
+    date?: Date;
+    valueCents?: number;
+  };
 }) {
   const t = await getTranslations('errors.outcome.update');
   const user = await getAuthenticatedUser();
@@ -55,6 +63,30 @@ export async function updateOutcome({
       throw new Error(knownErrors.outcomeNotBelongsToUser);
     }
 
+    if (outcome.recurrence === RecurrenceType.ONE_TIME) {
+      if (!updateOneTimeOutcomeSchema.safeParse(data).success) {
+        throw new Error(knownErrors.invalidOutcomeData);
+      }
+
+      const updatedOutcome = await prisma.outcome.update({
+        where: {
+          id
+        },
+        data: {
+          name: data.name,
+          category: data.category,
+          date: data.date || outcome.date,
+          valueCents: data.valueCents || outcome.valueCents
+        }
+      });
+
+      return {
+        success: true,
+        message: t('success'),
+        data: updatedOutcome
+      };
+    }
+
     if (!updateOutcomeSchema.safeParse(data).success) {
       throw new Error(knownErrors.invalidOutcomeData);
     }
@@ -80,8 +112,8 @@ export async function updateOutcome({
       Object.values(knownErrors).includes(error.message);
 
     if (!isKnownError) {
-      console.error(error);
     }
+    console.error(error);
 
     return {
       success: false,

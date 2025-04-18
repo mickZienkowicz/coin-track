@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Income } from '@prisma/client';
+import { Income, RecurrenceType } from '@prisma/client';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
@@ -26,7 +26,9 @@ import {
 } from '@/components/ui/select';
 import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
 import { getIncomesCategories } from '@/lib/categories';
+import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { pathGenerators } from '@/lib/paths';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 import { updateIncome } from '@/server/income/actions/update-income';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
@@ -35,7 +37,9 @@ export const getEditIncomeFormSchema = (
 ) =>
   z.object({
     name: z.string().min(1, t('nameField.error')),
-    category: z.string().min(1, t('categoryField.error'))
+    category: z.string().min(1, t('categoryField.error')),
+    value: getNumberSchema(t('valueField.error')),
+    date: dateSchemaWithMinDate({ message: t('dateField.error') })
   });
 
 export const EditIncomeForm = ({
@@ -53,7 +57,9 @@ export const EditIncomeForm = ({
     resolver: zodResolver(editIncomeFormSchema),
     defaultValues: {
       name: income.name,
-      category: income.category
+      category: income.category,
+      value: (income.valueCents / 100).toString() as unknown as number,
+      date: income.date
     }
   });
 
@@ -75,12 +81,24 @@ export const EditIncomeForm = ({
   });
 
   const onSubmit = async (values: z.infer<typeof editIncomeFormSchema>) => {
+    const data: {
+      name: string;
+      category: string;
+      valueCents?: number;
+      date?: Date;
+    } = {
+      name: values.name,
+      category: values.category
+    };
+
+    if (income.recurrence === RecurrenceType.ONE_TIME) {
+      data.valueCents = values.value * 100;
+      data.date = values.date;
+    }
+
     await mutate({
       id: income.id,
-      data: {
-        name: values.name,
-        category: values.category
-      }
+      data
     });
   };
 
@@ -142,17 +160,39 @@ export const EditIncomeForm = ({
               )}
             />
 
-            <FormItemWrapper label={t('valueField.label')} disabled>
-              <CurrencyInput
-                currency={currency}
-                value={income.valueCents / 100}
-                disabled
-              />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='value'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('valueField.label')}>
+                  <CurrencyInput
+                    {...field}
+                    currency={currency}
+                    disabled={income.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
-            <FormItemWrapper label={t('dateField.label')} disabled>
-              <DatePicker date={income.date} disabled setDate={() => {}} />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='date'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('dateField.label')}>
+                  <DatePicker
+                    date={field.value}
+                    setDate={(e) => {
+                      if (income.recurrence === RecurrenceType.ONE_TIME) {
+                        field.onChange(e);
+                      }
+                    }}
+                    disabled={income.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
             <FormItemWrapper label={t('recurrenceField.label')} disabled>
               <Select defaultValue={income.recurrence} disabled>

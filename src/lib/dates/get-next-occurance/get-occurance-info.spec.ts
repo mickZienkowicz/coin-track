@@ -1,5 +1,5 @@
 import { Interval, RecurrenceType } from '@prisma/client';
-import { addDays, addMonths, addWeeks } from 'date-fns';
+import { addDays, addMonths, addWeeks, subDays } from 'date-fns';
 import { describe, expect, it } from 'vitest';
 
 import { getUtcMiddayDateOfGivenDate } from '../get-utc-midday-date-of-given-date';
@@ -15,7 +15,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 1,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -36,7 +37,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 1,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -57,7 +59,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 5,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -78,7 +81,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 10,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -99,7 +103,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.WEEK,
       repeatCount: 10,
       stoppedAt: getUtcMiddayDateOfGivenDate(new Date('2023-10-05')),
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -120,7 +125,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.MONTH,
       repeatCount: 5,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -141,7 +147,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: null,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -162,7 +169,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: null,
       stoppedAt: today,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -183,7 +191,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.WEEK,
       repeatCount: null,
       stoppedAt: getUtcMiddayDateOfGivenDate(new Date('2023-10-02')),
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -204,12 +213,16 @@ describe('getOccurenceInfo', () => {
       interval: Interval.WEEK,
       repeatCount: 3,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
       nextOccurrenceDate: addDays(today, 1),
-      lastOccurrenceDate: addWeeks(new Date('2023-09-27T12:00'), 1),
+      lastOccurrenceDate: addWeeks(
+        getUtcMiddayDateOfGivenDate(new Date('2023-09-27')),
+        1
+      ),
       nextOccurrenceCount: 3,
       occurrenceCount: 2,
       isFinished: false,
@@ -225,7 +238,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 3,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -246,7 +260,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.DAY,
       repeatCount: 3,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -267,7 +282,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.MONTH,
       repeatCount: 6,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
 
     const result = getOccurenceInfo(args);
@@ -289,7 +305,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.QUARTER,
       repeatCount: 5,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: addDays(today, -1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -310,7 +327,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.QUARTER,
       repeatCount: 6,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: addDays(today, -1)
     };
 
     const result = getOccurenceInfo(args);
@@ -332,7 +350,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.MONTH,
       repeatCount: 10,
       stoppedAt: getUtcMiddayDateOfGivenDate(new Date('2023-09-15')),
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({
@@ -353,7 +372,8 @@ describe('getOccurenceInfo', () => {
       interval: Interval.MONTH,
       repeatCount: 5,
       stoppedAt: null,
-      today
+      today,
+      currentBudgetStartDate: subDays(today, 1)
     };
     const result = getOccurenceInfo(args);
     expect(result).toEqual({

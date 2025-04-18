@@ -50,7 +50,8 @@ export const MobileFortunesStructureCard = ({
   investments,
   investmentsPercentageOfWholeFortune,
   restOfAssets,
-  restOfAssetsPercentageOfWholeFortune
+  restOfAssetsPercentageOfWholeFortune,
+  monthlySpendingsMultiplier
 }: {
   financialCushion: ReactNode;
   financialCushionPercentageOfWholeFortune: number;
@@ -60,6 +61,7 @@ export const MobileFortunesStructureCard = ({
   investmentsPercentageOfWholeFortune: number;
   restOfAssets: ReactNode;
   restOfAssetsPercentageOfWholeFortune: number;
+  monthlySpendingsMultiplier: number;
 }) => {
   const t = useTranslations('dashboard.fortune');
 
@@ -78,7 +80,7 @@ export const MobileFortunesStructureCard = ({
           </div>
           <p className='flex flex-col-reverse gap-1 text-sm font-normal text-primary/70'>
             <Badge className='bg-blue-600 font-bold tracking-tighter text-white'>
-              2.5x miesięcznych wydatków
+              {monthlySpendingsMultiplier.toFixed(1)}x miesięcznych wydatków
             </Badge>
             <span>Poduszka finansowa stanowi </span>
           </p>

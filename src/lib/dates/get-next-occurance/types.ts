@@ -13,6 +13,7 @@ export type GetOccurrenceInfoArgs = {
   repeatCount: number | null;
   stoppedAt: Date | null;
   today: Date;
+  currentBudgetStartDate: Date;
 };
 
 export type GetOccurrenceInfoResult = {

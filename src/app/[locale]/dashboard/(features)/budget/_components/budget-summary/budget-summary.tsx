@@ -14,10 +14,16 @@ import { OutcomesSummaryCard } from './_components/summary-cards/outcomes-summar
 import { PouchesSummaryCard } from './_components/summary-cards/pouches-summary-card';
 import { getCurrentBudgetTimeframeLabel } from './_utils/get-current-budget-timeframe-label';
 
-export const BudgetSummary = async () => {
+export const BudgetSummary = async ({
+  date,
+  isPreview
+}: {
+  date?: Date;
+  isPreview?: boolean;
+}) => {
   const [locale, budgetSummary] = await Promise.all([
     getLocale(),
-    getBudgetSummary()
+    getBudgetSummary(date)
   ]);
 
   if (!budgetSummary) {
@@ -33,7 +39,8 @@ export const BudgetSummary = async () => {
             {getCurrentBudgetTimeframeLabel({
               startDate: budgetSummary.startDate,
               finishDate: budgetSummary.endDate,
-              locale: locale as Language
+              locale: locale as Language,
+              budgetInterval: budgetSummary.budget.interval
             })}
           </h2>
         </div>
@@ -53,18 +60,27 @@ export const BudgetSummary = async () => {
         <PouchesSummaryCard
           pouchesSum={budgetSummary.pouchesSum}
           pouchesOutcomesSum={budgetSummary.pouchesOutcomesSum}
+          isPreview={isPreview}
         />
 
         <IncomesSummaryCard incomesSum={budgetSummary.incomesSum} />
         <OutcomesSummaryCard outcomesSum={budgetSummary.outcomesSum} />
       </div>
       <section className='mt-16 grid grid-cols-1 gap-6 2xl:grid-cols-3'>
-        <BudgetSummaryPouchList pouches={budgetSummary.pouchOccurances} />
+        <BudgetSummaryPouchList
+          isPreview={isPreview ?? false}
+          pouches={budgetSummary.pouchOccurances}
+          isTransferingPouchesBalance={
+            budgetSummary.isTransferingPouchesBalance
+          }
+        />
         <BudgetSummaryIncomeList
+          isPreview={isPreview ?? false}
           incomesSum={budgetSummary.incomesSum}
           incomes={budgetSummary.incomeOccurances}
         />
         <BudgetSummaryOutcomeList
+          isPreview={isPreview ?? false}
           outcomesSum={budgetSummary.outcomesSum}
           outcomes={budgetSummary.outcomeOccurances}
         />

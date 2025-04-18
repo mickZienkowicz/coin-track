@@ -7,16 +7,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import type { Language } from '@/i18n/routing';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
+import { cn } from '@/lib/utils';
 import type { OutcomeWithCurrentBudgetOccurance } from '@/server/budget/types';
 
 import { AddOutcomeDialog } from '../../../budget-configuration/_components/outcome/add-outcome/add-outcome-dialog';
+import { CategoryBadge } from '../../../budget-configuration/_components/outcome/outcome-card/components/category-badge';
 
 export const BudgetSummaryOutcomeList = ({
   outcomesSum,
-  outcomes
+  outcomes,
+  isPreview
 }: {
   outcomesSum: number;
   outcomes: OutcomeWithCurrentBudgetOccurance[];
+  isPreview: boolean;
 }) => {
   const locale = useLocale();
   const t = useTranslations('budget.outcomes');
@@ -32,15 +36,17 @@ export const BudgetSummaryOutcomeList = ({
               </div>
               {t('budgetSummary.title')}
             </h2>
-            <AddOutcomeDialog>
-              <Button
-                variant='secondary'
-                size='iconSmall'
-                aria-label={t('addOutcomeButton')}
-              >
-                <PlusCircle className='h-4 w-4' />
-              </Button>
-            </AddOutcomeDialog>
+            {!isPreview && (
+              <AddOutcomeDialog>
+                <Button
+                  variant='secondary'
+                  size='iconSmall'
+                  aria-label={t('addOutcomeButton')}
+                >
+                  <PlusCircle className='h-4 w-4' />
+                </Button>
+              </AddOutcomeDialog>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -76,35 +82,45 @@ export const BudgetSummaryOutcomeList = ({
                       />
                     </p>
                   </div>
-                  {outcome.occurrences.length > 1 ? (
-                    <>
-                      <p className='mt-4 flex justify-between text-sm text-primary/70'>
-                        {t('budgetSummary.occurrences')}
-                        <span className='font-semibold text-primary/70'>
-                          {outcome.occurrences.length}
-                        </span>
+                  <div
+                    className={cn(
+                      'flex items-center justify-between gap-2',
+                      outcome.goalId && 'mt-1.5'
+                    )}
+                  >
+                    {outcome.occurrences.length > 1 ? (
+                      <>
+                        <p className='mt-4 flex justify-between text-sm text-primary/70'>
+                          {t('budgetSummary.occurrences')}
+                          <span className='font-semibold text-primary/70'>
+                            {outcome.occurrences.length}
+                          </span>
+                        </p>
+                        <p className='mt-1 flex justify-between text-sm text-primary/70'>
+                          {t('budgetSummary.singleOccurrence')}
+                          <span className='font-semibold text-primary/70'>
+                            <FormattedCurrency
+                              valueCents={outcome.valueCents}
+                            />
+                          </span>
+                        </p>
+                      </>
+                    ) : (
+                      <p className='text-sm text-primary/70'>
+                        {outcome.occurrences.map((date, index) => (
+                          <span key={date.toISOString()}>
+                            {format(date, 'd MMMM yyyy', {
+                              locale: getDateFnsLocaleFromLanguage(
+                                locale as Language
+                              )
+                            })}
+                            {index < outcome.occurrences.length - 1 && ', '}
+                          </span>
+                        ))}
                       </p>
-                      <p className='mt-1 flex justify-between text-sm text-primary/70'>
-                        {t('budgetSummary.singleOccurrence')}
-                        <span className='font-semibold text-primary/70'>
-                          <FormattedCurrency valueCents={outcome.valueCents} />
-                        </span>
-                      </p>
-                    </>
-                  ) : (
-                    <p className='text-sm text-primary/70'>
-                      {outcome.occurrences.map((date, index) => (
-                        <span key={date.toISOString()}>
-                          {format(date, 'd MMMM yyyy', {
-                            locale: getDateFnsLocaleFromLanguage(
-                              locale as Language
-                            )
-                          })}
-                          {index < outcome.occurrences.length - 1 && ', '}
-                        </span>
-                      ))}
-                    </p>
-                  )}
+                    )}
+                    {outcome.goalId && <CategoryBadge category='goals' />}
+                  </div>
                 </CardContent>
               </Card>
             </li>

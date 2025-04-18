@@ -45,7 +45,8 @@ export const BudgetSummaryCard = async ({
                 {getCurrentBudgetTimeframeLabel({
                   startDate: budgetSummary.startDate,
                   finishDate: budgetSummary.endDate,
-                  locale: locale as Language
+                  locale: locale as Language,
+                  budgetInterval: budgetSummary.budget.interval
                 })}
               </p>
             </div>

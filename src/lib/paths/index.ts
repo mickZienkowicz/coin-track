@@ -4,7 +4,8 @@ export const paths = {
   fortune: '/dashboard/fortune',
   budget: '/dashboard/budget',
   goals: '/dashboard/goals',
-  settings: '/dashboard/settings'
+  settings: '/dashboard/settings',
+  budgetFromDate: '/dashboard/budget/:date'
 };
 
 export const pathGenerators = {
@@ -12,6 +13,7 @@ export const pathGenerators = {
   dashboard: () => paths.dashboard,
   fortune: () => paths.fortune,
   budget: () => paths.budget,
+  budgetFromDate: (date: string) => paths.budgetFromDate.replace(':date', date),
   goals: () => paths.goals,
   settings: () => paths.settings
 };

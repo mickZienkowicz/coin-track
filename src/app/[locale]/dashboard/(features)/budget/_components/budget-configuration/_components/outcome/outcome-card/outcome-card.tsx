@@ -7,7 +7,6 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  RefreshCw,
   TargetIcon
 } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -27,11 +26,11 @@ import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-f
 import { pathGenerators } from '@/lib/paths';
 import { cn } from '@/lib/utils';
 
+import { RecuranceInfo } from '../../recurrance-info/recurance-info';
 import { EditOutcomeDialog } from '../edit-outcome/edit-outcome-dialog';
 import { RemoveOutcomeDialog } from '../remove-outcome/remove-income-dialog';
 import { StopOutcomeDialog } from '../stop-outcome/stop-outcome-dialog';
 import { CategoryBadge } from './components/category-badge';
-import { RecuranceInfo } from './components/recurance-info';
 
 export const OutcomeCard = async ({
   outcome
@@ -123,12 +122,7 @@ export const OutcomeCard = async ({
 
           <div className='@md:order-1 -order-1 flex items-center'>
             {outcome.recurrence !== RecurrenceType.ONE_TIME ? (
-              <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
-                <RefreshCw className='mr-1.5 h-3.5 w-3.5 text-blue-500' />
-                <span className='text-xs font-medium text-blue-700'>
-                  {t('recurring')}
-                </span>
-              </div>
+              <RecuranceInfo itemWithOccurenceInfo={outcome} />
             ) : (
               <div className='flex items-center rounded-full bg-gray-100 px-3 py-1'>
                 <Clock className='mr-1.5 h-3.5 w-3.5 text-gray-500' />
@@ -139,13 +133,12 @@ export const OutcomeCard = async ({
             )}
           </div>
         </div>
-        <RecuranceInfo outcome={outcome} />
       </CardContent>
 
       <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
         {outcome.goalId ? (
-          <div className='flex items-center gap-4'>
-            <p className='text-sm text-primary/70'>
+          <div className='flex w-full items-center justify-between gap-4'>
+            <p className='text-start text-sm text-primary/70'>
               {t('goalOutcomeChangeInfo')}
             </p>
             <Link

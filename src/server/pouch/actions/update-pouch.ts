@@ -1,19 +1,27 @@
 'use server';
 
+import { RecurrenceType } from '@prisma/client';
 import { getTranslations } from 'next-intl/server';
-import { z } from 'zod';
 
 import { prisma } from '@/lib/prisma/prisma-client';
 import { getAuthenticatedUser } from '@/server/utils/get-authenticated-user';
 
-import { updatePouchSchema } from '../schemas/update-pouch-schema';
+import {
+  updateOneTimePouchSchema,
+  updatePouchSchema
+} from '../schemas/update-pouch-schema';
 
 export async function updatePouch({
   id,
   data
 }: {
   id: string;
-  data: z.infer<typeof updatePouchSchema>;
+  data: {
+    name: string;
+    category: string;
+    date?: Date;
+    valueCents?: number;
+  };
 }) {
   const t = await getTranslations('errors.pouch.update');
   const user = await getAuthenticatedUser();
@@ -53,6 +61,30 @@ export async function updatePouch({
 
     if (!isPouchBelongsToUser) {
       throw new Error(knownErrors.pouchNotBelongsToUser);
+    }
+
+    if (pouch.recurrence === RecurrenceType.ONE_TIME) {
+      if (!updateOneTimePouchSchema.safeParse(data).success) {
+        throw new Error(knownErrors.invalidPouchData);
+      }
+
+      const updatedPouch = await prisma.pouch.update({
+        where: {
+          id
+        },
+        data: {
+          name: data.name,
+          category: data.category,
+          date: data.date || pouch.date,
+          valueCents: data.valueCents || pouch.valueCents
+        }
+      });
+
+      return {
+        success: true,
+        message: t('success'),
+        data: updatedPouch
+      };
     }
 
     if (!updatePouchSchema.safeParse(data).success) {

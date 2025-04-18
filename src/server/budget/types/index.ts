@@ -9,6 +9,7 @@ export type BudgetSummaryResponse = Awaited<
 export type PouchWithCurrentBudgetOccurance = Pouch & {
   pouchExpenses: PouchExpense[];
   occurrences: Date[];
+  eachOccuranceValueCents: number;
 };
 export type IncomeWithCurrentBudgetOccurance = Income & {
   occurrences: Date[];

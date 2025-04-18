@@ -5,6 +5,7 @@ import { compareAsc } from 'date-fns';
 import { getLocale } from 'next-intl/server';
 
 import { redirect } from '@/i18n/navigation';
+import { getCurrentBudgetPeriod } from '@/lib/dates/get-current-budget-period';
 import { getOccurenceInfo } from '@/lib/dates/get-next-occurance';
 import { PouchWithOccurenceInfo } from '@/lib/dates/get-next-occurance/types';
 import { getUtcMiddayDateOfGivenDate } from '@/lib/dates/get-utc-midday-date-of-given-date';
@@ -35,6 +36,13 @@ export async function getPouches(): Promise<PouchWithOccurenceInfo[]> {
     }
   });
 
+  const today = getUtcMiddayDateOfGivenDate(new Date());
+  const { startDate } = await getCurrentBudgetPeriod(
+    budget.startDate,
+    budget.interval,
+    today
+  );
+
   return pouches
     .map((pouch) => ({
       ...pouch,
@@ -44,7 +52,8 @@ export async function getPouches(): Promise<PouchWithOccurenceInfo[]> {
         interval: pouch.repeatEvery,
         repeatCount: pouch.repeatCount,
         stoppedAt: pouch.stoppedAt,
-        today: getUtcMiddayDateOfGivenDate(new Date())
+        today,
+        currentBudgetStartDate: getUtcMiddayDateOfGivenDate(startDate)
       })
     }))
     .sort((a, b) => {

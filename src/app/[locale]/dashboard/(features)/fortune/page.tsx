@@ -1,12 +1,7 @@
 import { useTranslations } from 'next-intl';
 
-import { FortuneSummarySection } from '../_components/fortune-summary-section';
 import { NoFamilyCardFallback } from '../../_components/no-family-card-fallback';
-import { AddAssetDialog } from './_components/assets/add-asset/add-asset-dialog';
-import { AssetsList } from './_components/assets/assets-list';
-import { AddDebtDialog } from './_components/debts/add-debt/add-debt-dialog';
-import { DebtsList } from './_components/debts/debts-list';
-import { FortuneStructure } from './_components/fortune-structure/fortune-structure';
+import { FortunePageWrapper } from './_components/fortune-structure/_components/fortune-page-wrapper';
 
 export default function FortunePage() {
   const t = useTranslations('fortune');
@@ -22,19 +17,7 @@ export default function FortunePage() {
       </div>
 
       <NoFamilyCardFallback>
-        <div className='mt-6 flex flex-col gap-6'>
-          <FortuneSummarySection />
-          <div className='grid w-full grid-cols-2 items-center gap-2 md:flex md:justify-end'>
-            <AddAssetDialog />
-            <AddDebtDialog />
-          </div>
-
-          <FortuneStructure />
-          <section className='mt-8 grid grid-cols-1 gap-6 xl:grid-cols-2'>
-            <AssetsList />
-            <DebtsList />
-          </section>
-        </div>
+        <FortunePageWrapper />
       </NoFamilyCardFallback>
     </div>
   );

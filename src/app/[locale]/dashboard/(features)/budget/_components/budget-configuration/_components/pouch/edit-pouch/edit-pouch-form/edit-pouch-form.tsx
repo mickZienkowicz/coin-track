@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Pouch } from '@prisma/client';
+import { Pouch, RecurrenceType } from '@prisma/client';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
@@ -26,14 +26,18 @@ import {
 } from '@/components/ui/select';
 import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
 import { getPouchCategories } from '@/lib/categories';
+import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { pathGenerators } from '@/lib/paths';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 import { updatePouch } from '@/server/pouch/actions/update-pouch';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
 export const getEditPouchFormSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t('nameField.error')),
-    category: z.string().min(1, t('categoryField.error'))
+    category: z.string().min(1, t('categoryField.error')),
+    value: getNumberSchema(t('valueField.error')),
+    date: dateSchemaWithMinDate({ message: t('dateField.error') })
   });
 
 export const EditPouchForm = ({
@@ -52,7 +56,9 @@ export const EditPouchForm = ({
     resolver: zodResolver(editPouchFormSchema),
     defaultValues: {
       name: pouch.name,
-      category: pouch.category
+      category: pouch.category,
+      value: (pouch.valueCents / 100).toString() as unknown as number,
+      date: pouch.date
     }
   });
 
@@ -75,12 +81,24 @@ export const EditPouchForm = ({
   });
 
   const onSubmit = async (values: z.infer<typeof editPouchFormSchema>) => {
+    const data: {
+      name: string;
+      category: string;
+      valueCents?: number;
+      date?: Date;
+    } = {
+      name: values.name,
+      category: values.category
+    };
+
+    if (pouch.recurrence === RecurrenceType.ONE_TIME) {
+      data.valueCents = values.value * 100;
+      data.date = values.date;
+    }
+
     await mutate({
       id: pouch.id,
-      data: {
-        name: values.name,
-        category: values.category
-      }
+      data
     });
   };
 
@@ -137,17 +155,39 @@ export const EditPouchForm = ({
               )}
             />
 
-            <FormItemWrapper label={t('valueField.label')} disabled>
-              <CurrencyInput
-                currency={currency}
-                value={pouch.valueCents / 100}
-                disabled
-              />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='value'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('valueField.label')}>
+                  <CurrencyInput
+                    {...field}
+                    currency={currency}
+                    disabled={pouch.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
-            <FormItemWrapper label={t('dateField.label')} disabled>
-              <DatePicker date={pouch.createdAt} disabled setDate={() => {}} />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='date'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('dateField.label')}>
+                  <DatePicker
+                    date={field.value}
+                    setDate={(e) => {
+                      if (pouch.recurrence === RecurrenceType.ONE_TIME) {
+                        field.onChange(e);
+                      }
+                    }}
+                    disabled={pouch.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
             <FormItemWrapper label={t('recurrenceField.label')} disabled>
               <Select defaultValue={pouch.recurrence} disabled>

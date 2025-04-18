@@ -13,13 +13,18 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
+
+import { EditAssetForm } from '../edit-asset-form/edit-asset-form';
 
 export const EditAssetDialog = ({
   className,
-  children
+  children,
+  asset
 }: {
   className?: string;
   children?: React.ReactNode;
+  asset: AssetWithAdditionalInfo;
 }) => {
   const t = useTranslations('fortune.assets.editAsset');
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +47,7 @@ export const EditAssetDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
+        <EditAssetForm closeDialog={() => setIsOpen(false)} asset={asset} />
         {/* <AddIncomeForm closeDialog={() => setIsOpen(false)} /> */}
       </DialogContent>
     </Dialog>

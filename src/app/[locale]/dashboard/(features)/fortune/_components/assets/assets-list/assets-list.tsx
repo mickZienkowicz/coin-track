@@ -3,12 +3,18 @@ import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
 
-import { assets } from '../../../data';
 import { AddAssetDialog } from '../add-asset/add-asset-dialog';
 import { AssetDetailsCard } from '../asset-details-card';
 
-export const AssetsList = async () => {
+export const AssetsList = async ({
+  assets,
+  totalAssets
+}: {
+  assets: AssetWithAdditionalInfo[];
+  totalAssets: number;
+}) => {
   const t = await getTranslations('fortune.assets');
 
   return (
@@ -37,7 +43,7 @@ export const AssetsList = async () => {
       <ul className='flex flex-col gap-4'>
         {assets.map((asset) => (
           <li key={asset.id}>
-            <AssetDetailsCard asset={asset} />
+            <AssetDetailsCard asset={asset} totalAssets={totalAssets} />
           </li>
         ))}
         {assets.length === 0 && (

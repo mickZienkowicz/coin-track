@@ -11,14 +11,13 @@ export const getOccurenceInfo = ({
   interval,
   repeatCount,
   stoppedAt,
-  today
+  today,
+  currentBudgetStartDate
 }: GetOccurrenceInfoArgs): GetOccurrenceInfoResult => {
   const UTCMiddayToday = getUtcMiddayDateOfGivenDate(today);
 
   if (recurrence === RecurrenceType.ONE_TIME || !interval) {
-    const isFinished =
-      isBefore(firstOccurrenceDate, UTCMiddayToday) ||
-      isEqual(firstOccurrenceDate, UTCMiddayToday);
+    const isFinished = isBefore(firstOccurrenceDate, currentBudgetStartDate);
 
     return {
       nextOccurrenceDate: isFinished ? null : firstOccurrenceDate,
@@ -81,7 +80,12 @@ const recursivelyGetOccurrenceInfo = ({
   today: Date;
   stoppedAt: Date | null;
 }): GetOccurrenceInfoResult => {
-  const nextOccurrenceDate = getDateOneIntervalAfter({ date, interval });
+  const nextOccurrenceDate = getUtcMiddayDateOfGivenDate(
+    getDateOneIntervalAfter({
+      date,
+      interval
+    })
+  );
 
   // Stopped today and no next occurance
   if (stoppedAt && isEqual(nextOccurrenceDate, stoppedAt)) {

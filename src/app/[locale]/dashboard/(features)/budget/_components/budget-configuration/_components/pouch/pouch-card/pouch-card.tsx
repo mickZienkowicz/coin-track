@@ -1,13 +1,6 @@
 import { RecurrenceType } from '@prisma/client';
 import { format } from 'date-fns';
-import {
-  Ban,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  RefreshCw,
-  ShoppingCart
-} from 'lucide-react';
+import { Ban, Calendar, CheckCircle2, Clock, ShoppingCart } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
@@ -23,11 +16,11 @@ import { PouchWithOccurenceInfo } from '@/lib/dates/get-next-occurance/types';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 import { cn } from '@/lib/utils';
 
+import { RecuranceInfo } from '../../recurrance-info';
 import { EditPouchDialog } from '../edit-pouch/edit-pouch-dialog';
 import { RemovePouchDialog } from '../remove-pouch/remove-pouch-dialog';
 import { StopPouchDialog } from '../stop-pouch/stop-pouch-dialog';
 import { CategoryBadge } from './components/category-badge';
-import { RecuranceInfo } from './components/recurance-info';
 
 export const PouchCard = async ({
   pouch
@@ -116,12 +109,7 @@ export const PouchCard = async ({
 
           <div className='@md:order-1 -order-1 flex items-center'>
             {pouch.recurrence !== RecurrenceType.ONE_TIME ? (
-              <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
-                <RefreshCw className='mr-1.5 h-3.5 w-3.5 text-blue-500' />
-                <span className='text-xs font-medium text-blue-700'>
-                  {t('recurring')}
-                </span>
-              </div>
+              <RecuranceInfo itemWithOccurenceInfo={pouch} />
             ) : (
               <div className='flex items-center rounded-full bg-gray-100 px-3 py-1'>
                 <Clock className='mr-1.5 h-3.5 w-3.5 text-gray-500' />
@@ -132,7 +120,6 @@ export const PouchCard = async ({
             )}
           </div>
         </div>
-        <RecuranceInfo pouch={pouch} />
       </CardContent>
 
       <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>

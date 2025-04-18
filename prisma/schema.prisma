@@ -179,7 +179,7 @@ model Asset {
   name        String
   description String
   category    AssetCategory
-  valueCents  FortuneValue[]
+  values      FortuneValue[]
   familyId    String
   family      Family         @relation(fields: [familyId], references: [id], onDelete: Cascade)
   createdAt   DateTime       @default(now())

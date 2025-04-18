@@ -13,10 +13,12 @@ import { AddIncomeDialog } from '../../../budget-configuration/_components/incom
 
 export const BudgetSummaryIncomeList = ({
   incomes,
-  incomesSum
+  incomesSum,
+  isPreview
 }: {
   incomes: IncomeWithCurrentBudgetOccurance[];
   incomesSum: number;
+  isPreview: boolean;
 }) => {
   const locale = useLocale();
   const t = useTranslations('budget.incomes');
@@ -32,15 +34,17 @@ export const BudgetSummaryIncomeList = ({
               </div>
               {t('budgetSummary.title')}
             </h2>
-            <AddIncomeDialog>
-              <Button
-                variant='secondary'
-                size='iconSmall'
-                aria-label={t('addIncomeButton')}
-              >
-                <PlusCircle className='h-4 w-4' />
-              </Button>
-            </AddIncomeDialog>
+            {!isPreview && (
+              <AddIncomeDialog>
+                <Button
+                  variant='secondary'
+                  size='iconSmall'
+                  aria-label={t('addIncomeButton')}
+                >
+                  <PlusCircle className='h-4 w-4' />
+                </Button>
+              </AddIncomeDialog>
+            )}
           </div>
         </CardContent>
       </Card>

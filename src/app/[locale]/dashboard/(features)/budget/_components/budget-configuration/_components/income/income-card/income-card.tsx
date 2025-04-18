@@ -5,8 +5,7 @@ import {
   Ban,
   Calendar,
   CheckCircle2,
-  Clock,
-  RefreshCw
+  Clock
 } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
@@ -23,11 +22,11 @@ import { IncomeWithOccurenceInfo } from '@/lib/dates/get-next-occurance/types';
 import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 import { cn } from '@/lib/utils';
 
+import { RecuranceInfo } from '../../recurrance-info';
 import { EditIncomeDialog } from '../edit-income/edit-income-dialog';
 import { RemoveIncomeDialog } from '../remove-income/remove-income-dialog';
 import { StopIncomeDialog } from '../stop-income/stop-income-dialog';
 import { CategoryBadge } from './components/category-badge';
-import { RecuranceInfo } from './components/recurance-info';
 
 export const IncomeCard = async ({
   income
@@ -40,7 +39,7 @@ export const IncomeCard = async ({
   ]);
 
   return (
-    <Card className='pb-4! @container w-full'>
+    <Card className='pb-4! w-full'>
       {income.isFinished && (
         <Badge
           variant='outline'
@@ -97,7 +96,7 @@ export const IncomeCard = async ({
         </div>
       </CardHeader>
       <CardContent
-        className={cn(income.isDisabled && 'opacity-30', 'flex flex-col gap-3')}
+        className={cn(income.isDisabled && 'opacity-30', 'flex flex-col gap-4')}
       >
         <div className='@md:flex-row @md:items-center @md:gap-2 flex flex-col justify-between gap-4'>
           <div className='flex items-center'>
@@ -116,12 +115,7 @@ export const IncomeCard = async ({
 
           <div className='@md:order-1 -order-1 flex items-center'>
             {income.recurrence !== RecurrenceType.ONE_TIME ? (
-              <div className='flex items-center rounded-full bg-blue-50 px-3 py-1'>
-                <RefreshCw className='mr-1.5 h-3.5 w-3.5 text-blue-500' />
-                <span className='text-xs font-medium text-blue-700'>
-                  {t('recurrence')}
-                </span>
-              </div>
+              <RecuranceInfo itemWithOccurenceInfo={income} />
             ) : (
               <div className='flex items-center rounded-full bg-gray-100 px-3 py-1'>
                 <Clock className='mr-1.5 h-3.5 w-3.5 text-gray-500' />
@@ -132,7 +126,6 @@ export const IncomeCard = async ({
             )}
           </div>
         </div>
-        <RecuranceInfo income={income} />
       </CardContent>
 
       <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>

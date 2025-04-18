@@ -14,6 +14,8 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog';
 
+import { AddDebtForm } from '../add-debt-form/add-debt-form';
+
 export const AddDebtDialog = ({
   className,
   children
@@ -42,7 +44,7 @@ export const AddDebtDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        {/* <AddIncomeForm closeDialog={() => setIsOpen(false)} /> */}
+        <AddDebtForm closeDialog={() => setIsOpen(false)} />{' '}
       </DialogContent>
     </Dialog>
   );

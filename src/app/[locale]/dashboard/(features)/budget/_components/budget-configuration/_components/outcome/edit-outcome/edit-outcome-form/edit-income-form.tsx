@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Outcome } from '@prisma/client';
+import { Outcome, RecurrenceType } from '@prisma/client';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
@@ -26,7 +26,9 @@ import {
 } from '@/components/ui/select';
 import { useCurrentFamilyCurrency } from '@/hooks/use-current-family';
 import { getOutcomesCategories } from '@/lib/categories';
+import { dateSchemaWithMinDate } from '@/lib/dates/date-schema-with-min-date';
 import { pathGenerators } from '@/lib/paths';
+import { getNumberSchema } from '@/lib/schemas/number-schema';
 import { updateOutcome } from '@/server/outcome/actions/update-outcome';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
@@ -35,7 +37,9 @@ export const getEditOutcomeFormSchema = (
 ) =>
   z.object({
     name: z.string().min(1, t('nameField.error')),
-    category: z.string().min(1, t('categoryField.error'))
+    category: z.string().min(1, t('categoryField.error')),
+    value: getNumberSchema(t('valueField.error')),
+    date: dateSchemaWithMinDate({ message: t('dateField.error') })
   });
 
 export const EditOutcomeForm = ({
@@ -53,7 +57,9 @@ export const EditOutcomeForm = ({
     resolver: zodResolver(editOutcomeFormSchema),
     defaultValues: {
       name: outcome.name,
-      category: outcome.category
+      category: outcome.category,
+      value: (outcome.valueCents / 100).toString() as unknown as number,
+      date: outcome.date
     }
   });
 
@@ -75,12 +81,24 @@ export const EditOutcomeForm = ({
   });
 
   const onSubmit = async (values: z.infer<typeof editOutcomeFormSchema>) => {
+    const data: {
+      name: string;
+      category: string;
+      valueCents?: number;
+      date?: Date;
+    } = {
+      name: values.name,
+      category: values.category
+    };
+
+    if (outcome.recurrence === RecurrenceType.ONE_TIME) {
+      data.valueCents = values.value * 100;
+      data.date = values.date;
+    }
+
     await mutate({
       id: outcome.id,
-      data: {
-        name: values.name,
-        category: values.category
-      }
+      data
     });
   };
 
@@ -142,17 +160,39 @@ export const EditOutcomeForm = ({
               )}
             />
 
-            <FormItemWrapper label={t('valueField.label')} disabled>
-              <CurrencyInput
-                currency={currency}
-                value={outcome.valueCents / 100}
-                disabled
-              />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='value'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('valueField.label')}>
+                  <CurrencyInput
+                    {...field}
+                    currency={currency}
+                    disabled={outcome.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
-            <FormItemWrapper label={t('dateField.label')} disabled>
-              <DatePicker date={outcome.date} disabled setDate={() => {}} />
-            </FormItemWrapper>
+            <FormField
+              control={form.control}
+              name='date'
+              render={({ field, fieldState }) => (
+                <FormItemWrapper label={t('dateField.label')}>
+                  <DatePicker
+                    date={field.value}
+                    setDate={(e) => {
+                      if (outcome.recurrence === RecurrenceType.ONE_TIME) {
+                        field.onChange(e);
+                      }
+                    }}
+                    disabled={outcome.recurrence !== RecurrenceType.ONE_TIME}
+                    hasError={!!fieldState.error}
+                  />
+                </FormItemWrapper>
+              )}
+            />
 
             <FormItemWrapper label={t('recurrenceField.label')} disabled>
               <Select defaultValue={outcome.recurrence} disabled>

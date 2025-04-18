@@ -1,89 +1,159 @@
+import { useMemo } from 'react';
 import { ChartNoAxesCombined, House, Shield, Wallet } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { FormattedCurrency } from '@/app/[locale]/dashboard/_components/formatted-currency/formatted-currency';
+import { FortuneSummary } from '@/server/fortune/queries/get-forune-summary';
 
 import { FortuneStructureCard } from './_components/fortune-structure-card';
 import { MobileFortunesStructureCard } from './_components/mobile-fortune-structure-card';
+import {
+  getAssetsCountsByCategory,
+  getDescriptionKeyOfAssetsComponents,
+  getPercentageOfWholeFortune
+} from './utils';
 
-export const FortuneStructure = () => {
+export const FortuneStructure = ({
+  fortuneSummary
+}: {
+  fortuneSummary: FortuneSummary;
+}) => {
   const t = useTranslations('fortune.structure');
 
-  const financialCushionCount = 1 as number;
-  const livingAssetsCount = 3 as number;
-  const investmentAssetsCount = 15 as number;
-  const otherAssetsCount = 4 as number;
+  const {
+    financialCushionCount,
+    livingAssetsCount,
+    investmentAssetsCount,
+    otherAssetsCount
+  } = useMemo(
+    () => getAssetsCountsByCategory(fortuneSummary.assets),
+    [fortuneSummary.assets]
+  );
 
   return (
     <>
       <section className='md:hidden'>
         <MobileFortunesStructureCard
-          financialCushion={<FormattedCurrency valueCents={100000} />}
-          financialCushionPercentageOfWholeFortune={30}
-          livingAssets={<FormattedCurrency valueCents={100000} />}
-          livingAssetsPercentageOfWholeFortune={20}
-          investments={<FormattedCurrency valueCents={100000} />}
-          investmentsPercentageOfWholeFortune={40}
-          restOfAssets={<FormattedCurrency valueCents={100000} />}
-          restOfAssetsPercentageOfWholeFortune={10}
+          monthlySpendingsMultiplier={
+            fortuneSummary.totalAssets
+              ? fortuneSummary.totalAssets / fortuneSummary.monthlyOutcomesSum
+              : 0
+          }
+          financialCushion={
+            <FormattedCurrency
+              valueCents={fortuneSummary.financialCushionAssetsValueSum}
+            />
+          }
+          financialCushionPercentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.financialCushionAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
+          livingAssets={
+            <FormattedCurrency
+              valueCents={fortuneSummary.livingAssetsValueSum}
+            />
+          }
+          livingAssetsPercentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.livingAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
+          investments={
+            <FormattedCurrency
+              valueCents={fortuneSummary.investmentsAssetsValueSum}
+            />
+          }
+          investmentsPercentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.investmentsAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
+          restOfAssets={
+            <FormattedCurrency
+              valueCents={fortuneSummary.otherAssetsValueSum}
+            />
+          }
+          restOfAssetsPercentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.otherAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
         />
       </section>
       <section className='hidden grid-cols-1 gap-6 md:grid md:grid-cols-2 2xl:grid-cols-4'>
         <FortuneStructureCard
           icon={<Shield className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('financialCushion')}
-          value={<FormattedCurrency valueCents={100000} />}
-          description={
-            financialCushionCount === 1
-              ? t('description.one', { count: financialCushionCount })
-              : financialCushionCount < 5
-                ? t('description.few', { count: financialCushionCount })
-                : t('description.many', { count: financialCushionCount })
+          value={
+            <FormattedCurrency
+              valueCents={fortuneSummary.financialCushionAssetsValueSum}
+            />
           }
-          percentageOfWholeFortune={30}
-          monthlySpendingsMultiplier={1.5}
+          description={t(
+            getDescriptionKeyOfAssetsComponents(financialCushionCount),
+            { count: financialCushionCount }
+          )}
+          percentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.financialCushionAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
+          monthlySpendingsMultiplier={
+            fortuneSummary.totalAssets
+              ? fortuneSummary.financialCushionAssetsValueSum /
+                fortuneSummary.monthlyOutcomesSum
+              : 0
+          }
         />
 
         <FortuneStructureCard
           icon={<House className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('livingAssets')}
-          value={<FormattedCurrency valueCents={100000} />}
-          description={
-            livingAssetsCount === 1
-              ? t('description.one', { count: livingAssetsCount })
-              : livingAssetsCount < 5
-                ? t('description.few', { count: livingAssetsCount })
-                : t('description.many', { count: livingAssetsCount })
+          value={
+            <FormattedCurrency
+              valueCents={fortuneSummary.livingAssetsValueSum}
+            />
           }
-          percentageOfWholeFortune={20}
+          description={t(
+            getDescriptionKeyOfAssetsComponents(livingAssetsCount),
+            { count: livingAssetsCount }
+          )}
+          percentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.livingAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
         />
         <FortuneStructureCard
           icon={
             <ChartNoAxesCombined className='mr-1 inline-block h-3.5 w-3.5' />
           }
           title={t('investmentAssets')}
-          value={<FormattedCurrency valueCents={100000} />}
-          description={
-            investmentAssetsCount === 1
-              ? t('description.one', { count: investmentAssetsCount })
-              : investmentAssetsCount < 5
-                ? t('description.few', { count: investmentAssetsCount })
-                : t('description.many', { count: investmentAssetsCount })
+          value={
+            <FormattedCurrency
+              valueCents={fortuneSummary.investmentsAssetsValueSum}
+            />
           }
-          percentageOfWholeFortune={40}
+          description={t(
+            getDescriptionKeyOfAssetsComponents(investmentAssetsCount),
+            { count: investmentAssetsCount }
+          )}
+          percentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.investmentsAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
         />
         <FortuneStructureCard
           icon={<Wallet className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('otherAssets')}
-          value={<FormattedCurrency valueCents={100000} />}
-          description={
-            otherAssetsCount === 1
-              ? t('description.one', { count: otherAssetsCount })
-              : otherAssetsCount < 5
-                ? t('description.few', { count: otherAssetsCount })
-                : t('description.many', { count: otherAssetsCount })
+          value={
+            <FormattedCurrency
+              valueCents={fortuneSummary.otherAssetsValueSum}
+            />
           }
-          percentageOfWholeFortune={10}
+          description={t(
+            getDescriptionKeyOfAssetsComponents(otherAssetsCount),
+            { count: otherAssetsCount }
+          )}
+          percentageOfWholeFortune={getPercentageOfWholeFortune(
+            fortuneSummary.otherAssetsValueSum,
+            fortuneSummary.totalAssets
+          )}
         />
       </section>
     </>

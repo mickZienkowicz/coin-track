@@ -1,5 +1,6 @@
 'use client';
 
+import { RecurrenceType } from '@prisma/client';
 import { format } from 'date-fns';
 import { ChevronsUpDown } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -25,10 +26,14 @@ import { RemovePouchOutcomeDialog } from '../../../../budget-configuration/_comp
 
 export const PouchDetailsCard = ({
   pouch,
-  pouches
+  pouches,
+  isTransferingPouchesBalance,
+  isPreview
 }: {
   pouch: PouchWithCurrentBudgetOccurance;
   pouches: PouchWithCurrentBudgetOccurance[];
+  isTransferingPouchesBalance: boolean;
+  isPreview: boolean;
 }) => {
   const t = useTranslations('budget.pouch.budgetSummary');
   const locale = useLocale();
@@ -38,10 +43,15 @@ export const PouchDetailsCard = ({
     0
   );
 
-  const pouchFullCapacity = pouch.valueCents * pouch.occurrences.length;
+  const pouchFullCapacity =
+    pouch.valueCents +
+    pouch.eachOccuranceValueCents * (pouch.occurrences.length - 1);
 
   const pouchPercetageUsage =
     expensesSum <= 0 ? 0 : (expensesSum / pouchFullCapacity) * 100;
+
+  const thisPeriodPouchCapacity =
+    pouch.eachOccuranceValueCents * pouch.occurrences.length;
 
   return (
     <Card className='pb-4! w-full gap-4'>
@@ -62,9 +72,23 @@ export const PouchDetailsCard = ({
         <p className='text-sm text-primary/70'>
           {t('capacity')}:{' '}
           <span className='font-semibold text-primary/70'>
-            <FormattedCurrency valueCents={pouchFullCapacity} />
+            <FormattedCurrency valueCents={thisPeriodPouchCapacity} />
           </span>
+          {pouch.recurrence !== RecurrenceType.ONE_TIME &&
+            isTransferingPouchesBalance && (
+              <span> ({t('withoutTransfers')})</span>
+            )}
         </p>
+        {pouch.valueCents - thisPeriodPouchCapacity !== 0 && (
+          <p className='mt-1 text-sm text-primary/70'>
+            {t('transferredFromPreviousPeriods')}:{' '}
+            <span className='font-semibold text-primary/70'>
+              <FormattedCurrency
+                valueCents={pouch.valueCents - thisPeriodPouchCapacity}
+              />
+            </span>
+          </p>
+        )}
         <div className='mb-2 mt-4 flex items-center justify-between gap-2'>
           <p className='flex flex-col'>
             <span
@@ -84,7 +108,7 @@ export const PouchDetailsCard = ({
               <FormattedCurrency valueCents={pouchFullCapacity - expensesSum} />
             </span>
             <span className='text-right text-sm text-primary/70'>
-              {t('leftCapacity')}
+              {!isPreview ? t('leftCapacity') : t('unusedCapacity')}
             </span>
           </p>
         </div>
@@ -140,9 +164,11 @@ export const PouchDetailsCard = ({
           )}
         </div>
       </CardContent>
-      <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
-        <AddPouchOutcomeDialog pouches={pouches} pouchId={pouch.id} />
-      </CardFooter>
+      {!isPreview && (
+        <CardFooter className='pt-4! flex w-full items-center justify-end gap-4 border-t border-sidebar-border'>
+          <AddPouchOutcomeDialog pouches={pouches} pouchId={pouch.id} />
+        </CardFooter>
+      )}
     </Card>
   );
 };

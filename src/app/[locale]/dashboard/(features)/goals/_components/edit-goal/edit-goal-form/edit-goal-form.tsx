@@ -28,7 +28,7 @@ const getEditGoalFormSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t('nameField.error')),
     value: getNumberSchema(t('valueField.error')),
-    initialDeposit: getNumberSchema(t('initialDepositField.error')),
+    initialDeposit: getNumberSchema(t('initialDepositField.error')).optional(),
     endDate: z.date({ required_error: t('dateField.error') }),
     savingInterval: z.nativeEnum(Interval)
   });
@@ -80,7 +80,7 @@ export const EditGoalForm = ({
         ...values,
         id: goal.id,
         valueCents: values.value * 100,
-        initialDepositCents: values.initialDeposit * 100,
+        initialDepositCents: (values.initialDeposit ?? 0) * 100,
         endDate: getUtcMiddayDateOfGivenDate(values.endDate)
       }
     });

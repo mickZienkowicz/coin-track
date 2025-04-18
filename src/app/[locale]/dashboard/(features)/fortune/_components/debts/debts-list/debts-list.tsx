@@ -3,12 +3,18 @@ import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
 
-import { debts } from '../../../data';
 import { AddDebtDialog } from '../add-debt/add-debt-dialog';
 import { DebtDetailsCard } from '../debt-details-card';
 
-export const DebtsList = async () => {
+export const DebtsList = async ({
+  debts,
+  totalDebts
+}: {
+  debts: DebtWithAdditionalInfo[];
+  totalDebts: number;
+}) => {
   const t = await getTranslations('fortune.debts');
 
   return (
@@ -37,7 +43,7 @@ export const DebtsList = async () => {
       <ul className='flex flex-col gap-4'>
         {debts.map((debt) => (
           <li key={debt.id}>
-            <DebtDetailsCard debt={debt} />
+            <DebtDetailsCard debt={debt} totalDebts={totalDebts} />
           </li>
         ))}
         {debts.length === 0 && (

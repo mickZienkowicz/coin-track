@@ -20,7 +20,10 @@ interface PouchOutcomeProgressBarProps {
 const calculatePouchCapacity = (
   pouch: PouchWithCurrentBudgetOccurance
 ): number => {
-  return pouch.valueCents * pouch.occurrences.length;
+  return (
+    pouch.valueCents +
+    pouch.eachOccuranceValueCents * (pouch.occurrences.length - 1)
+  );
 };
 
 const calculateCurrentExpenses = (

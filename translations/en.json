@@ -1,4 +1,13 @@
 {
+  "recurring": {
+    "day": "day",
+    "week": "week",
+    "twoWeeks": "two weeks",
+    "month": "month",
+    "twoMonths": "two months",
+    "quarter": "quarter",
+    "year": "year"
+  },
   "fortune": {
     "title": "Fortune",
     "structure": {
@@ -7,6 +16,7 @@
       "investmentAssets": "Investment assets",
       "otherAssets": "Other assets",
       "description": {
+        "zero": "{count} components",
         "one": "{count} component",
         "few": "{count} components",
         "many": "{count} components"
@@ -23,26 +33,91 @@
         "title": "Add asset",
         "description": "Add an asset to your list of assets.",
         "button": "Add asset",
-        "buttonMobile": "Add"
+        "buttonMobile": "Add",
+        "form": {
+          "error": "Something went wrong.",
+          "category": {
+            "financialCushion": "Financial cushion",
+            "livingAssets": "Living assets",
+            "investmentAssets": "Investment assets",
+            "otherAssets": "Other assets"
+          },
+          "nameField": {
+            "label": "Name",
+            "placeholder": "e.g. Savings in foreign currency",
+            "error": "Provide name."
+          },
+          "categoryField": {
+            "label": "Category",
+            "placeholder": "e.g. Financial cushion",
+            "error": "Provide category."
+          },
+          "descriptionField": {
+            "label": "Description",
+            "placeholder": "e.g. 1000 USD",
+            "error": "Provide description."
+          },
+          "valueField": {
+            "label": "Value",
+            "placeholder": "e.g. 1000",
+            "error": "Provide value."
+          },
+          "addAssetButton": "Add asset"
+        }
       },
       "editAsset": {
         "title": "Edit asset",
         "description": "Edit an asset from your list of assets.",
         "button": "Edit asset",
-        "buttonMobile": "Edit"
+        "buttonMobile": "Edit",
+        "form": {
+          "error": "Something went wrong.",
+          "category": {
+            "financialCushion": "Financial cushion",
+            "livingAssets": "Living assets",
+            "investmentAssets": "Investment assets",
+            "otherAssets": "Other assets"
+          },
+          "nameField": {
+            "label": "Name",
+            "placeholder": "e.g. Savings in foreign currency",
+            "error": "Provide name."
+          },
+          "descriptionField": {
+            "label": "Description",
+            "placeholder": "e.g. 1000 USD",
+            "error": "Provide description."
+          },
+          "categoryField": {
+            "label": "Category",
+            "placeholder": "e.g. Financial cushion",
+            "error": "Provide category."
+          },
+          "valueField": {
+            "label": "Value",
+            "placeholder": "e.g. 1000",
+            "error": "Provide value."
+          },
+          "button": "Edit asset"
+        }
       },
       "deleteAsset": {
         "title": "Delete asset",
-        "description": "Delete an asset from your list of assets.",
+        "description": "If you added an asset by mistake and want to delete it together with the history, so that no traces are left in it - ",
+        "descriptionDeleteButton": "click here.",
         "button": "Delete asset",
-        "buttonMobile": "Delete"
+        "buttonMobile": "Delete",
+        "deleteAssetButton": "Delete asset",
+        "totalDeleteTitle": "Delete asset completely",
+        "totalDeleteDescription": "If you want to delete the asset completely, it may affect your account history. If you simply reduced it to zero, use the regular delete option.",
+        "totalDeleteButton": "Delete asset completely"
       },
       "assetDetailsCard": {
         "lastUpdate": "Last updated: ",
         "amount": "Amount",
         "category": "Category",
         "value": "Value",
-        "yourFortune": "of your fortune",
+        "yourAssets": "of your assets",
         "livingAssets": "Living assets",
         "investmentAssets": "Investment assets",
         "otherAssets": "Other assets",
@@ -60,13 +135,49 @@
         "title": "Add debt",
         "description": "Add a debt to your list of debts.",
         "button": "Add debt",
-        "buttonMobile": "Add"
+        "buttonMobile": "Add",
+        "form": {
+          "nameField": {
+            "label": "Name",
+            "placeholder": "e.g. Credit card",
+            "error": "Provide name."
+          },
+          "descriptionField": {
+            "label": "Description",
+            "placeholder": "e.g. Personal loan",
+            "error": "Provide description."
+          },
+          "valueField": {
+            "label": "Value",
+            "placeholder": "e.g. 1000",
+            "error": "Provide value."
+          },
+          "addDebtButton": "Add debt"
+        }
       },
       "editDebt": {
         "title": "Edit debt",
         "description": "Edit a debt from your list of debts.",
         "button": "Edit debt",
-        "buttonMobile": "Edit"
+        "buttonMobile": "Edit",
+        "form": {
+          "nameField": {
+            "label": "Name",
+            "placeholder": "e.g. Credit card",
+            "error": "Provide name."
+          },
+          "descriptionField": {
+            "label": "Description",
+            "placeholder": "e.g. Personal loan",
+            "error": "Provide description."
+          },
+          "valueField": {
+            "label": "Value",
+            "placeholder": "e.g. 1000",
+            "error": "Provide value."
+          },
+          "button": "Edit debt"
+        }
       },
       "deleteDebt": {
         "title": "Delete debt",
@@ -79,7 +190,7 @@
         "amount": "Amount",
         "category": "Category",
         "value": "Value",
-        "yourFortune": "of your fortune"
+        "yourDebts": "of your debts"
       }
     }
   },
@@ -211,6 +322,16 @@
   },
   "dashboard": {
     "title": "Dashboard",
+    "history": {
+      "title": "History of your finances",
+      "seePreview": "See preview",
+      "to": "to",
+      "selectBudgetToPreview": "Select budget to preview",
+      "preview": "Preview",
+      "incomes": "Incomes",
+      "outcomes": "Outcomes",
+      "balance": "Balance"
+    },
     "fortune": {
       "assets": "Assets",
       "debts": "Debts",
@@ -221,9 +342,28 @@
       "manageAssets": "Manage assets",
       "cardTitle": "Your fortune"
     },
+    "goalsSummaryCard": {
+      "title": "Goals",
+      "description": "Last updated: ",
+      "manageGoals": "Manage goals",
+      "noActiveGoals": "No active goals",
+      "noGoals": "You don't have any goals yet",
+      "addFirstGoal": "Add first goal",
+      "activeGoals": "Your goals - {count}"
+    },
     "balance": {
       "currentBudgetBalance": "Current budget balance",
       "manageBudget": "Manage budget",
+      "financialCushion": {
+        "title": "Financial cushion",
+        "recommendation": "We recommend:",
+        "manageAssets": "Manage assets",
+        "current": "Currently:",
+        "recommendationAmount": "Recommendation amount:",
+        "description1": "Financial cushion should be 3-6 months of your monthly expenses to ensure financial security in case of unexpected situations. You currently have ",
+        "description2": ", which is ",
+        "description3": " of the recommended value. We recommend a cushion of 6 times your monthly expenses."
+      },
       "balance": {
         "title": "Balance",
         "income": "Incomes",
@@ -417,6 +557,10 @@
     "infinite": "Constant",
     "multiple": "Multiple"
   },
+  "budgetHistory": {
+    "title": "Previous budget preview",
+    "backToCurrentBudget": "Back to current budget"
+  },
   "budget": {
     "title": "Budget",
     "summary": "Summary",
@@ -438,11 +582,14 @@
         "listOfPouches": "Total amount of pouches in the budget period.",
         "singleOccurrence": "Amount of a single occurrence: ",
         "occurrences": "Occurrences in this budget period: ",
-        "capacity": "Planned expenses in pouch",
+        "capacity": "Pouch capacity",
+        "transferredFromPreviousPeriods": "Transferred from previous periods",
+        "withoutTransfers": "without transfers",
         "expensesSum": "Expenses sum",
         "seeFullList": "Click to see the list of expenses in this pouch",
         "toggleList": "toggle list",
-        "leftCapacity": "Left capacity"
+        "leftCapacity": "Left capacity",
+        "unusedCapacity": "Unused capacity"
       },
       "removePouchOutcome": {
         "title": "Remove expense from pouch",
@@ -598,13 +745,19 @@
               "label": "Creation date"
             },
             "recurrenceField": {
-              "label": "Repeat every"
+              "label": "Repeat every",
+              "placeholder": "Select option",
+              "noResultsMessage": "No results found"
             },
             "repeatCountField": {
-              "label": "How many times"
+              "label": "How many times",
+              "placeholder": "e.g. 10",
+              "error": "Provide number of occurrences."
             },
             "repeatEveryField": {
-              "label": "Every how many"
+              "label": "Every how many",
+              "placeholder": "e.g. every month",
+              "error": "Provide interval."
             },
             "createPouchButton": "Edit pouch"
           }
@@ -884,7 +1037,7 @@
       },
       "editIncome": {
         "title": "Edit income",
-        "description": "Unfortunately, due to the correctness of the history of your income, not all fields can be changed. To fully edit the income, use the pause income or delete income options, and then create a new one.",
+        "description": "Unfortunately, due to the correctness of the history of your income, not all fields can be changed. To fully edit the income, pause or delete it, and then create a new one.",
         "editIncomeButton": "Edit income",
         "form": {
           "error": "Something went wrong.",
@@ -954,13 +1107,15 @@
     "transport": "Transport",
     "savings": "Savings",
     "other": "Other",
-    "goal": "Outcome on goal"
+    "goals": "Outcome on goal",
+    "goal": "Goal"
   },
   "budgetSummary": {
     "balance": "Balance",
     "pouches": "Pouches",
     "balanceSummary": "Balance: ",
     "pouchesSummary": "Sum of pouches capacity",
+    "pouchesExpensesSummaryOnPreview": "Pouches expenses",
     "pouchesExpensesSummary": "Sum of expenses in pouches",
     "currentBudgetBalance": "Current budget balance with pouches expenses",
     "currentBudgetBalanceWithPouches": "Current budget balance with pouches capacity",
@@ -994,6 +1149,56 @@
     }
   },
   "errors": {
+    "fortune": {
+      "asset": {
+        "create": {
+          "invalidAssetData": "Invalid asset data",
+          "failedToCreateAsset": "Failed to create asset",
+          "familyNotFound": "Family profile not found",
+          "success": "Asset created"
+        },
+        "delete": {
+          "invalidAssetData": "Invalid asset data",
+          "failedToDeleteAsset": "Failed to delete asset",
+          "familyNotFound": "Family profile not found",
+          "assetNotFound": "Asset not found",
+          "assetNotBelongsToFamily": "Asset does not belong to family profile",
+          "success": "Asset deleted"
+        },
+        "update": {
+          "invalidAssetData": "Invalid asset data",
+          "failedToUpdateAsset": "Failed to update asset",
+          "familyNotFound": "Family profile not found",
+          "assetNotFound": "Asset not found",
+          "assetNotBelongsToFamily": "Asset does not belong to family profile",
+          "success": "Asset updated"
+        }
+      },
+      "debt": {
+        "create": {
+          "invalidDebtData": "Invalid debt data",
+          "failedToCreateDebt": "Failed to create debt",
+          "familyNotFound": "Family profile not found",
+          "success": "Debt created"
+        },
+        "delete": {
+          "invalidDebtData": "Invalid debt data",
+          "failedToDeleteDebt": "Failed to delete debt",
+          "familyNotFound": "Family profile not found",
+          "debtNotFound": "Debt not found",
+          "debtNotBelongsToFamily": "Debt does not belong to family profile",
+          "success": "Debt deleted"
+        },
+        "update": {
+          "invalidDebtData": "Invalid debt data",
+          "failedToUpdateDebt": "Failed to update debt",
+          "familyNotFound": "Family profile not found",
+          "debtNotFound": "Debt not found",
+          "debtNotBelongsToFamily": "Debt does not belong to family profile",
+          "success": "Debt updated"
+        }
+      }
+    },
     "goal": {
       "create": {
         "invalidIncomeData": "Invalid goal data",

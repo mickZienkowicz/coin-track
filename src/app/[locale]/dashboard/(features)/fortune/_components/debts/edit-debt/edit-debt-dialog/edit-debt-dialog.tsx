@@ -13,13 +13,18 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
+
+import { EditDebtForm } from '../edit-debt-form/edit-debt-form';
 
 export const EditDebtDialog = ({
   className,
-  children
+  children,
+  debt
 }: {
   className?: string;
   children?: React.ReactNode;
+  debt: DebtWithAdditionalInfo;
 }) => {
   const t = useTranslations('fortune.debts.editDebt');
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +47,7 @@ export const EditDebtDialog = ({
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-        {/* <AddIncomeForm closeDialog={() => setIsOpen(false)} /> */}
+        <EditDebtForm closeDialog={() => setIsOpen(false)} debt={debt} />
       </DialogContent>
     </Dialog>
   );

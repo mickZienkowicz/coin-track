@@ -17,12 +17,12 @@ export const updateFortuneAsset = async ({
   data: z.infer<typeof fortuneAssetSchema>;
   assetId: string;
 }) => {
-  const t = await getTranslations('errors.asset.update');
+  const t = await getTranslations('errors.fortune.asset.update');
   await getUser();
 
   const knownErrors = {
     invalidAssetData: t('invalidAssetData'),
-    failedToCreateAsset: t('failedToCreateAsset'),
+    failedToUpdateAsset: t('failedToUpdateAsset'),
     familyNotFound: t('familyNotFound'),
     assetNotFound: t('assetNotFound'),
     assetNotBelongsToFamily: t('assetNotBelongsToFamily')
@@ -50,7 +50,7 @@ export const updateFortuneAsset = async ({
     }
 
     if (asset.familyId !== selectedFamily.id) {
-      throw new Error(knownErrors.assetNotFound);
+      throw new Error(knownErrors.assetNotBelongsToFamily);
     }
 
     const updatedAsset = await prisma.asset.update({
@@ -61,7 +61,7 @@ export const updateFortuneAsset = async ({
         name: data.name,
         description: data.description,
         category: data.category,
-        valueCents: {
+        values: {
           create: {
             valueCents: data.valueCents,
             date: getUtcMiddayDateOfGivenDate(new Date())
@@ -85,7 +85,7 @@ export const updateFortuneAsset = async ({
     }
     return {
       success: false,
-      message: isKnownError ? error.message : knownErrors.failedToCreateAsset
+      message: isKnownError ? error.message : knownErrors.failedToUpdateAsset
     };
   }
 };

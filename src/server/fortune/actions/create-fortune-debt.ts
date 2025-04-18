@@ -15,7 +15,7 @@ export const createFortuneDebt = async ({
 }: {
   data: z.infer<typeof fortuneDebtSchema>;
 }) => {
-  const t = await getTranslations('errors.goal.create');
+  const t = await getTranslations('errors.fortune.debt.create');
   await getUser();
 
   const knownErrors = {

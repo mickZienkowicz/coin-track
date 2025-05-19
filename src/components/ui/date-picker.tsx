@@ -39,7 +39,7 @@ export const DatePicker = ({
             <CalendarIcon className='h-4 w-4 text-gray-500' />
           </Button>
         </PopoverTrigger>
-        <PopoverContent>
+        <PopoverContent className='z-[10010]'>
           <Calendar mode='single' selected={date} onSelect={setDate} required />
         </PopoverContent>
       </Popover>

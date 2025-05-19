@@ -73,7 +73,12 @@ export const DeleteDebtDialog = ({
       <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
         <DialogTrigger asChild>
           {children || (
-            <Button className={className} variant='outline' size='sm'>
+            <Button
+              className={className}
+              variant='outline'
+              size='sm'
+              data-tour='delete-debt-dialog'
+            >
               <Trash2 className='size-4' />
               <span className='hidden min-[350px]:inline'>{t('button')}</span>
               <span className='inline min-[350px]:hidden'>
@@ -82,7 +87,7 @@ export const DeleteDebtDialog = ({
             </Button>
           )}
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent data-tour='delete-debt-dialog-content'>
           <DialogHeader>
             <DialogTitle>{t('title')}</DialogTitle>
             <DialogDescription>

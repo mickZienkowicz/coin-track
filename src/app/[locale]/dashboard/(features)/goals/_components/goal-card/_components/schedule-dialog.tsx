@@ -56,12 +56,12 @@ export const ScheduleDialog = ({ goal }: { goal: GoalWithAdditionalInfo }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size='sm'>
+        <Button size='sm' data-tour='view-deposit-schedule-button'>
           <CalendarDays className='h-4 w-4' />
           {t('button')}
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='view-deposit-schedule-modal'>
         <DialogHeader>
           <DialogTitle>{t('title', { goalName: goal.name })}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

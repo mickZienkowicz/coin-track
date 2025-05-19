@@ -39,12 +39,13 @@ export const BudgetSettingsDialog = ({
           variant='secondary'
           size='icon'
           aria-label={t('title')}
+          data-tour='budget-settings'
         >
           <Cog className='h-4 w-4 md:mr-2' />
           <span className='hidden md:inline'>{t('title')}</span>
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='budget-settings-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

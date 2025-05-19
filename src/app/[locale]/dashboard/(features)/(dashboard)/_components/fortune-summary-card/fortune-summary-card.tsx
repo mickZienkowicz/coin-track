@@ -5,5 +5,10 @@ import { FortuneSummarySection } from '../../../_components/fortune-summary-sect
 export const FortuneSummaryCard = async () => {
   const fortuneSummary = await getFortuneSummary();
 
-  return <FortuneSummarySection fortuneSummary={fortuneSummary} />;
+  return (
+    <FortuneSummarySection
+      fortuneSummary={fortuneSummary}
+      shoudlAddDataTourTags={true}
+    />
+  );
 };

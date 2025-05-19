@@ -30,14 +30,18 @@ export const AddOutcomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button className={className} variant='outline'>
+          <Button
+            className={className}
+            variant='outline'
+            data-tour='add-outcome-button'
+          >
             <ArrowDownCircle className='size-4 text-red-600' />
             <span className='hidden md:inline'>{t('button')}</span>
             <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='add-outcome-dialog'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

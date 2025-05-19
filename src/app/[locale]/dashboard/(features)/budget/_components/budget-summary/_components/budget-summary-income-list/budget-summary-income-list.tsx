@@ -24,7 +24,10 @@ export const BudgetSummaryIncomeList = ({
   const t = useTranslations('budget.incomes');
 
   return (
-    <div className='mb-12 flex flex-col gap-4'>
+    <div
+      className='mb-12 flex flex-col gap-4'
+      data-tour='budget-incomes-section'
+    >
       <Card className='py-5! mb-2'>
         <CardContent>
           <div className='flex items-center justify-between'>

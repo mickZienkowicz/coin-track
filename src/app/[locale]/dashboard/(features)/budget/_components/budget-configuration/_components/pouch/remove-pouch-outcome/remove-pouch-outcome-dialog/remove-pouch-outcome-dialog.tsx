@@ -56,12 +56,13 @@ export const RemovePouchOutcomeDialog = ({
             variant='destructive'
             size='iconSmall'
             aria-label={t('removeButton')}
+            data-tour='remove-pouch-card-outcome-button'
           >
             <Trash2 className='size-4' />
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='remove-pouch-card-outcome-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

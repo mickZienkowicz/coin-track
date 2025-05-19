@@ -42,13 +42,18 @@ export const AddPouchOutcomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button className={className} variant='outline' size='sm'>
+          <Button
+            className={className}
+            variant='outline'
+            size='sm'
+            data-tour='add-pouch-outcome-dialog'
+          >
             <ShoppingCart className='size-4 text-blue-600' />
             {t('button')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='pouch-card-outcome-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

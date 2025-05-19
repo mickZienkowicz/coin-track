@@ -13,13 +13,18 @@ import { cn } from '@/lib/utils';
 const CardItem = ({
   icon,
   title,
-  value
+  value,
+  dataTour
 }: {
   icon: React.ReactNode;
   title: string;
   value: ReactNode;
+  dataTour?: string;
 }) => (
-  <div className='flex items-center gap-3 text-lg'>
+  <div
+    className='flex items-center gap-3 text-lg md:hidden'
+    data-tour={dataTour}
+  >
     {icon}
     <div className='flex flex-col'>
       <h4 className='text-[22px] font-black leading-6 2xl:hidden '>{value}</h4>
@@ -73,6 +78,7 @@ export const MobileFortuneCard = ({
             }
             title={t('assets')}
             value={assetsCount}
+            dataTour='assets-count-card'
           />
           <CardItem
             icon={
@@ -82,6 +88,7 @@ export const MobileFortuneCard = ({
             }
             title={t('debts')}
             value={debtsCount}
+            dataTour='debts-count-card'
           />
           <CardItem
             icon={
@@ -91,6 +98,7 @@ export const MobileFortuneCard = ({
             }
             title={t('netWorth')}
             value={netWorth}
+            dataTour='net-worth-card'
           />
         </div>
         {pathname !== paths.fortune && (

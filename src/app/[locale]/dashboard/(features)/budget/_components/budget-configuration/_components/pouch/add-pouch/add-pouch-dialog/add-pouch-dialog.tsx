@@ -30,14 +30,18 @@ export const AddPouchDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button className={className} variant='outline'>
+          <Button
+            className={className}
+            variant='outline'
+            data-tour='add-pouch-button'
+          >
             <ShoppingCart className='size-4 text-blue-600' />
             <span className='hidden md:inline'>{t('button')}</span>
             <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='add-pouch-dialog'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

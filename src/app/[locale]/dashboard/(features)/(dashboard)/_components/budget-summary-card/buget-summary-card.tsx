@@ -30,7 +30,7 @@ export const BudgetSummaryCard = async ({
   }
 
   return (
-    <Card className={cn('gap-3', className)}>
+    <Card className={cn('gap-3', className)} data-tour='budget-balance-card'>
       <CardHeader className='pb-2'>
         <CardTitle className='flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between '>
           <div className='order-2 flex items-center gap-3 xl:order-1'>
@@ -82,6 +82,7 @@ export const BudgetSummaryCard = async ({
           <Link
             href={pathGenerators.budget()}
             className={cn(buttonVariants({ size: 'sm' }))}
+            data-tour='manage-budget-button'
           >
             {t('manageBudget')}
           </Link>

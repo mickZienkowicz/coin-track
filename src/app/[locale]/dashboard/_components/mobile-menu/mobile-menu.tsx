@@ -17,22 +17,26 @@ export const MobileMenu = () => {
       {
         value: pathGenerators.fortune(),
         label: t('fortune'),
-        icon: Wallet
+        icon: Wallet,
+        'data-tour': 'fortune-link'
       },
       {
         value: pathGenerators.budget(),
         label: t('budget'),
-        icon: Package
+        icon: Package,
+        'data-tour': 'budget-link'
       },
       {
         value: pathGenerators.dashboard(),
         label: t('dashboard'),
-        icon: LayoutDashboard
+        icon: LayoutDashboard,
+        'data-tour': 'dashboard-link'
       },
       {
         value: pathGenerators.goals(),
         label: t('goals'),
-        icon: Target
+        icon: Target,
+        'data-tour': 'goals-link'
       }
     ],
     [t]
@@ -44,7 +48,10 @@ export const MobileMenu = () => {
 
   return (
     <>
-      <div className='fixed bottom-0 left-0 right-0 z-40 border-t border-sidebar-border bg-sidebar min-[768px]:hidden'>
+      <div
+        className='fixed bottom-0 left-0 right-0 z-40 border-t border-sidebar-border bg-sidebar min-[768px]:hidden'
+        data-tour='mobile-menu'
+      >
         <ul className='safe-area-fix-bottom flex items-center justify-center gap-4'>
           {mainNavItems.map((item) => {
             const isActive = item.value === activeItemValue;
@@ -52,6 +59,7 @@ export const MobileMenu = () => {
             return (
               <li
                 key={item.label}
+                data-tour={item['data-tour']}
                 className={cn(
                   'relative border-sidebar transition-[scale,translate] duration-300',
                   isActive &&

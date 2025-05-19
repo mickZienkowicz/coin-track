@@ -33,6 +33,7 @@ export const AssetsList = async ({
                 variant='secondary'
                 size='iconSmall'
                 aria-label={t('addAssetButton')}
+                data-tour='add-asset-button'
               >
                 <PlusCircle className='h-4 w-4' />
               </Button>

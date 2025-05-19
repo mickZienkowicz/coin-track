@@ -15,13 +15,15 @@ export const NetWorthCard = ({
   icon,
   value,
   description,
-  className
+  className,
+  dataTour
 }: {
   title: string;
   icon: React.ReactNode;
   value: React.ReactNode;
   description?: string;
   className?: string;
+  dataTour?: string;
 }) => {
   const pathname = usePathname();
   const t = useTranslations('dashboard.fortune');
@@ -33,6 +35,7 @@ export const NetWorthCard = ({
         pathname === paths.fortune && 'justify-center',
         className
       )}
+      data-tour={dataTour}
     >
       <CardHeader className='pb-2'>
         <CardTitle className='flex items-center gap-3 text-lg'>

@@ -54,7 +54,7 @@ export const PouchDetailsCard = ({
     pouch.eachOccuranceValueCents * pouch.occurrences.length;
 
   return (
-    <Card className='pb-4! w-full gap-4'>
+    <Card className='pb-4! w-full gap-4' data-tour='pouch-card'>
       <CardContent>
         <h3 className='mb-1 flex items-center justify-between gap-2 text-2xl font-bold'>
           <span className='overflow-hidden text-ellipsis break-words'>
@@ -119,7 +119,11 @@ export const PouchDetailsCard = ({
               <CollapsibleTrigger asChild>
                 <h5 className='mt-7 flex w-full items-center justify-between gap-2 text-sm text-primary/70'>
                   {t('seeFullList')}
-                  <Button variant='outline' size='iconSmall'>
+                  <Button
+                    variant='outline'
+                    size='iconSmall'
+                    data-tour='pouch-card-expenses-button'
+                  >
                     <ChevronsUpDown className='h-4 w-4' />
                     <span className='sr-only'>{t('toggleList')}</span>
                   </Button>

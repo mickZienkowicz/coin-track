@@ -15,25 +15,32 @@ export const SentInvitationsList = async () => {
     getTranslations('settings.invitations.sent')
   ]);
 
-  if (invitations.length === 0) {
-    return null;
-  }
-
   return (
     <div className='mt-16'>
       <h2 className='mb-6 text-2xl font-semibold'>{t('title')}</h2>
 
+      {invitations?.length <= 0 && (
+        <Card data-tour='family-sent-invitations'>
+          <CardContent className='flex flex-col items-center gap-2'>
+            <h3 className='text-xl font-semibold'>{t('noInvitationsTitle')}</h3>
+            <p className='text-muted-foreground'>
+              {t('noInvitationsDescription')}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       <div className='flex flex-col gap-4'>
         {invitations.map((invitation) => (
-          <Card key={invitation.id}>
+          <Card key={invitation.id} data-tour='family-sent-invitations'>
             <CardContent className='relative flex flex-col items-end justify-between gap-4 md:flex-row'>
               <div className='flex w-full flex-col gap-2'>
-                <h4 className='mb-2 flex items-center gap-2 truncate font-semibold md:mb-3'>
+                <h3 className='mb-2 flex items-center gap-2 truncate font-semibold md:mb-3'>
                   <span className='flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gray-100 text-muted'>
                     <Mail className='h-4 w-4' />
                   </span>
                   {invitation.toUser.email}
-                </h4>
+                </h3>
                 <InvitationStatusBadge
                   status={invitation.status}
                   className='right-6 top-0 mb-3 w-full md:absolute md:w-auto'

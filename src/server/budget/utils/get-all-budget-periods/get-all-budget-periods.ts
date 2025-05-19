@@ -1,5 +1,12 @@
 import { Interval } from '@prisma/client';
-import { addDays, addMonths, addWeeks, addYears, isBefore } from 'date-fns';
+import {
+  addDays,
+  addMonths,
+  addWeeks,
+  addYears,
+  isBefore,
+  isSameDay
+} from 'date-fns';
 
 import { getCurrentBudgetPeriod } from '@/lib/dates/get-current-budget-period';
 
@@ -16,7 +23,7 @@ export const getAllBudgetPeriods = (
   const periods: BudgetPeriod[] = [];
   let currentDate = budgetStartDate;
 
-  while (isBefore(currentDate, today)) {
+  while (isBefore(currentDate, today) || isSameDay(currentDate, today)) {
     const period = getCurrentBudgetPeriod(
       budgetStartDate,
       budgetInterval,

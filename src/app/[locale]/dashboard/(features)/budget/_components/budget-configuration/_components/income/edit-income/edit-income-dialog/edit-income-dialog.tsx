@@ -38,13 +38,14 @@ export const EditIncomeDialog = ({
             variant='outline'
             size='sm'
             aria-label={t('editIncomeButton')}
+            data-tour='edit-income-button'
           >
             <Pencil className='size-4' />
             {t('editIncomeButton')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-income-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

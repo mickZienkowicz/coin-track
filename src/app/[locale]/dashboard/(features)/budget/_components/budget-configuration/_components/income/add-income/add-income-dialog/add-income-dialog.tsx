@@ -30,14 +30,18 @@ export const AddIncomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button className={className} variant='outline'>
+          <Button
+            className={className}
+            variant='outline'
+            data-tour='add-income-button'
+          >
             <ArrowUpCircle className='size-4 text-green-600' />
             <span className='hidden md:inline'>{t('button')}</span>
             <span className='inline md:hidden'>{t('buttonMobile')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='add-income-dialog'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

@@ -89,7 +89,9 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
 
       closeDialog();
       form.reset();
-      toast.success(message);
+      toast.success(
+        <span data-tour='add-family-success-message'>{message}</span>
+      );
       revalidatePathAction(pathGenerators.settings());
     }
   });
@@ -243,6 +245,7 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
               className='mt-6'
               loading={isPending}
               disabled={isPending}
+              data-tour='add-family-save-button'
             >
               {t('saveChangesButton')}
             </Button>

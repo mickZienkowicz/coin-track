@@ -23,7 +23,7 @@ export const BalanceSummaryCard = ({
   const t = useTranslations('budgetSummary');
 
   return (
-    <Card className='justify-between gap-2'>
+    <Card className='justify-between gap-2' data-tour='budget-balance-card'>
       <CardHeader className='flex items-center justify-between gap-2'>
         <CardTitle className='text-[26px]'>{t('balance')}</CardTitle>
         <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-yellow-600/20 md:size-11'>

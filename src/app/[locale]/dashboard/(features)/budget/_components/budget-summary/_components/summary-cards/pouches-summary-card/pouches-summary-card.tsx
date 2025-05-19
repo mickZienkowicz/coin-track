@@ -21,7 +21,7 @@ export const PouchesSummaryCard = ({
     (pouchesSum <= 0 ? 0 : pouchesOutcomesSum / pouchesSum) * 100;
 
   return (
-    <Card className='justify-between gap-2'>
+    <Card className='justify-between gap-2' data-tour='budget-pouches-card'>
       <CardHeader className='flex items-center justify-between gap-2'>
         <CardTitle className='text-[26px]'>{t('pouches')}</CardTitle>
         <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-600/20 md:size-11'>

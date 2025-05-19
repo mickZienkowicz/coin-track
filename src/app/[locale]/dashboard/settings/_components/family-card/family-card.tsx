@@ -42,13 +42,21 @@ export const FamilyCard = ({
         isSelectedFamily &&
           'ring-2 ring-brand-primary ring-offset-4 ring-offset-background'
       )}
+      data-tour={isSelectedFamily ? 'active-family-card' : 'family-card'}
     >
       <CardHeader className='flex items-center justify-start gap-2'>
         <CardTitle className='w-full grow text-2xl'>
           <h3>{family.name}</h3>
         </CardTitle>
         {isSelectedFamily && (
-          <Badge variant='brand'>{t('familyCard.activeBadge')}</Badge>
+          <Badge
+            variant='brand'
+            data-tour={
+              isSelectedFamily ? 'active-family-card-active-badge' : undefined
+            }
+          >
+            {t('familyCard.activeBadge')}
+          </Badge>
         )}
         {!isSelectedFamily && (
           <SwitchFamilyButton
@@ -89,9 +97,15 @@ export const FamilyCard = ({
                 name={family.name}
                 timezone={family.timezone}
                 familyId={family.id}
+                isSelectedFamily={isSelectedFamily}
               />
             )}
-            {isCurrentUserOwner && <RemoveFamilyDialog familyId={family.id} />}
+            {isCurrentUserOwner && (
+              <RemoveFamilyDialog
+                familyId={family.id}
+                isSelectedFamily={isSelectedFamily}
+              />
+            )}
           </div>
         </div>
 
@@ -108,6 +122,7 @@ export const FamilyCard = ({
             familyName={family.name}
             familyId={family.id}
             className='@sm:w-auto w-full'
+            isSelectedFamily={isSelectedFamily}
           />
         ) : (
           <LeaveFamilyDialog

@@ -8,15 +8,17 @@ export const FortuneCard = async ({
   icon,
   value,
   description,
-  className
+  className,
+  dataTour
 }: {
   title: string;
   icon: React.ReactNode;
   value: React.ReactNode;
   description?: string;
   className?: string;
+  dataTour?: string;
 }) => (
-  <Card className={cn('gap-0', className)}>
+  <Card className={cn('gap-0', className)} data-tour={dataTour}>
     <CardHeader className='gap-0 pb-0'>
       <CardTitle className='flex items-center gap-3 text-lg'>
         {icon}

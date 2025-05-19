@@ -12,10 +12,12 @@ import { NetWorthCard } from './_components/net-worth-card';
 
 export const FortuneSummarySection = ({
   className,
-  fortuneSummary
+  fortuneSummary,
+  shoudlAddDataTourTags
 }: {
   className?: string;
   fortuneSummary: FortuneSummary;
+  shoudlAddDataTourTags?: boolean;
 }) => {
   const t = useTranslations('dashboard.fortune');
 
@@ -47,7 +49,10 @@ export const FortuneSummarySection = ({
 
   return (
     <>
-      <div className={cn('md:hidden', className)}>
+      <div
+        className={cn('md:hidden', className)}
+        data-tour={shoudlAddDataTourTags && 'assets-cards'}
+      >
         <MobileFortuneCard
           netWorth={netWorth}
           assetsCount={assetsCount}
@@ -55,8 +60,12 @@ export const FortuneSummarySection = ({
           lastUpdateDate={lastUpdateDate && format(lastUpdateDate, 'd.MM.yyyy')}
         />
       </div>
-      <div className='hidden grid-cols-1 gap-6 md:grid md:grid-cols-2 lg:grid-cols-[1fr_1.25fr] 2xl:grid-cols-3'>
+      <div
+        className='hidden grid-cols-1 gap-6 md:grid md:grid-cols-2 lg:grid-cols-[1fr_1.25fr] 2xl:grid-cols-3'
+        data-tour={shoudlAddDataTourTags && 'assets-cards'}
+      >
         <FortuneCard
+          dataTour='assets-count-card'
           title={t('assets')}
           description={
             lastAssetsUpdateDate &&
@@ -74,6 +83,7 @@ export const FortuneSummarySection = ({
         />
 
         <FortuneCard
+          dataTour='debts-count-card'
           className='lg:order-last 2xl:order-none'
           title={t('debts')}
           description={
@@ -92,6 +102,7 @@ export const FortuneSummarySection = ({
         />
 
         <NetWorthCard
+          dataTour='net-worth-card'
           className='md:col-span-2 lg:col-span-1 lg:row-span-2 2xl:row-span-1'
           title={t('netWorth')}
           description={

@@ -38,13 +38,14 @@ export const EditOutcomeDialog = ({
             variant='outline'
             size='sm'
             aria-label={t('editButton')}
+            data-tour='edit-outcome-button'
           >
             <Pencil className='size-4' />
             {t('editButton')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-outcome-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

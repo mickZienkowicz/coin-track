@@ -15,6 +15,13 @@
       "livingAssets": "Majątek bytowy",
       "investmentAssets": "Majątek inwestycyjny",
       "otherAssets": "Pozostałe",
+      "financialCushionDetailedInfo": "Poduszka finansowa, w tej kategorii powinny znajdować sie te składniki majątku, które są najbardziej płynne i można je szybko zamienić na pieniądze.",
+      "livingAssetsDetailedInfo": "Majątek bytowy, w tej kategorii powinny znajdować sie te składniki majątku, które są używane do życia codziennego, np. dom czy samochód.",
+      "investmentAssetsDetailedInfo": "Majątek inwestycyjny, w tej kategorii powinny znajdować sie te składniki majątku, które są inwestowane w dłuższą przyszłość, np. akcje czy obligacje.",
+      "otherAssetsDetailedInfo": "Pozostałe, w tej kategorii powinny znajdować sie te składniki majątku, które nie pasują do innych kategorii, np. kolekcje, biżuteria.",
+      "structure": " Struktura majątku",
+      "monthlySpendings": "Twoje miesięczne wydatki",
+      "yourMonthlySpendings": "Poduszka finansowa stanowi",
       "description": {
         "zero": "{count} składników",
         "one": "{count} składnik",
@@ -327,7 +334,7 @@
       "title": "Historia twoich finansów",
       "seePreview": "Zobacz podgląd",
       "to": "do",
-      "selectBudgetToPreview": "Wybierz budżet do podglądu",
+      "selectBudgetToPreview": "Wybierz okres do podglądu",
       "preview": "Podgląd",
       "incomes": "Przychody",
       "outcomes": "Wydatki",
@@ -336,7 +343,7 @@
     "fortune": {
       "assets": "Aktywa",
       "debts": "Pasywa",
-      "netWorth": "Twoja wartość netto",
+      "netWorth": "Majątek",
       "assetsDescription": "Ostatnia aktualizacja: ",
       "debtsDescription": "Ostatnia aktualizacja: ",
       "netWorthDescription": "Ostatnia aktualizacja: ",
@@ -352,24 +359,31 @@
       "addFirstGoal": "Dodaj pierwszy cel",
       "activeGoals": "Twoje cele - {count}"
     },
+    "selectBudgetToPreviewDialog": {
+      "button": "Wybierz okres do podglądu",
+      "title": "Wybierz okres do podglądu",
+      "description": "Wybierz okres, który chcesz podglądnąć.",
+      "selectBudgetToPreview": "Wybierz okres do podglądu",
+      "previewButton": "Otwórz podgląd"
+    },
     "balance": {
-      "currentBudgetBalance": "Obecny budżet",
+      "currentBudgetBalance": "Budżet",
       "manageBudget": "Zarządzaj budżetem",
       "financialCushion": {
         "title": "Poduszka finansowa",
         "recommendation": "Rekomendujemy:",
-        "manageAssets": "Zarządzaj majątkiem",
+        "manageAssets": "Zarządzaj poduszką finansową",
         "current": "Obecnie:",
         "recommendationAmount": "Kwota rekomendacji:",
         "description1": "Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych. Aktualnie posiadasz ",
         "description2": ", co stanowi ",
-        "description3": " rekomendowanej wartości. Dowyliczeń przyjmujemy poduszkę wynoszącą 6-krotność miesięcznych wydatków."
+        "description3": " rekomendowanej wartości. Dowyliczeń wyliczeń procentowych przyjmujemy poduszkę wynoszącą 6-krotność miesięcznych wydatków."
       },
       "balance": {
         "title": "Bilans",
         "income": "Przychody",
         "outcome": "Wydatki",
-        "withPouches": "(Włącznie z sakiewkami)"
+        "withPouches": "(Włącznie z portfelami)"
       },
       "income": {
         "title": "Przychody",
@@ -382,10 +396,10 @@
         "total": "Wydatków w tym okresie budżetowym."
       },
       "pouch": {
-        "title": "Sakiewki",
+        "title": "Portfele",
         "spent": "Wydane",
         "planned": "Zaplanowane",
-        "addPouchOutcome": "Dodaj wydatek do sakiewki"
+        "addPouchOutcome": "Dodaj wydatek do portfela"
       }
     }
   },
@@ -408,6 +422,8 @@
         "title": "Zaproszenia do profili rodzinnych",
         "for": "Zaproszenie od:",
         "sent": "Wysłano:",
+        "noInvitationsTitle": "Nie znaleziono zaproszeń",
+        "noInvitationsDescription": "Nie masz jeszcze żadnych zaproszeń.",
         "accept": {
           "button": "Zaakceptuj",
           "error": "Coś poszło nie tak."
@@ -420,6 +436,8 @@
         }
       },
       "sent": {
+        "noInvitationsTitle": "Nie znaleziono zaproszeń",
+        "noInvitationsDescription": "Nie masz jeszcze żadnych zaproszeń.",
         "title": "Wysłane zaproszenia",
         "for": "Zaproszenie do:",
         "family": "Profil rodzinny:",
@@ -464,7 +482,7 @@
           "noResultsMessage": "Nie znaleziono wyników"
         },
         "budgetTransferPouchBalanceField": {
-          "label": "Przenoszenie salda sakiewek między budżetami",
+          "label": "Przenoszenie salda portfeli między budżetami",
           "triggerDefaultLabel": "Wybierz opcję",
           "yes": "Tak",
           "no": "Nie"
@@ -577,29 +595,29 @@
       "addFamilyButton": "Przejdź to ustawień"
     },
     "pouch": {
-      "title": "Sakiewki",
-      "addPouchButton": "Dodaj sakiewkę",
+      "title": "Portfele",
+      "addPouchButton": "Dodaj portfel",
       "noPouchesCard": {
-        "title": "Nie masz jeszcze żadnych sakiewek",
-        "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
+        "title": "Nie masz jeszcze żadnych portfeli",
+        "description": "Dodaj portfele, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
       },
       "budgetSummary": {
-        "title": "Sakiewki",
-        "listOfPouches": "Łączna kwota sakiewek w okresie budżetowym.",
+        "title": "Portfele",
+        "listOfPouches": "Łączna kwota portfeli w okresie budżetowym.",
         "singleOccurrence": "Kwota pojedynczego wystąpienia: ",
         "occurrences": "Wystąpienia w tym okresie budżetowym: ",
-        "capacity": "Pojemność sakiewki",
+        "capacity": "Pojemność portfeli",
         "transferredFromPreviousPeriods": "Przeniesione z poprzednich okresów",
         "withoutTransfers": "bez przeniesień",
         "expensesSum": "Suma wydatków",
-        "seeFullList": "Kliknij aby zobaczyć listę wydatków w tej sakiewce",
+        "seeFullList": "Kliknij aby zobaczyć listę wydatków w tym portfelu",
         "toggleList": "przełącz listę",
         "leftCapacity": "Pozostało do wydania",
         "unusedCapacity": "Niewykorzystana pojemność"
       },
       "removePouchOutcome": {
-        "title": "Usuń wydatek z sakiewki",
-        "description": "Czy na pewno chcesz usunąć ten wydatek z sakiewki? Tej operacji nie da sie cofnąć.",
+        "title": "Usuń wydatek z portfela",
+        "description": "Czy na pewno chcesz usunąć ten wydatek z portfela? Tej operacji nie da sie cofnąć.",
         "removeButton": "Usuń wydatek",
         "error": "Coś poszło nie tak."
       },
@@ -619,8 +637,8 @@
         "recurringMultiple": "Powtarza się co {interval}, jeszcze {count} razy",
         "recurringInfinite": "Powtarza się co {interval}",
         "editPouchOutcome": {
-          "title": "Edytuj wydatek w sakiewce",
-          "description": "Edytuj wydatek w sakiewce, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "title": "Edytuj wydatek w portfelu",
+          "description": "Edytuj wydatek w portfelu, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
           "button": "Edytuj wydatek",
           "form": {
             "error": "Coś poszło nie tak.",
@@ -643,22 +661,22 @@
           }
         },
         "removePouch": {
-          "title": "Usuń sakiewkę",
-          "descriptionOneTime": "Czy na pewno chcesz usunąć ten sakiewkę? Tej operacji nie da sie cofnąć.",
-          "descriptionMultiple": "Czy na pewno chcesz usunąć ten sakiewkę? Tej operacji nie da sie cofnąć, a moze ona wpłynąć na historię twojego konta, np. poprzez zmiane salda obecnego lub przeszłego budżetu.",
+          "title": "Usuń portfel",
+          "descriptionOneTime": "Czy na pewno chcesz usunąć ten portfel? Tej operacji nie da sie cofnąć.",
+          "descriptionMultiple": "Czy na pewno chcesz usunąć ten portfel? Tej operacji nie da sie cofnąć, a moze ona wpłynąć na historię twojego konta, np. poprzez zmiane salda obecnego lub przeszłego budżetu.",
           "removeButton": "Usuń",
           "error": "Coś poszło nie tak."
         },
         "addPouchOutcome": {
-          "title": "Dodaj wydatek do sakiewki",
-          "description": "Wybierz sakiewkę i dodaj wydatek w jej ramach, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
-          "button": "Dodaj wydatek w ramach sakiewki",
+          "title": "Dodaj wydatek do portfela",
+          "description": "Wybierz portfel i dodaj wydatek w jej ramach, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "button": "Dodaj wydatek w ramach portfela",
           "form": {
             "error": "Coś poszło nie tak.",
             "pouchField": {
-              "label": "Sakiewka",
-              "placeholder": "Wybierz sakiewkę",
-              "error": "Wybierz sakiewkę."
+              "label": "Portfel",
+              "placeholder": "Wybierz portfel",
+              "error": "Wybierz portfel."
             },
             "nameField": {
               "label": "Nazwa",
@@ -679,9 +697,9 @@
           }
         },
         "addPouch": {
-          "title": "Utwórz nową sakiewkę",
-          "description": "Dodaj sakiewki, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
-          "button": "Dodaj sakiewkę",
+          "title": "Utwórz nowy portfel",
+          "description": "Dodaj portfele, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
+          "button": "Dodaj portfel",
           "buttonMobile": "Dodaj",
           "form": {
             "error": "Coś poszło nie tak.",
@@ -702,7 +720,7 @@
             },
             "recurrenceField": {
               "label": "Powtarzanie",
-              "placeholder": "Wybierz opcję",
+              "placeholder": "Wybierz typ portfela",
               "noResultsMessage": "Nie znaleziono wyników"
             },
             "repeatCountField": {
@@ -720,12 +738,12 @@
               "placeholder": "Wybierz kategorię",
               "error": "Wybierz kategorię."
             },
-            "createPouchButton": "Utwórz sakiewkę"
+            "createPouchButton": "Utwórz portfel"
           }
         },
         "editPouch": {
-          "title": "Edytuj sakiewkę",
-          "description": "Niestety ze względu na zachownie poprawności historii twoich sakiewek nie wszystkie pola możesz zmienić. W celu pełnej edycji wydatku skorzystaj z opcji wstrzymaj sakiewkę lub usuń sakiewkę, a następnie utwórz nową.",
+          "title": "Edytuj portfel",
+          "description": "Niestety ze względu na zachownie poprawności historii twoich portfeli nie wszystkie pola możesz zmienić. W celu pełnej edycji wydatku skorzystaj z opcji wstrzymaj portfel lub usuń portfel, a następnie utwórz nowy.",
           "button": "Edytuj",
           "form": {
             "error": "Coś poszło nie tak.",
@@ -735,8 +753,8 @@
               "error": "Podaj nazwę."
             },
             "typeField": {
-              "label": "Typ sakiewki",
-              "placeholder": "Wybierz typ sakiewki",
+              "label": "Typ portfela",
+              "placeholder": "Wybierz typ portfela",
               "noResultsMessage": "Nie znaleziono wyników"
             },
             "categoryField": {
@@ -745,7 +763,7 @@
               "error": "Wybierz kategorię."
             },
             "valueField": {
-              "label": "Kwota sakiewki"
+              "label": "Kwota portfela"
             },
             "dateField": {
               "label": "Data utworzenia"
@@ -765,27 +783,27 @@
               "placeholder": "np. Co miesiąc",
               "error": "Podaj poprawną wartość."
             },
-            "createPouchButton": "Edytuj sakiewkę"
+            "createPouchButton": "Edytuj portfel"
           }
         },
 
         "stopPouch": {
-          "title": "Wstrzymaj sakiewkę",
+          "title": "Wstrzymaj portfel",
           "stopButton": "Wstrzymaj",
           "description": "Uwaga!",
           "descriptionAttention": "Tej operacji nie można cofnąć. ",
-          "descriptionAttentionStop": "Wstrzymając sakiewkę, nie będzie ona uwzględniwana w budżecie od daty którą podasz. ",
-          "descriptionAttentionStopPouch": "Wstrzymając sakiewkę, nie będzie ona uwzględniwana w budżecie od daty którą podasz. ",
-          "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc sakiewkę, ",
+          "descriptionAttentionStop": "Wstrzymając portfel, nie będzie on uwzględniany w budżecie od daty którą podasz. ",
+          "descriptionAttentionStopPouch": "Wstrzymając portfel, nie będzie on uwzględniany w budżecie od daty którą podasz. ",
+          "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc portfel, ",
           "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie wydateku moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
           "descriptionDeleteButton": "kliknij tutaj",
           "form": {
             "error": "Coś poszło nie tak.",
             "dateField": {
-              "label": "Data wstrzymania sakiewki",
+              "label": "Data wstrzymania portfela",
               "error": "Wybierz datę."
             },
-            "stopPouchButton": "Wstrzymaj sakiewkę"
+            "stopPouchButton": "Wstrzymaj portfel"
           }
         }
       }
@@ -1117,13 +1135,13 @@
   },
   "budgetSummary": {
     "balance": "Bilans",
-    "pouches": "Sakiewki",
+    "pouches": "Portfele",
     "balanceSummary": "Bilans: ",
-    "pouchesSummary": "Planowane wydatki w sakiewkach",
-    "pouchesExpensesSummaryOnPreview": "Wydatki w sakiewkach",
-    "pouchesExpensesSummary": "Aktualne wydatki w sakiewkach",
-    "currentBudgetBalance": "Bilans z zaplanowanymi wydatkami w sakiewkach",
-    "currentBudgetBalanceWithPouches": "Bilans z wydatkami w sakiewkach",
+    "pouchesSummary": "Planowane wydatki w portfelach",
+    "pouchesExpensesSummaryOnPreview": "Wydatki w portfelach",
+    "pouchesExpensesSummary": "Aktualne wydatki w portfelach",
+    "currentBudgetBalance": "Bilans z zaplanowanymi wydatkami w portfelach",
+    "currentBudgetBalanceWithPouches": "Bilans z wydatkami w portfelach",
     "positiveBalance": "Nadwyżka",
     "negativeBalance": "Deficyt",
     "neutralBalance": "Równowaga",
@@ -1145,7 +1163,7 @@
         "label": "Data rozpoczęcia pierwszego okresu"
       },
       "transferPouchBalanceField": {
-        "label": "Przenoszenie salda sakiewek",
+        "label": "Przenoszenie salda portfeli",
         "placeholder": "Wybierz opcję",
         "yes": "Tak",
         "no": "Nie"
@@ -1396,58 +1414,270 @@
     },
     "pouchOutcome": {
       "create": {
-        "success": "Utworzono wydatek w sakiewce",
-        "invalidPouchOutcomeData": "Nieprawidłowe dane wydatku w sakiewce",
+        "success": "Utworzono wydatek w portfelu",
+        "invalidPouchOutcomeData": "Nieprawidłowe dane wydatku w portfelu",
         "budgetNotFound": "Budżet nie znaleziony",
-        "pouchNotFound": "Sakiewka nie znaleziona",
-        "failedToCreatePouchOutcome": "Nie udało się utworzyć wydatku w sakiewce",
-        "unauthorized": "Nie jesteś upoważniony do utworzenia wydatku w sakiewce"
+        "pouchNotFound": "Portfel nie znaleziony",
+        "failedToCreatePouchOutcome": "Nie udało się utworzyć wydatku w portfelu",
+        "unauthorized": "Nie jesteś upoważniony do utworzenia wydatku w portfelu"
       },
       "delete": {
-        "success": "Usunięto wydatek z sakiewki",
-        "failedToDeletePouchOutcome": "Nie udało się usunąć wydateku z sakiewki",
-        "pouchOutcomeNotFound": "Wydatku w sakiewce nie znaleziony",
-        "pouchOutcomeNotBelongsToUser": "Wydatku w sakiewce nie należy do ciebie"
+        "success": "Usunięto wydatek z portfela",
+        "failedToDeletePouchOutcome": "Nie udało się usunąć wydateku z portfela",
+        "pouchOutcomeNotFound": "Wydatku w portfelu nie znaleziony",
+        "pouchOutcomeNotBelongsToUser": "Wydatku w portfelu nie należy do ciebie"
       },
       "update": {
-        "success": "Zaktualizowano wydatek w sakiewce",
-        "failedToUpdatePouchOutcome": "Failed to update pouch outcome",
-        "pouchOutcomeNotFound": "Pouch outcome not found",
-        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you",
-        "invalidPouchOutcomeData": "Invalid pouch outcome data"
+        "success": "Zaktualizowano wydatek w portfelu",
+        "failedToUpdatePouchOutcome": "Nie udało się zaktualizować wydateku w portfelu",
+        "pouchOutcomeNotFound": "Wydatku w portfelu nie znaleziony",
+        "pouchOutcomeNotBelongsToUser": "Wydatku w portfelu nie należy do ciebie",
+        "invalidPouchOutcomeData": "Nieprawidłowe dane wydatku w portfelu"
       }
     },
     "pouch": {
       "create": {
-        "success": "Utworzono sakiewkę",
-        "invalidPouchData": "Nieprawidłowe dane sakiewki",
+        "success": "Utworzono portfel",
+        "invalidPouchData": "Nieprawidłowe dane portfela",
         "budgetNotFound": "Budżet nie znaleziony",
-        "repeatCountRequired": "\"Ile razy ma sie powtarzać\" jest wymagane kiedy sakiewka jest wielorazowa.",
-        "repeatEveryRequired": "\"Co ile ma sie powtarzać\" jest wymagane kiedy sakiewka jest wielorazowa",
-        "failedToCreatePouch": "Nie udało się utworzyć sakiewki",
-        "unauthorized": "Nie jesteś upoważniony do utworzenia sakiewki"
+        "repeatCountRequired": "\"Ile razy ma sie powtarzać\" jest wymagane kiedy portfel jest wielorazowa.",
+        "repeatEveryRequired": "\"Co ile ma sie powtarzać\" jest wymagane kiedy portfel jest wielorazowa",
+        "failedToCreatePouch": "Nie udało się utworzyć portfela",
+        "unauthorized": "Nie jesteś upoważniony do utworzenia portfela"
       },
       "delete": {
-        "success": "Usunięto sakiewkę",
-        "failedToDeletePouch": "Nie udało się usunąć sakiewki",
-        "pouchNotFound": "Sakiewka nie znaleziona",
-        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie"
+        "success": "Usunięto portfel",
+        "failedToDeletePouch": "Nie udało się usunąć portfela",
+        "pouchNotFound": "Portfel nie znaleziony",
+        "pouchNotBelongsToUser": "Portfel nie należy do ciebie"
       },
       "stop": {
-        "success": "Wstrzymano sakiewkę",
-        "failedToStopPouch": "Nie udało się wstrzymać sakiewki",
-        "pouchNotFound": "Sakiewka nie znaleziona",
-        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",
-        "invalidPouchData": "Nieprawidłowe dane sakiewki",
-        "oneTimePouchCannotBeStopped": "Jednorazowa sakiewka nie może być wstrzymana. Po prostu usuń ją"
+        "success": "Wstrzymano portfel",
+        "failedToStopPouch": "Nie udało się wstrzymać portfela",
+        "pouchNotFound": "Portfel nie znaleziony",
+        "pouchNotBelongsToUser": "Portfel nie należy do ciebie",
+        "invalidPouchData": "Nieprawidłowe dane portfela",
+        "oneTimePouchCannotBeStopped": "Jednorazowy portfel nie może być wstrzymany. Po prostu usuń ją"
       },
       "update": {
-        "success": "Zaktualizowano sakiewkę",
-        "failedToUpdatePouch": "Nie udało się zaktualizować sakiewki",
-        "pouchNotFound": "Sakiewka nie znaleziona",
-        "pouchNotBelongsToUser": "Sakiewka nie należy do ciebie",
-        "invalidPouchData": "Nieprawidłowe dane sakiewki"
+        "success": "Zaktualizowano portfel",
+        "failedToUpdatePouch": "Nie udało się zaktualizować portfela",
+        "pouchNotFound": "Portfel nie znaleziony",
+        "pouchNotBelongsToUser": "Portfel nie należy do ciebie",
+        "invalidPouchData": "Nieprawidłowe dane portfela"
       }
+    }
+  },
+  "tour": {
+    "startTourButton": "Rozpocznij przewodnik",
+    "title": "Witaj w aplikacji",
+    "nextButton": "Następny",
+    "previousButton": "Poprzedni",
+    "finishButton": "Zakończ przewodnik",
+    "description": "To jest przewodnik po aplikacji. Pomoże Ci zrozumieć aplikację i zacząć korzystać z niej. Możesz go teraz pominać, i zacząc w dowolnym momencie z ekranu ustawień.",
+    "skipTourButton": "Pomiń przewodnik"
+  },
+  "tourSteps": {
+    "addFamily": {
+      "title": "Dodaj swoją rodzinę",
+      "description": "Pierwszym krokiem jest dodanie rodziny, jest to profil, który będzie współdzielony z innymi użytkownikami i pozwoli na wspólne zarządzanie finansami. Do sterowania przewodnikiem użyj przycisków poniej lub strzałek na klawiaturze.",
+      "alert": "Musisz dodać przynajmniej jedną rodzinę, aby kontynuować"
+    },
+    "families": {
+      "title": "Karta rodziny",
+      "description": "To karta twojej rodziny, zawiera informacje o rodzinie i możliwości zarządzania nią. Mozesz należeć do kilku rodzin jednocześnie, do przełączenia sie między innymi służy guzik w prawym gównym rogu karty, na tej karcie nie jest on widoczny poniewajest ona obecnie wybrana."
+    },
+    "familyEdit": {
+      "title": "Edycja rodziny",
+      "description": "Ten guzik pozowli otworzyć panel edycji rodziny, w którym możesz zmienić nazwę rodziny, strefe czasową oraz walutę."
+    },
+    "familyDelete": {
+      "title": "Usuwanie rodziny",
+      "description": "Ten guzik pozwoli usunąć rodzinę, w tym celu należy kliknąć w guzik usuń rodzinę i potwierdzić to w oknie dialogowym."
+    },
+    "inviteUserToFamily": {
+      "title": "Zaproszenie użytkownika do rodziny",
+      "description": "Ten guzik pozwoli zaprosić użytkownika do rodziny, w tym celu należy kliknąć w guzik zaproszenie użytkownika i wprowadzić adres email użytkownika."
+    },
+    "yourFamilyInvitations": {
+      "title": "Wysłane zaproszenia",
+      "description": "W tym miejscu pojwią sie zaproszenia do rodziny wysłane przez Ciebie"
+    },
+    "familyInvitations": {
+      "title": "Otrzymane zaproszenia",
+      "description": "W tym miejscu pojwią sie zaproszenia do rodziny od innych użytkowników"
+    },
+    "goToBudgetPage": {
+      "title": "Przejdź do strony budżetu",
+      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do strony budżetu."
+    },
+
+    "budgetSettings": {
+      "title": "Ustawienia budżetu",
+      "description": "Ten guzik otwiera okno zarządzania ustawieniami budżetu, mozna tam ustawić dzień startu nowego budzetu oraz co ile nowy budzet powinien sie rozpoczynac, jest tam tez opcja przenoszenia przenoszenia sald portfeli do kolejnych budzetów o której wiecej mozesz doweidzeic sie wiecej klikajac przy ikonce \"i\" zaraz koło pola do wybrania tej opcji."
+    },
+    "budgetItems": {
+      "title": "Przejdź do pozycji budżetu",
+      "description": "Aby skonfigurować swoje wydatki i przychody, przejdź do strony \"pozycje budżetu\"."
+    },
+    "addIncome": {
+      "title": "Dodaj nowy przychód",
+      "description": "Dodaj swoj pierwszy przychód, wybierz czy jest on jednorazowy, czy sie powtarza oraz wpisz jego kwote",
+      "alert": "Musisz dodać przynajmniej jeden przychód, aby kontynuować"
+    },
+    "seeThisIncome": {
+      "title": "Karta przychódu",
+      "description": "To karta przychodu, zawiera informacje o przychodzie, jego kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem dochdów cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny dochód przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+    },
+    "addOutcome": {
+      "title": "Dodaj nowy wydatek",
+      "description": "Dodaj swoj pierwszy wydatek, wybierz czy jest on jednorazowy, czy sie powtarza oraz wpisz jego kwote",
+      "alert": "Musisz dodać przynajmniej jeden wydatek, aby kontynuować"
+    },
+    "seeThisOutcome": {
+      "title": "Karta wydateku",
+      "description": "To karta wydatku, zawiera informacje o wydajce, jego kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem wydajce cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny wydatek przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+    },
+    "addPouch": {
+      "title": "Dodaj nowy portfel",
+      "description": "Dodaj swoaj pierwsza portfel, portfel to specjalny rodzaj wydatku, który może być używany do kontroli budżetu, pozwala wybrac kwote jaka chcemy przeznaczac na dany cel, np. jedzenie, a potem w trakcie trwanai budzetu dodwać poszczególne wydatki w ramach tej skawieki, tak aby dokładnie wiedzieć ile pieniedzy wydaliśmy na dany cel w trakcie trwania okresu budzetowego. Jeeli wybrałes opcje przenoszenia sald sakiwewek, to jeeli nie wydasz wszyskhc pieniedzy w danych okresie to brakujaa kwota zostanie przeniesiona do kolejengo, podobnie kiedy w danych okresie wydasz na dany cel za duzo .Wybierz czy jest ona jednorazowa, czy sie powtarza oraz wpisz jej kwote.",
+      "alert": "Musisz dodać przynajmniej jeden portfel, aby kontynuować"
+    },
+    "seeThisPouch": {
+      "title": "Karta portfela",
+      "description": "To karta portfela, zawiera informacje o portfelu, jej kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem portfeli cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny wydatek przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+    },
+    "goToBudgetSummary": {
+      "title": "Przejdź do podsumowania budżetu",
+      "description": "Przejdz do podsumowania budzetu, zobaczysz tam obeny okres budzety który jest oparty na danych które zostały przez ciebie dodane w tym okenie"
+    },
+    "seeBudgetTimeline": {
+      "title": "Zobacz okres budzetowy",
+      "description": "Tutaj mozesz zoabczyc od kiedy do kiedy trwa obecny okres budzetu"
+    },
+    "seeBudgetBalance": {
+      "title": "Karta bilansu budżetu",
+      "description": "Ta karta pokazuje twoje saldo w danym okresie budzetu, moesz porównać ile masz dochodów i wydatków w danym okresie, liczac z wydatkiami które poczyniałeś w portfelach, ale równiez saldo liczac ze wszystkimi zaplanowanymi wydatkami i dochodami"
+    },
+    "budgetPouches": {
+      "title": "Karta portfeli",
+      "description": "Ta karta pokazuje podsumowanie wsztstkich portfeli, widać tu ile w tym okresie zostało wydane, oraz ile wydatków w ramach portfeli jest zaplanowane w tym okresie budzetwoym."
+    },
+    "pouchOutcome": {
+      "title": "Karta portfela",
+      "description": "Tak jak wspominałem wcześniej, portfel to specjany rodzaj pojemnika na wydatki, portfel ma sowją pojemność. Dzięki temu guzikowi mozesz dodac wydatek w ramach portfela, dodaj teraz taki wydatek, poźniej mozesz go usunac.",
+      "alert": "Musisz dodać przynajmniej jeden wydatek w ramach portfela, aby kontynuować"
+    },
+    "pouchOutcomesList": {
+      "title": "Lista wydatków w portfelu",
+      "description": "Wydatki w ramach portfela moesz przeglądć tutaj w formie listy, rowin tą liste zeby zoabczyc jakie wydatki zostały dodane w ramach tego portfela.",
+      "alert": "Musisz rozwinąć listę wydatków w portfelu, aby kontynuować"
+    },
+    "pouchOutcomeEdit": {
+      "title": "Zarządzanie wydatkiami w portfelu",
+      "description": "Kady wydatek moesz edytować i usuwać, aby to zrobić uzyj podswietlonych guzików."
+    },
+    "incomesList": {
+      "title": "Lista przychodów",
+      "description": "Tutaj widać te przychodu które występują w obecny okresie budzetowym."
+    },
+    "outcomesList": {
+      "title": "Lista wydatków",
+      "description": "Tutaj widać te wydatki które występują w obecny okresie budzetowym."
+    },
+    "goToGoalsPage": {
+      "title": "Przejdź do strony celów",
+      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do strony celów."
+    },
+
+    "addGoal": {
+      "title": "Dodaj nowy cel",
+      "description": "Dodaj nowy cel, wybierz jego nazwe, kwote którą juz masz, kwote jaką potrzebujesz, co ile chcesz odkładać oraz do kiedy chcesz osiągnąć ten cel. Po dodaniu ccelu, wydatki na ten cel zostaną automatycznie uwzględniony w budzecie.",
+      "alert": "Musisz dodać przynajmniej jeden cel, aby kontynuować"
+    },
+    "seeThisGoal": {
+      "title": "Karta celu",
+      "description": "To jest karta celu, zawiera informacje o celu, jego kwocie czy postepie. Podświetlony guzik słuzy do zobaczenia harmonogramu oszczędności. Mozesz edytowac wydatek na cel w danych okresie jezeli oszczedziełes wiecej, luz gdy nie udało Ci sie wszczedzic zaplnowanej kwoty, przyszłe wydatki na cel zostaną automatycznie zaaktuaizowane tak aby osiaganc wyznaczony cel."
+    },
+    "editGoal": {
+      "title": "Edycja celu",
+      "description": "Moesz takze edytowac cel, zakonczuc go, lub usunać jezeli dodałes go przez przypadek."
+    },
+    "goToFortunePage": {
+      "title": "Przejdź do strony majątku",
+      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do strony majątku."
+    },
+
+    "addFirstAsset": {
+      "title": "Dodaj nowy składnik majątku",
+      "description": "Teraz dodaj pierwszy skaldnik twojego majątku, moze to byc np.  mieszkanie, gotowka, czy akcje.",
+      "alert": "Musisz dodać przynajmniej jeden składnik majątku, aby kontynuować"
+    },
+    "seeThisAsset": {
+      "title": "Karta składnika majątku",
+      "description": "To jest karta składnika twojego majątku, mozesz go edytować i usuwać, aby to zrobić uzyj podswietlonych guzików. Co jakis czas nalezy zaaktualiwac wartość poszczególnych składników swojego majątku, aby móc dokładnie wiedzieć jaka jest twoja wartosc netto w danym momencie."
+    },
+    "addFirstDebt": {
+      "title": "Dodaj nowe zadłuzenie",
+      "description": "Dodaj swoje pierwsze zadłuzenie, moze to byc np. kredyt mieszkaniowy, czy pozyczka",
+      "alert": "Musisz dodać przynajmniej jeden dług, aby kontynuować"
+    },
+    "seeThisDebt": {
+      "title": "Karta zadłuzen",
+      "description": "To jest karta zadłuzenia, mozesz je edytować i usuwać, aby to zrobić uzyj podswietlonych guzików. Co jakis czas nalezy zaaktualiwac wartość poszczególnych składników swojego majątku, aby móc dokładnie wiedzieć jaka jest twoja wartosc netto w danym momencie."
+    },
+    "seeAssetsCountCard": {
+      "title": "Karta aktywów",
+      "description": "To karta aktywów, zawwiera inforamcje o tm jaka wartosc maja wszystkie twoje aktywa."
+    },
+    "seeDebtsCountCard": {
+      "title": "Karta zadłuzen",
+      "description": "To karta zadłuzen, zawwiera inforamcje o tm jaka wartosc maja wszystkie twoje zadłuzenia."
+    },
+    "seeNetWorthCard": {
+      "title": "Karta wartości netto",
+      "description": "To jest karta wartości netto, zawiera informacje o wartości netto twojego majątku."
+    },
+    "financialCushionCard": {
+      "title": "Karta poduszki finansowej",
+      "description": "To jest karta poduszki finansowej, zawiera informacje o wartości poduszki finansowej twojego majątku."
+    },
+    "livingAssetsCard": {
+      "title": "Karta aktywów bytowych",
+      "description": "To jest karta aktywów bytowych, zawiera informacje o wartości aktywów takich jak np. dom w którym mieszkasz, samochód, meble, sprzęt AGD itp..."
+    },
+    "investmentsCard": {
+      "title": "Karta aktywów inwestycyjnych",
+      "description": "To jest karta aktywów inwestycyjnych, zawiera informacje o takich aktywach jak np. akcje, obligacje czy lokaty."
+    },
+    "othersAssetsCard": {
+      "title": "Karta pozostałych aktywów",
+      "description": "To jest karta pozostałych aktywów, w tej kategroii powinny być wsztkie aktywa które nie mieszczą sie w pozostałych kategoriach."
+    },
+    "goToDashboardPage": {
+      "title": "Przejdź do strony głównej",
+      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do strony głównej."
+    },
+
+    "dashboardFortuneCard": {
+      "title": "Karta majątku",
+      "description": "Tutaj mozesz zobaczyc podsuwanie sowjego majątku."
+    },
+    "dashboardBudgetBalanceCard": {
+      "title": "Karta bilansu budżetu",
+      "description": "Tutaj mozesz zobaczyc aktualny bilans twojego budzetu"
+    },
+    "dashboardHistoryOfFinancesCard": {
+      "title": "Karta historii finansów",
+      "description": "Tutaj mozesz zobaczyc historie swoich finansów na przestrzeni tego i poprzednich okresów budzetowych."
+    },
+    "dashboardGoalsCard": {
+      "title": "Karta celów",
+      "description": "Tutaj mozesz zobaczyc swoje cele i monitorować ich postęp."
+    },
+    "dashboardFinancialCushionCard": {
+      "title": "Karta poduszki finansowej",
+      "description": "Tutaj mozesz zobaczyc jaki jest obecny poziom towjej poduszki finansowej, apliakcja poakze Ci czy jest ona na bezpiecznym poziomie w porównaniu do twoich wydatków"
     }
   }
 }

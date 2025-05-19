@@ -37,7 +37,7 @@ export const SwitchFamilyButton = ({
         await mutate({ familyId });
         setOptimisticSelectedFamilyId(familyId);
       }}
-      variant='secondary'
+      variant='outline'
       className={className}
       size='sm'
     >

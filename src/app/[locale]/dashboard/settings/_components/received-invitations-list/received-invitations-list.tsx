@@ -14,17 +14,24 @@ export const ReceivedInvitationsList = async () => {
     getTranslations('settings.invitations.received')
   ]);
 
-  if (invitations.length === 0) {
-    return null;
-  }
-
   return (
     <div className='mt-16'>
       <h2 className='mb-6 text-2xl font-semibold'>{t('title')}</h2>
 
+      {invitations?.length <= 0 && (
+        <Card data-tour='family-invitations'>
+          <CardContent className='flex flex-col items-center gap-2'>
+            <h3 className='text-xl font-semibold'>{t('noInvitationsTitle')}</h3>
+            <p className='text-muted-foreground'>
+              {t('noInvitationsDescription')}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       <div className='space-y-4'>
         {invitations.map((invitation) => (
-          <Card key={invitation.id}>
+          <Card key={invitation.id} data-tour='family-invitation'>
             <CardContent className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
               <div className='flex w-full flex-col gap-2'>
                 <h4 className='mb-3 flex items-center gap-2 truncate font-semibold'>

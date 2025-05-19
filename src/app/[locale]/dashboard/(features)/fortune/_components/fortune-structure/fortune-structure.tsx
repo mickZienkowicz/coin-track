@@ -81,6 +81,7 @@ export const FortuneStructure = ({
         <FortuneStructureCard
           icon={<Shield className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('financialCushion')}
+          detailedInfo={t('financialCushionDetailedInfo')}
           value={
             <FormattedCurrency
               valueCents={fortuneSummary.financialCushionAssetsValueSum}
@@ -100,11 +101,13 @@ export const FortuneStructure = ({
                 fortuneSummary.monthlyOutcomesSum
               : 0
           }
+          dataTour='financial-cushion-card'
         />
 
         <FortuneStructureCard
           icon={<House className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('livingAssets')}
+          detailedInfo={t('livingAssetsDetailedInfo')}
           value={
             <FormattedCurrency
               valueCents={fortuneSummary.livingAssetsValueSum}
@@ -118,12 +121,14 @@ export const FortuneStructure = ({
             fortuneSummary.livingAssetsValueSum,
             fortuneSummary.totalAssets
           )}
+          dataTour='living-assets-card'
         />
         <FortuneStructureCard
           icon={
             <ChartNoAxesCombined className='mr-1 inline-block h-3.5 w-3.5' />
           }
           title={t('investmentAssets')}
+          detailedInfo={t('investmentAssetsDetailedInfo')}
           value={
             <FormattedCurrency
               valueCents={fortuneSummary.investmentsAssetsValueSum}
@@ -137,10 +142,12 @@ export const FortuneStructure = ({
             fortuneSummary.investmentsAssetsValueSum,
             fortuneSummary.totalAssets
           )}
+          dataTour='investments-card'
         />
         <FortuneStructureCard
           icon={<Wallet className='mr-1 inline-block h-3.5 w-3.5' />}
           title={t('otherAssets')}
+          detailedInfo={t('otherAssetsDetailedInfo')}
           value={
             <FormattedCurrency
               valueCents={fortuneSummary.otherAssetsValueSum}
@@ -154,6 +161,7 @@ export const FortuneStructure = ({
             fortuneSummary.otherAssetsValueSum,
             fortuneSummary.totalAssets
           )}
+          dataTour='other-assets-card'
         />
       </section>
     </>

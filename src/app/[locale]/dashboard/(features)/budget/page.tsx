@@ -1,8 +1,9 @@
+'use server';
+
 import { Suspense } from 'react';
-import { ListOrdered, PieChart } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { TabsContent } from '@/components/ui/tabs';
 import { getBudget } from '@/server/budget/queries/get-budget';
 
 import { LoadingCard } from '../../_components/loading-card/loading-card';
@@ -10,12 +11,19 @@ import { NoFamilyCardFallback } from '../../_components/no-family-card-fallback'
 import { BudgetConfiguration } from './_components/budget-configuration';
 import { BudgetSettingsDialog } from './_components/budget-settings/budget-settings-dialog/budget-settings-dialog';
 import { BudgetSummary } from './_components/budget-summary/budget-summary';
+import { BudgetTabs } from './_components/budget-tabs';
 
-export default async function BudgetPage() {
+export default async function BudgetPage({
+  searchParams
+}: {
+  searchParams: Promise<{ tab?: string | undefined }>;
+}) {
   const [t, budget] = await Promise.all([
     getTranslations('budget'),
     getBudget()
   ]);
+
+  const activeTab = (await searchParams)?.tab || 'summary';
 
   return (
     <div>
@@ -34,17 +42,7 @@ export default async function BudgetPage() {
       </div>
 
       <NoFamilyCardFallback>
-        <Tabs defaultValue='summary' className='w-full gap-0'>
-          <TabsList className='mt-6 w-full'>
-            <TabsTrigger value='summary'>
-              <PieChart className='h-4 w-4' />
-              {t('summary')}
-            </TabsTrigger>
-            <TabsTrigger value='budget-items'>
-              <ListOrdered className='h-4 w-4' />
-              {t('budgetItems')}
-            </TabsTrigger>
-          </TabsList>
+        <BudgetTabs activeTab={activeTab}>
           <TabsContent value='summary'>
             <Suspense fallback={<LoadingCard className='mt-6' />}>
               <BudgetSummary />
@@ -55,7 +53,7 @@ export default async function BudgetPage() {
               <BudgetConfiguration />
             </Suspense>
           </TabsContent>
-        </Tabs>
+        </BudgetTabs>
       </NoFamilyCardFallback>
     </div>
   );

@@ -39,18 +39,23 @@ export const AddFamilyDialog = ({
             variant='secondary'
             size='icon'
             aria-label={t('title')}
+            data-tour='add-family-btn'
           >
             <UserPlus2 className='h-4 w-4' />
             <span className='hidden md:inline'>{t('title')}</span>
           </Button>
         ) : (
-          <Button className={className} variant='secondary'>
+          <Button
+            className={className}
+            variant='secondary'
+            data-tour='add-family-btn'
+          >
             <UserPlus2 className='h-4 w-4' />
             {t('title')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='add-family-dialog'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

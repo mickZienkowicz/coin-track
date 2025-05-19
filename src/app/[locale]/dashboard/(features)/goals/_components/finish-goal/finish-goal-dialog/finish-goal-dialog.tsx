@@ -57,13 +57,14 @@ export const FinishGoalDialog = ({
             variant='outline'
             size='sm'
             aria-label={t('button')}
+            data-tour='finish-goal-button'
           >
             <Goal className='size-4' />
             <span className='hidden min-[359px]:inline'>{t('button')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='finish-goal-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

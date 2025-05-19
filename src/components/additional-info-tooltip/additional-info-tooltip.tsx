@@ -22,8 +22,8 @@ export const AdditionalInfoTooltip = ({
         <TooltipTrigger className={cn('cursor-pointer p-1', className)}>
           <Info className='size-4.5 text-primary/70' />
         </TooltipTrigger>
-        <TooltipContent>
-          <p>{text}</p>
+        <TooltipContent className='max-w-[300px] p-3'>
+          <p className='text-sm font-normal'>{text}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

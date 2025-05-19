@@ -31,7 +31,7 @@ export const GoalCard = ({ goal }: { goal: GoalWithAdditionalInfo }) => {
     isAfter(getUtcMiddayDateOfGivenDate(new Date()), goal.endDate);
 
   return (
-    <Card className='pb-4! w-full gap-4'>
+    <Card className='pb-4! w-full gap-4' data-tour='goal-card'>
       {isFinished && (
         <Badge
           variant='outline'

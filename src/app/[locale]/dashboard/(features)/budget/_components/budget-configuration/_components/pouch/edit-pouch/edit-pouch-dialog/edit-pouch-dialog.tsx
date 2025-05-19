@@ -38,13 +38,14 @@ export const EditPouchDialog = ({
             variant='outline'
             size='sm'
             aria-label={t('button')}
+            data-tour='edit-pouch-card-button'
           >
             <Pencil className='size-4' />
             {t('button')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-pouch-card-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

@@ -15,7 +15,7 @@ export const GoalsSummaryCard = async () => {
   const t = await getTranslations('dashboard.goalsSummaryCard');
 
   return (
-    <Card className='gap-0'>
+    <Card className='gap-0' data-tour='goals-card'>
       <CardHeader className='pb-2'>
         <CardTitle className='flex items-center gap-3 text-lg'>
           <div className='flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-600/20 md:size-11'>
@@ -53,6 +53,7 @@ export const GoalsSummaryCard = async () => {
               <Link
                 href={pathGenerators.goals()}
                 className={cn(buttonVariants({ size: 'sm' }))}
+                data-tour='manage-goals-button'
               >
                 {t('manageGoals')}
               </Link>

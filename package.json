@@ -42,6 +42,7 @@
     "currency-codes": "^2.2.0",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
+    "focus-trap": "^7.6.4",
     "lucide-react": "^0.479.0",
     "next": "15.2.2",
     "next-intl": "^4.0.2",

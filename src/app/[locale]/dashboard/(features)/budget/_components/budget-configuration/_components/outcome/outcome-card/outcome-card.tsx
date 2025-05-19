@@ -43,7 +43,7 @@ export const OutcomeCard = async ({
   ]);
 
   return (
-    <Card className='pb-4! w-full'>
+    <Card className='pb-4! w-full' data-tour='outcome-card'>
       {outcome.isFinished && (
         <Badge
           variant='outline'

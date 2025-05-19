@@ -33,7 +33,12 @@ export const EditDebtDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button className={className} variant='outline' size='sm'>
+          <Button
+            className={className}
+            variant='outline'
+            size='sm'
+            data-tour='edit-debt-dialog'
+          >
             <Pencil className='size-4 ' />
             <span className='hidden min-[350px]:inline'>{t('button')}</span>
             <span className='inline min-[350px]:hidden'>
@@ -42,7 +47,7 @@ export const EditDebtDialog = ({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-debt-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

@@ -54,7 +54,7 @@ export const BudgetHistoryChart = ({
       <ChartContainer
         config={chartConfig}
         className='mx-auto h-[220px] w-full border-none'
-        style={{ width: `${chartData?.length * 160}px` }}
+        style={{ width: `${chartData?.length * 220}px` }}
       >
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
@@ -73,7 +73,7 @@ export const BudgetHistoryChart = ({
       <div className='mx-auto mb-2 mt-1 flex flex-row-reverse justify-center'>
         {budgetsHistory?.map((item) => (
           <div
-            className='flex w-[160px] items-center justify-center'
+            className='flex w-[220px] items-center justify-center'
             key={item.endDate.toISOString()}
           >
             <Link
@@ -89,6 +89,7 @@ export const BudgetHistoryChart = ({
                 size: 'sm',
                 variant: 'outline'
               })}
+              data-tour='select-budget-button'
               aria-label={`${t('seePreview')} ${item.startDate.toLocaleDateString()} ${t('to')} ${item.endDate.toLocaleDateString()}`}
             >
               {t('seePreview')}

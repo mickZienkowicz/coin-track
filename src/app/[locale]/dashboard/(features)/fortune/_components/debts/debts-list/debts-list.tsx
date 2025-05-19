@@ -33,6 +33,7 @@ export const DebtsList = async ({
                 variant='secondary'
                 size='iconSmall'
                 aria-label={t('addDebtButton')}
+                data-tour='add-debt-button'
               >
                 <PlusCircle className='h-4 w-4' />
               </Button>

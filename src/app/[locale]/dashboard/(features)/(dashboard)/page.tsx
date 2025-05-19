@@ -28,7 +28,9 @@ export default async function Dashboard() {
           <BudgetSummaryCard className='-order-1 md:order-none' />
           <BudgetHistoryCard />
           <div className='grid grid-cols-1 gap-6 xl:grid-cols-[1fr_1.5fr]'>
-            <GoalsSummaryCard />
+            <div>
+              <GoalsSummaryCard />
+            </div>
             <div>
               <FinancialCushionCard />
             </div>

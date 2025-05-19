@@ -26,7 +26,7 @@ export const DebtDetailsCard = ({
   const t = useTranslations('fortune.debts.debtDetailsCard');
 
   return (
-    <Card className='pb-4! @container w-full gap-4'>
+    <Card className='pb-4! @container w-full gap-4' data-tour='debt-card'>
       <CardHeader
         className={cn(
           'mb-2 flex flex-col items-start justify-between gap-4 md:flex-row'

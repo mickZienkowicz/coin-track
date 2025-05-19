@@ -33,7 +33,7 @@ export const PouchCard = async ({
   ]);
 
   return (
-    <Card className='pb-4! w-full'>
+    <Card className='pb-4! w-full' data-tour='pouch-card'>
       {pouch.isFinished && (
         <Badge
           variant='outline'

@@ -57,13 +57,18 @@ export const RemovePouchDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button variant='outline' size='sm' aria-label='Usuń profil'>
+          <Button
+            variant='outline'
+            size='sm'
+            aria-label='Usuń profil'
+            data-tour='remove-pouch-card-button'
+          >
             <Trash2 className='size-4' />
             {t('removeButton')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='remove-pouch-card-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>

@@ -33,7 +33,10 @@ export const BudgetSummary = async ({
   return (
     <>
       <div className='my-6 flex flex-col justify-between gap-4 xl:flex-row xl:items-center'>
-        <div className='flex items-center justify-start'>
+        <div
+          className='flex items-center justify-start p-1 pr-2'
+          data-tour='budget-timeframe-title'
+        >
           <Calendar className='mr-3 size-6 shrink-0' />
           <h2 className='text-2xl font-bold'>
             {getCurrentBudgetTimeframeLabel({

@@ -53,13 +53,18 @@ export const RemoveIncomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button variant='outline' size='sm' aria-label='Usuń profil'>
+          <Button
+            variant='outline'
+            size='sm'
+            aria-label='Usuń profil'
+            data-tour='remove-income-button'
+          >
             <Trash2 className='size-4' />
             {t('removeButton')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='remove-income-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

@@ -34,13 +34,14 @@ export const AddGoalDialog = ({
             className={className}
             variant='secondary'
             aria-label={t('button')}
+            data-tour='add-goal-button'
           >
             <PlusCircle className='size-4' />
             <span className='hidden md:inline'>{t('button')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='add-goal-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

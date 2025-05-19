@@ -55,13 +55,18 @@ export const RemoveOutcomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button variant='outline' size='sm' aria-label={t('removeButton')}>
+          <Button
+            variant='outline'
+            size='sm'
+            aria-label={t('removeButton')}
+            data-tour='remove-outcome-button'
+          >
             <Trash2 className='size-4' />
             {t('removeButton')}
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='remove-outcome-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>

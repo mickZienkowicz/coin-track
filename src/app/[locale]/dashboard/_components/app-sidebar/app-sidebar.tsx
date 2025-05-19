@@ -53,22 +53,26 @@ export function AppSidebar() {
       {
         value: pathGenerators.dashboard(),
         label: t('dashboard'),
-        icon: LayoutDashboard
+        icon: LayoutDashboard,
+        'data-tour': 'dashboard-link'
       },
       {
         value: pathGenerators.fortune(),
         label: t('fortune'),
-        icon: Wallet
+        icon: Wallet,
+        'data-tour': 'fortune-link'
       },
       {
         value: pathGenerators.budget(),
         label: t('budget'),
-        icon: Package
+        icon: Package,
+        'data-tour': 'budget-link'
       },
       {
         value: pathGenerators.goals(),
         label: t('goals'),
-        icon: Target
+        icon: Target,
+        'data-tour': 'goals-link'
       }
     ],
     [t]
@@ -80,7 +84,8 @@ export function AppSidebar() {
         value: pathGenerators.settings(),
 
         label: t('settings'),
-        icon: Settings
+        icon: Settings,
+        'data-tour': 'settings-link'
       }
     ],
     [t]
@@ -88,7 +93,7 @@ export function AppSidebar() {
 
   return (
     <>
-      <Sidebar collapsible='icon'>
+      <Sidebar collapsible='icon' data-tour='desktop-menu'>
         <SidebarHeader className='hidden md:flex'>
           <Image
             src='/logo-transparent-icon.svg'
@@ -107,12 +112,16 @@ export function AppSidebar() {
             <SidebarGroupContent>
               <SidebarMenu className='gap-0 md:gap-2'>
                 {mainNavItems.map((item) => (
-                  <SidebarMenuItem key={item.value}>
+                  <SidebarMenuItem
+                    key={item.value}
+                    data-tour={item['data-tour']}
+                  >
                     <SidebarMenuButton
                       asChild
                       isActive={pathname.endsWith(item.value)}
                       tooltip={item.label}
                       onClick={() => setOpenMobile(false)}
+                      // data-tour={item['data-tour']}
                     >
                       <Link href={item.value} target='_self'>
                         <item.icon className='size-6' />
@@ -135,6 +144,7 @@ export function AppSidebar() {
                 <SidebarMenuButton
                   isActive={false}
                   tooltip={t('languageSwitcher.title')}
+                  data-tour='language-switcher'
                 >
                   <>
                     <Globe className='size-6' />
@@ -151,13 +161,14 @@ export function AppSidebar() {
                   receivedInvitationsCount > 0 &&
                     `relative after:absolute after:-bottom-[3px] after:-right-[3px] after:h-2.5 after:w-2.5 after:rounded-full after:bg-yellow-600`
                 )}
+                data-tour={item['data-tour']}
               >
                 <SidebarMenuButton
                   isActive={pathname.endsWith(item.value)}
                   tooltip={item.label}
                   asChild
                 >
-                  <Link href={item.value}>
+                  <Link href={item.value} target='_self'>
                     <item.icon className='size-6' />
                     <span>{item.label}</span>
                   </Link>

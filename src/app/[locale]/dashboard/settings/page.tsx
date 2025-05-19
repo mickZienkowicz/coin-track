@@ -1,5 +1,7 @@
 import { useTranslations } from 'next-intl';
 
+import { StartTourButton } from '@/app/[locale]/dashboard/_components/start-tour-button';
+
 import { NoFamilyCardFallback } from '../_components/no-family-card-fallback';
 import { AddFamilyDialog } from './_components/family-card/components/add-family/add-family-dialog';
 import { FamilyCardsWrapper } from './_components/family-cards-warpper/family-cards-wrapper';
@@ -16,7 +18,14 @@ export default function SettingsPage() {
           {t('yourProfiles')}
         </h1>
 
-        <AddFamilyDialog className='@md:w-auto w-full' mobileSmallVersion />
+        <div className='flex gap-2'>
+          <AddFamilyDialog className='@md:w-auto w-full' mobileSmallVersion />
+          <StartTourButton className='hidden md:flex' />
+        </div>
+      </div>
+
+      <div className='flex justify-end md:hidden'>
+        <StartTourButton />
       </div>
 
       <NoFamilyCardFallback>

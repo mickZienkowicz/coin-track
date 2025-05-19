@@ -19,7 +19,13 @@ import { pathGenerators } from '@/lib/paths';
 import { deleteFamily } from '@/server/family/actions/delete-family';
 import { revalidatePathAction } from '@/server/revalidate/actions/revalidate-path';
 
-export const RemoveFamilyDialog = ({ familyId }: { familyId: string }) => {
+export const RemoveFamilyDialog = ({
+  familyId,
+  isSelectedFamily
+}: {
+  familyId: string;
+  isSelectedFamily?: boolean;
+}) => {
   const t = useTranslations('settings.removeFamily');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,21 +49,32 @@ export const RemoveFamilyDialog = ({ familyId }: { familyId: string }) => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant='destructive' size='iconSmall' aria-label={t('title')}>
+        <Button
+          variant='destructive'
+          size='iconSmall'
+          aria-label={t('title')}
+          data-tour={
+            isSelectedFamily ? 'active-family-card-delete-button' : undefined
+          }
+        >
           <Trash2 className='h-3 w-3' />
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent
+        data-tour={
+          isSelectedFamily ? 'active-family-card-delete-dialog' : undefined
+        }
+      >
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
-
         <Button
           variant='destructive'
           onClick={() => mutate({ familyId })}
           loading={isPending}
           disabled={isPending}
+          className='w-full'
         >
           {t('removeButton')}
         </Button>

@@ -16,12 +16,14 @@ export const FinancialCushionCard = async () => {
   const fortuneSummary = await getFortuneSummary();
 
   const currentFinancialCushionPercentage =
-    (fortuneSummary.financialCushionAssetsValueSum /
-      (fortuneSummary.monthlyOutcomesSum * 6)) *
-    100;
+    fortuneSummary.monthlyOutcomesSum === 0
+      ? 0
+      : (fortuneSummary.financialCushionAssetsValueSum /
+          (fortuneSummary.monthlyOutcomesSum * 6)) *
+        100;
 
   return (
-    <Card className='gap-0'>
+    <Card className='gap-0' data-tour='financial-cushion-card'>
       <CardHeader className='pb-2'>
         <div className='flex items-start justify-between gap-2 md:items-center'>
           <CardTitle className='flex items-center gap-3 text-lg'>
@@ -106,6 +108,7 @@ export const FinancialCushionCard = async () => {
           <Link
             href={pathGenerators.fortune()}
             className={cn(buttonVariants({ size: 'sm' }))}
+            data-tour='manage-assets-button'
           >
             {t('manageAssets')}
           </Link>

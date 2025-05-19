@@ -38,13 +38,14 @@ export const EditGoalDialog = ({
             variant='outline'
             size='sm'
             aria-label={t('button')}
+            data-tour='edit-goal-button'
           >
             <Pencil className='size-4' />
             <span className='hidden min-[359px]:inline'>{t('button')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-goal-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

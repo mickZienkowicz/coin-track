@@ -57,13 +57,14 @@ export const DeleteGoalDialog = ({
             variant='destructive'
             size='sm'
             aria-label={t('button')}
+            data-tour='remove-goal-button'
           >
             <Trash2 className='size-4' />
             <span className='hidden min-[359px]:inline'>{t('button')}</span>
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='remove-goal-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

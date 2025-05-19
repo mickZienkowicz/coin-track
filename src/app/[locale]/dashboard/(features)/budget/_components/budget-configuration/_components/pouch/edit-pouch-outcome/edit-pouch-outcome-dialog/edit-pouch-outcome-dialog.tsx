@@ -31,12 +31,17 @@ export const EditPouchOutcomeDialog = ({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {children || (
-          <Button variant='outline' size='sm' aria-label={t('button')}>
+          <Button
+            variant='outline'
+            size='sm'
+            aria-label={t('button')}
+            data-tour='edit-pouch-card-outcome-button'
+          >
             <Pencil className='size-4' />
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent data-tour='edit-pouch-card-outcome-form'>
         <DialogHeader>
           <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription>{t('description')}</DialogDescription>

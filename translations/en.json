@@ -15,6 +15,13 @@
       "livingAssets": "Living assets",
       "investmentAssets": "Investment assets",
       "otherAssets": "Other assets",
+      "financialCushionDetailedInfo": "Financial cushion, in this category should be placed assets that are easily liquidated, such as cash, savings, and investments.",
+      "livingAssetsDetailedInfo": "Living assets, in this category should be placed assets that are used for daily life, such as a house or a car.",
+      "investmentAssetsDetailedInfo": "Investment assets, in this category should be placed assets that are invested for a longer period of time, such as stocks or bonds.",
+      "otherAssetsDetailedInfo": "Other assets, in this category should be placed assets that do not fit into other categories, such as collectibles or jewelry.",
+      "structure": "Fortune structure",
+      "monthlySpendings": "Your monthly spendings",
+      "yourMonthlySpendings": "Financial cushion is",
       "description": {
         "zero": "{count} components",
         "one": "{count} component",
@@ -181,9 +188,14 @@
       },
       "deleteDebt": {
         "title": "Delete debt",
-        "description": "Delete a debt from your list of debts.",
+        "description": "If you added a debt by mistake and want to delete it together with the history, so that no traces are left in it - ",
+        "descriptionDeleteButton": "click here",
         "button": "Delete debt",
-        "buttonMobile": "Delete"
+        "buttonMobile": "Delete",
+        "deleteDebtButton": "Delete debt",
+        "totalDeleteTitle": "Delete debt completely",
+        "totalDeleteDescription": "If you want to delete the debt completely, it may affect your account history. If you simply reduced it to zero, use the regular delete option.",
+        "totalDeleteButton": "Delete debt completely"
       },
       "debtDetailsCard": {
         "lastUpdate": "Last updated: ",
@@ -351,6 +363,13 @@
       "addFirstGoal": "Add first goal",
       "activeGoals": "Your goals - {count}"
     },
+    "selectBudgetToPreviewDialog": {
+      "button": "Select budget to preview",
+      "title": "Select budget to preview",
+      "description": "Select budget to preview.",
+      "selectBudgetToPreview": "Select budget to preview",
+      "previewButton": "Open preview"
+    },
     "balance": {
       "currentBudgetBalance": "Current budget balance",
       "manageBudget": "Manage budget",
@@ -407,6 +426,8 @@
         "title": "Family profile invitations",
         "for": "Invitation from:",
         "sent": "Sent:",
+        "noInvitationsTitle": "No invitations found",
+        "noInvitationsDescription": "You don't have any invitations yet.",
         "accept": {
           "button": "Accept",
           "error": "Something went wrong."
@@ -419,6 +440,8 @@
         }
       },
       "sent": {
+        "noInvitationsTitle": "No invitations found",
+        "noInvitationsDescription": "You don't have any invitations yet.",
         "title": "Sent invitations",
         "for": "Invitation to:",
         "family": "Family profile:",
@@ -1243,7 +1266,8 @@
         "failedToCreateBudget": "Failed to create budget",
         "notAllowedToCreateBudget": "You are not allowed to create this budget",
         "invalidBudgetData": "Invalid budget data",
-        "budgetAlreadyExists": "Budget already exists"
+        "budgetAlreadyExists": "Budget already exists",
+        "success": "Budget created"
       },
       "update": {
         "success": "Budget updated",
@@ -1442,6 +1466,218 @@
         "pouchNotBelongsToUser": "Pouch does not belong to you",
         "invalidPouchData": "Invalid pouch data"
       }
+    }
+  },
+  "tour": {
+    "startTourButton": "Start tour",
+    "title": "Welcome to the application",
+    "nextButton": "Next",
+    "previousButton": "Previous",
+    "finishButton": "Finish tour",
+    "description": "This is a guide to the application. It will help you understand the application and start using it. You can skip it now, and start at any time from the settings screen.",
+    "skipTourButton": "Skip tour"
+  },
+  "tourSteps": {
+    "addFamily": {
+      "title": "Add your family",
+      "description": "The first step is to add a family, this is a profile that will be shared with other users and will allow for joint management of finances. To control the tour use the buttons below or the arrows on the keyboard.",
+      "alert": "You must add at least one family, to continue"
+    },
+    "families": {
+      "title": "Family card",
+      "description": "This is your family card, it contains information about the family and the ability to manage it. You can be a member of several families at the same time, to switch between them use the button in the upper right corner of the card, it is not visible on this card because it is currently selected."
+    },
+    "familyEdit": {
+      "title": "Family edit",
+      "description": "This button will allow you to open the family edit panel, in which you can change the family name, time zone and currency."
+    },
+    "familyDelete": {
+      "title": "Family delete",
+      "description": "This button will allow you to delete the family, in order to do this, you need to click on the delete family button and confirm it in the dialog window."
+    },
+    "inviteUserToFamily": {
+      "title": "Invite user to family",
+      "description": "This button will allow you to invite a user to the family, in order to do this, you need to click on the invite user button and enter the user's email."
+    },
+    "yourFamilyInvitations": {
+      "title": "Sent invitations",
+      "description": "Here you will see the invitations to the family sent by you"
+    },
+    "familyInvitations": {
+      "title": "Received invitations",
+      "description": "Here you will see the invitations to the family sent by other users"
+    },
+    "goToBudgetPage": {
+      "title": "Go to budget page",
+      "description": "To discover the next features of the application, go to the budget page."
+    },
+
+    "budgetSettings": {
+      "title": "Budget settings",
+      "description": "This button opens the budget management settings window, you can set the start day of the new budget and how often the new budget should start, there is also an option to transfer the balance of pouches to the next budgets, you can learn more about it by clicking on the \"i\" icon next to the field to select this option."
+    },
+    "budgetItems": {
+      "title": "Go to budget items page",
+      "description": "To configure your expenses and incomes, go to the budget items page."
+    },
+    "addIncome": {
+      "title": "Add new income",
+      "description": "Add your first income, select whether it is one-time or recurring and enter its amount",
+      "alert": "You must add at least one income, to continue"
+    },
+    "seeThisIncome": {
+      "title": "Income card",
+      "description": "This is the income card, it contains information about the income, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring incomes, it may affect previous budgets, so when a recurring income stops, simply stop it so that the history of your budgets is not changed."
+    },
+    "addOutcome": {
+      "title": "Add new expense",
+      "description": "Add your first expense, select whether it is one-time or recurring and enter its amount",
+      "alert": "You must add at least one expense, to continue"
+    },
+    "seeThisOutcome": {
+      "title": "Expense card",
+      "description": "This is the expense card, it contains information about the expense, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring expenses, it may affect previous budgets, so when a recurring expense stops, simply stop it so that the history of your budgets is not changed."
+    },
+    "addPouch": {
+      "title": "Add new pouch",
+      "description": "Add your first pouch, pouches are a special type of expense, which can be used to control the budget, allows you to select the amount you want to allocate to a specific purpose, for example food, and then during the budget period add individual expenses within this pouch, so that you can exactly know how much money we spent on a specific purpose during the budget period. If you have selected the option of transferring pouch balances, then if you do not spend all the money in this period, the remaining amount will be transferred to the next one, similarly when you spend more money than allocated in a given period, the remaining amount will be transferred to the next period.",
+      "alert": "You must add at least one pouch, to continue"
+    },
+    "seeThisPouch": {
+      "title": "Pouch card",
+      "description": "This is the pouch card, it contains information about the pouch, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring pouches, it may affect previous budgets, so when a recurring pouch stops, simply stop it so that the history of your budgets is not changed."
+    },
+    "goToBudgetSummary": {
+      "title": "Go to budget summary",
+      "description": "Go to budget summary, you will see there the current budget period based on the data you have added in this period"
+    },
+    "seeBudgetTimeline": {
+      "title": "See budget timeline",
+      "description": "Here you can see from when to when the current budget period is"
+    },
+    "seeBudgetBalance": {
+      "title": "See budget balance",
+      "description": "This card shows your balance in the current budget period, you can compare how much you have in income and expenses in this period, calculating with the expenses you have made in pouches, but also balance calculating with all planned expenses and incomes"
+    },
+    "budgetPouches": {
+      "title": "Pouch summary",
+      "description": "This card shows the summary of all pouches, you can see how much was spent in this period, and how much expenses in pouches are planned in this budget period."
+    },
+    "pouchOutcome": {
+      "title": "Pouch card",
+      "description": "As I mentioned earlier, pouches are a special type of container for expenses, a pouch has its own capacity. Thanks to this button, you can add an expense in the pouch, add it now, then you can delete it.",
+      "alert": "You must add at least one expense in the pouch, to continue"
+    },
+    "pouchOutcomesList": {
+      "title": "Pouch expenses list",
+      "description": "You can view the expenses in the pouch here in the form of a list, click on this list to see which expenses were added in this pouch.",
+      "alert": "You must expand the list of expenses in the pouch, to continue"
+    },
+    "pouchOutcomeEdit": {
+      "title": "Pouch expenses management",
+      "description": "Each expense can be edited and deleted, to do this use the highlighted buttons."
+    },
+    "incomesList": {
+      "title": "Incomes list",
+      "description": "Here you can see the incomes that are in the current budget period."
+    },
+    "outcomesList": {
+      "title": "Expenses list",
+      "description": "Here you can see the expenses that are in the current budget period."
+    },
+    "goToGoalsPage": {
+      "title": "Go to goals page",
+      "description": "To discover the next features of the application, go to the goals page."
+    },
+
+    "addGoal": {
+      "title": "Add new goal",
+      "description": "Add a new goal, select its name, amount you already have, amount you need, how often you want to save and until when you want to achieve this goal. After adding the goal, expenses on this goal will be automatically included in the budget.",
+      "alert": "You must add at least one goal, to continue"
+    },
+    "seeThisGoal": {
+      "title": "Goal card",
+      "description": "This is the goal card, it contains information about the goal, its amount and progress. The highlighted button is used to view the savings schedule. You can edit the goal expense in this period if you saved more, or if you did not save the planned amount, future goal expenses will be automatically updated so that you can achieve the set goal."
+    },
+    "editGoal": {
+      "title": "Goal edit",
+      "description": "You can also edit the goal, complete it, or delete it if you added it by mistake."
+    },
+    "goToFortunePage": {
+      "title": "Go to fortune page",
+      "description": "To discover the next features of the application, go to the fortune page."
+    },
+
+    "addFirstAsset": {
+      "title": "Add new asset",
+      "description": "Now add your first asset, it can be a house, cash, or stocks.",
+      "alert": "You must add at least one asset, to continue"
+    },
+    "seeThisAsset": {
+      "title": "Asset card",
+      "description": "This is the asset card, it contains information about the asset, its amount and progress. The highlighted button is used to view the asset history. You can edit the asset expense in this period if you saved more, or if you did not save the planned amount, future asset expenses will be automatically updated so that you can achieve the set goal."
+    },
+    "addFirstDebt": {
+      "title": "Add new debt",
+      "description": "Add your first debt, it can be a mortgage, or a loan.",
+      "alert": "You must add at least one debt, to continue"
+    },
+    "seeThisDebt": {
+      "title": "Debt card",
+      "description": "This is the debt card, you can edit and delete it, to do this use the highlighted buttons. You need to update the value of your assets and debts periodically to know exactly how much your net worth is at any given time."
+    },
+    "seeAssetsCountCard": {
+      "title": "Assets card",
+      "description": "This is the assets card, it contains information about the value of all your assets."
+    },
+    "seeDebtsCountCard": {
+      "title": "Debts card",
+      "description": "This is the debts card, it contains information about the value of all your debts."
+    },
+    "seeNetWorthCard": {
+      "title": "Net worth card",
+      "description": "This is the net worth card, it contains information about the value of your net worth."
+    },
+    "financialCushionCard": {
+      "title": "Financial cushion card",
+      "description": "This is the financial cushion card, it contains information about the value of your financial cushion."
+    },
+    "livingAssetsCard": {
+      "title": "Living assets card",
+      "description": "This is the living assets card, it contains information about the value of your living assets."
+    },
+    "investmentsCard": {
+      "title": "Investments card",
+      "description": "This is the investments card, it contains information about the value of your investments."
+    },
+    "othersAssetsCard": {
+      "title": "Others assets card",
+      "description": "This is the others assets card, it contains information about the value of your others assets."
+    },
+    "goToDashboardPage": {
+      "title": "Go to dashboard page",
+      "description": "To discover the next features of the application, go to the dashboard page."
+    },
+
+    "dashboardFortuneCard": {
+      "title": "Fortune card",
+      "description": "Here you can see the summary of your fortune."
+    },
+    "dashboardBudgetBalanceCard": {
+      "title": "Budget balance card",
+      "description": "Here you can see the current balance of your budget."
+    },
+    "dashboardHistoryOfFinancesCard": {
+      "title": "History of finances card",
+      "description": "Here you can see the history of your finances on this and previous budget periods."
+    },
+    "dashboardGoalsCard": {
+      "title": "Goals card",
+      "description": "Here you can see your goals and monitor their progress."
+    },
+    "dashboardFinancialCushionCard": {
+      "title": "Financial cushion card",
+      "description": "Here you can see the current level of your financial cushion, the application will show you if it is on a safe level compared to your expenses."
     }
   }
 }

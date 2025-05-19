@@ -10,26 +10,35 @@ import {
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const CardItem = ({
   icon,
   title,
+  detailedInfo,
   value,
-  percentage
+  percentage,
+  dataTour
 }: {
   icon: React.ReactNode;
   title: string;
+  detailedInfo?: string;
   value: ReactNode;
   percentage: number;
+  dataTour?: string;
 }) => (
-  <div className='flex items-center justify-between'>
+  <div
+    className='flex items-center justify-between md:hidden'
+    data-tour={dataTour}
+  >
     <div className='flex items-center gap-3 text-lg'>
       {icon}
       <div className='flex flex-col'>
         <h4 className='text-[22px] font-black leading-6 2xl:hidden '>
           {value}
+          {detailedInfo && <AdditionalInfoTooltip text={detailedInfo} />}
         </h4>
         <p className='text-xs font-normal text-primary/70 2xl:hidden'>
           {title}
@@ -75,14 +84,14 @@ export const MobileFortunesStructureCard = ({
             </div>
 
             <div className='flex flex-col gap-1'>
-              <h2 className='text-2xl font-bold'>Struktura majątku</h2>
+              <h2 className='text-2xl font-bold'>{t('structure')}</h2>
             </div>
           </div>
           <p className='flex flex-col-reverse gap-1 text-sm font-normal text-primary/70'>
             <Badge className='bg-blue-600 font-bold tracking-tighter text-white'>
-              {monthlySpendingsMultiplier.toFixed(1)}x miesięcznych wydatków
+              {monthlySpendingsMultiplier.toFixed(1)}x {t('monthlySpendings')}
             </Badge>
-            <span>Poduszka finansowa stanowi </span>
+            <span>{t('yourMonthlySpendings')} </span>
           </p>
         </CardTitle>
       </CardHeader>
@@ -94,9 +103,11 @@ export const MobileFortunesStructureCard = ({
                 <Shield className='size-4.5 text-blue-600' />
               </div>
             }
-            title='Poduszka finansowa'
+            title={t('financialCushion')}
+            detailedInfo={t('financialCushionDetailedInfo')}
             value={financialCushion}
             percentage={financialCushionPercentageOfWholeFortune}
+            dataTour='financial-cushion-card'
           />
           <CardItem
             icon={
@@ -104,9 +115,11 @@ export const MobileFortunesStructureCard = ({
                 <House className='size-4.5 text-blue-600' />
               </div>
             }
-            title='Majątek bytowy'
+            title={t('livingAssets')}
+            detailedInfo={t('livingAssetsDetailedInfo')}
             value={livingAssets}
             percentage={livingAssetsPercentageOfWholeFortune}
+            dataTour='living-assets-card'
           />
           <CardItem
             icon={
@@ -115,8 +128,10 @@ export const MobileFortunesStructureCard = ({
               </div>
             }
             title={t('netWorth')}
+            detailedInfo={t('netwWorthDetailedInfo')}
             value={investments}
             percentage={investmentsPercentageOfWholeFortune}
+            dataTour='investments-card'
           />
           <CardItem
             icon={
@@ -124,9 +139,11 @@ export const MobileFortunesStructureCard = ({
                 <Wallet className='size-4.5 text-blue-600' />
               </div>
             }
-            title={t('netWorth')}
+            title={t('otherAssets')}
+            detailedInfo={t('otherAssetsDetailedInfo')}
             value={restOfAssets}
             percentage={restOfAssetsPercentageOfWholeFortune}
+            dataTour='other-assets-card'
           />
         </div>
       </CardContent>

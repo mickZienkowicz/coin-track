@@ -6,6 +6,7 @@ import { getTranslations } from 'next-intl/server';
 import { currencyCodes } from '@/lib/currencies/currencies-list';
 import { timezoneCodes } from '@/lib/dates/time-zones/time-zones';
 import { prisma } from '@/lib/prisma/prisma-client';
+import { stripe } from '@/lib/stripe';
 import { createBudget } from '@/server/budget/actions/create-budget';
 import { getAuthenticatedUser } from '@/server/utils/get-authenticated-user';
 
@@ -40,13 +41,18 @@ export async function createFamily(data: {
       throw new Error(knownErrors.invalidTimezone);
     }
 
+    const customer = await stripe.customers.create({
+      email: user.email,
+      name: user.name
+    });
+
     const family = await prisma.family.create({
       data: {
         name: data.name,
         ownerId: user.id,
         currency: data.currency,
         timezone: data.timezone,
-
+        stripeCustomerId: customer.id,
         users: {
           create: {
             user: {

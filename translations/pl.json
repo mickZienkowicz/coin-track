@@ -8,6 +8,65 @@
     "quarter": "kwartał",
     "year": "rok"
   },
+  "subscription": {
+    "title": "Twoja subskrypcja dla - {familyName}",
+    "monthly": "Miesięczna",
+    "monthlyDescription": "Elastyczność płatności co miesiąc",
+    "monthlyPriceSuffix": "/miesiąc",
+    "monthlyButton": "Wybierz plan miesięczny",
+    "yearly": "Roczna",
+    "yearlyDescription": "Najlepsza cena  - płać raz w roku",
+    "yearlyPriceSuffix": "/rok",
+    "yearlyButton": "Wybierz plan roczny",
+    "yearlySavings": "Oszczędzasz {savings} rocznie",
+    "yearlySavingsSuffix": "rocznie",
+    "yearlySavingsMonthly": "Oszczędzasz {savings} miesięcznie",
+    "yearlySavingsMonthlySuffix": "miesięcznie",
+    "yearlySavingsMonthlyDescription": "Oszczędzasz {savings} miesięcznie",
+    "yearlySavingsMonthlyDescriptionSuffix": "miesięcznie",
+    "trial": "Okres próbny",
+    "trialDays": "dnia",
+    "trialDaysSuffix": "dni",
+    "trialDescription": "Okres próbny trwa 7 dni i skończy się {date}",
+    "trialDaysRemaining": "Pozostało dni: ",
+    "trialDaysRemainingSuffix": "dni",
+    "trialChooseSubscriptionButton": "Zakończ okres próbny",
+    "freeAccountCard": {
+      "title": "Darmowe Konto",
+      "subtitle": "Konto darmowe aktywne",
+      "badge": "Free",
+      "description": "Masz dostęp do wszystkich funkcji bez opłat"
+    },
+    "activeCard": {
+      "currentSubscription": "Twoja subskrypcja",
+      "status": "Status",
+      "active": "Aktywna",
+      "plan": "Plan:",
+      "currentPeriodEnds": "Koniec bieżącego okresu:",
+      "currentPeriodStarts": "Początek bieżącego okresu:",
+      "manageSubscription": "Zarządzaj subskrypcją",
+      "monthlyPrice": "{price}/miesiąc",
+      "yearlyPrice": "{price}/rok",
+      "monthly": "Miesięczny",
+      "yearly": "Roczny"
+    },
+    "chooseSubscriptionDialog": {
+      "title": "Wybierz subskrypcję",
+      "description": "Twój okres próbny się skończył lub nie posiadasz aktywnej subskrypcji. Wybierz subskrypcję, która najbardziej odpowiada Twoim potrzebom.",
+      "button": "Wybierz subskrypcję",
+      "buttonMobile": "Wybierz"
+    },
+    "checkout": {
+      "create": {
+        "error": "Nie udało się utworzyć sesji płatności, spróbuj ponownie później."
+      }
+    },
+    "portal": {
+      "create": {
+        "error": "Nie udało się utworzyć sesji portalu do zarządzania subskrypcją, spróbuj ponownie później."
+      }
+    }
+  },
   "fortune": {
     "title": "Majątek",
     "structure": {
@@ -348,7 +407,18 @@
       "debtsDescription": "Ostatnia aktualizacja: ",
       "netWorthDescription": "Ostatnia aktualizacja: ",
       "manageAssets": "Zarządzaj majątkiem",
-      "cardTitle": "Twój majątek"
+      "cardTitle": "Twój majątek",
+      "structure": "Struktura",
+      "yourMonthlySpendings": "Twoje miesięczne wydatki",
+      "monthlySpendings": "Miesięczne wydatki",
+      "monthlySpendingsMultiplier": "Współczynnik miesięcznych wydatków",
+      "financialCushion": "Poduszka finansowa",
+      "financialCushionDetailedInfo": "Poduszka finansowa",
+      "livingAssets": "Majątek bytowy",
+      "livingAssetsDetailedInfo": "Majątek bytowy",
+      "netWorthDetailedInfo": "Majątek netto",
+      "otherAssets": "Inne aktywa",
+      "otherAssetsDetailedInfo": "Inne aktywa"
     },
     "goalsSummaryCard": {
       "title": "Cele",
@@ -1172,6 +1242,54 @@
     }
   },
   "errors": {
+    "subscription": {
+      "cancel": {
+        "success": "Subskrypcja anulowana",
+        "failedToCancelSubscription": "Nie udało się anulować subskrypcji",
+        "subscriptionNotFound": "Subskrypcja nie znaleziona",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego"
+      },
+      "portal": {
+        "success": "Sesja portalu utworzona",
+        "failedToCreatePortalSession": "Nie udało się utworzyć sesji portalu",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
+        "subscriptionNotFound": "Subskrypcja nie znaleziona"
+      },
+      "get": {
+        "success": "Subskrypcja pobrana",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "subscriptionNotFound": "Subskrypcja nie znaleziona",
+        "failedToGetSubscription": "Nie udało się pobrać subskrypcji",
+        "subscriptionNotBelongsToFamily": "Subskrypcja nie należy do profilu rodzinnego",
+        "subscriptionNotBelongsToUser": "Subskrypcja nie należy do ciebie",
+        "subscriptionNotActive": "Subskrypcja nie jest aktywna",
+        "subscriptionCanceled": "Subskrypcja została anulowana"
+      },
+      "check": {
+        "success": "Subskrypcja sprawdzona",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "subscriptionNotFound": "Subskrypcja nie znaleziona",
+        "failedToCheckSubscription": "Nie udało się sprawdzić subskrypcji",
+        "subscriptionNotBelongsToFamily": "Subskrypcja nie należy do profilu rodzinnego",
+        "subscriptionNotBelongsToUser": "Subskrypcja nie należy do ciebie",
+        "subscriptionNotActive": "Subskrypcja nie jest aktywna"
+      },
+      "create": {
+        "success": "Subskrypcja utworzona",
+        "failedToCreateSubscription": "Nie udało się utworzyć subskrypcji",
+        "familyNotFound": "Profil rodzinny nie znaleziony",
+        "invalidSubscriptionData": "Nieprawidłowe dane subskrypcji",
+        "notFamilyOwner": "Nie jesteś właścicielem tego profilu rodzinnego",
+        "subscriptionAlreadyExists": "Subskrypcja już istnieje"
+      },
+      "update": {
+        "success": "Subskrypcja zaktualizowana",
+        "failedToUpdateSubscription": "Nie udało się zaktualizować subskrypcji",
+        "subscriptionNotFound": "Subskrypcja nie znaleziona"
+      }
+    },
     "fortune": {
       "asset": {
         "create": {

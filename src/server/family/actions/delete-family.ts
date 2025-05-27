@@ -3,6 +3,7 @@
 import { getTranslations } from 'next-intl/server';
 
 import { prisma } from '@/lib/prisma/prisma-client';
+import { cancelSubscription } from '@/server/subscription/actions/cancel-subscription';
 import { getAuthenticatedUser } from '@/server/utils/get-authenticated-user';
 
 export async function deleteFamily({ familyId }: { familyId: string }) {
@@ -17,7 +18,10 @@ export async function deleteFamily({ familyId }: { familyId: string }) {
 
   try {
     const family = await prisma.family.findUnique({
-      where: { id: familyId }
+      where: { id: familyId },
+      include: {
+        subscription: true
+      }
     });
 
     if (!family) {
@@ -26,6 +30,18 @@ export async function deleteFamily({ familyId }: { familyId: string }) {
 
     if (family.ownerId !== user.id) {
       throw new Error(knownErrors.notFamilyOwner);
+    }
+
+    const { success: subscriptionCanceled, message: subscriptionMessage } =
+      await cancelSubscription({
+        familyId
+      });
+
+    if (!subscriptionCanceled) {
+      console.error('Unable to cancel subscription: ', subscriptionMessage, {
+        family,
+        familySubscription: family.subscription
+      });
     }
 
     await prisma.family.delete({

@@ -8,6 +8,65 @@
     "quarter": "quarter",
     "year": "year"
   },
+  "subscription": {
+    "title": "Your subscription for - {familyName}",
+    "monthly": "Monthly",
+    "monthlyDescription": "Flexibility to pay monthly",
+    "monthlyPriceSuffix": "/month",
+    "monthlyButton": "Select monthly plan",
+    "yearly": "Yearly",
+    "yearlyDescription": "Best price - pay once a year",
+    "yearlyPriceSuffix": "/year",
+    "yearlyButton": "Select yearly plan",
+    "yearlySavings": "You save {savings} per year",
+    "yearlySavingsSuffix": "per year",
+    "yearlySavingsMonthly": "You save {savings} monthly",
+    "yearlySavingsMonthlySuffix": "monthly",
+    "yearlySavingsMonthlyDescription": "You save {savings} monthly",
+    "yearlySavingsMonthlyDescriptionSuffix": "monthly",
+    "trial": "Trial period",
+    "trialDays": "days",
+    "trialDaysSuffix": "days",
+    "trialDescription": "The trial period lasts 7 days and will end on {date}",
+    "trialDaysRemaining": "Days remaining: ",
+    "trialDaysRemainingSuffix": "days",
+    "trialChooseSubscriptionButton": "End trial",
+    "freeAccountCard": {
+      "title": "Free account",
+      "subtitle": "Free account active",
+      "badge": "Free",
+      "description": "You have access to all features without any fees"
+    },
+    "activeCard": {
+      "currentSubscription": "Current subscription",
+      "status": "Status",
+      "active": "Active",
+      "plan": "Plan:",
+      "currentPeriodEnds": "End of current period:",
+      "currentPeriodStarts": "Start of current period:",
+      "manageSubscription": "Manage subscription",
+      "monthlyPrice": "{price}/month",
+      "yearlyPrice": "{price}/year",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "chooseSubscriptionDialog": {
+      "title": "Select subscription",
+      "description": "Your trial period has ended or you don't have an active subscription. Select the subscription that best suits your needs.",
+      "button": "Select subscription",
+      "buttonMobile": "Select"
+    },
+    "checkout": {
+      "create": {
+        "error": "Failed to create payment session, please try again later."
+      }
+    },
+    "portal": {
+      "create": {
+        "error": "Failed to create subscription portal session, please try again later."
+      }
+    }
+  },
   "fortune": {
     "title": "Fortune",
     "structure": {
@@ -347,12 +406,23 @@
     "fortune": {
       "assets": "Assets",
       "debts": "Debts",
-      "netWorth": "Your net worth",
+      "netWorth": "Net worth",
       "assetsDescription": "Last updated: ",
       "debtsDescription": "Last updated: ",
       "netWorthDescription": "Last updated: ",
       "manageAssets": "Manage assets",
-      "cardTitle": "Your fortune"
+      "cardTitle": "Your fortune",
+      "structure": "Structure",
+      "yourMonthlySpendings": "Your monthly spendings",
+      "monthlySpendings": "Monthly spendings",
+      "monthlySpendingsMultiplier": "Monthly spendings multiplier",
+      "financialCushion": "Financial cushion",
+      "financialCushionDetailedInfo": "Financial cushion",
+      "livingAssets": "Living assets",
+      "livingAssetsDetailedInfo": "Living assets",
+      "netWorthDetailedInfo": "Net worth",
+      "otherAssets": "Other assets",
+      "otherAssetsDetailedInfo": "Other assets"
     },
     "goalsSummaryCard": {
       "title": "Goals",
@@ -1172,6 +1242,54 @@
     }
   },
   "errors": {
+    "subscription": {
+      "portal": {
+        "success": "Portal session created",
+        "failedToCreatePortalSession": "Failed to create portal session",
+        "familyNotFound": "Family profile not found",
+        "notFamilyOwner": "You are not the owner of this family profile",
+        "subscriptionNotFound": "Subscription not found"
+      },
+      "cancel": {
+        "success": "Subscription canceled",
+        "failedToCancelSubscription": "Failed to cancel subscription",
+        "subscriptionNotFound": "Subscription not found",
+        "familyNotFound": "Family profile not found",
+        "notFamilyOwner": "You are not the owner of this family profile"
+      },
+      "get": {
+        "success": "Subscription retrieved",
+        "familyNotFound": "Family profile not found",
+        "subscriptionNotFound": "Subscription not found",
+        "failedToGetSubscription": "Failed to get subscription",
+        "subscriptionNotBelongsToFamily": "Subscription does not belong to family profile",
+        "subscriptionNotBelongsToUser": "Subscription does not belong to you",
+        "subscriptionNotActive": "Subscription is not active",
+        "subscriptionCanceled": "Subscription has been canceled"
+      },
+      "check": {
+        "success": "Subscription checked",
+        "familyNotFound": "Family profile not found",
+        "subscriptionNotFound": "Subscription not found",
+        "failedToCheckSubscription": "Failed to check subscription",
+        "subscriptionNotBelongsToFamily": "Subscription does not belong to family profile",
+        "subscriptionNotBelongsToUser": "Subscription does not belong to you",
+        "subscriptionNotActive": "Subscription is not active"
+      },
+      "create": {
+        "success": "Subscription created",
+        "failedToCreateSubscription": "Nie udało się utworzyć subskrypcji",
+        "familyNotFound": "Family profile not found",
+        "invalidSubscriptionData": "Invalid subscription data",
+        "notFamilyOwner": "You are not the owner of this family profile",
+        "subscriptionAlreadyExists": "Subscription already exists"
+      },
+      "update": {
+        "success": "Subscription updated",
+        "failedToUpdateSubscription": "Failed to update subscription",
+        "subscriptionNotFound": "Subscription not found"
+      }
+    },
     "fortune": {
       "asset": {
         "create": {
@@ -1227,7 +1345,7 @@
         "invalidIncomeData": "Invalid goal data",
         "budgetNotFound": "Budget not found",
         "failedToCreateGoal": "Failed to create goal",
-        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "endDateMustBeInFuture": "End date must be in the future",
         "success": "Goal created"
       },
       "delete": {
@@ -1247,7 +1365,7 @@
         "budgetNotFound": "Budget not found",
         "failedToUpdateGoal": "Failed to update goal",
         "goalNotFound": "Goal not found",
-        "endDateMustBeInFuture": "Data zakończenia musi być w przyszłości",
+        "endDateMustBeInFuture": "End date must be in the future",
         "goalNotBelongsToUser": "Goal does not belong to you",
         "success": "Goal updated"
       },

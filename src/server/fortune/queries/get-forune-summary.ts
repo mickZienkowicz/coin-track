@@ -1,9 +1,6 @@
 import { auth } from '@clerk/nextjs/server';
 import { Asset, AssetCategory, Debt, FortuneValue } from '@prisma/client';
-import { getLocale } from 'next-intl/server';
 
-import { redirect } from '@/i18n/navigation';
-import { pathGenerators } from '@/lib/paths';
 import { prisma } from '@/lib/prisma/prisma-client';
 import { getBudgetSummary } from '@/server/budget/queries/get-budget-summary';
 import { getSelectedFamily } from '@/server/family/queries/get-selected-family';
@@ -34,13 +31,7 @@ export type FortuneSummary = {
 };
 
 export const getFortuneSummary = async (): Promise<FortuneSummary> => {
-  const { userId: clerkUserId } = await auth();
-
-  if (!clerkUserId) {
-    const locale = await getLocale();
-    redirect({ href: pathGenerators.home(), locale });
-    throw new Error('Unauthorized');
-  }
+  await auth();
 
   const family = await getSelectedFamily();
 

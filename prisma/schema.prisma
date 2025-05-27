@@ -22,20 +22,23 @@ model User {
 }
 
 model Family {
-  id          String       @id @default(uuid())
-  name        String
-  ownerId     String
-  owner       User         @relation(fields: [ownerId], references: [id], onDelete: Cascade, name: "UserOwnerFamilies")
-  users       UserFamily[]
-  budget      Budget?
-  goals       Goal[]
-  invitations Invitation[]
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  currency    String       @default("PLN")
-  timezone    String       @default("Europe/Warsaw")
-  assets      Asset[]
-  debts       Debt[]
+  id               String        @id @default(uuid())
+  name             String
+  ownerId          String
+  hasFreeAccount   Boolean       @default(false)
+  stripeCustomerId String
+  owner            User          @relation(fields: [ownerId], references: [id], onDelete: Cascade, name: "UserOwnerFamilies")
+  users            UserFamily[]
+  subscription     Subscription?
+  budget           Budget?
+  goals            Goal[]
+  invitations      Invitation[]
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  currency         String        @default("PLN")
+  timezone         String        @default("Europe/Warsaw")
+  assets           Asset[]
+  debts            Debt[]
 }
 
 model UserFamily {
@@ -212,4 +215,36 @@ model FortuneValue {
   assetId    String?
   Debt       Debt?    @relation(fields: [debtId], references: [id])
   debtId     String?
+}
+
+enum SubscriptionStatus {
+  incomplete
+  incomplete_expired
+  trialing
+  active
+  past_due
+  canceled
+  unpaid
+  paused
+}
+
+enum SubscriptionPlan {
+  MONTHLY
+  YEARLY
+}
+
+model Subscription {
+  id                   String             @id @default(uuid())
+  familyId             String             @unique
+  family               Family             @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  stripeCustomerId     String             @unique
+  stripePriceId        String
+  stripeSubscriptionId String             @unique
+  status               SubscriptionStatus
+  plan                 SubscriptionPlan
+  currentPeriodStart   DateTime
+  currentPeriodEnd     DateTime
+  cancelAtPeriodEnd    Boolean            @default(false)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
 }

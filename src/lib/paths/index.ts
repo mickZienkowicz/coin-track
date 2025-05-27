@@ -4,7 +4,7 @@ export const paths = {
   fortune: '/dashboard/fortune',
   budget: '/dashboard/budget',
   goals: '/dashboard/goals',
-  settings: '/dashboard/settings',
+  settings: '/settings',
   budgetFromDate: '/dashboard/budget/:date'
 };
 

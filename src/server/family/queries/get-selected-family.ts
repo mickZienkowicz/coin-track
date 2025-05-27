@@ -3,6 +3,7 @@
 import { cookies } from 'next/headers';
 
 import { prisma } from '@/lib/prisma/prisma-client';
+import { syncSubscription } from '@/server/subscription/actions/sync-subscription';
 import { getAuthenticatedUser } from '@/server/utils/get-authenticated-user';
 
 export async function getSelectedFamily() {
@@ -16,6 +17,10 @@ export async function getSelectedFamily() {
           userId: user.id
         }
       }
+    },
+    include: {
+      owner: true,
+      subscription: true
     }
   });
 
@@ -26,10 +31,20 @@ export async function getSelectedFamily() {
   );
 
   if (selectedFamilyId && familyFromCookie) {
+    if (familyFromCookie.subscription?.stripeSubscriptionId) {
+      await syncSubscription(
+        familyFromCookie.subscription.stripeSubscriptionId
+      );
+    }
+
     return familyFromCookie;
   }
 
   if (defaultFamily) {
+    if (defaultFamily.subscription?.stripeSubscriptionId) {
+      await syncSubscription(defaultFamily.subscription.stripeSubscriptionId);
+    }
+
     return defaultFamily;
   }
 

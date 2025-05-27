@@ -1,6 +1,7 @@
 import { PlusCircle, ShoppingCart } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getPouches } from '@/server/pouch/queries/get-pouch';
@@ -24,6 +25,7 @@ export const PouchList = async () => {
                 <ShoppingCart className='size-5 text-blue-600' />
               </div>
               {t('title')}
+              <AdditionalInfoTooltip text={t('additionalInfo')} />
             </h2>
             <AddPouchDialog>
               <Button

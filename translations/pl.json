@@ -173,6 +173,8 @@
     },
     "assets": {
       "title": "Aktywa",
+      "assetsAdditionalInfo": "Aktywa to wszystkie Twoje zasoby finansowe, takie jak: pieniądze na koncie bankowym, akcje, obligacje, nieruchomości i inne inwestycje.",
+
       "addAssetButton": "Dodaj aktywo",
       "noAssetsCard": {
         "title": "Nie masz jeszcze żadnych aktywów",
@@ -244,9 +246,9 @@
             "error": "Podaj kategorię aktywa."
           },
           "valueField": {
-            "label": "Wartość",
+            "label": "Kwota",
             "placeholder": "np. 1000",
-            "error": "Podaj wartość aktywa."
+            "error": "Podaj kwotę aktywa."
           },
           "button": "Edytuj aktywo"
         }
@@ -266,7 +268,7 @@
         "lastUpdate": "Ostatnia aktualizacja: ",
         "amount": "Kwota",
         "category": "Kategoria",
-        "value": "Wartość",
+        "value": "Kwota",
         "yourAssets": "twoich aktywów",
         "livingAssets": "Majątek bytowy",
         "investmentAssets": "Majątek inwestycyjny",
@@ -322,9 +324,9 @@
             "error": "Podaj opis pasywa."
           },
           "valueField": {
-            "label": "Wartość",
+            "label": "Kwota",
             "placeholder": "np. 1000",
-            "error": "Podaj wartość pasywa."
+            "error": "Podaj kwotę pasywa."
           },
           "button": "Edytuj pasywo"
         }
@@ -344,7 +346,7 @@
         "lastUpdate": "Ostatnia aktualizacja: ",
         "amount": "Kwota",
         "category": "Kategoria",
-        "value": "Wartość",
+        "value": "Kwota",
         "yourDebts": "twoich pasyw"
       }
     }
@@ -386,26 +388,30 @@
           "error": "Podaj nazwę celu."
         },
         "valueField": {
-          "label": "Wartość celu",
+          "label": "Kwota celu",
           "placeholder": "np. 10000",
-          "error": "Podaj wartość."
+          "error": "Podaj kwotę.",
+          "additionalInfo": "To pole określa kwotę, którą chcesz osiągnąć. Podaj ją razem z kwotą, którą masz już odłożoną."
         },
         "dateField": {
           "label": "Planowana data zakończenia",
           "placeholder": "np. 2024-01-01",
           "error": "Wybierz datę.",
-          "errorMustBeInTheFuture": "Data musi być w przyszłości."
+          "errorMustBeInTheFuture": "Data musi być w przyszłości.",
+          "additionalInfo": "To pole określa datę, do której chcesz osiągnąć cel. Wydatki na cel w Twoim budżecie zostaną tak rozplanowane, aby osiągnąć ten cel do tej daty."
         },
         "savingIntervalField": {
           "label": "Częstotliwość wpłat",
           "triggerDefaultLabel": "Wybierz interwał",
           "placeholder": "Wyszukaj interwał...",
-          "noResultsMessage": "Nie znaleziono wyników"
+          "noResultsMessage": "Nie znaleziono wyników",
+          "additionalInfo": "To pole określa częstotliwość występowania celu. Na przykład, jeżeli wybierzesz \"co miesiąc\", to co miesiąc do Twojego budżetu zostanie dodany wydatek na ten cel."
         },
         "initialDepositField": {
           "label": "Wpłata początkowa",
           "placeholder": "np. 1000",
-          "error": "Podaj kwotę."
+          "error": "Podaj kwotę.",
+          "additionalInfo": "To pole określa kwotę, którą już masz odłożoną na ten cel."
         },
         "addGoalButton": "Dodaj cel"
       }
@@ -422,25 +428,29 @@
           "error": "Podaj nazwę celu."
         },
         "valueField": {
-          "label": "Wartość celu",
+          "label": "Kwota celu",
           "placeholder": "np. 10000",
-          "error": "Podaj wartość."
+          "error": "Podaj kwotę.",
+          "additionalInfo": "To pole określa kwotę, którą chcesz osiągnąć. Podaj ją razem z kwotą, którą masz już odłożoną."
         },
         "dateField": {
           "label": "Data",
           "placeholder": "np. 2024-01-01",
-          "error": "Wybierz datę."
+          "error": "Wybierz datę.",
+          "additionalInfo": "To pole określa datę, do której chcesz osiągnąć cel. Wydatki na cel w Twoim budżecie zostaną tak rozplanowane, aby osiągnąć ten cel do tej daty."
         },
         "savingIntervalField": {
           "label": "Interwał",
           "triggerDefaultLabel": "Wybierz interwał",
           "placeholder": "Wyszukaj interwał...",
-          "noResultsMessage": "Nie znaleziono wyników"
+          "noResultsMessage": "Nie znaleziono wyników",
+          "additionalInfo": "To pole określa częstotliwość występowania celu. Na przykład, jeżeli wybierzesz \"co miesiąc\", to co miesiąc do Twojego budżetu zostanie dodany wydatek na ten cel."
         },
         "initialDepositField": {
           "label": "Wpłata początkowa",
           "placeholder": "np. 1000",
-          "error": "Podaj kwotę."
+          "error": "Podaj kwotę.",
+          "additionalInfo": "To pole określa kwotę, którą już masz odłożoną na ten cel."
         },
         "editGoalButton": "Edytuj cel"
       }
@@ -464,7 +474,7 @@
         "valueField": {
           "label": "Kwota",
           "placeholder": "np. 1000",
-          "error": "Podaj wartość."
+          "error": "Podaj kwotę."
         },
         "editGoalOutcomeButton": "Edytuj wydatek na cel"
       }
@@ -501,7 +511,9 @@
       "livingAssetsDetailedInfo": "Majątek bytowy",
       "netWorthDetailedInfo": "Majątek netto",
       "otherAssets": "Inne aktywa",
-      "otherAssetsDetailedInfo": "Inne aktywa"
+      "otherAssetsDetailedInfo": "Inne aktywa",
+      "assetsAdditionalInfo": "Aktywa to wszystkie Twoje zasoby finansowe, takie jak: pieniądze na koncie bankowym, akcje, obligacje, nieruchomości i inne inwestycje.",
+      "debtsAdditionalInfo": "Pasywa to wszystkie Twoje zobowiązania finansowe, na przykład: pozostała do spłaty kwota kredytu razem z odsetkami."
     },
     "goalsSummaryCard": {
       "title": "Cele",
@@ -632,16 +644,19 @@
           "label": "Interwał okresu budżetowego",
           "triggerDefaultLabel": "Wybierz interwał",
           "placeholder": "Wyszukaj interwał...",
-          "noResultsMessage": "Nie znaleziono wyników"
+          "noResultsMessage": "Nie znaleziono wyników",
+          "additionalInfo": "To pole pozwala skonfigurować, co ile ma się otwierać nowy budżet, czyli w jakich ramach czasowych będziemy podsumowywać Twoje wydatki i przychody."
         },
         "budgetTransferPouchBalanceField": {
           "label": "Przenoszenie salda portfeli między budżetami",
           "triggerDefaultLabel": "Wybierz opcję",
           "yes": "Tak",
-          "no": "Nie"
+          "no": "Nie",
+          "additionalInfo": "To pole pozwala skonfigurować, czy po zakończeniu okresu budżetowego saldo w portfelu ma zostać przeniesione do kolejnego budżetu. W przypadku wyboru opcji \"tak\", jeżeli w danym miesiącu wydasz na dany cel (na przykład zakupy) więcej niż zaplanowałeś, to portfel w następnym miesiącu zostanie zmniejszony o tę kwotę. Zadziała to również odwrotnie - jeżeli nie wydasz zaplanowanej kwoty, to w następnym miesiącu zostanie on zwiększony o tę kwotę."
         },
         "budgetStartDateField": {
-          "label": "Data rozpoczęcia pierwszego okresu budżetowego"
+          "label": "Data rozpoczęcia pierwszego okresu budżetowego",
+          "additionalInfo": "To pole pozwala skonfigurować, którego dnia będzie się otwierać nowy okres budżetowy. W większości przypadków najlepszy będzie 1. dzień miesiąca, w którym rozpoczynasz pracę z aplikacją."
         }
       }
     },
@@ -741,7 +756,9 @@
   "budget": {
     "title": "Budżet",
     "summary": "Podsumowanie",
+    "summaryAdditionalInfo": "To zakładka obecnego budżetu, pokazuje podsumowanie przychodów i wydatków w obecnym okresie budżetowym, tak jak wskazane jest w tytule poniżej.",
     "budgetItems": "Pozycje budżetu",
+    "budgetItemsAdditionalInfo": "To zakładka służy do konfiguracji Twojego budżetu. Możesz w niej dodać swoje przychody, wydatki i portfele cykliczne, a przez to skonfigurować przyszłe budżety tak, aby nie trzeba było dodawać ich na nowo dla każdego nowego okresu budżetowego (na przykład w każdym kolejnym miesiącu). Widać też tutaj wszystkie dodane przez Ciebie rzeczy, a nie tylko te z obecnego budżetu, co pozwala na pełny przegląd.",
     "noFamilyCard": {
       "title": "Nie masz jeszcze żadnego profilu rodzinnego",
       "description": "Dodaj profil rodzinny, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe.",
@@ -750,6 +767,7 @@
     "pouch": {
       "title": "Portfele",
       "addPouchButton": "Dodaj portfel",
+      "additionalInfo": "Portfele to specjalny rodzaj wydatków. Portfel posiada swoją zaplanowaną pojemność, ale nie zostaje ona dodana do sumy wydatków od razu, a w miarę jak będziesz dodawać wydatki do niego. Dobrym przykładem wykorzystania portfeli są takie wydatki jak zakupy - możesz zaplanować kwotę, jaką chcesz przeznaczyć na zakupy w danym miesiącu, ale do salda budżetu zostanie wliczona tylko kwota, którą faktycznie wydałeś (czyli suma wydatków dodanych do tego portfela w danym miesiącu). W ustawieniach budżetu możesz ustawić opcję przenoszenia salda portfeli. Oznacza to, że jeżeli w danym miesiącu wydasz więcej niż planowałeś, w następnym zaplanowana kwota będzie zmniejszona o tę wartość. Zadziała to również odwrotnie - jeżeli nie wydasz wszystkich zaplanowanych środków, w następnym miesiącu nadwyżka zostanie przeniesiona do następnego portfela.",
       "noPouchesCard": {
         "title": "Nie masz jeszcze żadnych portfeli",
         "description": "Dodaj portfele, aby móc kontrolować budżet, śledzić majątek i osiągać swoje cele finansowe."
@@ -869,12 +887,14 @@
             "dateField": {
               "label": "Data",
               "placeholder": "np. 2024-01-01",
-              "error": "Wybierz datę."
+              "error": "Wybierz datę.",
+              "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
             },
             "recurrenceField": {
               "label": "Powtarzanie",
               "placeholder": "Wybierz typ portfela",
-              "noResultsMessage": "Nie znaleziono wyników"
+              "noResultsMessage": "Nie znaleziono wyników",
+              "additionalInfo": "To pole pozwala skonfigurować powtarzalność. Jeżeli coś wystąpi tylko raz, wybierz \"jednorazowy\". Jeżeli coś wystąpi wiele razy, wybierz \"cykliczny\" i określ co ile ma się powtarzać. W przypadku wyboru opcji cyklicznej musisz skonfigurować, ile razy i co ile ma się powtarzać."
             },
             "repeatCountField": {
               "label": "Ile razy ma się powtarzać",
@@ -919,7 +939,8 @@
               "label": "Kwota portfela"
             },
             "dateField": {
-              "label": "Data utworzenia"
+              "label": "Data utworzenia",
+              "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
             },
             "recurrenceField": {
               "label": "Powtarzaj co",
@@ -964,6 +985,7 @@
     "outcomes": {
       "title": "Wydatki",
       "addOutcomeButton": "Dodaj wydatek",
+      "additionalInfo": "Wydatki to kategoria, do której powinieneś dodać wszystkie wydatki, co do których wiesz, że na pewno wydasz konkretną kwotę, na przykład: rata kredytu czy czynsz za mieszkanie. Jeśli nie wiesz, ile wyniesie dany wydatek, a jedynie planujesz wydawać daną kwotę na jakiś cel, użyj portfela.",
       "budgetSummary": {
         "title": "Wydatki",
         "listOfOutcomes": "Wydatki w tym okresie budżetowym.",
@@ -980,7 +1002,7 @@
         "recurring": "Cykliczny",
         "amount": "Kwota",
         "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
-        "goalOutcomeChangeInfo": "Zmiany w wydatkach na cele moliwe są za poziomu celów",
+        "goalOutcomeChangeInfo": "Zmiany w wydatkach na cele moliwe są z poziomu celów",
         "goToGoals": "Przejdź do celów",
         "recurringDisabledCountLabel": {
           "one": "raz",
@@ -1019,7 +1041,8 @@
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Wybierz datę."
+            "error": "Wybierz datę.",
+            "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
@@ -1064,13 +1087,15 @@
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Wybierz datę."
+            "error": "Wybierz datę.",
+            "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
             "triggerDefaultLabel": "Wybierz opcję",
             "placeholder": "Wyszukaj opcję...",
-            "noResultsMessage": "Nie znaleziono wyników"
+            "noResultsMessage": "Nie znaleziono wyników",
+            "additionalInfo": "To pole pozwala skonfigurować powtarzalność. Jeżeli coś wystąpi tylko raz, wybierz \"jednorazowy\". Jeżeli coś wystąpi wiele razy, wybierz \"cykliczny\" i określ co ile ma się powtarzać. W przypadku wyboru opcji cyklicznej musisz skonfigurować, ile razy i co ile ma się powtarzać."
           },
           "repeatCountField": {
             "label": "Ile razy ma się powtarzać",
@@ -1112,6 +1137,7 @@
     "incomes": {
       "title": "Przychody",
       "addIncomeButton": "Dodaj przychód",
+      "additionalInfo": "Do przychodów dodaj wszystkie wpływy, które zasilają Twój budżet. Jeżeli przychód jest cykliczny, jak na przykład wypłata, to dodaj przychód stały. Jeżeli przychód jest jednorazowy, na przykład premia, to dodaj przychód jednorazowy. Możesz też dodać przychód kilkukrotny, jeżeli wiesz, że powtórzy się on konkretną ilość razy.",
       "budgetSummary": {
         "title": "Przychody",
         "listOfIncomes": "Przychody w tym okresie budżetowym.",
@@ -1178,20 +1204,22 @@
             "error": "Podaj nazwę."
           },
           "valueField": {
-            "label": "Wartość",
+            "label": "Kwota",
             "placeholder": "np. 1000",
             "error": "Podaj poprawną kwotę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Wybierz datę."
+            "error": "Wybierz datę.",
+            "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
             "triggerDefaultLabel": "Wybierz opcję",
             "placeholder": "Wyszukaj opcję...",
-            "noResultsMessage": "Nie znaleziono wyników"
+            "noResultsMessage": "Nie znaleziono wyników",
+            "additionalInfo": "To pole określa częstotliwość występowania przychodu. Na przykład jeżeli wybierzesz \"co miesiąc\", to co miesiąc do Twojego budżetu zostanie dodany przychód na ten cel."
           },
           "repeatCountField": {
             "label": "Ile razy ma się powtarzać",
@@ -1230,19 +1258,21 @@
             "error": "Wybierz kategorię."
           },
           "valueField": {
-            "label": "Wartość",
+            "label": "Kwota",
             "placeholder": "np. 1000",
             "error": "Podaj poprawną kwotę."
           },
           "dateField": {
             "label": "Data",
             "placeholder": "np. 2024-01-01",
-            "error": "Wybierz datę."
+            "error": "Wybierz datę.",
+            "additionalInfo": "To pole określa datę wystąpienia. Jeżeli wybrałeś, że ma to być cykliczne wystąpienie, ta data określa pierwsze wystąpienie."
           },
           "recurrenceField": {
             "label": "Powtarzanie",
             "placeholder": "Wyszukaj opcję...",
-            "noResultsMessage": "Nie znaleziono wyników"
+            "noResultsMessage": "Nie znaleziono wyników",
+            "additionalInfo": "To pole określa częstotliwość występowania przychodu. Na przykład jeżeli wybierzesz \"co miesiąc\", to co miesiąc do Twojego budżetu zostanie dodany przychód na ten cel."
           },
           "repeatCountField": {
             "label": "Ile razy ma się powtarzać",
@@ -1310,16 +1340,19 @@
       "error": "Coś poszło nie tak.",
       "intervalField": {
         "label": "Interwał",
-        "placeholder": "Wybierz interwał"
+        "placeholder": "Wybierz interwał",
+        "additionalInfo": "To pole pozwala skonfigurować, co ile ma się otwierać nowy budzet. czyli w jakich ramach czasowych bedziemy podumowywać twoje wydatki i przychody."
       },
       "startDateField": {
-        "label": "Data rozpoczęcia pierwszego okresu"
+        "label": "Data rozpoczęcia pierwszego okresu",
+        "additionalInfo": "To pole pozwala skonfigurować, którego dnia będzie się otwierać nowy okres budżetowy. W większości przypadków najlepszy będzie 1. dzień miesiąca, w którym rozpoczynasz pracę z aplikacją."
       },
       "transferPouchBalanceField": {
         "label": "Przenoszenie salda portfeli",
         "placeholder": "Wybierz opcję",
         "yes": "Tak",
-        "no": "Nie"
+        "no": "Nie",
+        "additionalInfo": "To pole pozwala skonfigurować, czy po zakończeniu okresu budżetowego saldo w portfelu ma zostać przeniesione do kolejnego budżetu. W przypadku wyboru opcji \"tak\", jeżeli w danym miesiącu wydasz na dany cel (na przykład zakupy) więcej niż zaplanowałeś, to portfel w następnym miesiącu zostanie zmniejszony o tę kwotę. Zadziała to również odwrotnie - jeżeli nie wydasz zaplanowanej kwoty, to w następnym miesiącu zostanie on zwiększony o tę kwotę."
       },
       "applyChangesButton": "Zastosuj zmiany"
     }
@@ -1376,22 +1409,22 @@
     "fortune": {
       "asset": {
         "create": {
-          "invalidAssetData": "Nieprawidłowe dane aktywu",
-          "failedToCreateAsset": "Nie udało się utworzyć aktywu",
+          "invalidAssetData": "Nieprawidłowe dane aktywa",
+          "failedToCreateAsset": "Nie udało się utworzyć aktywa",
           "familyNotFound": "Profil rodzinny nie znaleziony",
           "success": "Aktyw utworzony"
         },
         "delete": {
-          "invalidAssetData": "Nieprawidłowe dane aktywu",
-          "failedToDeleteAsset": "Nie udało się usunąć aktywu",
+          "invalidAssetData": "Nieprawidłowe dane aktywa",
+          "failedToDeleteAsset": "Nie udało się usunąć aktywa",
           "familyNotFound": "Profil rodzinny nie znaleziony",
           "assetNotFound": "Aktyw nie znaleziony",
           "assetNotBelongsToFamily": "Aktyw nie należy do profilu rodzinnego",
           "success": "Aktyw usunięty"
         },
         "update": {
-          "invalidAssetData": "Nieprawidłowe dane aktywu",
-          "failedToUpdateAsset": "Nie udało się zaktualizować aktywu",
+          "invalidAssetData": "Nieprawidłowe dane aktywa",
+          "failedToUpdateAsset": "Nie udało się zaktualizować aktywa",
           "familyNotFound": "Profil rodzinny nie znaleziony",
           "assetNotFound": "Aktyw nie znaleziony",
           "assetNotBelongsToFamily": "Aktyw nie należy do profilu rodzinnego",

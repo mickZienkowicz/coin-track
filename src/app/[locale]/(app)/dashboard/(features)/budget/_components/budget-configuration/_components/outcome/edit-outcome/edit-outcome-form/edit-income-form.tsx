@@ -179,7 +179,10 @@ export const EditOutcomeForm = ({
               control={form.control}
               name='date'
               render={({ field, fieldState }) => (
-                <FormItemWrapper label={t('dateField.label')}>
+                <FormItemWrapper
+                  label={t('dateField.label')}
+                  additionalInfo={t('dateField.additionalInfo')}
+                >
                   <DatePicker
                     date={field.value}
                     setDate={(e) => {

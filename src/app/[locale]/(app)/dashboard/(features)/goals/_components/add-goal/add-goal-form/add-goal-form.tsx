@@ -124,7 +124,10 @@ export const AddGoalForm = ({ closeDialog }: { closeDialog: () => void }) => {
                 control={form.control}
                 name='initialDeposit'
                 render={({ field, fieldState }) => (
-                  <FormItemWrapper label={t('initialDepositField.label')}>
+                  <FormItemWrapper
+                    label={t('initialDepositField.label')}
+                    additionalInfo={t('initialDepositField.additionalInfo')}
+                  >
                     <CurrencyInput
                       hasError={!!fieldState.error}
                       currency={currency}
@@ -138,7 +141,10 @@ export const AddGoalForm = ({ closeDialog }: { closeDialog: () => void }) => {
                 control={form.control}
                 name='value'
                 render={({ field, fieldState }) => (
-                  <FormItemWrapper label={t('valueField.label')}>
+                  <FormItemWrapper
+                    label={t('valueField.label')}
+                    additionalInfo={t('valueField.additionalInfo')}
+                  >
                     <CurrencyInput
                       hasError={!!fieldState.error}
                       currency={currency}
@@ -152,7 +158,10 @@ export const AddGoalForm = ({ closeDialog }: { closeDialog: () => void }) => {
                 control={form.control}
                 name='endDate'
                 render={({ field, fieldState }) => (
-                  <FormItemWrapper label={t('dateField.label')}>
+                  <FormItemWrapper
+                    label={t('dateField.label')}
+                    additionalInfo={t('dateField.additionalInfo')}
+                  >
                     <DatePicker
                       date={field.value}
                       setDate={field.onChange}
@@ -166,7 +175,10 @@ export const AddGoalForm = ({ closeDialog }: { closeDialog: () => void }) => {
                 control={form.control}
                 name='savingInterval'
                 render={({ field, fieldState }) => (
-                  <FormItemWrapper label={t('savingIntervalField.label')}>
+                  <FormItemWrapper
+                    label={t('savingIntervalField.label')}
+                    additionalInfo={t('savingIntervalField.additionalInfo')}
+                  >
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}

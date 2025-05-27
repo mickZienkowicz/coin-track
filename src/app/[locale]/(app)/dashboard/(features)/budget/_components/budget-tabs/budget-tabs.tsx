@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { ListOrdered, PieChart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useRouter } from '@/i18n/navigation';
 import { pathGenerators } from '@/lib/paths';
@@ -28,8 +29,12 @@ export const BudgetTabs = ({
             router.replace(`${pathGenerators.budget()}?tab=summary`);
           }}
         >
-          <PieChart className='h-4 w-4' />
+          <PieChart className='size-4' />
           {t('summary')}
+          <AdditionalInfoTooltip
+            text={t('summaryAdditionalInfo')}
+            className='ml-1'
+          />
         </TabsTrigger>
         <TabsTrigger
           value='budget-items'
@@ -40,6 +45,10 @@ export const BudgetTabs = ({
         >
           <ListOrdered className='h-4 w-4' />
           {t('budgetItems')}
+          <AdditionalInfoTooltip
+            text={t('budgetItemsAdditionalInfo')}
+            className='ml-1'
+          />
         </TabsTrigger>
       </TabsList>
       {children}

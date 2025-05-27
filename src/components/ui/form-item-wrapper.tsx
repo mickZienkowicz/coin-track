@@ -2,18 +2,21 @@ import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
 
+import { AdditionalInfoTooltip } from '../additional-info-tooltip';
 import { FormControl, FormItem, FormLabel, FormMessage } from './form';
 
 export const FormItemWrapper = ({
   label,
   children,
   className,
-  disabled
+  disabled,
+  additionalInfo
 }: {
   label?: string | ReactNode;
   children: ReactNode;
   className?: string;
   disabled?: boolean;
+  additionalInfo?: string;
 }) => (
   <FormItem className={cn('gap-1.5 text-left', className)}>
     {label && (
@@ -24,6 +27,7 @@ export const FormItemWrapper = ({
         )}
       >
         {label}
+        {additionalInfo && <AdditionalInfoTooltip text={additionalInfo} />}
       </FormLabel>
     )}
     <FormControl>{children}</FormControl>

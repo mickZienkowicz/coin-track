@@ -89,7 +89,10 @@ export const BudgetSettingsForm = ({
             control={form.control}
             name='interval'
             render={({ field, fieldState }) => (
-              <FormItemWrapper label={t('intervalField.label')}>
+              <FormItemWrapper
+                label={t('intervalField.label')}
+                additionalInfo={t('intervalField.additionalInfo')}
+              >
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -110,7 +113,10 @@ export const BudgetSettingsForm = ({
             control={form.control}
             name='startDate'
             render={({ field, fieldState }) => (
-              <FormItemWrapper label={t('startDateField.label')}>
+              <FormItemWrapper
+                label={t('startDateField.label')}
+                additionalInfo={t('startDateField.additionalInfo')}
+              >
                 <DatePicker
                   date={field.value}
                   setDate={field.onChange}
@@ -124,7 +130,10 @@ export const BudgetSettingsForm = ({
             control={form.control}
             name='transferPouchBalance'
             render={({ field, fieldState }) => (
-              <FormItemWrapper label={t('transferPouchBalanceField.label')}>
+              <FormItemWrapper
+                label={t('transferPouchBalanceField.label')}
+                additionalInfo={t('transferPouchBalanceField.additionalInfo')}
+              >
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -150,7 +159,12 @@ export const BudgetSettingsForm = ({
               </FormItemWrapper>
             )}
           />
-          <Button className='mt-6' loading={isPending} disabled={isPending}>
+          <Button
+            className='mt-6'
+            autoFocus
+            loading={isPending}
+            disabled={isPending}
+          >
             {t('applyChangesButton')}
           </Button>
         </form>

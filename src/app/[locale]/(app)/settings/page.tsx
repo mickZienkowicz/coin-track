@@ -46,9 +46,11 @@ export default async function SettingsPage() {
             />
           )}
 
-          <ReceivedInvitationsList />
+          <div className='grid grid-cols-1 gap-8 2xl:grid-cols-2'>
+            <ReceivedInvitationsList />
 
-          <SentInvitationsList />
+            <SentInvitationsList />
+          </div>
         </>
       </NoFamilyCardFallback>
     </div>

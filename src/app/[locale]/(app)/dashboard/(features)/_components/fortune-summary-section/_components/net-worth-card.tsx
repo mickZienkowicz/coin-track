@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { buttonVariants } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { usePathname } from '@/i18n/navigation';
@@ -16,7 +17,8 @@ export const NetWorthCard = ({
   value,
   description,
   className,
-  dataTour
+  dataTour,
+  additionalInfo
 }: {
   title: string;
   icon: React.ReactNode;
@@ -24,6 +26,7 @@ export const NetWorthCard = ({
   description?: string;
   className?: string;
   dataTour?: string;
+  additionalInfo?: string;
 }) => {
   const pathname = usePathname();
   const t = useTranslations('dashboard.fortune');
@@ -41,7 +44,12 @@ export const NetWorthCard = ({
         <CardTitle className='flex items-center gap-3 text-lg'>
           {icon}
           <div className='flex flex-col'>
-            <h4 className='hidden text-2xl font-bold sm:block'>{title}</h4>
+            <h4 className='hidden text-2xl font-bold sm:block'>
+              {title}
+              {additionalInfo && (
+                <AdditionalInfoTooltip text={additionalInfo} />
+              )}
+            </h4>
             {description && (
               <p className='hidden text-sm font-normal text-primary/70 sm:block'>
                 <Calendar className='-mt-0.5 mr-1 inline-block h-3.5 w-3.5' />

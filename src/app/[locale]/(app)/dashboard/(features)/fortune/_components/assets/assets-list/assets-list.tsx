@@ -1,6 +1,7 @@
 import { PlusCircle, TrendingUp } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AssetWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
@@ -27,6 +28,7 @@ export const AssetsList = async ({
                 <TrendingUp className='size-6 text-green-600' />
               </div>
               {t('title')}
+              <AdditionalInfoTooltip text={t('assetsAdditionalInfo')} />
             </h2>
             <AddAssetDialog>
               <Button

@@ -23,7 +23,6 @@ export const HeroSection = () => {
         />
         <h1 className='text-4xl font-bold tracking-tight md:text-5xl'>
           {t('title')}
-          <span className='text-primary'>{t('titleHighlight')}</span>
         </h1>
         <p className='mx-auto max-w-3xl text-base text-primary/70 md:text-lg'>
           {t('description')}

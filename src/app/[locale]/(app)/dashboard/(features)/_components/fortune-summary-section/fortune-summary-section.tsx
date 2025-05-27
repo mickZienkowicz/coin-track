@@ -80,6 +80,7 @@ export const FortuneSummarySection = ({
             </div>
           }
           value={assetsCount}
+          additionalInfo={t('assetsAdditionalInfo')}
         />
 
         <FortuneCard
@@ -99,6 +100,7 @@ export const FortuneSummarySection = ({
             </div>
           }
           value={debtsCount}
+          additionalInfo={t('debtsAdditionalInfo')}
         />
 
         <NetWorthCard

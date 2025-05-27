@@ -123,7 +123,10 @@ export const AddIncomeForm = ({ closeDialog }: { closeDialog: () => void }) => {
               control={form.control}
               name='date'
               render={({ field, fieldState }) => (
-                <FormItemWrapper label={t('dateField.label')}>
+                <FormItemWrapper
+                  label={t('dateField.label')}
+                  additionalInfo={t('dateField.additionalInfo')}
+                >
                   <DatePicker
                     date={field.value}
                     setDate={field.onChange}
@@ -172,7 +175,10 @@ export const AddIncomeForm = ({ closeDialog }: { closeDialog: () => void }) => {
               control={form.control}
               name='recurrence'
               render={({ field, fieldState }) => (
-                <FormItemWrapper label={t('recurrenceField.label')}>
+                <FormItemWrapper
+                  label={t('recurrenceField.label')}
+                  additionalInfo={t('recurrenceField.additionalInfo')}
+                >
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}

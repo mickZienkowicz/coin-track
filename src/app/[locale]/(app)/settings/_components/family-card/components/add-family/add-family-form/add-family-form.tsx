@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Interval } from '@prisma/client';
 import { useMutation } from '@tanstack/react-query';
+import { startOfMonth } from 'date-fns';
 import { useLocale, useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -70,7 +71,7 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
       familyName: '',
       currency: deviceTimezone === 'Europe/Warsaw' ? 'PLN' : 'USD',
       timezone: deviceTimezone,
-      budgetStartDate: new Date(),
+      budgetStartDate: startOfMonth(new Date()),
       budgetInterval: Interval.MONTH,
       budgetTransferPouchBalance: YesNoEnum.NO
     }
@@ -171,7 +172,10 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
               control={form.control}
               name='budgetInterval'
               render={({ field, fieldState }) => (
-                <FormItemWrapper label={t('budgetIntervalField.label')}>
+                <FormItemWrapper
+                  label={t('budgetIntervalField.label')}
+                  additionalInfo={t('budgetIntervalField.additionalInfo')}
+                >
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -196,7 +200,10 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
               control={form.control}
               name='budgetStartDate'
               render={({ field, fieldState }) => (
-                <FormItemWrapper label={t('budgetStartDateField.label')}>
+                <FormItemWrapper
+                  label={t('budgetStartDateField.label')}
+                  additionalInfo={t('budgetStartDateField.additionalInfo')}
+                >
                   <DatePicker
                     date={field.value}
                     setDate={field.onChange}
@@ -212,6 +219,9 @@ export const AddFamilyForm = ({ closeDialog }: { closeDialog: () => void }) => {
               render={({ field, fieldState }) => (
                 <FormItemWrapper
                   label={t('budgetTransferPouchBalanceField.label')}
+                  additionalInfo={t(
+                    'budgetTransferPouchBalanceField.additionalInfo'
+                  )}
                 >
                   <Select
                     onValueChange={field.onChange}

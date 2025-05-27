@@ -1,6 +1,7 @@
 import { PlusCircle, TrendingDown } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { DebtWithAdditionalInfo } from '@/server/fortune/queries/get-forune-summary';
@@ -27,6 +28,7 @@ export const DebtsList = async ({
                 <TrendingDown className='size-5 text-red-700' />
               </div>
               {t('title')}
+              <AdditionalInfoTooltip text='Pasywa to wszystkie Twoje zobowiązania finansowe, np. Pozostała do spłaty kwota kredytu razem z odsetkami.' />
             </h2>
             <AddDebtDialog>
               <Button

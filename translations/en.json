@@ -11,26 +11,26 @@
   "footer": {
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy",
-    "mail": "Mail"
+    "mail": "Email"
   },
   "landingPage": {
     "dashboard": "Dashboard",
-    "signIn": "Sign in",
-    "signUp": "Sign up",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
     "heroSection": {
       "title": "Manage your finances smartly",
-      "description": "Comprehensive tool for controlling your budget, tracking your assets and achieving financial goals.",
+      "description": "Comprehensive tool for controlling budget, tracking assets and achieving financial goals.",
       "titleHighlight": "smartly",
       "dashboard": "Dashboard",
-      "signIn": "Sign in",
-      "signUp": "Sign up"
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
     },
     "ctaSection": {
       "title": "Ready to take control of your finances?",
       "description": "Join thousands of users who already use our app and achieve their financial goals.",
       "dashboard": "Dashboard",
-      "signIn": "Sign in",
-      "signUp": "Sign up"
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
     },
     "howItWorksSection": {
       "title": "How it works?",
@@ -38,41 +38,41 @@
       "step1": "Step 1: Create a budget",
       "step2": "Step 2: Track your finances",
       "step3": "Step 3: Achieve goals",
-      "step1Description": "Start by creating a budget, defining the period and adding your income and planned expenses.",
-      "step2Description": "Regularly add your expenses and income, to have an up-to-date view of your finances.",
+      "step1Description": "Start by creating a budget, specifying the period and adding your income and planned expenses.",
+      "step2Description": "Regularly add your expenses and income to have an up-to-date view of your finances.",
       "step3Description": "Set financial goals and save money systematically to achieve them in the planned time."
     },
     "featuresSection": {
       "title": "Everything you need to manage your finances",
-      "description": "Our app offers a comprehensive set of tools that help you control your finances, plan your expenses and achieve financial goals.",
+      "description": "Our app offers a comprehensive set of tools that will help you control your finances, plan your expenses and achieve your financial goals.",
       "feature1": {
         "title": "Budgeting",
-        "description": "Create and manage budgets, track your expenses and income, to always have control over your finances."
+        "description": "Create and manage budgets, track your expenses and income, so you always have control over your finances."
       },
       "feature2": {
         "title": "Asset management",
-        "description": "Monitor your assets and track changes in their net value over time."
+        "description": "Monitor your assets and track changes in your net worth over time."
       },
       "feature3": {
         "title": "Financial goals",
-        "description": "Set financial goals, monitor progress and get notifications about upcoming deadlines."
+        "description": "Set financial goals, monitor your progress and get notifications about upcoming deadlines."
       },
       "feature4": {
         "title": "Financial analysis",
-        "description": "Analyze your expenses, income and debts, to make better financial decisions."
+        "description": "Analyze your expenses, income and debts to make better financial decisions."
       },
       "feature5": {
-        "title": "Wallets system",
-        "description": "Use the wallets system to effectively manage money designated for specific goals."
+        "title": "Wallet system",
+        "description": "Use the wallet system to effectively manage money designated for specific goals."
       },
       "feature6": {
         "title": "Iron reserve",
-        "description": "Build and monitor your iron reserve, to be prepared for unexpected expenses."
+        "description": "Build and monitor your iron reserve to be prepared for unexpected expenses."
       }
     },
     "benefitsSection": {
       "title": "Benefits of using the app",
-      "description": "Our app helps thousands of users better manage their finances and achieve financial goals.",
+      "description": "Our app helps thousands of users better manage their finances and achieve their financial goals.",
       "benefit1": {
         "title": "Reduction of financial stress",
         "description": "Planning and controlling finances reduces financial stress associated with uncertainty."
@@ -83,30 +83,30 @@
       },
       "benefit3": {
         "title": "Achieving financial goals",
-        "description": "Systematic saving and monitoring progress helps achieve financial goals."
+        "description": "Systematic saving and monitoring progress helps in achieving financial goals."
       },
       "benefit4": {
         "title": "Better financial decisions",
-        "description": "Analyzing expenses and income helps make better financial decisions."
+        "description": "Analysis of expenses and income helps make better financial decisions."
       }
     }
   },
   "subscription": {
     "title": "Your subscription for - {familyName}",
     "monthly": "Monthly",
-    "monthlyDescription": "Flexibility to pay monthly",
+    "monthlyDescription": "Flexible payment every month",
     "monthlyPriceSuffix": "/month",
     "monthlyButton": "Select monthly plan",
     "yearly": "Yearly",
-    "yearlyDescription": "Best price - pay once a year",
+    "yearlyDescription": "Najlepsza cena  - płać raz w roku",
     "yearlyPriceSuffix": "/year",
     "yearlyButton": "Select yearly plan",
     "yearlySavings": "You save {savings} per year",
     "yearlySavingsSuffix": "per year",
-    "yearlySavingsMonthly": "You save {savings} monthly",
-    "yearlySavingsMonthlySuffix": "monthly",
-    "yearlySavingsMonthlyDescription": "You save {savings} monthly",
-    "yearlySavingsMonthlyDescriptionSuffix": "monthly",
+    "yearlySavingsMonthly": "You save {savings} per month",
+    "yearlySavingsMonthlySuffix": "per month",
+    "yearlySavingsMonthlyDescription": "You save {savings} per month",
+    "yearlySavingsMonthlyDescriptionSuffix": "per month",
     "trial": "Trial period",
     "trialDays": "days",
     "trialDaysSuffix": "days",
@@ -121,7 +121,7 @@
       "description": "You have access to all features without any fees"
     },
     "activeCard": {
-      "currentSubscription": "Current subscription",
+      "currentSubscription": "Your subscription",
       "status": "Status",
       "active": "Active",
       "plan": "Plan:",
@@ -135,7 +135,7 @@
     },
     "chooseSubscriptionDialog": {
       "title": "Select subscription",
-      "description": "Your trial period has ended or you don't have an active subscription. Select the subscription that best suits your needs.",
+      "description": "Your trial period has ended or you do not have an active subscription. Select the subscription that best suits your needs.",
       "button": "Select subscription",
       "buttonMobile": "Select"
     },
@@ -146,7 +146,7 @@
     },
     "portal": {
       "create": {
-        "error": "Failed to create subscription portal session, please try again later."
+        "error": "Failed to create portal session, please try again later."
       }
     }
   },
@@ -157,30 +157,32 @@
       "livingAssets": "Living assets",
       "investmentAssets": "Investment assets",
       "otherAssets": "Other assets",
-      "financialCushionDetailedInfo": "Financial cushion, in this category should be placed assets that are easily liquidated, such as cash, savings, and investments.",
-      "livingAssetsDetailedInfo": "Living assets, in this category should be placed assets that are used for daily life, such as a house or a car.",
-      "investmentAssetsDetailedInfo": "Investment assets, in this category should be placed assets that are invested for a longer period of time, such as stocks or bonds.",
-      "otherAssetsDetailedInfo": "Other assets, in this category should be placed assets that do not fit into other categories, such as collectibles or jewelry.",
+      "financialCushionDetailedInfo": "Financial cushion, in this category should be assets that are most liquid and can be easily converted to money.",
+      "livingAssetsDetailedInfo": "Living assets, in this category should be assets that are used for daily life, such as a house or a car.",
+      "investmentAssetsDetailedInfo": "Investment assets, in this category should be assets that are invested for a longer future, such as stocks or bonds.",
+      "otherAssetsDetailedInfo": "Other assets, in this category should be assets that do not fit into other categories, such as collections or jewelry.",
       "structure": "Fortune structure",
       "monthlySpendings": "Your monthly spendings",
-      "yourMonthlySpendings": "Financial cushion is",
+      "yourMonthlySpendings": "Financial cushion makes up",
       "description": {
-        "zero": "{count} components",
-        "one": "{count} component",
-        "few": "{count} components",
-        "many": "{count} components"
+        "zero": "{count} assets",
+        "one": "{count} asset",
+        "few": "{count} assets",
+        "many": "{count} assets"
       }
     },
     "assets": {
       "title": "Assets",
+      "assetsAdditionalInfo": "Assets are all your financial resources, such as: money in the bank account, stocks, bonds, real estate and other investments.",
+
       "addAssetButton": "Add asset",
       "noAssetsCard": {
         "title": "You don't have any assets yet",
-        "description": "Add assets to control your fortune."
+        "description": "Add asset to control your fortune."
       },
       "addAsset": {
         "title": "Add asset",
-        "description": "Add an asset to your list of assets.",
+        "description": "Add asset to your list of assets.",
         "button": "Add asset",
         "buttonMobile": "Add",
         "form": {
@@ -193,32 +195,33 @@
           },
           "nameField": {
             "label": "Name",
-            "placeholder": "e.g. Savings in foreign currency",
-            "error": "Provide name."
+            "placeholder": "e.g. Savings in euros",
+            "error": "Provide asset name."
+          },
+          "descriptionField": {
+            "label": "Description",
+            "placeholder": "e.g. 1200 euros",
+            "error": "Provide asset description."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "e.g. Financial cushion",
-            "error": "Provide category."
-          },
-          "descriptionField": {
-            "label": "Description",
-            "placeholder": "e.g. 1000 USD",
-            "error": "Provide description."
+            "error": "Provide asset category."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide asset value."
           },
           "addAssetButton": "Add asset"
         }
       },
       "editAsset": {
         "title": "Edit asset",
-        "description": "Edit an asset from your list of assets.",
+        "description": "Edit asset to your list of assets.",
         "button": "Edit asset",
         "buttonMobile": "Edit",
+        "error": "Something went wrong.",
         "form": {
           "error": "Something went wrong.",
           "category": {
@@ -229,44 +232,44 @@
           },
           "nameField": {
             "label": "Name",
-            "placeholder": "e.g. Savings in foreign currency",
-            "error": "Provide name."
+            "placeholder": "e.g. Savings in euros",
+            "error": "Provide asset name."
           },
           "descriptionField": {
             "label": "Description",
-            "placeholder": "e.g. 1000 USD",
-            "error": "Provide description."
+            "placeholder": "e.g. 1200 euros",
+            "error": "Provide asset description."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "e.g. Financial cushion",
-            "error": "Provide category."
+            "error": "Provide asset category."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide asset value."
           },
           "button": "Edit asset"
         }
       },
       "deleteAsset": {
         "title": "Delete asset",
-        "description": "If you added an asset by mistake and want to delete it together with the history, so that no traces are left in it - ",
+        "description": "If you added the asset by mistake and want to delete it together with the history, so that there are no traces left - ",
         "descriptionDeleteButton": "click here.",
         "button": "Delete asset",
         "buttonMobile": "Delete",
         "deleteAssetButton": "Delete asset",
         "totalDeleteTitle": "Delete asset completely",
-        "totalDeleteDescription": "If you want to delete the asset completely, it may affect your account history. If you simply reduced it to zero, use the regular delete option.",
+        "totalDeleteDescription": "If you want to delete the asset completely, it may disrupt the history of your account. If you simply reduced it to zero, use the regular delete option.",
         "totalDeleteButton": "Delete asset completely"
       },
       "assetDetailsCard": {
-        "lastUpdate": "Last updated: ",
+        "lastUpdate": "Last update: ",
         "amount": "Amount",
         "category": "Category",
         "value": "Value",
-        "yourAssets": "of your assets",
+        "yourAssets": "your assets",
         "livingAssets": "Living assets",
         "investmentAssets": "Investment assets",
         "otherAssets": "Other assets",
@@ -278,73 +281,73 @@
       "addDebtButton": "Add debt",
       "noDebtsCard": {
         "title": "You don't have any debts yet",
-        "description": "Add debts to control your fortune."
+        "description": "Add debt to control your fortune."
       },
       "addDebt": {
         "title": "Add debt",
-        "description": "Add a debt to your list of debts.",
+        "description": "Add debt to your list of debts.",
         "button": "Add debt",
         "buttonMobile": "Add",
         "form": {
           "nameField": {
             "label": "Name",
-            "placeholder": "e.g. Credit card",
-            "error": "Provide name."
+            "placeholder": "e.g. Car loan",
+            "error": "Provide debt name."
           },
           "descriptionField": {
             "label": "Description",
-            "placeholder": "e.g. Personal loan",
-            "error": "Provide description."
+            "placeholder": "e.g. Car loan",
+            "error": "Provide debt description."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide debt value."
           },
           "addDebtButton": "Add debt"
         }
       },
       "editDebt": {
         "title": "Edit debt",
-        "description": "Edit a debt from your list of debts.",
+        "description": "Edit debt from your list of debts.",
         "button": "Edit debt",
         "buttonMobile": "Edit",
         "form": {
           "nameField": {
             "label": "Name",
-            "placeholder": "e.g. Credit card",
-            "error": "Provide name."
+            "placeholder": "np. Kredyt",
+            "error": "Podaj nazwę pasywa."
           },
           "descriptionField": {
             "label": "Description",
-            "placeholder": "e.g. Personal loan",
-            "error": "Provide description."
+            "placeholder": "e.g. Car loan",
+            "error": "Provide debt description."
           },
           "valueField": {
             "label": "Value",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide debt value."
           },
           "button": "Edit debt"
         }
       },
       "deleteDebt": {
         "title": "Delete debt",
-        "description": "If you added a debt by mistake and want to delete it together with the history, so that no traces are left in it - ",
-        "descriptionDeleteButton": "click here",
+        "description": "If you added the debt by mistake and want to delete it together with the history, so that there are no traces left - ",
+        "descriptionDeleteButton": "click here.",
         "button": "Delete debt",
         "buttonMobile": "Delete",
         "deleteDebtButton": "Delete debt",
         "totalDeleteTitle": "Delete debt completely",
-        "totalDeleteDescription": "If you want to delete the debt completely, it may affect your account history. If you simply reduced it to zero, use the regular delete option.",
+        "totalDeleteDescription": "If you want to delete the debt completely, it may disrupt the history of your account. If you simply reduced it to zero, use the regular delete option.",
         "totalDeleteButton": "Delete debt completely"
       },
       "debtDetailsCard": {
-        "lastUpdate": "Last updated: ",
+        "lastUpdate": "Last update: ",
         "amount": "Amount",
         "category": "Category",
         "value": "Value",
-        "yourDebts": "of your debts"
+        "yourDebts": "your debts"
       }
     }
   },
@@ -360,117 +363,120 @@
     },
     "noGoalsCard": {
       "title": "You don't have any goals yet",
-      "description": "Add a goal to your list of goals, to track your financial goals.",
+      "description": "Add goal to your list of goals, to track your financial goals.",
       "addGoalButton": "Add new goal"
     },
     "scheduleDialog": {
       "title": "Deposit schedule - {goalName}",
-      "description": "Here is the deposit schedule on the goal.",
+      "description": "Here you can see the deposit schedule for the goal.",
       "button": "View deposit schedule",
       "past": "Completed",
       "future": "Planned",
-      "currentBudget": "In the current budget",
-      "incomingOutcomes": "Incoming outcomes:",
-      "passedOutcomes": "Completed outcomes:"
+      "currentBudget": "In current budget",
+      "incomingOutcomes": "Planned outcomes:",
+      "passedOutcomes": "Passed outcomes:"
     },
     "addGoal": {
       "title": "Add new goal",
-      "description": "Add a new goal to your list of goals.",
+      "description": "Add new goal to your list of goals.",
       "button": "Add new goal",
       "form": {
         "error": "Something went wrong.",
         "nameField": {
           "label": "Name",
           "placeholder": "e.g. Car replacement",
-          "error": "Provide name."
+          "error": "Provide goal name."
         },
         "valueField": {
-          "label": "Value",
+          "label": "Goal amount",
           "placeholder": "e.g. 10000",
-          "error": "Provide value."
+          "error": "Provide goal amount.",
+          "additionalInfo": "This field specifies the amount you want to achieve. Include the amount you have already saved."
         },
         "dateField": {
-          "label": "Planned end date",
+          "label": "Planned completion date",
           "placeholder": "e.g. 2024-01-01",
           "error": "Select date.",
-          "errorMustBeInTheFuture": "Date must be in the future."
+          "errorMustBeInTheFuture": "Date must be in the future.",
+          "additionalInfo": "This field specifies the date by which you want to achieve the goal. The goal will be planned in your budget so that you can achieve it by that date."
         },
         "savingIntervalField": {
-          "label": "Saving interval",
+          "label": "Deposit frequency",
           "triggerDefaultLabel": "Select interval",
-          "placeholder": "Search for an interval...",
-          "noResultsMessage": "No results found"
+          "placeholder": "Search interval...",
+          "noResultsMessage": "No results found",
+          "additionalInfo": "This field specifies the frequency of the goal. For example, if you select \"monthly\", then a monthly expense will be added to your budget."
         },
         "initialDepositField": {
           "label": "Initial deposit",
           "placeholder": "e.g. 1000",
-          "error": "Provide initial deposit."
+          "error": "Provide initial deposit.",
+          "additionalInfo": "This field specifies the amount you have already saved for the goal."
         },
         "addGoalButton": "Add goal"
       }
     },
     "editGoal": {
       "title": "Edit goal",
-      "description": "Edit a goal from your list of goals.",
-      "button": "Edit",
+      "description": "Edit goal from your list of goals.",
+      "button": "Edit goal",
       "form": {
         "error": "Something went wrong.",
         "nameField": {
           "label": "Name",
           "placeholder": "e.g. Car replacement",
-          "error": "Provide name."
+          "error": "Provide goal name."
         },
         "valueField": {
-          "label": "Value",
+          "label": "Goal amount",
           "placeholder": "e.g. 10000",
-          "error": "Provide value."
+          "error": "Provide goal amount.",
+          "additionalInfo": "This field specifies the amount you want to achieve. Include the amount you have already saved."
         },
         "dateField": {
           "label": "Date",
           "placeholder": "e.g. 2024-01-01",
-          "error": "Select date."
+          "error": "Select date.",
+          "additionalInfo": "This field specifies the date by which you want to achieve the goal. The goal will be planned in your budget so that you can achieve it by that date."
         },
         "savingIntervalField": {
-          "label": "Interval",
+          "label": "Saving interval",
           "triggerDefaultLabel": "Select interval",
-          "placeholder": "Search for an interval...",
-          "noResultsMessage": "No results found"
+          "placeholder": "Search interval...",
+          "noResultsMessage": "No results found",
+          "additionalInfo": "This field specifies the frequency of the goal. For example, if you select \"monthly\", then a monthly expense will be added to your budget."
         },
         "initialDepositField": {
           "label": "Initial deposit",
           "placeholder": "e.g. 1000",
-          "error": "Provide initial deposit."
+          "error": "Provide initial deposit.",
+          "additionalInfo": "This field specifies the amount you have already saved for the goal."
         },
         "editGoalButton": "Edit goal"
       }
     },
     "deleteGoal": {
       "title": "Delete goal",
-      "description": "Delete a goal from your list of goals. All the outcomes will be removed from previous budget periods, so it may affect your account history. If you don't want to affect history finish the goal instead, then only the future outcomes will be removed.",
-      "button": "Delete"
+      "description": "Delete goal from your list of goals. All expenses from previous budget periods will be deleted, which may affect your account history. If you do not want to affect the account history, simply delete the future expenses.",
+      "button": "Delete goal"
     },
     "finishGoal": {
       "title": "Finish goal",
-      "description": "Finish a goal from your list of goals.",
-      "button": "Finish"
+      "description": "Finish goal from your list of goals.",
+      "button": "Finish goal"
     },
     "editGoalOutcome": {
-      "title": "Edit goal saving",
-      "description": "Edit a goal saving item.",
-      "button": "Edit goal saving",
-      "editGoalOutcome": {
-        "title": "Edit goal saving",
-        "description": "Edit a goal saving item.",
-        "button": "Edit goal saving",
-        "form": {
-          "error": "Something went wrong.",
-          "valueField": {
-            "label": "Value",
-            "placeholder": "e.g. 1000",
-            "error": "Provide value."
-          },
-          "editGoalOutcomeButton": "Edit goal saving"
-        }
+      "title": "Edit goal outcome",
+      "description": "Edit goal outcome from your list of goals.",
+      "button": "Edit goal outcome",
+      "form": {
+        "error": "Something went wrong.",
+        "valueField": {
+          "label": "Amount",
+          "placeholder": "e.g. 1000",
+          "error": "Provide amount."
+        },
+        "editGoalOutcomeButton": "Edit goal outcome"
       }
     }
   },
@@ -480,7 +486,7 @@
       "title": "History of your finances",
       "seePreview": "See preview",
       "to": "to",
-      "selectBudgetToPreview": "Select budget to preview",
+      "selectBudgetToPreview": "Select period to preview",
       "preview": "Preview",
       "incomes": "Incomes",
       "outcomes": "Outcomes",
@@ -490,9 +496,9 @@
       "assets": "Assets",
       "debts": "Debts",
       "netWorth": "Net worth",
-      "assetsDescription": "Last updated: ",
-      "debtsDescription": "Last updated: ",
-      "netWorthDescription": "Last updated: ",
+      "assetsDescription": "Last update: ",
+      "debtsDescription": "Last update: ",
+      "netWorthDescription": "Last update: ",
       "manageAssets": "Manage assets",
       "cardTitle": "Your fortune",
       "structure": "Structure",
@@ -505,11 +511,13 @@
       "livingAssetsDetailedInfo": "Living assets",
       "netWorthDetailedInfo": "Net worth",
       "otherAssets": "Other assets",
-      "otherAssetsDetailedInfo": "Other assets"
+      "otherAssetsDetailedInfo": "Other assets",
+      "assetsAdditionalInfo": "Assets are all your financial resources, such as: money in the bank account, stocks, bonds, real estate and other investments.",
+      "debtsAdditionalInfo": "Debts are all your financial obligations, for example: the remaining amount of the loan together with interest."
     },
     "goalsSummaryCard": {
       "title": "Goals",
-      "description": "Last updated: ",
+      "description": "Last update: ",
       "manageGoals": "Manage goals",
       "noActiveGoals": "No active goals",
       "noGoals": "You don't have any goals yet",
@@ -517,53 +525,53 @@
       "activeGoals": "Your goals - {count}"
     },
     "selectBudgetToPreviewDialog": {
-      "button": "Select budget to preview",
-      "title": "Select budget to preview",
-      "description": "Select budget to preview.",
-      "selectBudgetToPreview": "Select budget to preview",
+      "button": "Select period to preview",
+      "title": "Select period to preview",
+      "description": "Select period to preview.",
+      "selectBudgetToPreview": "Select period to preview",
       "previewButton": "Open preview"
     },
     "balance": {
-      "currentBudgetBalance": "Current budget balance",
+      "currentBudgetBalance": "Budget",
       "manageBudget": "Manage budget",
       "financialCushion": {
         "title": "Financial cushion",
-        "recommendation": "We recommend:",
-        "manageAssets": "Manage assets",
+        "recommendation": "Recommendation:",
+        "manageAssets": "Manage financial cushion",
         "current": "Currently:",
         "recommendationAmount": "Recommendation amount:",
-        "description1": "Financial cushion should be 3-6 months of your monthly expenses to ensure financial security in case of unexpected situations. You currently have ",
+        "description1": "Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych. Aktualnie posiadasz ",
         "description2": ", which is ",
-        "description3": " of the recommended value. We recommend a cushion of 6 times your monthly expenses."
+        "description3": " of the recommended value. For the calculation of the percentage of the recommended value, we assume that the financial cushion is 6 times the monthly expenses."
       },
       "balance": {
         "title": "Balance",
         "income": "Incomes",
         "outcome": "Outcomes",
-        "withPouches": "(Including pouches)"
+        "withPouches": "(Including wallets)"
       },
       "income": {
         "title": "Incomes",
         "summary": "Summary",
-        "total": "Total amount of incomes in the budget period."
+        "total": "Incomes in this budget period."
       },
       "outcome": {
         "title": "Outcomes",
         "summary": "Summary",
-        "total": "Total amount of outcomes in the budget period."
+        "total": "Outcomes in this budget period."
       },
       "pouch": {
-        "title": "Pouches",
+        "title": "Wallets",
         "spent": "Spent",
         "planned": "Planned",
-        "addPouchOutcome": "Add outcome within pouch"
+        "addPouchOutcome": "Add outcome to wallet"
       }
     }
   },
   "settings": {
     "yourProfiles": "Your profiles",
     "noProfilesCardTitle": "You don't have any family profile yet",
-    "noProfilesCardDescription": "Add a family profile to control your budget, track your assets and achieve your financial goals.",
+    "noProfilesCardDescription": "Add family profile, to control budget, track assets and achieve your financial goals.",
     "familyCard": {
       "activeBadge": "Active",
       "role": "Role: ",
@@ -571,7 +579,7 @@
       "member": "Member",
       "members": "Members",
       "switchFamilyButton": "Switch family",
-      "switchFamilyDefaultError": "Failed to switch family",
+      "switchFamilyDefaultError": "Something went wrong.",
       "you": "(you)"
     },
     "invitations": {
@@ -588,7 +596,7 @@
         "reject": {
           "button": "Reject",
           "title": "Reject invitation",
-          "description": "Are you sure you want to reject the invitation?",
+          "description": "Are you sure you want to reject this invitation?",
           "error": "Something went wrong."
         }
       },
@@ -614,91 +622,99 @@
         "name": "Name",
         "error": "Something went wrong.",
         "familyNameField": {
-          "label": "Family name",
-          "placeholder": "e.g. The Smiths",
-          "error": "Provide family name."
+          "label": "Family profile name",
+          "placeholder": "e.g. Family Kowalskich",
+          "error": "Provide family profile name."
         },
         "currencyField": {
           "label": "Currency",
           "triggerDefaultLabel": "Select currency",
-          "placeholder": "Search for a currency...",
+          "placeholder": "Search currency...",
           "noResultsMessage": "No results found",
           "error": "Select currency."
         },
         "timezoneField": {
           "label": "Timezone",
           "triggerDefaultLabel": "Select timezone",
-          "placeholder": "Search for a timezone...",
+          "placeholder": "Search timezone...",
           "noResultsMessage": "No results found",
           "error": "Select timezone."
         },
         "budgetIntervalField": {
-          "label": "Budget period interval",
+          "label": "Budget interval",
           "triggerDefaultLabel": "Select interval",
-          "placeholder": "Search for an interval...",
+          "placeholder": "Search interval...",
           "noResultsMessage": "No results found",
-          "error": "Select interval."
+          "additionalInfo": "This field allows you to configure how often a new budget should be opened, i.e. in which time frames we will summarize your expenses and incomes."
         },
         "budgetTransferPouchBalanceField": {
-          "label": "Transfer pouch balance between budgets",
+          "label": "Transfer wallet balance between budgets",
           "triggerDefaultLabel": "Select option",
           "yes": "Yes",
-          "no": "No"
+          "no": "No",
+          "additionalInfo": "This field allows you to configure whether the balance of wallets should be transferred to the next budget after the budget period. In case of choosing \"yes\", if you spend more than planned on a goal (e.g. shopping) in a given month, the wallet in the next month will be decreased by that amount. It will also work in reverse - if you do not spend the planned amount, the balance will be increased in the next month."
         },
         "budgetStartDateField": {
-          "label": "Budget start date"
+          "label": "Start date of the first budget period",
+          "additionalInfo": "This field allows you to configure which day a new budget period will be opened. In most cases, the best option will be the 1st day of the month, when you start using the application."
         }
       }
     },
     "editFamily": {
       "title": "Edit family profile",
-      "description": "Edit the name of your family profile.",
+      "description": "Edit family profile name.",
       "name": "Name",
+      "currency": "Currency",
+      "timezone": "Timezone",
       "form": {
-        "defaultError": "Failed to edit family profile",
         "saveChangesButton": "Save changes",
-        "name": "Name",
         "familyNameField": {
-          "label": "Family name",
-          "placeholder": "e.g. The Smiths"
+          "label": "Family profile name",
+          "placeholder": "e.g. Smith family"
         },
         "currencyField": {
-          "label": "Currency",
+          "label": "Waluta",
           "triggerDefaultLabel": "Select currency",
-          "placeholder": "Search for a currency...",
+          "placeholder": "Search currency...",
           "noResultsMessage": "No results found"
         },
         "timezoneField": {
           "label": "Timezone",
           "triggerDefaultLabel": "Select timezone",
-          "placeholder": "Search for a timezone...",
+          "placeholder": "Search timezone...",
           "noResultsMessage": "No results found"
         }
       }
     },
     "leaveFamily": {
-      "title": "Leave family profile",
-      "description": "Are you sure you want to leave this family profile?",
+      "title": "Leave family",
+      "description": "Are you sure you want to leave this family?",
       "leaveButton": "Leave",
       "error": "Something went wrong."
     },
     "inviteUserToFamily": {
       "button": "Invite user to family",
-      "title": "Invite user to family profile",
-      "description": "Invite a user to the family profile {familyName}.",
+      "title": "Invite user to family",
+      "description": "Provide email of the person you want to invite to {familyName} family profile.",
       "form": {
         "emailField": {
           "label": "Email",
-          "placeholder": "e.g. john.doe@gmail.com",
-          "error": "Provide valid email address."
+          "placeholder": "e.g. jan.kowalski@gmail.com",
+          "error": "Provide valid email."
         },
         "sendInvitationButton": "Send invitation",
         "error": "Something went wrong."
       }
     },
     "removeFamily": {
-      "title": "Remove family profile",
-      "description": "Are you sure you want to remove this family profile?",
+      "title": "Remove family",
+      "description": "Are you sure you want to remove this family?",
+      "removeButton": "Remove",
+      "error": "Something went wrong."
+    },
+    "removeUserFromFamily": {
+      "title": "Remove user from family",
+      "description": "Are you sure you want to remove this user from this family?",
       "removeButton": "Remove",
       "error": "Something went wrong."
     }
@@ -712,7 +728,7 @@
     "logout": "Logout",
     "languageSwitcher": {
       "title": "Change language",
-      "description": "Change the language of the application.",
+      "description": "Change application language.",
       "polish": "Polish",
       "english": "English",
       "placeholder": "Select language",
@@ -720,17 +736,17 @@
     }
   },
   "interval": {
-    "day": "Every day",
-    "week": "Every week",
+    "day": "Daily",
+    "week": "Weekly",
     "twoWeeks": "Every two weeks",
-    "month": "Every month",
+    "month": "Monthly",
     "twoMonths": "Every two months",
-    "quarter": "Every quarter",
-    "year": "Every year"
+    "quarter": "Quarterly",
+    "year": "Yearly"
   },
   "recurrence": {
-    "oneTime": "One time",
-    "infinite": "Constant",
+    "oneTime": "One-time",
+    "infinite": "Fixed",
     "multiple": "Multiple"
   },
   "budgetHistory": {
@@ -740,37 +756,40 @@
   "budget": {
     "title": "Budget",
     "summary": "Summary",
+    "summaryAdditionalInfo": "This tab is used to configure your budget. You can add your income, expenses and recurring wallets, and thus configure future budgets so that you do not have to add them again for each new budget period (for example, every month). You can also see all the things you have added, not just those from the current budget, which allows for a complete overview.",
     "budgetItems": "Budget items",
+    "budgetItemsAdditionalInfo": "This tab is used to configure your budget. You can add your income, expenses and recurring wallets, and thus configure future budgets so that you do not have to add them again for each new budget period (for example, every month). You can also see all the things you have added, not just those from the current budget, which allows for a complete overview.",
     "noFamilyCard": {
       "title": "You don't have any family profile yet",
-      "description": "Add a family profile to control your budget, track your assets and achieve your financial goals.",
+      "description": "Add family profile, to control budget, track assets and achieve your financial goals.",
       "addFamilyButton": "Go to settings"
     },
     "pouch": {
-      "title": "Pouches",
-      "addPouchButton": "Add pouch",
+      "title": "Wallets",
+      "addPouchButton": "Add wallet",
+      "additionalInfo": "Wallets are a special type of expenses. Wallet has a planned capacity, but it is not added to the sum of expenses immediately, but as you add expenses to it. A good example of using wallets is such expenses as shopping - you can plan the amount you want to spend on shopping in a given month, but only the amount you actually spent (the sum of expenses added to this wallet in a given month) will be added to the budget balance. In the budget settings, you can set the option to transfer the wallet balance. This means that if you spend more than planned in a given month, the planned amount for the next month will be reduced by that amount. It will also work in reverse - if you do not spend all the planned amount, the excess will be transferred to the next wallet.",
       "noPouchesCard": {
-        "title": "You don't have any pouches yet",
-        "description": "Add pouches to control your budget, track your assets and achieve your financial goals."
+        "title": "You don't have any wallets yet",
+        "description": "Add wallets, to control budget, track assets and achieve your financial goals."
       },
       "budgetSummary": {
-        "title": "Pouches",
-        "listOfPouches": "Total amount of pouches in the budget period.",
-        "singleOccurrence": "Amount of a single occurrence: ",
+        "title": "Wallets",
+        "listOfPouches": "Total amount of wallets in the budget period.",
+        "singleOccurrence": "Single occurrence amount: ",
         "occurrences": "Occurrences in this budget period: ",
-        "capacity": "Pouch capacity",
+        "capacity": "Wallet capacity",
         "transferredFromPreviousPeriods": "Transferred from previous periods",
         "withoutTransfers": "without transfers",
         "expensesSum": "Expenses sum",
-        "seeFullList": "Click to see the list of expenses in this pouch",
+        "seeFullList": "Click to see the list of expenses in this wallet",
         "toggleList": "toggle list",
         "leftCapacity": "Left capacity",
         "unusedCapacity": "Unused capacity"
       },
       "removePouchOutcome": {
-        "title": "Remove expense from pouch",
-        "description": "Are you sure you want to remove this expense from pouch? This operation cannot be undone.",
-        "removeButton": "Remove expense",
+        "title": "Remove expense from wallet",
+        "description": "Are you sure you want to remove this expense from wallet? This operation cannot be undone.",
+        "removeButton": "Remove",
         "error": "Something went wrong."
       },
       "pouchCard": {
@@ -778,7 +797,7 @@
         "stoppedBadge": "Stopped",
         "lastOccurrenceDatePrefix": "Last: ",
         "nextOccurrenceDatePrefix": "Next: ",
-        "oneTime": "One time",
+        "oneTime": "One-time",
         "recurring": "Recurring",
         "amount": "Planned",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
@@ -786,25 +805,49 @@
           "one": "time",
           "other": "times"
         },
-        "recurringMultiple": "Recurring every {interval}, {count} more times",
-        "recurringInfinite": "Recurring every {interval}",
+        "recurringMultiple": "Repeats every {interval}, {count} more times",
+        "recurringInfinite": "Repeats every {interval}",
+        "editPouchOutcome": {
+          "title": "Edit expense in wallet",
+          "description": "Edit expense in wallet, to control budget, track assets and achieve your financial goals.",
+          "button": "Edit expense",
+          "form": {
+            "error": "Something went wrong.",
+            "nameField": {
+              "label": "Name",
+              "placeholder": "e.g. Shopping",
+              "error": "Provide name."
+            },
+            "valueField": {
+              "label": "Amount",
+              "placeholder": "e.g. 100",
+              "error": "Provide correct amount."
+            },
+            "dateField": {
+              "label": "Date",
+              "placeholder": "e.g. 2024-01-01",
+              "error": "Select date."
+            },
+            "editPouchOutcomeButton": "Edit expense"
+          }
+        },
         "removePouch": {
-          "title": "Remove pouch",
-          "descriptionOneTime": "Are you sure you want to remove this pouch? This operation cannot be undone.",
-          "descriptionMultiple": "Are you sure you want to remove this pouch? This operation cannot be undone, and it may affect your account history, such as changing the balance of the current or past budget.",
+          "title": "Remove wallet",
+          "descriptionOneTime": "Are you sure you want to remove this wallet? This operation cannot be undone.",
+          "descriptionMultiple": "Are you sure you want to remove this wallet? This operation cannot be undone, and it may affect your account history, such as changing the current or past budget balance.",
           "removeButton": "Remove",
           "error": "Something went wrong."
         },
         "addPouchOutcome": {
-          "title": "Add expense to pouch",
-          "description": "Select pouch and add expense within it, to control your budget, track your assets and achieve your financial goals.",
-          "button": "Add expense within pouch",
+          "title": "Add expense to wallet",
+          "description": "Select wallet and add expense in its scope, to control budget, track assets and achieve your financial goals.",
+          "button": "Add expense in wallet",
           "form": {
             "error": "Something went wrong.",
             "pouchField": {
-              "label": "Pouch",
-              "placeholder": "Select pouch",
-              "error": "Select pouch."
+              "label": "Wallet",
+              "placeholder": "Select wallet",
+              "error": "Select wallet."
             },
             "nameField": {
               "label": "Name",
@@ -812,46 +855,22 @@
               "error": "Provide name."
             },
             "valueField": {
-              "label": "Value",
+              "label": "Amount",
               "placeholder": "e.g. 100",
-              "error": "Provide value."
+              "error": "Provide correct amount."
             },
             "dateField": {
               "label": "Date",
               "placeholder": "e.g. 2024-01-01",
               "error": "Select date."
             },
-            "createPouchOutcomeButton": "Add expense within pouch"
-          }
-        },
-        "editPouchOutcome": {
-          "title": "Edit expense from pouch",
-          "description": "Edit expense from pouch, to control your budget, track your assets and achieve your financial goals.",
-          "button": "Edit pouch expense",
-          "form": {
-            "error": "Something went wrong.",
-            "nameField": {
-              "label": "Name",
-              "placeholder": "e.g. Shopping",
-              "error": "Provide name."
-            },
-            "valueField": {
-              "label": "Name",
-              "placeholder": "e.g. Shopping",
-              "error": "Provide value."
-            },
-            "dateField": {
-              "label": "Date",
-              "placeholder": "e.g. 2024-01-01",
-              "error": "Select date."
-            },
-            "editPouchOutcomeButton": "Edit pouch expense"
+            "createPouchOutcomeButton": "Add expense"
           }
         },
         "addPouch": {
-          "title": "Create new pouch",
-          "description": "Add pouches to control your budget, track your assets and achieve your financial goals.",
-          "button": "Add pouch",
+          "title": "Create new wallet",
+          "description": "Add wallets, to control budget, track assets and achieve your financial goals.",
+          "button": "Add wallet",
           "buttonMobile": "Add",
           "form": {
             "error": "Something went wrong.",
@@ -863,40 +882,42 @@
             "valueField": {
               "label": "Capacity",
               "placeholder": "e.g. 1000",
-              "error": "Provide value."
+              "error": "Provide correct capacity."
             },
             "dateField": {
               "label": "Date",
               "placeholder": "e.g. 2024-01-01",
-              "error": "Select date."
+              "error": "Select date.",
+              "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
             },
             "recurrenceField": {
               "label": "Recurrence",
-              "placeholder": "Select option",
-              "noResultsMessage": "No results found"
+              "placeholder": "Select type",
+              "noResultsMessage": "No results found",
+              "additionalInfo": "This field allows you to configure recurrence. If something occurs only once, select \"one-time\". If something occurs multiple times, select \"recurring\" and specify how often it should occur. In the case of selecting the recurring option, you must configure how many times and how often it should occur."
             },
             "repeatCountField": {
-              "label": "Number of occurrences",
+              "label": "How many times",
               "placeholder": "e.g. 10",
-              "error": "Provide number of occurrences."
+              "error": "Provide correct number."
             },
             "repeatEveryField": {
               "label": "Repeat every",
               "placeholder": "e.g. every month",
-              "error": "Provide interval."
+              "error": "Provide correct value."
             },
             "categoryField": {
               "label": "Category",
               "placeholder": "Select category",
               "error": "Select category."
             },
-            "createPouchButton": "Create pouch"
+            "createPouchButton": "Create wallet"
           }
         },
         "editPouch": {
-          "title": "Edit pouch",
-          "description": "Unfortunately, due to the correctness of the history of your pouches, not all fields can be changed. To fully edit the pouch, use the pause pouch or delete pouch options, and then create a new one.",
-          "button": "Edit",
+          "title": "Edit wallet",
+          "description": "Unfortunately, due to the correctness of the history of your wallets, not all fields can be changed. To fully edit the wallet, use the option to stop the wallet or delete the wallet, and then create a new one.",
+          "button": "Edit wallet",
           "form": {
             "error": "Something went wrong.",
             "nameField": {
@@ -915,10 +936,11 @@
               "error": "Select category."
             },
             "valueField": {
-              "label": "Capacity"
+              "label": "Wallet capacity"
             },
             "dateField": {
-              "label": "Creation date"
+              "label": "Creation date",
+              "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
             },
             "recurrenceField": {
               "label": "Repeat every",
@@ -928,46 +950,46 @@
             "repeatCountField": {
               "label": "How many times",
               "placeholder": "e.g. 10",
-              "error": "Provide number of occurrences."
+              "error": "Provide correct number."
             },
             "repeatEveryField": {
-              "label": "Every how many",
+              "label": "Repeat every",
               "placeholder": "e.g. every month",
-              "error": "Provide interval."
+              "error": "Provide correct value."
             },
-            "createPouchButton": "Edit pouch"
+            "createPouchButton": "Edit wallet"
           }
         },
 
         "stopPouch": {
-          "title": "Stop pouch",
+          "title": "Stop wallet",
           "stopButton": "Stop",
           "description": "Attention!",
-          "descriptionAttention": "This operation cannot be undone",
-          "descriptionAttentionStop": "Stopping the pouch, it will not be included in the budget from the date you provide.",
-          "descriptionAttentionStopPouch": "Stopping the pouch, it will not be included in the budget from the date you provide.",
-          "descriptionDeleteTitle": "If you want to completely delete the pouch, ",
-          "descriptionDeleteAttention": "Remember, completely deleting the pouch may cause changes in the balances of the current and past budgets.",
+          "descriptionAttention": "This operation cannot be undone. ",
+          "descriptionAttentionStop": "Stopping the wallet, it will not be included in the budget from the date you provide. ",
+          "descriptionAttentionStopPouch": "Stopping the wallet, it will not be included in the budget from the date you provide. ",
+          "descriptionDeleteTitle": "If you want to completely delete the wallet, ",
+          "descriptionDeleteAttention": "Remember that completely deleting the wallet may cause changes in the balances of the current and past budgets.",
           "descriptionDeleteButton": "click here",
           "form": {
             "error": "Something went wrong.",
             "dateField": {
-              "label": "Stop pouch date",
+              "label": "Stopping date",
               "error": "Select date."
             },
-            "stopPouchButton": "Stop pouch"
+            "stopPouchButton": "Stop wallet"
           }
         }
       }
     },
     "outcomes": {
-      "title": "Outcomes",
-      "addOutcomeButton": "Add outcome",
-      "addOutcomeButtonMobile": "Add",
+      "title": "Expenses",
+      "addOutcomeButton": "Add expense",
+      "additionalInfo": "Expenses are a category, to which you should add all expenses, for which you know that you will spend a specific amount, for example: loan installment or rent. If you do not know how much the expense will be, and you only plan to spend a certain amount on a certain goal, use the wallet.",
       "budgetSummary": {
-        "title": "Outcomes",
-        "listOfOutcomes": "Total amount of outcomes in the budget period.",
-        "singleOccurrence": "Amount of a single occurrence: ",
+        "title": "Expenses",
+        "listOfOutcomes": "Expenses in this budget period.",
+        "singleOccurrence": "Single occurrence amount: ",
         "occurrences": "Occurrences in this budget period: ",
         "datesOfOccurrences": "Dates of occurrences: "
       },
@@ -976,33 +998,33 @@
         "stoppedBadge": "Stopped",
         "lastOccurrenceDatePrefix": "Last: ",
         "nextOccurrenceDatePrefix": "Next: ",
-        "oneTime": "One time",
+        "oneTime": "One-time",
         "recurring": "Recurring",
         "amount": "Amount",
-        "goalOutcomeChangeInfo": "Changes in outcome on goals are possible",
-        "goToGoals": "Go to goals",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
+        "goalOutcomeChangeInfo": "Changes in expenses on goals are possible from the goals page",
+        "goToGoals": "Go to goals",
         "recurringDisabledCountLabel": {
           "one": "time",
           "other": "times"
         },
-        "recurringMultiple": "Recurring every {interval}, {count} more times",
-        "recurringInfinite": "Recurring every {interval}"
+        "recurringMultiple": "Repeats every {interval}, {count} more times",
+        "recurringInfinite": "Repeats every {interval}"
       },
       "noOutcomesCard": {
-        "title": "You don't have any outcomes yet",
-        "description": "Add outcomes to control your budget, track your assets and achieve your financial goals."
+        "title": "You have no expenses yet",
+        "description": "Add expenses to control your budget, track assets and achieve your financial goals."
       },
       "removeOutcome": {
-        "title": "Delete outcome",
-        "descriptionOneTime": "Are you sure you want to delete this outcome? This operation cannot be undone.",
-        "descriptionMultiple": "Are you sure you want to delete this outcome? This operation cannot be undone, and it may affect your account history, such as changing the balance of the current or past budget.",
-        "removeButton": "Delete",
+        "title": "Remove expense",
+        "descriptionOneTime": "Are you sure you want to remove this expense? This operation cannot be undone.",
+        "descriptionMultiple": "Are you sure you want to remove this expense? This operation cannot be undone, and it may affect your account history, such as changing the current or past budget balance.",
+        "removeButton": "Remove",
         "error": "Something went wrong."
       },
       "editOutcome": {
-        "title": "Edit outcome",
-        "description": "Unfortunately, due to the correctness of the history of your outcomes, not all fields can be changed. To fully edit the outcome, use the pause outcome or delete outcome options, and then create a new one.",
+        "title": "Edit expense",
+        "description": "Unfortunately, due to the correctness of the history of your expenses, not all fields can be changed. To fully edit the expense, use the option to stop the expense or delete the expense, and then create a new one.",
         "editButton": "Edit",
         "form": {
           "error": "Something went wrong.",
@@ -1012,49 +1034,50 @@
             "error": "Provide name."
           },
           "valueField": {
-            "label": "Value",
+            "label": "Amount",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide correct amount."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Select date."
+            "error": "Select date.",
+            "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
           },
           "recurrenceField": {
-            "label": "Recurrence",
+            "label": "Repeat every",
             "placeholder": "Select option",
             "noResultsMessage": "No results found"
           },
           "repeatCountField": {
-            "label": "Number of occurrences",
+            "label": "How many times",
             "placeholder": "e.g. 10",
-            "error": "Provide number of occurrences."
+            "error": "Provide correct number."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Provide interval."
+            "error": "Provide correct value."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "Select category",
             "error": "Select category."
           },
-          "editButton": "Edit outcome"
+          "editButton": "Edit expense"
         }
       },
       "addOutcome": {
-        "title": "Create new outcome",
-        "description": "Add an outcome to control your budget, track your assets and achieve your financial goals.",
-        "button": "Add outcome",
+        "title": "Create new expense",
+        "description": "Add expenses to control your budget, track assets and achieve your financial goals.",
+        "button": "Add expense",
         "buttonMobile": "Add",
         "form": {
           "error": "Something went wrong.",
           "valueField": {
-            "label": "Value",
+            "label": "Amount",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide correct amount."
           },
           "nameField": {
             "label": "Name",
@@ -1064,57 +1087,61 @@
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Select date."
+            "error": "Select date.",
+            "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
           },
           "recurrenceField": {
-            "label": "Recurrence",
+            "label": "Repeat every",
             "triggerDefaultLabel": "Select option",
-            "noResultsMessage": "No results found"
+            "placeholder": "Search option...",
+            "noResultsMessage": "No results found",
+            "additionalInfo": "This field allows you to configure recurrence. If something occurs only once, select \"one-time\". If something occurs multiple times, select \"recurring\" and specify how often it should occur. In the case of selecting the recurring option, you must configure how many times and how often it should occur."
           },
           "repeatCountField": {
-            "label": "Number of occurrences",
+            "label": "How many times",
             "placeholder": "e.g. 10",
-            "error": "Provide number of occurrences."
+            "error": "Provide correct number."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Provide interval."
+            "error": "Provide correct value."
           },
           "categoryField": {
             "label": "Category",
             "placeholder": "Select category",
             "error": "Select category."
           },
-          "createOutcomeButton": "Create outcome"
+          "createOutcomeButton": "Create expense"
         }
       },
       "stopOutcome": {
-        "title": "Stop outcome",
+        "title": "Stop expense",
         "stopButton": "Stop",
         "descriptionAttention": "Attention!",
         "descriptionAttentionBold": "This operation cannot be undone.",
-        "descriptionAttentionStop": "Stopping the outcome, it will not be included in the budget from the date you provide.",
-        "descriptionDeleteTitle": "If you want to completely delete the outcome, ",
+        "descriptionAttentionStop": "Stopping the expense, it will not be included in the budget from the date you provide.",
+        "descriptionDeleteTitle": "If you want to completely delete the expense, ",
         "descriptionDeleteButton": "click here",
-        "descriptionDeleteAttention": "Remember, completely deleting the outcome may cause changes in the balances of the current and past budgets.",
+        "descriptionDeleteAttention": "Remember that completely deleting the expense may cause changes in the balances of the current and past budgets.",
         "form": {
           "error": "Something went wrong.",
           "dateField": {
-            "label": "Stop outcome date",
+            "label": "Stopping date",
             "error": "Select date."
           },
-          "stopOutcomeButton": "Stop outcome"
+          "stopOutcomeButton": "Stop expense"
         }
       }
     },
     "incomes": {
       "title": "Incomes",
       "addIncomeButton": "Add income",
+      "additionalInfo": "To incomes add all the inflows that replenish your budget. If the income is recurring, like a salary, add a recurring income. If the income is one-time, like a bonus, add a one-time income. You can also add a multiple income, if you know that it will occur a specific number of times.",
       "budgetSummary": {
         "title": "Incomes",
-        "listOfIncomes": "Total amount of incomes in the budget period.",
-        "singleOccurrence": "Amount of a single occurrence: ",
+        "listOfIncomes": "Incomes in this budget period.",
+        "singleOccurrence": "Single occurrence amount: ",
         "occurrences": "Occurrences in this budget period: ",
         "datesOfOccurrences": "Dates of occurrences: "
       },
@@ -1124,11 +1151,11 @@
         "lastOccurrenceDatePrefix": "Last: ",
         "nextOccurrenceDatePrefix": "Next: ",
         "recurrence": "Recurring",
-        "oneTime": "One time",
+        "oneTime": "One-time",
         "amount": "Amount",
         "recurringIncome": "Recurring income",
-        "recurringMultiple": "Recurring every {interval}, {count} more times",
-        "recurringInfinite": "Recurring every {interval}",
+        "recurringMultiple": "Repeats every {interval}, {count} more times",
+        "recurringInfinite": "Repeats every {interval}",
         "recurringDisabled": "Stopped, occurred {count} {countLabel}",
         "recurringDisabledCountLabel": {
           "one": "time",
@@ -1143,68 +1170,70 @@
         "descriptionAttentionStop": "Stopping the income, it will not be included in the budget from the date you provide.",
         "descriptionDeleteTitle": "If you want to completely delete the income, ",
         "descriptionDeleteButton": "click here",
-        "descriptionDeleteAttention": "Remember, completely deleting the income may cause changes in the balances of the current and past budgets.",
+        "descriptionDeleteAttention": "Remember that completely deleting the income may cause changes in the balances of the current and past budgets.",
         "form": {
           "error": "Something went wrong.",
           "dateField": {
-            "label": "Stop income date",
+            "label": "Stopping date",
             "error": "Select date."
           },
           "stopIncomeButton": "Stop income"
         }
       },
       "noIncomesCard": {
-        "title": "You don't have any incomes yet",
-        "description": "Add an income to control your budget, track your assets and achieve your financial goals.",
+        "title": "You have no incomes yet",
+        "description": "Add income to control your budget, track assets and achieve your financial goals.",
         "addIncomeButton": "Add income"
       },
       "removeIncome": {
         "title": "Remove income",
-        "description": "Are you sure you want to remove this income? This operation cannot be undone, and it may affect your account history, such as changing the balance of the current or past budget.",
-        "removeButton": "Remove",
+        "description": "Are you sure you want to delete the income? This operation cannot be undone, and it may affect your account history, such as changing the current or past budget balance.",
+        "removeButton": "Delete",
         "error": "Something went wrong."
       },
       "addIncome": {
         "title": "Create new income",
-        "description": "Add an income to control your budget, track your assets and achieve your financial goals.",
+        "description": "Add income to control your budget, track assets and achieve your financial goals.",
         "button": "Add income",
         "buttonMobile": "Add",
         "form": {
           "error": "Something went wrong.",
           "nameField": {
-            "label": "Income name",
+            "label": "Name",
             "placeholder": "e.g. Salary",
             "error": "Provide name."
           },
           "valueField": {
-            "label": "Value",
+            "label": "Amount",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide correct amount."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Select date."
+            "error": "Select date.",
+            "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
           },
           "recurrenceField": {
-            "label": "Recurrence",
+            "label": "Repeat every",
             "triggerDefaultLabel": "Select option",
-            "placeholder": "Search for an option...",
-            "noResultsMessage": "No results found"
+            "placeholder": "Search option...",
+            "noResultsMessage": "No results found",
+            "additionalInfo": "This field allows you to configure recurrence. If something occurs only once, select \"one-time\". If something occurs multiple times, select \"recurring\" and specify how often it should occur. In the case of selecting the recurring option, you must configure how many times and how often it should occur."
           },
           "repeatCountField": {
-            "label": "Number of occurrences",
+            "label": "How many times",
             "placeholder": "e.g. 10",
-            "error": "Provide number of occurrences."
+            "error": "Provide correct number."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Provide interval."
+            "error": "Provide correct value."
           },
           "categoryField": {
             "label": "Category",
-            "placeholder": "Search for a category...",
+            "placeholder": "Search category...",
             "noResultsMessage": "No results found",
             "error": "Select category."
           },
@@ -1213,45 +1242,47 @@
       },
       "editIncome": {
         "title": "Edit income",
-        "description": "Unfortunately, due to the correctness of the history of your income, not all fields can be changed. To fully edit the income, pause or delete it, and then create a new one.",
+        "description": "Unfortunately, due to the correctness of the history of your incomes, not all fields can be changed. To fully edit the income, use the option to stop the income or delete the income, and then create a new one.",
         "editIncomeButton": "Edit income",
         "form": {
           "error": "Something went wrong.",
           "nameField": {
-            "label": "Income name",
+            "label": "Name",
             "placeholder": "e.g. Salary",
             "error": "Provide name."
           },
           "categoryField": {
             "label": "Category",
-            "placeholder": "Search for a category...",
+            "placeholder": "Search category...",
             "noResultsMessage": "No results found",
             "error": "Select category."
           },
           "valueField": {
-            "label": "Value",
+            "label": "Amount",
             "placeholder": "e.g. 1000",
-            "error": "Provide value."
+            "error": "Provide correct amount."
           },
           "dateField": {
             "label": "Date",
             "placeholder": "e.g. 2024-01-01",
-            "error": "Select date."
+            "error": "Select date.",
+            "additionalInfo": "This field specifies the date of occurrence. If you selected that it should be a recurring occurrence, this date specifies the first occurrence."
           },
           "recurrenceField": {
-            "label": "Recurrence",
-            "placeholder": "Search for an option...",
-            "noResultsMessage": "No results found"
+            "label": "Repeat every",
+            "placeholder": "Search option...",
+            "noResultsMessage": "No results found",
+            "additionalInfo": "This field specifies the frequency of occurrence. For example, if you select \"every month\", then every month the income for this purpose will be added to your budget."
           },
           "repeatCountField": {
-            "label": "Number of occurrences",
+            "label": "How many times",
             "placeholder": "e.g. 10",
-            "error": "Provide number of occurrences."
+            "error": "Provide correct number."
           },
           "repeatEveryField": {
             "label": "Repeat every",
             "placeholder": "e.g. every month",
-            "error": "Provide interval."
+            "error": "Provide correct value."
           },
           "createIncomeButton": "Create income",
           "editIncomeButton": "Edit income"
@@ -1268,6 +1299,7 @@
     "bonus": "Bonus",
     "taxReturn": "Tax return",
     "investments": "Investments",
+    "other": "Other",
     "bills": "Bills",
     "home": "Home",
     "car": "Car",
@@ -1282,89 +1314,90 @@
     "technology": "Technology",
     "transport": "Transport",
     "savings": "Savings",
-    "other": "Other",
-    "goals": "Outcome on goal",
-    "goal": "Goal"
+    "goals": "Goal"
   },
   "budgetSummary": {
     "balance": "Balance",
-    "pouches": "Pouches",
+    "pouches": "Wallets",
     "balanceSummary": "Balance: ",
-    "pouchesSummary": "Sum of pouches capacity",
-    "pouchesExpensesSummaryOnPreview": "Pouches expenses",
-    "pouchesExpensesSummary": "Sum of expenses in pouches",
-    "currentBudgetBalance": "Current budget balance with pouches expenses",
-    "currentBudgetBalanceWithPouches": "Current budget balance with pouches capacity",
-    "positiveBalance": "Positive balance",
-    "negativeBalance": "Negative balance",
-    "neutralBalance": "Neutral balance",
-    "outcomes": "Outcomes",
-    "outcomesSummary": "Total amount of outcomes in the budget period",
+    "pouchesSummary": "Planned expenses in wallets",
+    "pouchesExpensesSummaryOnPreview": "Expenses in wallets",
+    "pouchesExpensesSummary": "Current expenses in wallets",
+    "currentBudgetBalance": "Balance with planned expenses in wallets",
+    "currentBudgetBalanceWithPouches": "Balance with expenses in wallets",
+    "positiveBalance": "Surplus",
+    "negativeBalance": "Deficit",
+    "neutralBalance": "Balance",
+    "outcomes": "Expenses",
+    "outcomesSummary": "Expenses in this budget period",
     "incomes": "Incomes",
-    "incomesSummary": "Total amount of incomes in the budget period"
+    "incomesSummary": "Incomes in this budget period"
   },
   "budgetSettings": {
     "title": "Budget settings",
-    "description": "Change budget settings to fit your needs.",
+    "description": "Change budget settings to match your needs.",
     "form": {
       "error": "Something went wrong.",
       "intervalField": {
         "label": "Interval",
-        "placeholder": "Select interval"
+        "placeholder": "Select interval",
+        "additionalInfo": "This field allows you to configure how often the budget should be opened. In other words, in what time intervals we will summarize your expenses and incomes."
       },
       "startDateField": {
-        "label": "Start date of the first period"
+        "label": "Start date",
+        "additionalInfo": "This field allows you to configure the date of the first budget period. In most cases, the best option will be the 1st day of the month, in which you start using the application."
       },
       "transferPouchBalanceField": {
-        "label": "Transfer pouch balance",
+        "label": "Transfer wallet balance",
         "placeholder": "Select option",
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "additionalInfo": "This field allows you to configure whether the balance in the wallet should be transferred to the next budget after the budget period ends. In the case of selecting the \"yes\" option, if you spend more than planned on a particular purpose (e.g. shopping) in a given month, the wallet in the next month will be reduced by that amount. This will also work in reverse - if you do not spend the planned amount, the balance in the next month will be increased by that amount."
       },
       "applyChangesButton": "Apply changes"
     }
   },
   "errors": {
     "subscription": {
+      "cancel": {
+        "success": "Subscription cancelled",
+        "failedToCancelSubscription": "Failed to cancel subscription",
+        "subscriptionNotFound": "Subscription not found",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "You are not the owner of this family"
+      },
       "portal": {
         "success": "Portal session created",
         "failedToCreatePortalSession": "Failed to create portal session",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "You are not the owner of this family profile",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "You are not the owner of this family",
         "subscriptionNotFound": "Subscription not found"
-      },
-      "cancel": {
-        "success": "Subscription canceled",
-        "failedToCancelSubscription": "Failed to cancel subscription",
-        "subscriptionNotFound": "Subscription not found",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "You are not the owner of this family profile"
       },
       "get": {
         "success": "Subscription retrieved",
-        "familyNotFound": "Family profile not found",
+        "familyNotFound": "Family not found",
         "subscriptionNotFound": "Subscription not found",
         "failedToGetSubscription": "Failed to get subscription",
-        "subscriptionNotBelongsToFamily": "Subscription does not belong to family profile",
-        "subscriptionNotBelongsToUser": "Subscription does not belong to you",
+        "subscriptionNotBelongsToFamily": "Subscription not belongs to family",
+        "subscriptionNotBelongsToUser": "Subscription not belongs to you",
         "subscriptionNotActive": "Subscription is not active",
-        "subscriptionCanceled": "Subscription has been canceled"
+        "subscriptionCanceled": "Subscription was canceled"
       },
       "check": {
         "success": "Subscription checked",
-        "familyNotFound": "Family profile not found",
+        "familyNotFound": "Family not found",
         "subscriptionNotFound": "Subscription not found",
         "failedToCheckSubscription": "Failed to check subscription",
-        "subscriptionNotBelongsToFamily": "Subscription does not belong to family profile",
-        "subscriptionNotBelongsToUser": "Subscription does not belong to you",
+        "subscriptionNotBelongsToFamily": "Subscription not belongs to family",
+        "subscriptionNotBelongsToUser": "Subscription not belongs to you",
         "subscriptionNotActive": "Subscription is not active"
       },
       "create": {
         "success": "Subscription created",
-        "failedToCreateSubscription": "Nie udało się utworzyć subskrypcji",
-        "familyNotFound": "Family profile not found",
+        "failedToCreateSubscription": "Failed to create subscription",
+        "familyNotFound": "Family not found",
         "invalidSubscriptionData": "Invalid subscription data",
-        "notFamilyOwner": "You are not the owner of this family profile",
+        "notFamilyOwner": "You are not the owner of this family",
         "subscriptionAlreadyExists": "Subscription already exists"
       },
       "update": {
@@ -1378,23 +1411,23 @@
         "create": {
           "invalidAssetData": "Invalid asset data",
           "failedToCreateAsset": "Failed to create asset",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "success": "Asset created"
         },
         "delete": {
           "invalidAssetData": "Invalid asset data",
           "failedToDeleteAsset": "Failed to delete asset",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "assetNotFound": "Asset not found",
-          "assetNotBelongsToFamily": "Asset does not belong to family profile",
+          "assetNotBelongsToFamily": "Asset not belongs to family",
           "success": "Asset deleted"
         },
         "update": {
           "invalidAssetData": "Invalid asset data",
           "failedToUpdateAsset": "Failed to update asset",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "assetNotFound": "Asset not found",
-          "assetNotBelongsToFamily": "Asset does not belong to family profile",
+          "assetNotBelongsToFamily": "Asset not belongs to family",
           "success": "Asset updated"
         }
       },
@@ -1402,23 +1435,23 @@
         "create": {
           "invalidDebtData": "Invalid debt data",
           "failedToCreateDebt": "Failed to create debt",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "success": "Debt created"
         },
         "delete": {
           "invalidDebtData": "Invalid debt data",
           "failedToDeleteDebt": "Failed to delete debt",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "debtNotFound": "Debt not found",
-          "debtNotBelongsToFamily": "Debt does not belong to family profile",
+          "debtNotBelongsToFamily": "Debt not belongs to family",
           "success": "Debt deleted"
         },
         "update": {
           "invalidDebtData": "Invalid debt data",
           "failedToUpdateDebt": "Failed to update debt",
-          "familyNotFound": "Family profile not found",
+          "familyNotFound": "Family not found",
           "debtNotFound": "Debt not found",
-          "debtNotBelongsToFamily": "Debt does not belong to family profile",
+          "debtNotBelongsToFamily": "Debt not belongs to family",
           "success": "Debt updated"
         }
       }
@@ -1428,19 +1461,19 @@
         "invalidIncomeData": "Invalid goal data",
         "budgetNotFound": "Budget not found",
         "failedToCreateGoal": "Failed to create goal",
-        "endDateMustBeInFuture": "End date must be in the future",
+        "endDateMustBeInFuture": "End date must be in future",
         "success": "Goal created"
       },
       "delete": {
         "failedToDeleteGoal": "Failed to delete goal",
         "goalNotFound": "Goal not found",
-        "goalNotBelongsToUser": "Goal does not belong to you",
+        "goalNotBelongsToUser": "Goal not belongs to you",
         "success": "Goal deleted"
       },
       "finish": {
         "failedToFinishGoal": "Failed to finish goal",
         "goalNotFound": "Goal not found",
-        "goalNotBelongsToUser": "Goal does not belong to you",
+        "goalNotBelongsToUser": "Goal not belongs to you",
         "success": "Goal finished"
       },
       "update": {
@@ -1448,8 +1481,8 @@
         "budgetNotFound": "Budget not found",
         "failedToUpdateGoal": "Failed to update goal",
         "goalNotFound": "Goal not found",
-        "endDateMustBeInFuture": "End date must be in the future",
-        "goalNotBelongsToUser": "Goal does not belong to you",
+        "endDateMustBeInFuture": "End date must be in future",
+        "goalNotBelongsToUser": "Goal not belongs to you",
         "success": "Goal updated"
       },
       "updateOutcome": {
@@ -1457,18 +1490,18 @@
         "goalOutcomeNotFound": "Goal outcome not found",
         "budgetNotFound": "Budget not found",
         "goalNotFound": "Goal not found",
-        "goalNotBelongsToUser": "Goal does not belong to you",
+        "goalNotBelongsToUser": "Goal not belongs to you",
         "success": "Goal outcome updated"
       }
     },
     "budget": {
       "create": {
+        "success": "Budget created",
         "budgetNotFound": "Budget not found",
         "failedToCreateBudget": "Failed to create budget",
         "notAllowedToCreateBudget": "You are not allowed to create this budget",
         "invalidBudgetData": "Invalid budget data",
-        "budgetAlreadyExists": "Budget already exists",
-        "success": "Budget created"
+        "budgetAlreadyExists": "Budget already exists"
       },
       "update": {
         "success": "Budget updated",
@@ -1480,46 +1513,46 @@
     },
     "family": {
       "create": {
-        "success": "Family profile created",
-        "failedToCreateFamily": "Failed to create family profile",
+        "success": "Family created",
+        "failedToCreateFamily": "Failed to create family",
         "invalidCurrency": "Invalid currency",
         "invalidName": "Invalid name",
         "invalidTimezone": "Invalid timezone"
       },
       "update": {
-        "success": "Family profile updated",
-        "failedToUpdateFamily": "Failed to update family profile",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "You are not the owner of this family profile",
+        "success": "Family updated",
+        "failedToUpdateFamily": "Failed to update family",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "You are not the owner of this family",
         "invalidName": "Invalid name",
         "invalidCurrency": "Invalid currency",
         "invalidTimezone": "Invalid timezone"
       },
       "delete": {
-        "success": "Family profile deleted",
-        "failedToDeleteFamily": "Failed to delete family profile",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "You are not the owner of this family profile"
+        "success": "Family deleted",
+        "failedToDeleteFamily": "Failed to delete family",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "You are not the owner of this family"
       },
       "leave": {
-        "success": "Family profile left",
-        "failedToLeaveFamily": "Failed to leave family profile",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "Family profile cannot be left by the owner"
+        "success": "You left the family",
+        "failedToLeaveFamily": "Failed to leave family",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "Family cannot be left by the owner"
       },
       "removeUser": {
-        "success": "User removed from family profile",
-        "failedToRemoveUserFromFamily": "Failed to remove user from family profile",
-        "familyNotFound": "Family profile not found",
-        "notFamilyOwner": "You are not the owner of this family profile",
-        "cannotRemoveSelf": "You cannot remove yourself from the family profile",
-        "cannotRemoveOwner": "You cannot remove the owner from the family profile",
-        "userNotFoundInFamily": "User not found in family profile"
+        "success": "User removed from family",
+        "failedToRemoveUserFromFamily": "Failed to remove user from family",
+        "familyNotFound": "Family not found",
+        "notFamilyOwner": "You are not the owner of this family",
+        "cannotRemoveSelf": "You cannot remove yourself from the family",
+        "cannotRemoveOwner": "You cannot remove the owner of the family",
+        "userNotFoundInFamily": "User not found in family"
       },
       "setSelectedFamily": {
-        "success": "Family profile selected",
-        "failedToSetSelectedFamily": "Failed to set active family profile",
-        "familyNotFound": "Family profile not found"
+        "success": "Family selected",
+        "failedToSetSelectedFamily": "Failed to set selected family",
+        "familyNotFound": "Family not found"
       }
     },
     "income": {
@@ -1527,29 +1560,29 @@
         "success": "Income created",
         "invalidIncomeData": "Invalid income data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"Number of occurrences\" is required when income is recurring",
-        "repeatEveryRequired": "\"Repeat every\" is required when income is recurring",
+        "repeatCountRequired": "\"How many times\" is required when income is repeated",
+        "repeatEveryRequired": "\"How often\" is required when income is repeated",
         "failedToCreateIncome": "Failed to create income"
       },
       "delete": {
         "success": "Income deleted",
         "failedToDeleteIncome": "Failed to delete income",
         "incomeNotFound": "Income not found",
-        "incomeNotBelongsToUser": "Income does not belong to you"
+        "incomeNotBelongsToUser": "Income not belongs to you"
       },
       "stop": {
         "success": "Income stopped",
         "failedToStopIncome": "Failed to stop income",
         "incomeNotFound": "Income not found",
-        "incomeNotBelongsToUser": "Income does not belong to you",
+        "incomeNotBelongsToUser": "Income not belongs to you",
         "invalidIncomeData": "Invalid income data",
-        "oneTimeIncomeCannotBeStopped": "One-time income cannot be stopped. Simply delete it"
+        "oneTimeIncomeCannotBeStopped": "One time income cannot be stopped. Just delete it"
       },
       "update": {
         "success": "Income updated",
         "failedToUpdateIncome": "Failed to update income",
         "incomeNotFound": "Income not found",
-        "incomeNotBelongsToUser": "Income does not belong to you",
+        "incomeNotBelongsToUser": "Income not belongs to you",
         "invalidIncomeData": "Invalid income data"
       }
     },
@@ -1561,7 +1594,7 @@
         "invitationNotForUser": "Invitation is not for you",
         "invitationAlreadyAccepted": "Invitation already accepted",
         "invitationAlreadyRejected": "Invitation already rejected",
-        "familyNotFound": "Family profile not found"
+        "familyNotFound": "Family not found"
       },
       "reject": {
         "success": "Invitation rejected",
@@ -1574,11 +1607,11 @@
         "success": "Invitation sent",
         "failedToSendInvitation": "Failed to send invitation",
         "userNotFound": "User not found",
-        "familyNotFound": "Family profile not found",
-        "cannotInviteSelf": "You cannot invite yourself to the family profile",
-        "userAlreadyMemberOfFamily": "User is already a member of this family profile",
-        "invitationAlreadyExists": "This user is already invited to this family profile",
-        "notFamilyOwner": "You are not the owner of this family profile"
+        "familyNotFound": "Family not found",
+        "cannotInviteSelf": "You cannot invite yourself to your family",
+        "userAlreadyMemberOfFamily": "User is already a member of this family",
+        "invitationAlreadyExists": "This user is already invited to this family",
+        "notFamilyOwner": "You are not the owner of this family"
       }
     },
     "outcome": {
@@ -1586,8 +1619,8 @@
         "success": "Outcome created",
         "invalidOutcomeData": "Invalid outcome data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"Number of occurrences\" is required when outcome is recurring",
-        "repeatEveryRequired": "\"Repeat every\" is required when outcome is recurring",
+        "repeatCountRequired": "\"How many times\" is required when outcome is repeated",
+        "repeatEveryRequired": "\"Repeat every\" is required when outcome is repeated",
         "failedToCreateOutcome": "Failed to create outcome",
         "unauthorized": "You are not authorized to create outcome"
       },
@@ -1595,77 +1628,77 @@
         "success": "Outcome deleted",
         "failedToDeleteOutcome": "Failed to delete outcome",
         "outcomeNotFound": "Outcome not found",
-        "outcomeNotBelongsToUser": "Outcome does not belong to you"
+        "outcomeNotBelongsToUser": "Outcome not belongs to you"
       },
       "stop": {
         "success": "Outcome stopped",
         "failedToStopOutcome": "Failed to stop outcome",
         "outcomeNotFound": "Outcome not found",
-        "outcomeNotBelongsToUser": "Outcome does not belong to you",
+        "outcomeNotBelongsToUser": "Outcome not belongs to you",
         "invalidOutcomeData": "Invalid outcome data",
-        "oneTimeOutcomeCannotBeStopped": "One-time outcome cannot be stopped. Simply delete it"
+        "oneTimeOutcomeCannotBeStopped": "One time outcome cannot be stopped. Just delete it"
       },
       "update": {
         "success": "Outcome updated",
         "failedToUpdateOutcome": "Failed to update outcome",
         "outcomeNotFound": "Outcome not found",
-        "outcomeNotBelongsToUser": "Outcome does not belong to you",
+        "outcomeNotBelongsToUser": "Outcome not belongs to you",
         "invalidOutcomeData": "Invalid outcome data"
       }
     },
     "pouchOutcome": {
       "create": {
-        "success": "Pouch outcome created",
-        "invalidPouchOutcomeData": "Invalid pouch outcome data",
+        "success": "Outcome in wallet created",
+        "invalidPouchOutcomeData": "Invalid outcome data in wallet",
         "budgetNotFound": "Budget not found",
-        "pouchNotFound": "Pouch not found",
-        "failedToCreatePouchOutcome": "Failed to create pouch outcome",
-        "unauthorized": "You are not authorized to create pouch outcome"
+        "pouchNotFound": "Wallet not found",
+        "failedToCreatePouchOutcome": "Failed to create outcome in wallet",
+        "unauthorized": "You are not authorized to create outcome in wallet"
       },
       "delete": {
-        "success": "Pouch outcome deleted",
-        "failedToDeletePouchOutcome": "Failed to delete pouch outcome",
-        "pouchOutcomeNotFound": "Pouch outcome not found",
-        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you"
+        "success": "Outcome in wallet deleted",
+        "failedToDeletePouchOutcome": "Failed to delete outcome in wallet",
+        "pouchOutcomeNotFound": "Outcome in wallet not found",
+        "pouchOutcomeNotBelongsToUser": "Outcome in wallet not belongs to you"
       },
       "update": {
-        "success": "Pouch outcome updated",
-        "failedToUpdatePouchOutcome": "Failed to update pouch outcome",
-        "pouchOutcomeNotFound": "Pouch outcome not found",
-        "pouchOutcomeNotBelongsToUser": "Pouch outcome does not belong to you",
-        "invalidPouchOutcomeData": "Invalid pouch outcome data"
+        "success": "Outcome in wallet updated",
+        "failedToUpdatePouchOutcome": "Failed to update outcome in wallet",
+        "pouchOutcomeNotFound": "Outcome in wallet not found",
+        "pouchOutcomeNotBelongsToUser": "Outcome in wallet not belongs to you",
+        "invalidPouchOutcomeData": "Invalid outcome data in wallet"
       }
     },
     "pouch": {
       "create": {
-        "success": "Pouch created",
-        "invalidPouchData": "Invalid pouch data",
+        "success": "Wallet created",
+        "invalidPouchData": "Invalid wallet data",
         "budgetNotFound": "Budget not found",
-        "repeatCountRequired": "\"Number of occurrences\" is required when pouch is recurring",
-        "repeatEveryRequired": "\"Repeat every\" is required when pouch is recurring",
-        "failedToCreatePouch": "Failed to create pouch",
-        "unauthorized": "You are not authorized to create pouch"
+        "repeatCountRequired": "\"How many times\" is required when wallet is repeated",
+        "repeatEveryRequired": "\"How often\" is required when wallet is repeated",
+        "failedToCreatePouch": "Failed to create wallet",
+        "unauthorized": "You are not authorized to create wallet"
       },
       "delete": {
-        "success": "Pouch deleted",
-        "failedToDeletePouch": "Failed to delete pouch",
-        "pouchNotFound": "Pouch not found",
-        "pouchNotBelongsToUser": "Pouch does not belong to you"
+        "success": "Wallet deleted",
+        "failedToDeletePouch": "Failed to delete wallet",
+        "pouchNotFound": "Wallet not found",
+        "pouchNotBelongsToUser": "Wallet not belongs to you"
       },
       "stop": {
-        "success": "Pouch stopped",
-        "failedToStopPouch": "Failed to stop pouch",
-        "pouchNotFound": "Pouch not found",
-        "pouchNotBelongsToUser": "Pouch does not belong to you",
-        "invalidPouchData": "Invalid pouch data",
-        "oneTimePouchCannotBeStopped": "One-time pouch cannot be stopped. Simply delete it"
+        "success": "Wallet stopped",
+        "failedToStopPouch": "Failed to stop wallet",
+        "pouchNotFound": "Wallet not found",
+        "pouchNotBelongsToUser": "Wallet not belongs to you",
+        "invalidPouchData": "Invalid wallet data",
+        "oneTimePouchCannotBeStopped": "One time wallet cannot be stopped. Just delete it"
       },
       "update": {
-        "success": "Pouch updated",
-        "failedToUpdatePouch": "Failed to update pouch",
-        "pouchNotFound": "Pouch not found",
-        "pouchNotBelongsToUser": "Pouch does not belong to you",
-        "invalidPouchData": "Invalid pouch data"
+        "success": "Wallet updated",
+        "failedToUpdatePouch": "Failed to update wallet",
+        "pouchNotFound": "Wallet not found",
+        "pouchNotBelongsToUser": "Wallet not belongs to you",
+        "invalidPouchData": "Invalid wallet data"
       }
     }
   },
@@ -1675,38 +1708,38 @@
     "nextButton": "Next",
     "previousButton": "Previous",
     "finishButton": "Finish tour",
-    "description": "This is a guide to the application. It will help you understand the application and start using it. You can skip it now, and start at any time from the settings screen.",
+    "description": "This is the tour of the application. It will help you understand the application and start using it. You can skip it now, and start it at any time from the settings screen.",
     "skipTourButton": "Skip tour"
   },
   "tourSteps": {
     "addFamily": {
       "title": "Add your family",
-      "description": "The first step is to add a family, this is a profile that will be shared with other users and will allow for joint management of finances. To control the tour use the buttons below or the arrows on the keyboard.",
+      "description": "The first step is to add a family, it is a profile that will be shared with other users and will allow for joint management of finances. To control the tour, use the buttons below or the arrows on the keyboard.",
       "alert": "You must add at least one family, to continue"
     },
     "families": {
       "title": "Family card",
-      "description": "This is your family card, it contains information about the family and the ability to manage it. You can be a member of several families at the same time, to switch between them use the button in the upper right corner of the card, it is not visible on this card because it is currently selected."
+      "description": "This is your family card, it contains information about the family and the ability to manage it. You can be a member of several families at the same time, to switch between them, use the button in the upper right corner of the card, it is not visible on this card because it is currently selected."
     },
     "familyEdit": {
       "title": "Family edit",
-      "description": "This button will allow you to open the family edit panel, in which you can change the family name, time zone and currency."
+      "description": "This button will open the family edit panel, in which you can change the family name, time zone and currency."
     },
     "familyDelete": {
       "title": "Family delete",
-      "description": "This button will allow you to delete the family, in order to do this, you need to click on the delete family button and confirm it in the dialog window."
+      "description": "This button will open the family delete panel, in which you can delete the family. You can also delete the family from the settings screen."
     },
     "inviteUserToFamily": {
       "title": "Invite user to family",
-      "description": "This button will allow you to invite a user to the family, in order to do this, you need to click on the invite user button and enter the user's email."
+      "description": "This button will open the family invite panel, in which you can invite a user to the family. You can also invite a user to the family from the settings screen."
     },
     "yourFamilyInvitations": {
       "title": "Sent invitations",
-      "description": "Here you will see the invitations to the family sent by you"
+      "description": "Here you will see the invitations to your family sent by you"
     },
     "familyInvitations": {
       "title": "Received invitations",
-      "description": "Here you will see the invitations to the family sent by other users"
+      "description": "Here you will see the invitations to your family received from other users"
     },
     "goToBudgetPage": {
       "title": "Go to budget page",
@@ -1715,38 +1748,38 @@
 
     "budgetSettings": {
       "title": "Budget settings",
-      "description": "This button opens the budget management settings window, you can set the start day of the new budget and how often the new budget should start, there is also an option to transfer the balance of pouches to the next budgets, you can learn more about it by clicking on the \"i\" icon next to the field to select this option."
+      "description": "This button opens the budget settings window, where you can set the start day of the new budget and how often the new budget should start, there is also an option to transfer the balance of wallets to the next budgets, you can learn more about it by clicking the \"i\" icon next to the field where you can select this option."
     },
     "budgetItems": {
-      "title": "Go to budget items page",
+      "title": "Go to budget items",
       "description": "To configure your expenses and incomes, go to the budget items page."
     },
     "addIncome": {
       "title": "Add new income",
-      "description": "Add your first income, select whether it is one-time or recurring and enter its amount",
+      "description": "Add your first income, select if it is one time or recurring and enter its amount",
       "alert": "You must add at least one income, to continue"
     },
     "seeThisIncome": {
       "title": "Income card",
-      "description": "This is the income card, it contains information about the income, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring incomes, it may affect previous budgets, so when a recurring income stops, simply stop it so that the history of your budgets is not changed."
+      "description": "This is the income card, it contains information about the income, its amount, whether it is one time or recurring, there are also options for editing and deleting, however, be careful with deleting recurring incomes, it may affect previous budgets, so when a recurring income stops, simply stop it so that the history of your budgets is not changed."
     },
     "addOutcome": {
       "title": "Add new expense",
-      "description": "Add your first expense, select whether it is one-time or recurring and enter its amount",
+      "description": "Add your first expense, select if it is one time or recurring and enter its amount",
       "alert": "You must add at least one expense, to continue"
     },
     "seeThisOutcome": {
       "title": "Expense card",
-      "description": "This is the expense card, it contains information about the expense, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring expenses, it may affect previous budgets, so when a recurring expense stops, simply stop it so that the history of your budgets is not changed."
+      "description": "This is the expense card, it contains information about the expense, its amount, whether it is one time or recurring, there are also options for editing and deleting, however, be careful with deleting recurring expenses, it may affect previous budgets, so when a recurring expense stops, simply stop it so that the history of your budgets is not changed."
     },
     "addPouch": {
-      "title": "Add new pouch",
-      "description": "Add your first pouch, pouches are a special type of expense, which can be used to control the budget, allows you to select the amount you want to allocate to a specific purpose, for example food, and then during the budget period add individual expenses within this pouch, so that you can exactly know how much money we spent on a specific purpose during the budget period. If you have selected the option of transferring pouch balances, then if you do not spend all the money in this period, the remaining amount will be transferred to the next one, similarly when you spend more money than allocated in a given period, the remaining amount will be transferred to the next period.",
-      "alert": "You must add at least one pouch, to continue"
+      "title": "Add new wallet",
+      "description": "Add your first wallet, wallet is a special type of expense, which can be used to control the budget, allows you to select the amount of money you want to allocate to a specific purpose, for example, food, and then during the budget period, add individual expenses within this wallet, so that you can exactly know how much money we spent on a specific purpose during the budget period. If you selected the option of transferring the balances of wallets, then if you do not spend all the money in the given period, the missing amount will be transferred to the next one, similarly, when you spend more on a specific purpose in the given period.",
+      "alert": "You must add at least one wallet, to continue"
     },
     "seeThisPouch": {
-      "title": "Pouch card",
-      "description": "This is the pouch card, it contains information about the pouch, its amount, whether it is one-time or recurring, there are also options for editing and deleting, be careful with deleting recurring pouches, it may affect previous budgets, so when a recurring pouch stops, simply stop it so that the history of your budgets is not changed."
+      "title": "Wallet card",
+      "description": "This is the wallet card, it contains information about the wallet, its amount, whether it is one time or recurring, there are also options for editing and deleting, however, be careful with deleting wallets, it may affect previous budgets, so when a wallet stops, simply stop it so that the history of your budgets is not changed."
     },
     "goToBudgetSummary": {
       "title": "Go to budget summary",
@@ -1758,33 +1791,33 @@
     },
     "seeBudgetBalance": {
       "title": "See budget balance",
-      "description": "This card shows your balance in the current budget period, you can compare how much you have in income and expenses in this period, calculating with the expenses you have made in pouches, but also balance calculating with all planned expenses and incomes"
+      "description": "This card shows your balance in the current budget period, you can compare how much you have in income and expenses in the given period, calculating with the expenses you have made in wallets, but also with the balance calculated with all planned expenses and incomes"
     },
     "budgetPouches": {
-      "title": "Pouch summary",
-      "description": "This card shows the summary of all pouches, you can see how much was spent in this period, and how much expenses in pouches are planned in this budget period."
+      "title": "Budget wallets",
+      "description": "This card shows the summary of all wallets, you can see how much was spent in this period, and how much expenses in wallets are planned in this budget period."
     },
     "pouchOutcome": {
-      "title": "Pouch card",
-      "description": "As I mentioned earlier, pouches are a special type of container for expenses, a pouch has its own capacity. Thanks to this button, you can add an expense in the pouch, add it now, then you can delete it.",
-      "alert": "You must add at least one expense in the pouch, to continue"
+      "title": "Wallet card",
+      "description": "As I mentioned earlier, wallet is a special type of container for expenses, wallet has its own capacity. Thanks to this button, you can add an expense within a wallet, add an expense now, then you can delete it.",
+      "alert": "You must add at least one expense within a wallet, to continue"
     },
     "pouchOutcomesList": {
-      "title": "Pouch expenses list",
-      "description": "You can view the expenses in the pouch here in the form of a list, click on this list to see which expenses were added in this pouch.",
-      "alert": "You must expand the list of expenses in the pouch, to continue"
+      "title": "List of expenses in wallet",
+      "description": "Expenses within a wallet can be viewed here in the form of a list, expand this list to see which expenses were added within this wallet.",
+      "alert": "You must expand the list of expenses in the wallet, to continue"
     },
     "pouchOutcomeEdit": {
-      "title": "Pouch expenses management",
-      "description": "Each expense can be edited and deleted, to do this use the highlighted buttons."
+      "title": "Manage expenses in wallet",
+      "description": "Each expense can be edited and deleted, to do this, use the highlighted buttons."
     },
     "incomesList": {
-      "title": "Incomes list",
-      "description": "Here you can see the incomes that are in the current budget period."
+      "title": "List of incomes",
+      "description": "Here you can see the incomes that occurred in the current budget period."
     },
     "outcomesList": {
-      "title": "Expenses list",
-      "description": "Here you can see the expenses that are in the current budget period."
+      "title": "List of expenses",
+      "description": "Here you can see the expenses that occurred in the current budget period."
     },
     "goToGoalsPage": {
       "title": "Go to goals page",
@@ -1798,10 +1831,10 @@
     },
     "seeThisGoal": {
       "title": "Goal card",
-      "description": "This is the goal card, it contains information about the goal, its amount and progress. The highlighted button is used to view the savings schedule. You can edit the goal expense in this period if you saved more, or if you did not save the planned amount, future goal expenses will be automatically updated so that you can achieve the set goal."
+      "description": "This is the goal card, it contains information about the goal, its amount and progress. The highlighted button is used to view the savings schedule. You can edit the goal expense in the given period if you saved more, or if you did not save the planned amount, future goal expenses will be automatically updated so that you can achieve the set goal."
     },
     "editGoal": {
-      "title": "Goal edit",
+      "title": "Edit goal",
       "description": "You can also edit the goal, complete it, or delete it if you added it by mistake."
     },
     "goToFortunePage": {
@@ -1816,7 +1849,7 @@
     },
     "seeThisAsset": {
       "title": "Asset card",
-      "description": "This is the asset card, it contains information about the asset, its amount and progress. The highlighted button is used to view the asset history. You can edit the asset expense in this period if you saved more, or if you did not save the planned amount, future asset expenses will be automatically updated so that you can achieve the set goal."
+      "description": "This is the asset card, you can edit and delete it, to do this, use the highlighted buttons. You need to update the value of each asset periodically to know exactly how much your net worth is at any given time."
     },
     "addFirstDebt": {
       "title": "Add new debt",
@@ -1825,7 +1858,7 @@
     },
     "seeThisDebt": {
       "title": "Debt card",
-      "description": "This is the debt card, you can edit and delete it, to do this use the highlighted buttons. You need to update the value of your assets and debts periodically to know exactly how much your net worth is at any given time."
+      "description": "This is the debt card, you can edit and delete it, to do this, use the highlighted buttons. You need to update the value of each debt periodically to know exactly how much your net worth is at any given time."
     },
     "seeAssetsCountCard": {
       "title": "Assets card",
@@ -1853,7 +1886,7 @@
     },
     "othersAssetsCard": {
       "title": "Others assets card",
-      "description": "This is the others assets card, it contains information about the value of your others assets."
+      "description": "This is the others assets card, it contains information about the value of your other assets."
     },
     "goToDashboardPage": {
       "title": "Go to dashboard page",
@@ -1878,7 +1911,7 @@
     },
     "dashboardFinancialCushionCard": {
       "title": "Financial cushion card",
-      "description": "Here you can see the current level of your financial cushion, the application will show you if it is on a safe level compared to your expenses."
+      "description": "Here you can see the current level of your financial cushion, the application will show you if it is on a safe level compared to your expenses"
     }
   }
 }

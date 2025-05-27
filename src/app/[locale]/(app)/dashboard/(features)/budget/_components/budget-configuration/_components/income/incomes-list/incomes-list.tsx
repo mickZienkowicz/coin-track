@@ -1,6 +1,7 @@
 import { ArrowUpCircle, PlusCircle } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import { AdditionalInfoTooltip } from '@/components/additional-info-tooltip';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getIncomes } from '@/server/income/queries/get-incomes';
@@ -24,6 +25,7 @@ export const IncomesList = async () => {
                 <ArrowUpCircle className='size-5 text-green-600' />
               </div>
               {t('title')}
+              <AdditionalInfoTooltip text={t('additionalInfo')} />
             </h2>
             <AddIncomeDialog>
               <Button

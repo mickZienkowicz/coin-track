@@ -6,6 +6,7 @@ import {
   Target,
   Wallet
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import {
   Card,
@@ -25,61 +26,60 @@ const FeatureCard = ({
   description: string;
 }) => {
   return (
-    <Card className='border-none shadow-md transition-shadow hover:shadow-lg'>
+    <Card className='gap-3'>
       <CardHeader>
         <div className='mb-4 flex justify-center'>{icon}</div>
-        <CardTitle className='text-center'>{title}</CardTitle>
+        <CardTitle className='text-center text-lg font-bold'>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className='text-center'>{description}</CardDescription>
+        <CardDescription className='text-center text-base text-primary/70'>
+          {description}
+        </CardDescription>
       </CardContent>
     </Card>
   );
 };
 
 export const FeaturesSection = () => {
+  const t = useTranslations('landingPage.featuresSection');
+
   return (
     <section className='space-y-10'>
       <div className='space-y-4 text-center'>
-        <h2 className='text-3xl font-bold'>
-          Wszystko, czego potrzebujesz do zarządzania finansami
-        </h2>
-        <p className='mx-auto max-w-3xl text-muted-foreground'>
-          Nasza aplikacja oferuje kompleksowy zestaw narzędzi, które pomogą Ci
-          kontrolować finanse, planować wydatki i osiągać cele finansowe.
-        </p>
+        <h2 className='text-3xl font-bold'>{t('title')}</h2>
+        <p className='mx-auto max-w-3xl text-primary/70'>{t('description')}</p>
       </div>
 
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
         <FeatureCard
-          icon={<BarChart3 className='h-10 w-10 text-primary' />}
-          title='Budżetowanie'
-          description='Twórz i zarządzaj budżetami, śledź wydatki i przychody, aby zawsze mieć kontrolę nad swoimi finansami.'
+          icon={<BarChart3 className='h-10 w-10 text-brand-primary' />}
+          title={t('feature1.title')}
+          description={t('feature1.description')}
         />
         <FeatureCard
-          icon={<Wallet className='h-10 w-10 text-primary' />}
-          title='Zarządzanie majątkiem'
-          description='Monitoruj wartość swojego majątku i śledź zmiany towojej wartości netto w czasie.'
+          icon={<Wallet className='h-10 w-10 text-brand-primary' />}
+          title={t('feature2.title')}
+          description={t('feature2.description')}
         />
         <FeatureCard
-          icon={<Target className='h-10 w-10 text-primary' />}
-          title='Cele finansowe'
-          description='Ustal cele finansowe, monitoruj postępy i otrzymuj powiadomienia o zbliżających się terminach.'
+          icon={<Target className='h-10 w-10 text-brand-primary' />}
+          title={t('feature3.title')}
+          description={t('feature3.description')}
         />
         <FeatureCard
-          icon={<PieChart className='h-10 w-10 text-primary' />}
-          title='Analiza finansowa'
-          description='Analizuj swoje wydatki, przychody i zobowiązania, aby podejmować lepsze decyzje finansowe.'
+          icon={<PieChart className='h-10 w-10 text-brand-primary' />}
+          title={t('feature4.title')}
+          description={t('feature4.description')}
         />
         <FeatureCard
-          icon={<Package className='h-10 w-10 text-primary' />}
-          title='System sakiewek'
-          description='Korzystaj z systemu sakiewek (kopert) do efektywnego zarządzania pieniędzmi przeznaczonymi na konkretne cele.'
+          icon={<Package className='h-10 w-10 text-brand-primary' />}
+          title={t('feature5.title')}
+          description={t('feature5.description')}
         />
         <FeatureCard
-          icon={<Shield className='h-10 w-10 text-primary' />}
-          title='Żelazna rezerwa'
-          description='Buduj i monitoruj swoją żelazną rezerwę finansową, aby być przygotowanym na nieprzewidziane wydatki.'
+          icon={<Shield className='h-10 w-10 text-brand-primary' />}
+          title={t('feature6.title')}
+          description={t('feature6.description')}
         />
       </div>
     </section>

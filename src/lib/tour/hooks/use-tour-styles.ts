@@ -12,7 +12,9 @@ export const useTourStyles = (
   const styleRef = useRef<HTMLStyleElement | null>(null);
 
   useEffect(() => {
-    if (!isRunning || !styleRef.current) return;
+    const styles = styleRef.current;
+
+    if (!isRunning || !styles) return;
 
     const step = tourSteps[currentStep];
     const highlightSelectors = step.highlightSelectors || [];
@@ -67,7 +69,7 @@ export const useTourStyles = (
       ...highlightSelectors.map((selector) => createStyleRule(selector, true)),
       ...visibleSelectors.map((selector) => createStyleRule(selector, false))
     ].join('\n');
-    styleRef.current.textContent = css;
+    styles.textContent = css;
 
     return () => {
       const style = styleRef.current;

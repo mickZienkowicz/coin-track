@@ -5,7 +5,9 @@ export const paths = {
   budget: '/dashboard/budget',
   goals: '/dashboard/goals',
   settings: '/settings',
-  budgetFromDate: '/dashboard/budget/:date'
+  budgetFromDate: '/dashboard/budget/:date',
+  termsOfService: '/terms-of-service',
+  privacyPolicy: '/privacy-policy'
 };
 
 export const pathGenerators = {
@@ -15,7 +17,9 @@ export const pathGenerators = {
   budget: () => paths.budget,
   budgetFromDate: (date: string) => paths.budgetFromDate.replace(':date', date),
   goals: () => paths.goals,
-  settings: () => paths.settings
+  settings: () => paths.settings,
+  termsOfService: () => paths.termsOfService,
+  privacyPolicy: () => paths.privacyPolicy
 };
 
 export const protectedPaths = [

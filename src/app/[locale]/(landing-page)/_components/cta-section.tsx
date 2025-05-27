@@ -1,23 +1,36 @@
-import { ArrowRight } from 'lucide-react';
+import { SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
+import { useTranslations } from 'next-intl';
 
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Link } from '@/i18n/navigation';
+import { pathGenerators } from '@/lib/paths';
+import { cn } from '@/lib/utils';
 
 export const CTASection = () => {
+  const t = useTranslations('landingPage.ctaSection');
+
   return (
-    <section className='space-y-6 rounded-2xl bg-primary/10 p-10 text-center'>
-      <h2 className='text-3xl font-bold'>
-        Gotowy, by przejąć kontrolę nad swoimi finansami?
+    <Card className='flex flex-col items-center justify-center gap-4'>
+      <h2 className='mt-4 max-w-xl text-center text-3xl font-bold'>
+        {t('title')}
       </h2>
-      <p className='mx-auto max-w-3xl text-muted-foreground'>
-        Dołącz do tysięcy użytkowników, którzy już korzystają z naszej aplikacji
-        i osiągają swoje cele finansowe.
-      </p>
-      <div className='flex flex-col justify-center gap-4 sm:flex-row'>
-        <Button className='gap-2'>
-          Rozpocznij za darmo <ArrowRight className='h-4 w-4' />
-        </Button>
-        <Button variant='outline'>Dowiedz się więcej</Button>
+      <p className='mx-auto max-w-3xl text-primary/70'>{t('description')}</p>
+      <div className='mb-2 flex flex-col justify-center gap-4 sm:flex-row'>
+        <SignedIn>
+          <Link
+            className={cn(buttonVariants(), 'text-base font-bold')}
+            href={pathGenerators.dashboard()}
+          >
+            {t('dashboard')}
+          </Link>
+        </SignedIn>
+        <SignedOut>
+          <SignUpButton>
+            <Button className='text-base font-bold'>{t('signUp')}</Button>
+          </SignUpButton>
+        </SignedOut>
       </div>
-    </section>
+    </Card>
   );
 };

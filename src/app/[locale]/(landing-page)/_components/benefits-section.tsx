@@ -1,4 +1,5 @@
 import { CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const BenefitItem = ({
   title,
@@ -8,45 +9,42 @@ const BenefitItem = ({
   description: string;
 }) => (
   <div className='flex gap-4'>
-    <div className='h-fit rounded-full bg-primary/10 p-2'>
-      <CheckCircle className='h-5 w-5 text-primary' />
+    <div className='h-fit rounded-full bg-brand-primary/30 p-2'>
+      <CheckCircle className='h-5 w-5 text-brand-primary' />
     </div>
     <div>
       <h3 className='text-xl font-semibold'>{title}</h3>
-      <p className='mt-2 text-muted-foreground'>{description}</p>
+      <p className='mt-2 text-primary/70'>{description}</p>
     </div>
   </div>
 );
 
 export const BenefitsSection = () => {
+  const t = useTranslations('landingPage.benefitsSection');
+
   return (
     <section className='space-y-10'>
       <div className='space-y-4 text-center'>
-        <h2 className='text-3xl font-bold'>
-          Korzyści z korzystania z aplikacji
-        </h2>
-        <p className='mx-auto max-w-3xl text-muted-foreground'>
-          Nasza aplikacja pomaga tysiącom użytkowników lepiej zarządzać swoimi
-          finansami i osiągać cele finansowe.
-        </p>
+        <h2 className='text-3xl font-bold'>{t('title')}</h2>
+        <p className='mx-auto max-w-2xl text-primary/70'>{t('description')}</p>
       </div>
 
       <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
         <BenefitItem
-          title='Redukcja stresu finansowego'
-          description='Planowanie i kontrola finansów zmniejsza stres związany z niepewnością finansową.'
+          title={t('benefit1.title')}
+          description={t('benefit1.description')}
         />
         <BenefitItem
-          title='Pełna kontrola nad finansami'
-          description='Zawsze wiesz, na co wydajesz pieniądze i ile możesz jeszcze wydać w danym okresie.'
+          title={t('benefit2.title')}
+          description={t('benefit2.description')}
         />
         <BenefitItem
-          title='Osiąganie celów finansowych'
-          description='Systematyczne oszczędzanie i monitorowanie postępów pomaga w osiąganiu celów finansowych.'
+          title={t('benefit3.title')}
+          description={t('benefit3.description')}
         />
         <BenefitItem
-          title='Lepsze decyzje finansowe'
-          description='Analiza wydatków i przychodów pomaga podejmować lepsze decyzje finansowe.'
+          title={t('benefit4.title')}
+          description={t('benefit4.description')}
         />
       </div>
     </section>

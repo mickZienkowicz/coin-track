@@ -47,7 +47,13 @@ export function SubscriptionManager({
     }
 
     return <NoActiveSubscriptionCard currency={family.currency} />;
-  }, [family.hasFreeAccount, isInTrial, trialEndsAt, subscription]);
+  }, [
+    family.hasFreeAccount,
+    isInTrial,
+    trialEndsAt,
+    subscription,
+    family.currency
+  ]);
 
   return (
     <div className='mt-16'>

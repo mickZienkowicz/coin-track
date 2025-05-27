@@ -1,11 +1,18 @@
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Link } from '@/i18n/navigation';
+import { pathGenerators } from '@/lib/paths';
+import { cn } from '@/lib/utils';
 
 export const HeroSection = () => {
+  const locale = useLocale();
+  const t = useTranslations('landingPage.heroSection');
+
   return (
-    <section className='space-y-6 pt-10 text-center'>
+    <section className='space-y-6 text-center md:pt-8'>
       <div className='space-y-4'>
         <Image
           src='/logo-transparent-icon.svg'
@@ -14,27 +21,43 @@ export const HeroSection = () => {
           height={100}
           className='mx-auto h-36 w-36'
         />
-        <h1 className='text-4xl font-bold tracking-tight md:text-6xl'>
-          Zarządzaj swoimi finansami{' '}
-          <span className='text-primary'>mądrze</span>
+        <h1 className='text-4xl font-bold tracking-tight md:text-5xl'>
+          {t('title')}
+          <span className='text-primary'>{t('titleHighlight')}</span>
         </h1>
-        <p className='mx-auto max-w-3xl text-xl text-muted-foreground'>
-          Kompleksowe narzędzie do kontrolowania budżetu, śledzenia majątku i
-          osiągania celów finansowych
+        <p className='mx-auto max-w-3xl text-base text-primary/70 md:text-lg'>
+          {t('description')}
         </p>
       </div>
       <div className='flex flex-col justify-center gap-4 sm:flex-row'>
-        <Button className='gap-2'>
-          Rozpocznij za darmo <ArrowRight className='h-4 w-4' />
-        </Button>
-        <Button variant='outline'>Zobacz demo</Button>
+        <SignedIn>
+          <Link
+            className={cn(buttonVariants(), 'text-base font-bold')}
+            href={pathGenerators.dashboard()}
+          >
+            {t('dashboard')}
+          </Link>
+        </SignedIn>
+        <SignedOut>
+          <SignUpButton>
+            <Button className='text-base font-bold'>{t('signUp')}</Button>
+          </SignUpButton>
+        </SignedOut>
       </div>
-      <div className='relative mx-auto mt-10 h-[400px] w-full max-w-5xl overflow-hidden rounded-xl shadow-xl'>
+      <div className='relative mx-auto mt-10 aspect-[1/1.9] w-[300px] max-w-5xl overflow-hidden rounded-xl shadow-xl md:aspect-[2.2/1] md:w-full md:max-w-3xl'>
         <Image
-          src='/placeholder.svg?height=800&width=1600'
-          alt='Dashboard aplikacji'
+          src={`/app-mobile-${locale}.png`}
+          alt={t('dashboard')}
           fill
-          className='object-cover'
+          className='object-cover md:hidden'
+          priority
+        />
+        <Image
+          src={`/app-desktop-${locale}.png`}
+          alt={t('dashboard')}
+          fill
+          className='hidden object-cover md:block'
+          priority
         />
         <div className='absolute inset-0 bg-gradient-to-t from-background/80 to-transparent'></div>
       </div>

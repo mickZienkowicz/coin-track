@@ -8,6 +8,89 @@
     "quarter": "kwartał",
     "year": "rok"
   },
+  "footer": {
+    "termsOfService": "Warunki użycia",
+    "privacyPolicy": "Polityka prywatności",
+    "mail": "Email"
+  },
+  "landingPage": {
+    "dashboard": "Panel Główny",
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "heroSection": {
+      "title": "Zarządzaj swoimi finansami mądrze",
+      "description": "Kompleksowe narzędzie do kontrolowania budżetu, śledzenia majątku i osiągania celów finansowych.",
+      "titleHighlight": "mądrze",
+      "dashboard": "Panel Główny",
+      "signIn": "Zaloguj się",
+      "signUp": "Zarejestruj się"
+    },
+    "ctaSection": {
+      "title": "Gotowy, by przejąć kontrolę nad swoimi finansami?",
+      "description": "Dołącz do tysięcy użytkowników, którzy już korzystają z naszej aplikacji i osiągają swoje cele finansowe.",
+      "dashboard": "Panel Główny",
+      "signIn": "Zaloguj się",
+      "signUp": "Zarejestruj się"
+    },
+    "howItWorksSection": {
+      "title": "Jak to działa?",
+      "description": "Zarządzanie finansami nigdy nie było prostsze. Nasza aplikacja prowadzi Cię przez cały proces.",
+      "step1": "Krok 1: Utwórz budżet",
+      "step2": "Krok 2: Śledź swoje finanse",
+      "step3": "Krok 3: Osiągaj cele",
+      "step1Description": "Zacznij od utworzenia budżetu, określając okres i dodając swoje przychody oraz planowane wydatki.",
+      "step2Description": "Regularnie dodawaj swoje wydatki i przychody, aby mieć aktualny obraz swoich finansów.",
+      "step3Description": "Ustal cele finansowe i systematycznie odkładaj pieniądze, aby je osiągnąć w zaplanowanym terminie."
+    },
+    "featuresSection": {
+      "title": "Wszystko, czego potrzebujesz do zarządzania finansami",
+      "description": "Nasza aplikacja oferuje kompleksowy zestaw narzędzi, które pomogą Ci kontrolować finanse, planować wydatki i osiągać cele finansowe.",
+      "feature1": {
+        "title": "Budżetowanie",
+        "description": "Twórz i zarządzaj budżetami, śledź wydatki i przychody, aby zawsze mieć kontrolę nad swoimi finansami."
+      },
+      "feature2": {
+        "title": "Zarządzanie majątkiem",
+        "description": "Monitoruj wartość swojego majątku i śledź zmiany towojej wartości netto w czasie."
+      },
+      "feature3": {
+        "title": "Cele finansowe",
+        "description": "Ustal cele finansowe, monitoruj postępy i otrzymuj powiadomienia o zbliżających się terminach."
+      },
+      "feature4": {
+        "title": "Analiza finansowa",
+        "description": "Analizuj swoje wydatki, przychody i zobowiązania, aby podejmować lepsze decyzje finansowe."
+      },
+      "feature5": {
+        "title": "System portfeli",
+        "description": "Korzystaj z systemu portfeli do efektywnego zarządzania pieniędzmi przeznaczonymi na konkretne cele."
+      },
+      "feature6": {
+        "title": "Żelazna rezerwa",
+        "description": "Buduj i monitoruj swoją żelazną rezerwę finansową, aby być przygotowanym na nieprzewidziane wydatki."
+      }
+    },
+    "benefitsSection": {
+      "title": "Korzyści z korzystania z aplikacji",
+      "description": "Nasza aplikacja pomaga tysiącom użytkowników lepiej zarządzać swoimi finansami i osiągać cele finansowe.",
+      "benefit1": {
+        "title": "Redukcja stresu finansowego",
+        "description": "Planowanie i kontrola finansów zmniejsza stres związany z niepewnością finansową."
+      },
+      "benefit2": {
+        "title": "Pełna kontrola nad finansami",
+        "description": "Zawsze wiesz, na co wydajesz pieniądze i ile możesz jeszcze wydać w danym okresie."
+      },
+      "benefit3": {
+        "title": "Osiąganie celów finansowych",
+        "description": "Systematyczne oszczędzanie i monitorowanie postępów pomaga w osiąganiu celów finansowych."
+      },
+      "benefit4": {
+        "title": "Lepsze decyzje finansowe",
+        "description": "Analiza wydatków i przychodów pomaga podejmować lepsze decyzje finansowe."
+      }
+    }
+  },
   "subscription": {
     "title": "Twoja subskrypcja dla - {familyName}",
     "monthly": "Miesięczna",

@@ -8,6 +8,89 @@
     "quarter": "quarter",
     "year": "year"
   },
+  "footer": {
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "mail": "Mail"
+  },
+  "landingPage": {
+    "dashboard": "Dashboard",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "heroSection": {
+      "title": "Manage your finances smartly",
+      "description": "Comprehensive tool for controlling your budget, tracking your assets and achieving financial goals.",
+      "titleHighlight": "smartly",
+      "dashboard": "Dashboard",
+      "signIn": "Sign in",
+      "signUp": "Sign up"
+    },
+    "ctaSection": {
+      "title": "Ready to take control of your finances?",
+      "description": "Join thousands of users who already use our app and achieve their financial goals.",
+      "dashboard": "Dashboard",
+      "signIn": "Sign in",
+      "signUp": "Sign up"
+    },
+    "howItWorksSection": {
+      "title": "How it works?",
+      "description": "Managing finances has never been easier. Our app guides you through the process.",
+      "step1": "Step 1: Create a budget",
+      "step2": "Step 2: Track your finances",
+      "step3": "Step 3: Achieve goals",
+      "step1Description": "Start by creating a budget, defining the period and adding your income and planned expenses.",
+      "step2Description": "Regularly add your expenses and income, to have an up-to-date view of your finances.",
+      "step3Description": "Set financial goals and save money systematically to achieve them in the planned time."
+    },
+    "featuresSection": {
+      "title": "Everything you need to manage your finances",
+      "description": "Our app offers a comprehensive set of tools that help you control your finances, plan your expenses and achieve financial goals.",
+      "feature1": {
+        "title": "Budgeting",
+        "description": "Create and manage budgets, track your expenses and income, to always have control over your finances."
+      },
+      "feature2": {
+        "title": "Asset management",
+        "description": "Monitor your assets and track changes in their net value over time."
+      },
+      "feature3": {
+        "title": "Financial goals",
+        "description": "Set financial goals, monitor progress and get notifications about upcoming deadlines."
+      },
+      "feature4": {
+        "title": "Financial analysis",
+        "description": "Analyze your expenses, income and debts, to make better financial decisions."
+      },
+      "feature5": {
+        "title": "Wallets system",
+        "description": "Use the wallets system to effectively manage money designated for specific goals."
+      },
+      "feature6": {
+        "title": "Iron reserve",
+        "description": "Build and monitor your iron reserve, to be prepared for unexpected expenses."
+      }
+    },
+    "benefitsSection": {
+      "title": "Benefits of using the app",
+      "description": "Our app helps thousands of users better manage their finances and achieve financial goals.",
+      "benefit1": {
+        "title": "Reduction of financial stress",
+        "description": "Planning and controlling finances reduces financial stress associated with uncertainty."
+      },
+      "benefit2": {
+        "title": "Full control over finances",
+        "description": "You always know where your money goes and how much you can spend in a given period."
+      },
+      "benefit3": {
+        "title": "Achieving financial goals",
+        "description": "Systematic saving and monitoring progress helps achieve financial goals."
+      },
+      "benefit4": {
+        "title": "Better financial decisions",
+        "description": "Analyzing expenses and income helps make better financial decisions."
+      }
+    }
+  },
   "subscription": {
     "title": "Your subscription for - {familyName}",
     "monthly": "Monthly",

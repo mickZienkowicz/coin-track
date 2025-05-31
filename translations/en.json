@@ -279,6 +279,7 @@
     "debts": {
       "title": "Debts",
       "addDebtButton": "Add debt",
+      "additionalInfo": "Debts are all your financial obligations, for example: the remaining amount of the loan together with interest.",
       "noDebtsCard": {
         "title": "You don't have any debts yet",
         "description": "Add debt to control your fortune."

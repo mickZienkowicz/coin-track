@@ -28,7 +28,7 @@ export const DebtsList = async ({
                 <TrendingDown className='size-5 text-red-700' />
               </div>
               {t('title')}
-              <AdditionalInfoTooltip text='Pasywa to wszystkie Twoje zobowiązania finansowe, np. Pozostała do spłaty kwota kredytu razem z odsetkami.' />
+              <AdditionalInfoTooltip text={t('additionalInfo')} />
             </h2>
             <AddDebtDialog>
               <Button

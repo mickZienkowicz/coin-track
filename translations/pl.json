@@ -279,6 +279,7 @@
     "debts": {
       "title": "Pasywa",
       "addDebtButton": "Dodaj pasywo",
+      "additionalInfo": "Pasywa to wszystkie Twoje zobowiązania finansowe, np. Pozostała do spłaty kwota kredytu razem z odsetkami.",
       "noDebtsCard": {
         "title": "Nie masz jeszcze żadnych pasyw",
         "description": "Dodaj pasywo, aby kontrolować swój majątek."

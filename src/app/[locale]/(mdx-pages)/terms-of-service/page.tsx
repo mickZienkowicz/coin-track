@@ -9,5 +9,7 @@ import TermsOfServicePL from '@/markdown/pl/terms-of-service.mdx';
 export default function TermsOfService() {
   const locale = useLocale();
 
+  console.log(locale);
+
   return locale === Language.pl ? <TermsOfServicePL /> : <TermsOfServiceEN />;
 }

@@ -25,6 +25,13 @@
       "signIn": "Zaloguj się",
       "signUp": "Zarejestruj się"
     },
+    "addAsApp": {
+      "title": "Dodaj jako aplikację",
+      "description": "Dodaj naszą aplikację do swojego telefonu, aby mieć dostęp do wszystkich funkcji.",
+      "iphone": "iPhone",
+      "android": "Android",
+      "videoNotSupported": "Twoja przeglądarka nie obsługuje wideo."
+    },
     "ctaSection": {
       "title": "Gotowy, by przejąć kontrolę nad swoimi finansami?",
       "description": "Dołącz do tysięcy użytkowników, którzy już korzystają z naszej aplikacji i osiągają swoje cele finansowe.",
@@ -34,7 +41,7 @@
     },
     "howItWorksSection": {
       "title": "Jak to działa?",
-      "description": "Zarządzanie finansami nigdy nie było prostsze. Nasza aplikacja prowadzi Cię przez cały proces.",
+      "description": "Zarządzanie finansami nigdy nie było prostsze. Nasza aplikacja poprowadzi Cię przez cały proces.",
       "step1": "Krok 1: Utwórz budżet",
       "step2": "Krok 2: Śledź swoje finanse",
       "step3": "Krok 3: Osiągaj cele",
@@ -43,7 +50,7 @@
       "step3Description": "Ustal cele finansowe i systematycznie odkładaj pieniądze, aby je osiągnąć w zaplanowanym terminie."
     },
     "featuresSection": {
-      "title": "Wszystko, czego potrzebujesz do zarządzania finansami",
+      "title": "Wszystko, czego potrzebujesz do zarządzania finansami.",
       "description": "Nasza aplikacja oferuje kompleksowy zestaw narzędzi, które pomogą Ci kontrolować finanse, planować wydatki i osiągać cele finansowe.",
       "feature1": {
         "title": "Budżetowanie",
@@ -51,7 +58,7 @@
       },
       "feature2": {
         "title": "Zarządzanie majątkiem",
-        "description": "Monitoruj wartość swojego majątku i śledź zmiany towojej wartości netto w czasie."
+        "description": "Monitoruj wartość swojego majątku i śledź zmiany Twojej wartości netto w czasie."
       },
       "feature3": {
         "title": "Cele finansowe",
@@ -79,7 +86,7 @@
       },
       "benefit2": {
         "title": "Pełna kontrola nad finansami",
-        "description": "Zawsze wiesz, na co wydajesz pieniądze i ile możesz jeszcze wydać w danym okresie."
+        "description": "Zawsze wiesz, na co wydajesz pieniądze i ile możesz jeszcze wydać w danym okresie i kategorii."
       },
       "benefit3": {
         "title": "Osiąganie celów finansowych",
@@ -157,10 +164,10 @@
       "livingAssets": "Majątek bytowy",
       "investmentAssets": "Majątek inwestycyjny",
       "otherAssets": "Pozostałe",
-      "financialCushionDetailedInfo": "Poduszka finansowa, w tej kategorii powinny znajdować sie te składniki majątku, które są najbardziej płynne i można je szybko zamienić na pieniądze.",
-      "livingAssetsDetailedInfo": "Majątek bytowy, w tej kategorii powinny znajdować sie te składniki majątku, które są używane do życia codziennego, np. dom czy samochód.",
-      "investmentAssetsDetailedInfo": "Majątek inwestycyjny, w tej kategorii powinny znajdować sie te składniki majątku, które są inwestowane w dłuższą przyszłość, np. akcje czy obligacje.",
-      "otherAssetsDetailedInfo": "Pozostałe, w tej kategorii powinny znajdować sie te składniki majątku, które nie pasują do innych kategorii, np. kolekcje, biżuteria.",
+      "financialCushionDetailedInfo": "Poduszka finansowa, w tej kategorii powinny znajdować się te składniki majątku, które są najbardziej płynne i można je szybko zamienić na pieniądze.",
+      "livingAssetsDetailedInfo": "Majątek bytowy, w tej kategorii powinny znajdować się te składniki majątku, które są wykorzystywane do życia codziennego, np. dom czy samochód.",
+      "investmentAssetsDetailedInfo": "Majątek inwestycyjny, w tej kategorii powinny znajdować się te składniki majątku, które są inwestowane w dłuższą przyszłość, np. akcje czy obligacje.",
+      "otherAssetsDetailedInfo": "Pozostałe, w tej kategorii powinny znajdować się te składniki majątku, które nie pasują do innych kategorii, np. kolekcje, biżuteria.",
       "structure": " Struktura majątku",
       "monthlySpendings": "Twoje miesięczne wydatki",
       "yourMonthlySpendings": "Poduszka finansowa stanowi",
@@ -195,22 +202,22 @@
           },
           "nameField": {
             "label": "Nazwa",
-            "placeholder": "np. Oszczedności w euro",
+            "placeholder": "np. Obligacje",
             "error": "Podaj nazwę aktywa."
           },
           "descriptionField": {
             "label": "Opis",
-            "placeholder": "np. 1200 euro",
+            "placeholder": "np. Obligacje skarbu państwa",
             "error": "Podaj opis aktywa."
           },
           "categoryField": {
             "label": "Kategoria",
-            "placeholder": "np. Poduszka finansowa",
+            "placeholder": "np. Majątek inwestycyjny",
             "error": "Podaj kategorię aktywa."
           },
           "valueField": {
             "label": "Wartość",
-            "placeholder": "np. 1000",
+            "placeholder": "np. 5000",
             "error": "Podaj wartość aktywa."
           },
           "addAssetButton": "Dodaj aktywo"
@@ -232,17 +239,17 @@
           },
           "nameField": {
             "label": "Nazwa",
-            "placeholder": "np. Oszczedności w euro",
+            "placeholder": "np. Obligacje",
             "error": "Podaj nazwę aktywa."
           },
           "descriptionField": {
             "label": "Opis",
-            "placeholder": "np. 1200 euro",
+            "placeholder": "np. Obligacje skarbu państwa",
             "error": "Podaj opis aktywa."
           },
           "categoryField": {
             "label": "Kategoria",
-            "placeholder": "np. Poduszka finansowa",
+            "placeholder": "np. Majątek inwestycyjny",
             "error": "Podaj kategorię aktywa."
           },
           "valueField": {
@@ -261,7 +268,7 @@
         "buttonMobile": "Usuń",
         "deleteAssetButton": "Usuń aktywo",
         "totalDeleteTitle": "Usuń aktywo całkowicie",
-        "totalDeleteDescription": "Jeśli chcesz usunąć aktywo całkowicie, moze to zaburzyć historie twojego konta. Jezeli po prostu zredukowałeś to aktywo do zera użyj zwykłej opcji usuwania.",
+        "totalDeleteDescription": "Jeśli chcesz usunąć aktywo całkowicie, może to zaburzyć historię Twojego konta. Jeżeli po prostu zredukowałeś to aktywo do zera, użyj zwykłej opcji usuwania.",
         "totalDeleteButton": "Usuń aktywo całkowicie"
       },
       "assetDetailsCard": {
@@ -340,7 +347,7 @@
         "buttonMobile": "Usuń",
         "deleteDebtButton": "Usuń pasywo",
         "totalDeleteTitle": "Usuń pasywo całkowicie",
-        "totalDeleteDescription": "Jeśli chcesz usunąć pasywo całkowicie, moze to zaburzyć historie twojego konta. Jezeli po prostu zredukowałeś to aktywo do zera użyj zwykłej opcji usuwania.",
+        "totalDeleteDescription": "Jeśli chcesz usunąć pasywo całkowicie, moze to zaburzyć historie twojego konta. Jeśli po prostu zredukowałeś to aktywo do zera użyj zwykłej opcji usuwania.",
         "totalDeleteButton": "Usuń pasywo całkowicie"
       },
       "debtDetailsCard": {
@@ -484,7 +491,7 @@
   "dashboard": {
     "title": "Panel Główny",
     "history": {
-      "title": "Historia twoich finansów",
+      "title": "Historia Twoich finansów",
       "seePreview": "Zobacz podgląd",
       "to": "do",
       "selectBudgetToPreview": "Wybierz okres do podglądu",
@@ -496,7 +503,7 @@
     "fortune": {
       "assets": "Aktywa",
       "debts": "Pasywa",
-      "netWorth": "Majątek",
+      "netWorth": "Wartość netto",
       "assetsDescription": "Ostatnia aktualizacja: ",
       "debtsDescription": "Ostatnia aktualizacja: ",
       "netWorthDescription": "Ostatnia aktualizacja: ",
@@ -510,7 +517,7 @@
       "financialCushionDetailedInfo": "Poduszka finansowa",
       "livingAssets": "Majątek bytowy",
       "livingAssetsDetailedInfo": "Majątek bytowy",
-      "netWorthDetailedInfo": "Majątek netto",
+      "netWorthDetailedInfo": "Wartość netto",
       "otherAssets": "Inne aktywa",
       "otherAssetsDetailedInfo": "Inne aktywa",
       "assetsAdditionalInfo": "Aktywa to wszystkie Twoje zasoby finansowe, takie jak: pieniądze na koncie bankowym, akcje, obligacje, nieruchomości i inne inwestycje.",
@@ -543,7 +550,7 @@
         "recommendationAmount": "Kwota rekomendacji:",
         "description1": "Poduszka finansowa powinna stanowić 3-6 miesięcznych wydatków, aby zapewnić bezpieczeństwo finansowe w przypadku sytuacji losowych. Aktualnie posiadasz ",
         "description2": ", co stanowi ",
-        "description3": " rekomendowanej wartości. Dowyliczeń wyliczeń procentowych przyjmujemy poduszkę wynoszącą 6-krotność miesięcznych wydatków."
+        "description3": " rekomendowanej wartości. Do wyliczeń procentowych przyjmujemy poduszkę wynoszącą 6-krotność miesięcznych wydatków."
       },
       "balance": {
         "title": "Bilans",
@@ -881,9 +888,9 @@
               "error": "Podaj nazwę."
             },
             "valueField": {
-              "label": "Pojemność",
+              "label": "Kwota",
               "placeholder": "np. 1000",
-              "error": "Podaj poprawną pojemność."
+              "error": "Podaj poprawną kwotę."
             },
             "dateField": {
               "label": "Data",
@@ -969,8 +976,8 @@
           "descriptionAttention": "Tej operacji nie można cofnąć. ",
           "descriptionAttentionStop": "Wstrzymając portfel, nie będzie on uwzględniany w budżecie od daty którą podasz. ",
           "descriptionAttentionStopPouch": "Wstrzymając portfel, nie będzie on uwzględniany w budżecie od daty którą podasz. ",
-          "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc portfel, ",
-          "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie wydateku moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+          "descriptionDeleteTitle": "Jeśli chcesz całkowicie usunąć portfel, ",
+          "descriptionDeleteAttention": "Pamiętaj, że całkowite usunięcie portfela może spowodować zmiany w saldach obecnego i przeszłych budżetów.",
           "descriptionDeleteButton": "kliknij tutaj",
           "form": {
             "error": "Coś poszło nie tak.",
@@ -1003,7 +1010,7 @@
         "recurring": "Cykliczny",
         "amount": "Kwota",
         "recurringDisabled": "Wstrzymany, wystąpił {count} {countLabel}",
-        "goalOutcomeChangeInfo": "Zmiany w wydatkach na cele moliwe są z poziomu celów",
+        "goalOutcomeChangeInfo": "Zmiany w wydatkach na cele możliwe są z poziomu celów",
         "goToGoals": "Przejdź do celów",
         "recurringDisabledCountLabel": {
           "one": "raz",
@@ -1122,13 +1129,13 @@
         "descriptionAttention": "Uwaga!",
         "descriptionAttentionBold": "Tej operacji nie można cofnąć.",
         "descriptionAttentionStop": "Wstrzymając wydatek, nie będzie on uwzględniany w budżecie od daty którą podasz.",
-        "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc wydatek, ",
+        "descriptionDeleteTitle": "Jeśli chcesz całkowicie usunąć wydatek, ",
         "descriptionDeleteButton": "kliknij tutaj",
-        "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie wydateku moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+        "descriptionDeleteAttention": "Pamiętaj, że całkowite usunięcie wydatku może spowodować zmiany w saldach obecnego i przeszłych budżetów.",
         "form": {
           "error": "Coś poszło nie tak.",
           "dateField": {
-            "label": "Data wstrzymania wydateku",
+            "label": "Data wstrzymania wydatku",
             "error": "Wybierz datę."
           },
           "stopOutcomeButton": "Wstrzymaj wydatek"
@@ -1169,9 +1176,9 @@
         "descriptionAttention": "Uwaga!",
         "descriptionAttentionBold": "Tej operacji nie można cofnąć.",
         "descriptionAttentionStop": "Wstrzymając dochód, nie będzie on uwzględniany w budżecie od daty którą podasz.",
-        "descriptionDeleteTitle": "Jezeli chcesz całkowicie usunąc dochód, ",
+        "descriptionDeleteTitle": "Jeśli chcesz całkowicie usunąć dochód, ",
         "descriptionDeleteButton": "kliknij tutaj",
-        "descriptionDeleteAttention": "Pamiętaj, ze całkowite usunięcie dochodu moze spowodaowac zmiany w saldach obecnego i przeszłych budżetów.",
+        "descriptionDeleteAttention": "Pamiętaj, że całkowite usunięcie dochodu może spowodować zmiany w saldach obecnego i przeszłych budżetów.",
         "form": {
           "error": "Coś poszło nie tak.",
           "dateField": {
@@ -1342,7 +1349,7 @@
       "intervalField": {
         "label": "Interwał",
         "placeholder": "Wybierz interwał",
-        "additionalInfo": "To pole pozwala skonfigurować, co ile ma się otwierać nowy budzet. czyli w jakich ramach czasowych bedziemy podumowywać twoje wydatki i przychody."
+        "additionalInfo": "To pole pozwala skonfigurować, co ile ma się otwierać nowy budżet. czyli w jakich ramach czasowych będziemy podsumowywać twoje wydatki i przychody."
       },
       "startDateField": {
         "label": "Data rozpoczęcia pierwszego okresu",
@@ -1658,13 +1665,13 @@
       },
       "delete": {
         "success": "Usunięto wydatek z portfela",
-        "failedToDeletePouchOutcome": "Nie udało się usunąć wydateku z portfela",
+        "failedToDeletePouchOutcome": "Nie udało się usunąć wydatku z portfela",
         "pouchOutcomeNotFound": "Wydatku w portfelu nie znaleziony",
         "pouchOutcomeNotBelongsToUser": "Wydatku w portfelu nie należy do ciebie"
       },
       "update": {
         "success": "Zaktualizowano wydatek w portfelu",
-        "failedToUpdatePouchOutcome": "Nie udało się zaktualizować wydateku w portfelu",
+        "failedToUpdatePouchOutcome": "Nie udało się zaktualizować wydatku w portfelu",
         "pouchOutcomeNotFound": "Wydatku w portfelu nie znaleziony",
         "pouchOutcomeNotBelongsToUser": "Wydatku w portfelu nie należy do ciebie",
         "invalidPouchOutcomeData": "Nieprawidłowe dane wydatku w portfelu"
@@ -1715,20 +1722,21 @@
   "tourSteps": {
     "addFamily": {
       "title": "Dodaj swoją rodzinę",
-      "description": "Pierwszym krokiem jest dodanie rodziny, jest to profil, który będzie współdzielony z innymi użytkownikami i pozwoli na wspólne zarządzanie finansami. Do sterowania przewodnikiem użyj przycisków poniej lub strzałek na klawiaturze.",
+      "description": "Pierwszym krokiem jest stworzenie profilu rodzinnego i dodanie użytkowników. Konto będzie współdzielone z członkami Twojej rodziny, co pozwoli na wspólne zarządzanie finansami.",
+
       "alert": "Musisz dodać przynajmniej jedną rodzinę, aby kontynuować"
     },
     "families": {
       "title": "Karta rodziny",
-      "description": "To karta twojej rodziny, zawiera informacje o rodzinie i możliwości zarządzania nią. Mozesz należeć do kilku rodzin jednocześnie, do przełączenia sie między innymi służy guzik w prawym gównym rogu karty, na tej karcie nie jest on widoczny poniewajest ona obecnie wybrana."
+      "description": "Tutaj znajdziesz kartę swojej rodziny. Możesz należeć do kilku rodzin jednocześnie. Jeśli chcesz przejść na inny profil kliknij \"Przełącz profil.\""
     },
     "familyEdit": {
-      "title": "Edycja rodziny",
-      "description": "Ten guzik pozowli otworzyć panel edycji rodziny, w którym możesz zmienić nazwę rodziny, strefe czasową oraz walutę."
+      "title": "Edycja profilu rodzinnego",
+      "description": ""
     },
     "familyDelete": {
-      "title": "Usuwanie rodziny",
-      "description": "Ten guzik pozwoli usunąć rodzinę, w tym celu należy kliknąć w guzik usuń rodzinę i potwierdzić to w oknie dialogowym."
+      "title": "Usuwanie profilu rodzinnego",
+      "description": ""
     },
     "inviteUserToFamily": {
       "title": "Zaproszenie użytkownika do rodziny",
@@ -1736,20 +1744,20 @@
     },
     "yourFamilyInvitations": {
       "title": "Wysłane zaproszenia",
-      "description": "W tym miejscu pojwią sie zaproszenia do rodziny wysłane przez Ciebie"
+      "description": "W tym miejscu pojwią sie zaproszenia do rodziny wysłane przez Ciebie."
     },
     "familyInvitations": {
       "title": "Otrzymane zaproszenia",
-      "description": "W tym miejscu pojwią sie zaproszenia do rodziny od innych użytkowników"
+      "description": "W tym miejscu pojawią sie zaproszenia do rodziny od innych użytkowników."
     },
     "goToBudgetPage": {
-      "title": "Przejdź do strony budżetu",
-      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do strony budżetu."
+      "title": "Przejdź do panelu budżetu.",
+      "description": "Aby odkryć kolejne funkcje aplikacji, przejdź do panelu budżetu."
     },
 
     "budgetSettings": {
       "title": "Ustawienia budżetu",
-      "description": "Ten guzik otwiera okno zarządzania ustawieniami budżetu, mozna tam ustawić dzień startu nowego budzetu oraz co ile nowy budzet powinien sie rozpoczynac, jest tam tez opcja przenoszenia przenoszenia sald portfeli do kolejnych budzetów o której wiecej mozesz doweidzeic sie wiecej klikajac przy ikonce \"i\" zaraz koło pola do wybrania tej opcji."
+      "description": "Możesz zarządzać swoim budżetem: ustawić dzień startu nowego budżetu, cykliczność rozpoczynania nowego budżetu i przenoszenie budżetu na kolejny miesiąc."
     },
     "budgetItems": {
       "title": "Przejdź do pozycji budżetu",
@@ -1757,68 +1765,68 @@
     },
     "addIncome": {
       "title": "Dodaj nowy przychód",
-      "description": "Dodaj swoj pierwszy przychód, wybierz czy jest on jednorazowy, czy sie powtarza oraz wpisz jego kwote",
+      "description": "Dodaj swój pierwszy przychód, wybierz czy jest on jednorazowy, czy się powtarza oraz wpisz jego kwotę.",
       "alert": "Musisz dodać przynajmniej jeden przychód, aby kontynuować"
     },
     "seeThisIncome": {
-      "title": "Karta przychódu",
-      "description": "To karta przychodu, zawiera informacje o przychodzie, jego kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem dochdów cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny dochód przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+      "title": "Karta przychodu",
+      "description": "Karta przychodu zawiera informacje o jego kwocie i cykliczności. Możesz ją edytować lub usunąć, ale UWAGA! Usunięcie przychodu powtarzającego się może mieć wpływ na obliczanie przeszłych budżetów. Kiedy powtarzający się przychód przestaje występować to wstrzymaj go, zamiast usuwać, żeby historia Twoich budżetów nie została zmieniona."
     },
     "addOutcome": {
       "title": "Dodaj nowy wydatek",
-      "description": "Dodaj swoj pierwszy wydatek, wybierz czy jest on jednorazowy, czy sie powtarza oraz wpisz jego kwote",
+      "description": "Dodaj swój pierwszy wydatek, wybierz czy jest on jednorazowy, czy się powtarza oraz wpisz jego kwotę.",
       "alert": "Musisz dodać przynajmniej jeden wydatek, aby kontynuować"
     },
     "seeThisOutcome": {
-      "title": "Karta wydateku",
-      "description": "To karta wydatku, zawiera informacje o wydajce, jego kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem wydajce cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny wydatek przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+      "title": "Karta wydatku",
+      "description": "Karta wydatku zawiera informacje o jego kwocie i cykliczności. Możesz ją edytować lub usunąć, ale UWAGA! Usunięcie wydatku powtarzającego się może mieć wpływ na obliczanie przeszłych budżetów. Kiedy powtarzający się wydatek przestaje występować to wstrzymaj go, zamiast usuwać, żeby historia Twoich budżetów nie została zmieniona."
     },
     "addPouch": {
       "title": "Dodaj nowy portfel",
-      "description": "Dodaj swoaj pierwsza portfel, portfel to specjalny rodzaj wydatku, który może być używany do kontroli budżetu, pozwala wybrac kwote jaka chcemy przeznaczac na dany cel, np. jedzenie, a potem w trakcie trwanai budzetu dodwać poszczególne wydatki w ramach tej skawieki, tak aby dokładnie wiedzieć ile pieniedzy wydaliśmy na dany cel w trakcie trwania okresu budzetowego. Jeeli wybrałes opcje przenoszenia sald sakiwewek, to jeeli nie wydasz wszyskhc pieniedzy w danych okresie to brakujaa kwota zostanie przeniesiona do kolejengo, podobnie kiedy w danych okresie wydasz na dany cel za duzo .Wybierz czy jest ona jednorazowa, czy sie powtarza oraz wpisz jej kwote.",
+      "description": "Portfele to subkonta, w których możesz tworzyć różne kategorie, takie jak: jedzenie, kosmetyki, zwierzę, etc. Pomaga to lepiej kontrolować swoje wydatki i nie przekraczać ustalonego budżetu w danej kategorii. Jeśli wybrałeś opcję przenoszenia sald portfeli, to kwota, kórej nie wydasz w danym miesiącu przeniesie się do kolejnego. Natomiast, jeśli wydasz ponad ustaloną kwotę, to w kolejnym miesiacu kwota w danej kategorii będzie niższa.",
       "alert": "Musisz dodać przynajmniej jeden portfel, aby kontynuować"
     },
     "seeThisPouch": {
       "title": "Karta portfela",
-      "description": "To karta portfela, zawiera informacje o portfelu, jej kwocie, o tym czy i co ile się powtarza, są tu te opcje edycji i usuwania, uwazaj jednak z usuwaniem portfeli cyklicznych, moze miec to wpływ na przeszle budzety, wiec kiedy dany cykliczny wydatek przestaje wystepowac, po prostu go wstrzymaj tak aby historia twoich budzetow nie została zmieniona."
+      "description": "Karta portfela zawiera informacje o jego kwocie i cykliczności. Możesz ją edytować lub usunąć, ale UWAGA! Usunięcie portfela potarzajacego się może mieć wpływ na obliczanie przeszłych budżetów. Kiedy dany powtarzający się portfel przestaje być potrzebny, to wstrzymaj go, zamiast usuwać, żeby historia Twoich budżetów nie została zmieniona."
     },
     "goToBudgetSummary": {
       "title": "Przejdź do podsumowania budżetu",
-      "description": "Przejdz do podsumowania budzetu, zobaczysz tam obeny okres budzety który jest oparty na danych które zostały przez ciebie dodane w tym okenie"
+      "description": "Zobacz podsumowanie obecnego okresu budżetowego, który jest oparty na dodanych przez Ciebie danych."
     },
     "seeBudgetTimeline": {
-      "title": "Zobacz okres budzetowy",
-      "description": "Tutaj mozesz zoabczyc od kiedy do kiedy trwa obecny okres budzetu"
+      "title": "Zobacz okres budżetowy",
+      "description": "Sprawdź od kiedy do kiedy trwa Twój obecny budżet."
     },
     "seeBudgetBalance": {
       "title": "Karta bilansu budżetu",
-      "description": "Ta karta pokazuje twoje saldo w danym okresie budzetu, moesz porównać ile masz dochodów i wydatków w danym okresie, liczac z wydatkiami które poczyniałeś w portfelach, ale równiez saldo liczac ze wszystkimi zaplanowanymi wydatkami i dochodami"
+      "description": "Pokazuje Twoje saldo budżetu w trwającym okresie budżetowym. Możesz porównać ile masz dochodów i wydatków. Do bilansu wliczają się wszystkie przychody i wydatki, także te z portfeli i zaplanowanych celów."
     },
     "budgetPouches": {
       "title": "Karta portfeli",
-      "description": "Ta karta pokazuje podsumowanie wsztstkich portfeli, widać tu ile w tym okresie zostało wydane, oraz ile wydatków w ramach portfeli jest zaplanowane w tym okresie budzetwoym."
+      "description": "Pokazuje podsumowanie wszystkich portfeli - bilans wydatków i pozostałej kwoty w portfelach."
     },
     "pouchOutcome": {
-      "title": "Karta portfela",
-      "description": "Tak jak wspominałem wcześniej, portfel to specjany rodzaj pojemnika na wydatki, portfel ma sowją pojemność. Dzięki temu guzikowi mozesz dodac wydatek w ramach portfela, dodaj teraz taki wydatek, poźniej mozesz go usunac.",
+      "title": "Dodaj wydatek w ramach portfela",
+      "description": "Dodaj wydatek do portfela w wybranej przez siebie kategorii.",
       "alert": "Musisz dodać przynajmniej jeden wydatek w ramach portfela, aby kontynuować"
     },
     "pouchOutcomesList": {
       "title": "Lista wydatków w portfelu",
-      "description": "Wydatki w ramach portfela moesz przeglądć tutaj w formie listy, rowin tą liste zeby zoabczyc jakie wydatki zostały dodane w ramach tego portfela.",
+      "description": "Wydatki w portfelach możesz przeglądać tutaj. Rozwiń listę, żeby zobaczyć swoje wydatki w tym portfelu.",
       "alert": "Musisz rozwinąć listę wydatków w portfelu, aby kontynuować"
     },
     "pouchOutcomeEdit": {
-      "title": "Zarządzanie wydatkiami w portfelu",
-      "description": "Kady wydatek moesz edytować i usuwać, aby to zrobić uzyj podswietlonych guzików."
+      "title": "Zarządzanie wydatkami w portfelu",
+      "description": "Każdy wydatek możesz edytować lub usunąć, aby to zrobić, użyj podświetlonych przycisków."
     },
     "incomesList": {
       "title": "Lista przychodów",
-      "description": "Tutaj widać te przychodu które występują w obecny okresie budzetowym."
+      "description": "Obecne przychody w budżecie."
     },
     "outcomesList": {
       "title": "Lista wydatków",
-      "description": "Tutaj widać te wydatki które występują w obecny okresie budzetowym."
+      "description": "Obecne wydatki w budżecie."
     },
     "goToGoalsPage": {
       "title": "Przejdź do strony celów",
@@ -1827,16 +1835,16 @@
 
     "addGoal": {
       "title": "Dodaj nowy cel",
-      "description": "Dodaj nowy cel, wybierz jego nazwe, kwote którą juz masz, kwote jaką potrzebujesz, co ile chcesz odkładać oraz do kiedy chcesz osiągnąć ten cel. Po dodaniu ccelu, wydatki na ten cel zostaną automatycznie uwzględniony w budzecie.",
+      "description": "Nazwij cel, wpisz kwotę poczatkową, kwotę, ktorą chcesz uzbierać i częstotliwość odkładania. Po dodaniu celu, kwota, którą należy odkładać zostanie automatycznie uwzględniona w budżecie",
       "alert": "Musisz dodać przynajmniej jeden cel, aby kontynuować"
     },
     "seeThisGoal": {
       "title": "Karta celu",
-      "description": "To jest karta celu, zawiera informacje o celu, jego kwocie czy postepie. Podświetlony guzik słuzy do zobaczenia harmonogramu oszczędności. Mozesz edytowac wydatek na cel w danych okresie jezeli oszczedziełes wiecej, luz gdy nie udało Ci sie wszczedzic zaplnowanej kwoty, przyszłe wydatki na cel zostaną automatycznie zaaktuaizowane tak aby osiaganc wyznaczony cel."
+      "description": "Zawiera informacje o celu, jego kwocie i sumie wpłat oraz podgląd harmonogramu oszczędności. Jeżeli w danym okresie udało Ci się oszczędzić więcej lub mniej niż przewiduje harmonogram, to możesz edytować wydatek na cel w tym okresie i zmienić kwotę. Cel będzie wtedy automatycznie aktualizowany i przeliczany w zależności od brakującej kwoty do zakończenia. "
     },
     "editGoal": {
       "title": "Edycja celu",
-      "description": "Moesz takze edytowac cel, zakonczuc go, lub usunać jezeli dodałes go przez przypadek."
+      "description": "W każdej chwili możesz edytować, zakończyć lub usunąć cel."
     },
     "goToFortunePage": {
       "title": "Przejdź do strony majątku",
@@ -1844,50 +1852,50 @@
     },
 
     "addFirstAsset": {
-      "title": "Dodaj nowy składnik majątku",
-      "description": "Teraz dodaj pierwszy skaldnik twojego majątku, moze to byc np.  mieszkanie, gotowka, czy akcje.",
-      "alert": "Musisz dodać przynajmniej jeden składnik majątku, aby kontynuować"
+      "title": "Dodaj aktywo",
+      "description": "Dodaj aktywo, np.  mieszkanie, gotówka czy akcje.",
+      "alert": "Musisz dodać przynajmniej jedno aktywo, aby kontynuować"
     },
     "seeThisAsset": {
-      "title": "Karta składnika majątku",
-      "description": "To jest karta składnika twojego majątku, mozesz go edytować i usuwać, aby to zrobić uzyj podswietlonych guzików. Co jakis czas nalezy zaaktualiwac wartość poszczególnych składników swojego majątku, aby móc dokładnie wiedzieć jaka jest twoja wartosc netto w danym momencie."
+      "title": "Karta aktywo",
+      "description": "Każde aktywo możesz edytować lub usuwać. Należy na bieżąco aktualizować wartość poszczególnych aktywów, aby móc dokładnie obliczyć, jaka jest Twoja wartość netto w danym momencie."
     },
     "addFirstDebt": {
-      "title": "Dodaj nowe zadłuzenie",
-      "description": "Dodaj swoje pierwsze zadłuzenie, moze to byc np. kredyt mieszkaniowy, czy pozyczka",
-      "alert": "Musisz dodać przynajmniej jeden dług, aby kontynuować"
+      "title": "Dodaj pasywo",
+      "description": "Dodaj pasywo, np. kredyt mieszkaniowy czy pożyczka",
+      "alert": "Musisz dodać przynajmniej jedno pasywo, aby kontynuować"
     },
     "seeThisDebt": {
-      "title": "Karta zadłuzen",
-      "description": "To jest karta zadłuzenia, mozesz je edytować i usuwać, aby to zrobić uzyj podswietlonych guzików. Co jakis czas nalezy zaaktualiwac wartość poszczególnych składników swojego majątku, aby móc dokładnie wiedzieć jaka jest twoja wartosc netto w danym momencie."
+      "title": "Karta pasywa",
+      "description": "Każde pasywo możesz edytować lub usuwać. Należy na bieżąco aktualizować wartość poszczególnych pasywów, aby móc dokładnie obliczyć, jaka jest Twoja wartość netto w danym momencie."
     },
     "seeAssetsCountCard": {
       "title": "Karta aktywów",
-      "description": "To karta aktywów, zawwiera inforamcje o tm jaka wartosc maja wszystkie twoje aktywa."
+      "description": "Zawiera informację o tym, jaką wartość mają wszystkie Twoje aktywa."
     },
     "seeDebtsCountCard": {
-      "title": "Karta zadłuzen",
-      "description": "To karta zadłuzen, zawwiera inforamcje o tm jaka wartosc maja wszystkie twoje zadłuzenia."
+      "title": "Karta pasywów",
+      "description": "Zawiera informację o tym, jaką wartość mają wszystkie Twoje pasywa."
     },
     "seeNetWorthCard": {
       "title": "Karta wartości netto",
-      "description": "To jest karta wartości netto, zawiera informacje o wartości netto twojego majątku."
+      "description": "Zawiera informację o wartości netto Twojego majątku."
     },
     "financialCushionCard": {
       "title": "Karta poduszki finansowej",
-      "description": "To jest karta poduszki finansowej, zawiera informacje o wartości poduszki finansowej twojego majątku."
+      "description": "Zawiera informację o wartości Twojej poduszki finansowej."
     },
     "livingAssetsCard": {
       "title": "Karta aktywów bytowych",
-      "description": "To jest karta aktywów bytowych, zawiera informacje o wartości aktywów takich jak np. dom w którym mieszkasz, samochód, meble, sprzęt AGD itp..."
+      "description": "Zawiera informację o wartości aktywów bytowych, np. dom, w którym mieszkasz, samochód, meble, sprzęt AGD, itp."
     },
     "investmentsCard": {
       "title": "Karta aktywów inwestycyjnych",
-      "description": "To jest karta aktywów inwestycyjnych, zawiera informacje o takich aktywach jak np. akcje, obligacje czy lokaty."
+      "description": "Zawiera informację o wartości aktywów inwestycyjnych, np. akcje, obligacje czy lokaty."
     },
     "othersAssetsCard": {
       "title": "Karta pozostałych aktywów",
-      "description": "To jest karta pozostałych aktywów, w tej kategroii powinny być wsztkie aktywa które nie mieszczą sie w pozostałych kategoriach."
+      "description": "Zawiera informację o watości aktywów, które nie mieszczą się w pozostałych kategoriach."
     },
     "goToDashboardPage": {
       "title": "Przejdź do strony głównej",
@@ -1896,23 +1904,23 @@
 
     "dashboardFortuneCard": {
       "title": "Karta majątku",
-      "description": "Tutaj mozesz zobaczyc podsuwanie sowjego majątku."
+      "description": "Podsumowanie Twojego majątku: aktywa, pasywa, wartość netto."
     },
     "dashboardBudgetBalanceCard": {
       "title": "Karta bilansu budżetu",
-      "description": "Tutaj mozesz zobaczyc aktualny bilans twojego budzetu"
+      "description": ""
     },
     "dashboardHistoryOfFinancesCard": {
       "title": "Karta historii finansów",
-      "description": "Tutaj mozesz zobaczyc historie swoich finansów na przestrzeni tego i poprzednich okresów budzetowych."
+      "description": "Możesz zobaczyć historię swoich finansów na przestrzeni tego i poprzednich okresów budżetowych."
     },
     "dashboardGoalsCard": {
       "title": "Karta celów",
-      "description": "Tutaj mozesz zobaczyc swoje cele i monitorować ich postęp."
+      "description": "Pozwala na monitorowanie celów i ich postępu."
     },
     "dashboardFinancialCushionCard": {
       "title": "Karta poduszki finansowej",
-      "description": "Tutaj mozesz zobaczyc jaki jest obecny poziom towjej poduszki finansowej, apliakcja poakze Ci czy jest ona na bezpiecznym poziomie w porównaniu do twoich wydatków"
+      "description": "Zobacz, jaki jest obecny stan Twojej poduszki finansowej. Apliakcja obliczy, czy jest ona na bezpiecznym poziomie w stosunku do Twoich wydatków."
     }
   }
 }

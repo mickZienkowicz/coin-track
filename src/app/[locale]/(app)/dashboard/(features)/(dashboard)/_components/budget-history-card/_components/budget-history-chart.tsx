@@ -70,7 +70,7 @@ export const BudgetHistoryChart = ({
           <Bar dataKey='balance' fill='var(--color-balance)' radius={4} />
         </BarChart>
       </ChartContainer>
-      <div className='mx-auto mb-2 mt-1 flex flex-row-reverse justify-center'>
+      <div className='mx-auto mb-2 mt-1 flex flex-row justify-center'>
         {budgetsHistory?.map((item) => (
           <div
             className='flex w-[220px] items-center justify-center'

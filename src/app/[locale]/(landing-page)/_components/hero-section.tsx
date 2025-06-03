@@ -43,19 +43,19 @@ export const HeroSection = () => {
           </SignUpButton>
         </SignedOut>
       </div>
-      <div className='relative mx-auto mt-10 aspect-[1/1.9] w-[300px] max-w-5xl overflow-hidden rounded-xl shadow-xl md:aspect-[2.2/1] md:w-full md:max-w-3xl'>
+      <div className='relative mx-auto mt-10 aspect-[1/1.8] w-[300px] overflow-hidden rounded shadow-xl lg:aspect-[16/7.3] lg:w-full'>
         <Image
           src={`/app-mobile-${locale}.png`}
           alt={t('dashboard')}
           fill
-          className='object-cover md:hidden'
+          className='object-cover lg:hidden'
           priority
         />
         <Image
           src={`/app-desktop-${locale}.png`}
           alt={t('dashboard')}
           fill
-          className='hidden object-cover md:block'
+          className='hidden object-cover lg:block'
           priority
         />
         <div className='absolute inset-0 bg-gradient-to-t from-background/80 to-transparent'></div>

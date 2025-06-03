@@ -45,15 +45,15 @@ export const getSettingsTourSteps = (
       '[data-tour="active-family-card"]'
     ]
   },
-  {
-    title: t('inviteUserToFamily.title'),
-    content: t('inviteUserToFamily.description'),
-    highlightSelectors: [
-      '[data-tour="active-family-card-invite-user-button"]',
-      '[data-tour="active-family-card-invite-user-dialog"]',
-      '[data-tour="active-family-card"]'
-    ]
-  },
+  // {
+  //   title: t('inviteUserToFamily.title'),
+  //   content: t('inviteUserToFamily.description'),
+  //   highlightSelectors: [
+  //     '[data-tour="active-family-card-invite-user-button"]',
+  //     '[data-tour="active-family-card-invite-user-dialog"]',
+  //     '[data-tour="active-family-card"]'
+  //   ]
+  // },
   {
     title: t('familyInvitations.title'),
     content: t('familyInvitations.description'),

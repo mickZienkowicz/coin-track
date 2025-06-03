@@ -54,7 +54,7 @@ export const TrialCard = ({
                   progress >= 80 && 'text-red-400'
                 )}
               >
-                {daysRemaining}
+                {daysRemaining + 1}
               </span>
             </p>
             <Progress

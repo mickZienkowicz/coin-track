@@ -7,6 +7,7 @@ import {
 } from '@clerk/nextjs';
 import { useTranslations } from 'next-intl';
 
+import { AddAsApp } from '@/components/add-as-app';
 import { AppFooter } from '@/components/app-footer/app-footer';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Link } from '@/i18n/navigation';
@@ -47,6 +48,7 @@ export default function Home() {
         <div className='flex flex-col gap-28 pb-20 md:gap-44 md:pb-40'>
           <HeroSection />
           <FeaturesSection />
+          <AddAsApp />
           <HowItWorksSection />
           <CTASection />
           <BenefitsSection />

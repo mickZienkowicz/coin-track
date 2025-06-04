@@ -9,11 +9,19 @@ import { getPouches } from '@/server/pouch/queries/get-pouch';
 import { AddPouchDialog } from '../add-pouch/add-pouch-dialog';
 import { PouchCard } from '../pouch-card';
 
-export const PouchList = async () => {
+export const PouchList = async ({
+  shouldShowPastItems
+}: {
+  shouldShowPastItems: boolean;
+}) => {
   const [t, pouches] = await Promise.all([
     getTranslations('budget.pouch'),
     getPouches()
   ]);
+
+  const filteredPouches = shouldShowPastItems
+    ? pouches
+    : pouches.filter((pouch) => !pouch.isFinished && !pouch.isStopped);
 
   return (
     <div className='mb-12 flex flex-col gap-4'>
@@ -40,12 +48,12 @@ export const PouchList = async () => {
         </CardContent>
       </Card>
       <ul className='flex flex-col gap-3'>
-        {pouches.map((pouch) => (
+        {filteredPouches.map((pouch) => (
           <li key={pouch.id}>
             <PouchCard pouch={pouch} />
           </li>
         ))}
-        {pouches.length === 0 && (
+        {filteredPouches.length === 0 && (
           <li>
             <Card className='w-full'>
               <CardContent className='flex flex-col items-center text-center'>

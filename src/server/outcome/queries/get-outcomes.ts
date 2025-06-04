@@ -1,7 +1,7 @@
 'use server';
 
 import { auth } from '@clerk/nextjs/server';
-import { compareAsc } from 'date-fns';
+import { compareAsc, compareDesc } from 'date-fns';
 import { getLocale } from 'next-intl/server';
 
 import { redirect } from '@/i18n/navigation';
@@ -59,6 +59,6 @@ export async function getOutcomes(): Promise<OutcomeWithOccurenceInfo[]> {
       if (a.isDisabled !== b.isDisabled) {
         return a.isDisabled ? 1 : -1;
       }
-      return compareAsc(b.date, a.date);
+      return compareDesc(b.date, a.date);
     });
 }

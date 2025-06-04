@@ -9,11 +9,19 @@ import { getOutcomes } from '@/server/outcome/queries/get-outcomes';
 import { AddOutcomeDialog } from '../add-outcome/add-outcome-dialog';
 import { OutcomeCard } from '../outcome-card';
 
-export const OutcomesList = async () => {
+export const OutcomesList = async ({
+  shouldShowPastItems
+}: {
+  shouldShowPastItems: boolean;
+}) => {
   const [t, outcomes] = await Promise.all([
     getTranslations('budget.outcomes'),
     getOutcomes()
   ]);
+
+  const filteredOutcomes = shouldShowPastItems
+    ? outcomes
+    : outcomes.filter((outcome) => !outcome.isFinished && !outcome.isStopped);
 
   return (
     <div className='mb-12 flex flex-col gap-4'>
@@ -40,12 +48,12 @@ export const OutcomesList = async () => {
         </CardContent>
       </Card>
       <ul className='flex flex-col gap-4'>
-        {outcomes.map((outcome) => (
+        {filteredOutcomes.map((outcome) => (
           <li key={outcome.id}>
             <OutcomeCard outcome={outcome} />
           </li>
         ))}
-        {outcomes.length === 0 && (
+        {filteredOutcomes.length === 0 && (
           <li>
             <Card className='w-full'>
               <CardContent className='flex flex-col items-center text-center'>

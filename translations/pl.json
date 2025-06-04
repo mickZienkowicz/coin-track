@@ -763,6 +763,7 @@
   },
   "budget": {
     "title": "Budżet",
+    "showPastItems": "Pokaż pozycje z poprzednich budżetów",
     "summary": "Podsumowanie",
     "summaryAdditionalInfo": "To zakładka obecnego budżetu, pokazuje podsumowanie przychodów i wydatków w obecnym okresie budżetowym, tak jak wskazane jest w tytule poniżej.",
     "budgetItems": "Pozycje budżetu",

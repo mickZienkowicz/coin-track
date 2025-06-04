@@ -1,5 +1,11 @@
 import { Interval, RecurrenceType } from '@prisma/client';
-import { addDays, isAfter, isBefore, isWithinInterval } from 'date-fns';
+import {
+  addDays,
+  compareDesc,
+  isAfter,
+  isBefore,
+  isWithinInterval
+} from 'date-fns';
 
 import { getUtcMiddayDateOfGivenDate } from '../get-utc-midday-date-of-given-date';
 import { getDateOneIntervalAfter } from '../utils/get-date-one-interval-after';
@@ -86,5 +92,15 @@ export const getOccurrencesInTimeframe = <T extends RecurringItem>(
         occurrences
       };
     })
-    .filter((item) => item.occurrences.length > 0);
+    .filter((item) => item.occurrences.length > 0)
+    .sort((a, b) => {
+      const aDate = a.occurrences.at(0);
+      const bDate = b.occurrences.at(0);
+
+      if (!aDate || !bDate) {
+        return 0;
+      }
+
+      return compareDesc(bDate, aDate);
+    });
 };

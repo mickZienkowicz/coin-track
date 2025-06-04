@@ -763,6 +763,7 @@
   },
   "budget": {
     "title": "Budget",
+    "showPastItems": "Show items from previous periods",
     "summary": "Summary",
     "summaryAdditionalInfo": "This tab shows a summary of your incomes and outcomes in the current budget period, as indicated in the title below.",
     "budgetItems": "Budget items",

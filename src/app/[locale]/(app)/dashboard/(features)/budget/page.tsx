@@ -16,7 +16,10 @@ import { BudgetTabs } from './_components/budget-tabs';
 export default async function BudgetPage({
   searchParams
 }: {
-  searchParams: Promise<{ tab?: string | undefined }>;
+  searchParams: Promise<{
+    tab?: string | undefined;
+    showPastItems?: string | undefined;
+  }>;
 }) {
   const [t, budget] = await Promise.all([
     getTranslations('budget'),
@@ -24,6 +27,7 @@ export default async function BudgetPage({
   ]);
 
   const activeTab = (await searchParams)?.tab || 'summary';
+  const shouldShowPastItems = !!((await searchParams)?.showPastItems || false);
 
   return (
     <div>
@@ -50,7 +54,7 @@ export default async function BudgetPage({
           </TabsContent>
           <TabsContent value='budget-items'>
             <Suspense fallback={<LoadingCard className='mt-6' />}>
-              <BudgetConfiguration />
+              <BudgetConfiguration shouldShowPastItems={shouldShowPastItems} />
             </Suspense>
           </TabsContent>
         </BudgetTabs>

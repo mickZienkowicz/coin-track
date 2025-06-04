@@ -9,11 +9,19 @@ import { getIncomes } from '@/server/income/queries/get-incomes';
 import { AddIncomeDialog } from '../add-income/add-income-dialog';
 import { IncomeCard } from '../income-card/income-card';
 
-export const IncomesList = async () => {
+export const IncomesList = async ({
+  shouldShowPastItems
+}: {
+  shouldShowPastItems: boolean;
+}) => {
   const [t, incomes] = await Promise.all([
     getTranslations('budget.incomes'),
     getIncomes()
   ]);
+
+  const filteredIncomes = shouldShowPastItems
+    ? incomes
+    : incomes.filter((income) => !income.isFinished && !income.isStopped);
 
   return (
     <div className='mb-12 flex flex-col gap-4'>
@@ -40,12 +48,12 @@ export const IncomesList = async () => {
         </CardContent>
       </Card>
       <ul className='flex flex-col gap-4'>
-        {incomes.map((income) => (
+        {filteredIncomes.map((income) => (
           <li key={income.id}>
             <IncomeCard income={income} />
           </li>
         ))}
-        {incomes.length === 0 && (
+        {filteredIncomes.length === 0 && (
           <li>
             <Card className='w-full'>
               <CardContent className='flex flex-col items-center text-center'>

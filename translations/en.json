@@ -1817,7 +1817,7 @@
       "description": "You can view your outcomes in pouches here. Expand the list to see your outcomes in this pouch.",
       "alert": "You must expand the list of outcomes in pouch, to continue"
     },
-    "pouchOutcomędit": {
+    "pouchOutcomeEdit": {
       "title": "Pouch outcome edit",
       "description": "You can edit or delete each outcome, to do this, use the highlighted buttons."
     },

@@ -1,5 +1,3 @@
-import { useParams } from 'next/navigation';
-
 import { AddIncomeDialog } from './_components/income/add-income/add-income-dialog';
 import { IncomesList } from './_components/income/incomes-list';
 import { AddOutcomeDialog } from './_components/outcome/add-outcome/add-outcome-dialog';

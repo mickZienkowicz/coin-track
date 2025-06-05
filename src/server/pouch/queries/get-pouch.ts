@@ -1,7 +1,10 @@
 'use server';
 
 import { auth } from '@clerk/nextjs/server';
-import { compareAsc, compareDesc } from 'date-fns';
+
+import 'date-fns';
+
+import { compareDesc } from 'date-fns';
 import { getLocale } from 'next-intl/server';
 
 import { redirect } from '@/i18n/navigation';

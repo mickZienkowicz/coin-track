@@ -3,7 +3,10 @@
 import * as React from 'react';
 import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
+import { useLocale } from 'next-intl';
 
+import { Language } from '@/i18n/routing';
+import { getDateFnsLocaleFromLanguage } from '@/lib/locale/get-date-fns-locale-from-language';
 import { cn } from '@/lib/utils';
 
 import { Button } from './button';
@@ -23,6 +26,8 @@ export const DatePicker = ({
   disabled?: boolean;
   hasError?: boolean;
 }) => {
+  const locale = useLocale();
+
   return (
     <>
       <Popover>
@@ -35,12 +40,24 @@ export const DatePicker = ({
               hasError && 'border-destructive'
             )}
           >
-            {date ? format(date, 'PPP') : <span>{label || 'Pick a date'}</span>}
+            {date ? (
+              format(date, 'PPP', {
+                locale: getDateFnsLocaleFromLanguage(locale as Language)
+              })
+            ) : (
+              <span>{label || 'Pick a date'}</span>
+            )}
             <CalendarIcon className='h-4 w-4 text-gray-500' />
           </Button>
         </PopoverTrigger>
         <PopoverContent className='z-[10010]'>
-          <Calendar mode='single' selected={date} onSelect={setDate} required />
+          <Calendar
+            mode='single'
+            selected={date}
+            onSelect={setDate}
+            required
+            locale={getDateFnsLocaleFromLanguage(locale as Language)}
+          />
         </PopoverContent>
       </Popover>
     </>
